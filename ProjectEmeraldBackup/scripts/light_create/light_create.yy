@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"light_create",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_create",
+  "parent":{
+    "name":"Lights",
+    "path":"folders/Shaders/LimitedView/LightingScr/Lights.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

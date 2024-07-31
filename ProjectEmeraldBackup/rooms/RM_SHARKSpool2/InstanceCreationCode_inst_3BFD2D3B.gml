@@ -1,0 +1,1 @@
+item = global.quest.swimmimgFins.available

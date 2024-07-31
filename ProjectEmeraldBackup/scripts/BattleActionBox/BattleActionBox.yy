@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BattleActionBox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BattleActionBox",
+  "parent":{
+    "name":"ActionBox",
+    "path":"folders/Objects/Combat/ActionBox.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

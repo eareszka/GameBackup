@@ -1,0 +1,1 @@
+if room=RM_BROWNSTOWNcave {global.ambientShadowIntensity=3}

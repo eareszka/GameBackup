@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"carryingSprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"carryingSprite",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

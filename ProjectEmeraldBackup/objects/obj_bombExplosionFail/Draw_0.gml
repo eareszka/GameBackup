@@ -1,0 +1,1 @@
+draw_sprite_stretched(spr_bombExplosion,-1,x,y,100,100)

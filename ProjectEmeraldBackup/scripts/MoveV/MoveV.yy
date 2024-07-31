@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"MoveV",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MoveV",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,5 @@
+instance_create_layer(96,128,"Emory",obj_emoryIntro)
+instance_create_layer(106,128,"Emory",obj_playerEmory)
+instance_create_depth(0,0,-9999,obj_guiControls)
+instance_create_depth(0,0,-9999,oFadeOut)
+room_goto_next()

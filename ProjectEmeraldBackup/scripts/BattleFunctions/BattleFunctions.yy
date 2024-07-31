@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"BattleFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BattleFunctions",
+  "parent":{
+    "name":"turnBasedBattles",
+    "path":"folders/Scripts/turnBasedRPG/turnBasedBattles.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

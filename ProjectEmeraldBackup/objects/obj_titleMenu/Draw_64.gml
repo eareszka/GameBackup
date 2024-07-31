@@ -1,0 +1,1 @@
+draw_text_color(320,200,"Version 0.01",c_white,c_white,c_white,c_white,1.0);

@@ -1,0 +1,1 @@
+enemy=global.bosses.daddyWorm

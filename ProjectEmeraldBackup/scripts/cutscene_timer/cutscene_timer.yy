@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"cutscene_timer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cutscene_timer",
+  "parent":{
+    "name":"cutsceneSystem",
+    "path":"folders/cutsceneSystem.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"light_remove_from_world",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_remove_from_world",
+  "parent":{
+    "name":"Lights",
+    "path":"folders/Shaders/LimitedView/LightingScr/Lights.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

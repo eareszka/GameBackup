@@ -1,0 +1,22 @@
+{
+  "$GMPath":"",
+  "%Name":"rockFall3",
+  "closed":false,
+  "kind":0,
+  "name":"rockFall3",
+  "parent":{
+    "name":"fallingRocks",
+    "path":"folders/Actors/fallingRocks.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":287.42773,"y":351.70068,},
+    {"speed":100.0,"x":414.2168,"y":478.77966,},
+    {"speed":100.0,"x":448.20593,"y":447.59573,},
+    {"speed":100.0,"x":543.8847,"y":577.0864,},
+    {"speed":100.0,"x":576.0835,"y":561.8628,},
+    {"speed":100.0,"x":638.1332,"y":701.5031,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

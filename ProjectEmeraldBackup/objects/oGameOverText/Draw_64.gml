@@ -1,0 +1,1 @@
+draw_sprite_ext(sGameOverText,-1,192,100,1,1,0,c_white,backgroundAlpha)

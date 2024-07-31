@@ -1,0 +1,1 @@
+if image_xscale<=0&&oRhythmBar4.set1{visible=false}

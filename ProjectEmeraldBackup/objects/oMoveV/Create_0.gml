@@ -1,0 +1,9 @@
+setup = false
+timer = -1
+obj = -1
+ammount = -1
+yspeed=0
+starty = obj.y
+back=false
+beg=true
+done=false

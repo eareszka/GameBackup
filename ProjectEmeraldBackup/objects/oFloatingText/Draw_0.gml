@@ -1,0 +1,12 @@
+draw_set_font(font);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_alpha(image_alpha);
+draw_set_color(c_black);
+draw_text_transformed(x+1,y,text,1.25,1.25,0)
+draw_text_transformed(x-1,y,text,1.25,1.25,0)
+draw_text_transformed(x,y+1,text,1.25,1.25,0)
+draw_text_transformed(x,y-1,text,1.25,1.25,0)
+draw_set_color(col);
+draw_text_transformed(x,y,text,1.25,1.25,0)
+draw_set_alpha(1.0);

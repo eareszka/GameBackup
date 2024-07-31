@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"createDancePad",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"createDancePad",
+  "parent":{
+    "name":"dancePad",
+    "path":"folders/Actors/dancePad.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

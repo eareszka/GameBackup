@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"LevelUp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LevelUp",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

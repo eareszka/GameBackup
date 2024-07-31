@@ -1,0 +1,4 @@
+instance_destroy(oRhythmVisual3)
+instance_destroy(oRhythmLine1)
+instance_destroy(oRhythmLine2)
+oBattle.battleStopFlow=false

@@ -1,0 +1,1 @@
+draw_sprite_stretched(spr_battleMenu,-16000,x,y,45,45)

@@ -1,0 +1,1 @@
+draw_sprite_ext(spr_tourch,-1,x+xOff,y,.32,.32,rotation,c_white,1)

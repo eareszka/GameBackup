@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"cutscene_move_obj",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cutscene_move_obj",
+  "parent":{
+    "name":"cutsceneSystem",
+    "path":"folders/cutsceneSystem.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

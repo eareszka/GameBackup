@@ -1,0 +1,6 @@
+draw_sprite_ext(spr_questMenu,subimg,camera_get_view_x(view_camera[0])+108,camera_get_view_y(view_camera[0])+60,1,1,0,c_white,1)
+draw_text(camera_get_view_x(view_camera[0])+120,camera_get_view_y(view_camera[0])+70,"$"+string(global.my_Money))
+draw_text(camera_get_view_x(view_camera[0])+120,camera_get_view_y(view_camera[0])+80,"XP:"+string(global.battleExperince))
+draw_set_halign(fa_right)
+draw_text(camera_get_view_x(view_camera[0])+375,camera_get_view_y(view_camera[0])+80,"Return (esc)")
+draw_text(camera_get_view_x(view_camera[0])+375,camera_get_view_y(view_camera[0])+70,"Accept (spacebar)")

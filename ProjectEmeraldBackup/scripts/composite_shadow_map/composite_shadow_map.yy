@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"composite_shadow_map",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"composite_shadow_map",
+  "parent":{
+    "name":"LightingScr",
+    "path":"folders/Shaders/LimitedView/LightingScr.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

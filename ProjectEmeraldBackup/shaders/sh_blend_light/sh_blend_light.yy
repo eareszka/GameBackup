@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"sh_blend_light",
+  "name":"sh_blend_light",
+  "parent":{
+    "name":"LightingShader",
+    "path":"folders/Shaders/LimitedView/LightingShader.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

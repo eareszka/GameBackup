@@ -1,0 +1,1 @@
+draw_sprite_stretched(spr_fireIdle,-1,x,y,12,12)

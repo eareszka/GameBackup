@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"light_acknowledge_shadow_caster",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_acknowledge_shadow_caster",
+  "parent":{
+    "name":"Misc",
+    "path":"folders/Shaders/LimitedView/LightingScr/Lights/Misc.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

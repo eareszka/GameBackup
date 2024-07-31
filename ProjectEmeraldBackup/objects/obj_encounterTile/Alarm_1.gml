@@ -1,0 +1,105 @@
+if (room == RM_BROWNSTOWN)
+{
+	NewEncounter(
+	choose
+	(
+	[global.enemies.catTails],
+	[global.enemies.catTails],
+	[global.enemies.frog],
+	[global.enemies.frog],
+	[global.enemies.frog,global.enemies.catTails],
+	[global.enemies.frog,global.enemies.catTails],
+	[global.enemies.frog,global.enemies.catTails,global.enemies.catTails],
+	), 
+	spr_battleBackground2,
+	battle1,
+	false
+	);
+}
+if (room == RM_BROWNSTOWNcave)
+{
+	NewEncounter(
+	choose
+	(
+		[global.enemies.spider],
+		[global.enemies.rock],
+		[global.enemies.rock,global.enemies.rock],
+		[global.enemies.rock,global.enemies.spider],
+		[global.enemies.spider,global.enemies.spider],
+		[global.enemies.spider,global.enemies.rock,global.enemies.spider],
+		[global.enemies.rock,global.enemies.spider,global.enemies.rock],
+	), 
+	spr_battleBackground1,
+	battle1,
+	false
+	);
+}
+if (room == RM_FINfarm)
+{
+	NewEncounter(
+	choose
+	(
+	[global.enemies.beetle,global.enemies.poisonthorns],
+	[global.enemies.poisonthorns,global.enemies.beetle],
+	[global.enemies.poisonthorns],
+	[global.enemies.beetle,global.enemies.beetle],
+	[global.enemies.beetle,global.enemies.beetle],
+	[global.enemies.beetle,global.enemies.poisonthorns,global.enemies.beetle],
+	), 
+	spr_battleBackground2,
+	battle1,
+	false
+	);
+}
+if (room == RM_CATACOMBS)
+{
+	NewEncounter(
+	choose
+	(
+	[global.enemies.bat],
+	[global.enemies.bat,global.enemies.amalbonemation,global.enemies.bat],
+	[global.enemies.bat,global.enemies.bat],
+	[global.enemies.amalbonemation,global.enemies.amalbonemation],
+	[global.enemies.bat,global.enemies.amalbonemation],
+	[global.enemies.amalbonemation],
+	), 
+	spr_battleBackground3,
+	battle1,
+	false
+	);
+}
+if (room == RM_PLAINVILL)
+{
+	NewEncounter(
+	choose
+	(
+	[global.enemies.mogMole],
+	[global.enemies.mogMole,global.enemies.poisonthorns,global.enemies.poisonthorns],
+	[global.enemies.poisonthorns,global.enemies.mogMole],
+	[global.enemies.mogMole,global.enemies.mogMole],
+	[global.enemies.poisonthorns,global.enemies.poisonthorns],
+	[global.enemies.poisonthorns],
+	), 
+	spr_battleBackground2,
+	battle1,
+	false
+	);
+}
+if (room == RM_MOUNTAINS)
+{
+	NewEncounter(
+	choose
+	(
+	[global.enemies.notDeer],
+	[global.enemies.notDeer,global.enemies.thunderBird,global.enemies.notDeer],
+	[global.enemies.notDeer,global.enemies.thunderBird],
+	[global.enemies.thunderBird,global.enemies.thunderBird],
+	[global.enemies.thunderBird,global.enemies.notDeer],
+	[global.enemies.thunderBird],
+	), 
+	spr_battleBackground1,
+	battle1,
+	false
+	);
+}
+

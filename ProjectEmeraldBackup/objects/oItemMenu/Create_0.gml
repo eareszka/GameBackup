@@ -1,0 +1,11 @@
+active = true;
+hover = 0
+maxHover=0
+item = -1
+user = 0
+arrowPos = 95
+units = [user]
+menu = [global.MainMenu.goBack,global.MainMenu.quest,global.MainMenu.quit]
+draw_char = 0
+text_spd = 2
+textBoxHeight = 23

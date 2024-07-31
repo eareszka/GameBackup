@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"ArrowCrit",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ArrowCrit",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

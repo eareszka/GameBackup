@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"CopyStruct",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CopyStruct",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

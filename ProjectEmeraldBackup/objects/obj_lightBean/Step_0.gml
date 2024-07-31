@@ -1,0 +1,1 @@
+light [|eLight.Intensity]=.5

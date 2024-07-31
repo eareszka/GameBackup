@@ -1,0 +1,1 @@
+if instance_exists(obj_playerBroke){obj_playerBroke.visible=true}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"lighting_free",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"lighting_free",
+  "parent":{
+    "name":"LightingScr",
+    "path":"folders/Shaders/LimitedView/LightingScr.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

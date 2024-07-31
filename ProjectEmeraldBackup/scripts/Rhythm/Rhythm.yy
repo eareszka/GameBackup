@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"Rhythm",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Rhythm",
+  "parent":{
+    "name":"rhythm",
+    "path":"folders/Scripts/turnBasedRPG/rhythm.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
