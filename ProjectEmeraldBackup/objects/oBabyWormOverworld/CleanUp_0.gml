@@ -1,1 +1,0 @@
-if dead{instance_create_layer(x,y,"Emory",oBossDropEmerald)}

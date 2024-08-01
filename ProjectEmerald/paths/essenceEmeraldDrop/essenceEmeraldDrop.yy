@@ -1,0 +1,23 @@
+{
+  "$GMPath":"",
+  "%Name":"essenceEmeraldDrop",
+  "closed":false,
+  "kind":0,
+  "name":"essenceEmeraldDrop",
+  "parent":{
+    "name":"bossDrop",
+    "path":"folders/Actors/bossDrop.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":640.73535,"y":94.64273,},
+    {"speed":100.0,"x":555.46265,"y":287.2708,},
+    {"speed":80.0,"x":525.0131,"y":265.84668,},
+    {"speed":90.0,"x":515.19434,"y":288.0488,},
+    {"speed":60.0,"x":501.24228,"y":273.55783,},
+    {"speed":70.0,"x":495.4151,"y":288.69318,},
+    {"speed":60.0,"x":468.18097,"y":289.39838,},
+  ],
+  "precision":1,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

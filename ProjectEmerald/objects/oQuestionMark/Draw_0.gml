@@ -1,0 +1,1 @@
+draw_sprite_stretched_ext(spr_oBattleActionBox,7,obj_playerEmory.x+14,obj_playerEmory.y-24,xSize,ySize,c_white,alpha)

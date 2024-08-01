@@ -1,0 +1,1 @@
+path_start(essenceEmeraldDrop,3,path_action_stop,false)

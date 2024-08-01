@@ -1,1 +1,0 @@
-oBattle.battleStopFlow=false
