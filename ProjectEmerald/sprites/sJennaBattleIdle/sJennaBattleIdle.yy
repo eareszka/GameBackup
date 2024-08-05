@@ -22,6 +22,7 @@
   "height":65,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"6fdc8a26-bd91-46c7-bff7-6d51a93d3ad3","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"6fdc8a26-bd91-46c7-bff7-6d51a93d3ad3","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"3a9f83bd-80d7-4bdb-914f-54c88ce3413b","blendMode":0,"displayName":"default","isLocked":false,"name":"3a9f83bd-80d7-4bdb-914f-54c88ce3413b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sJennaBattleIdle",

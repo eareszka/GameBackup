@@ -6,8 +6,8 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_22ABF6C1","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_191F4AB3","path":"rooms/debugRoom/debugRoom.yy",},
+    {"name":"inst_22ABF6C1","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_2FA32BAF","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_767C5132","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_79E1A551","path":"rooms/debugRoom/debugRoom.yy",},
@@ -36,12 +36,12 @@
     {"name":"inst_79089A9E","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_7DF16C46","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_5D635481","path":"rooms/debugRoom/debugRoom.yy",},
-    {"name":"inst_5CC381C1","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_28753974","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_4EBEC0D2","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_24397BA8","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_4987F91A","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_435CC79F","path":"rooms/debugRoom/debugRoom.yy",},
+    {"name":"inst_5CC381C1","path":"rooms/debugRoom/debugRoom.yy",},
   ],
   "isDnd":false,
   "layers":[

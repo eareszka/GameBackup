@@ -139,7 +139,7 @@ function MenuChangeHP(_user,_item, _amount)
 			case 2:
 				if global.BcurrentHP > 0
 				global.BcurrentHP = clamp(global.BcurrentHP + _amount, 0, round(10+(global.hpAdd*.5)));
-				with instance_create_depth(obj_playerBroke.x+10,obj_playerBroke.y+15,obj_playerBroke.layer,oBattleEffect)
+				with instance_create_depth(obj_playerzBroke.x+10,obj_playerzBroke.y+15,obj_playerzBroke.layer,oBattleEffect)
 				{
 					sprite_index = sAttackHeal
 				}
@@ -173,7 +173,7 @@ function MenuChangeHP(_user,_item, _amount)
 			break;
 			case 2:
 				global.BcurrentMP = clamp(global.BcurrentMP + _amount, 0, round(10+(global.mpAdd*2)));
-				with instance_create_depth(obj_playerBroke.x+10,obj_playerBroke.y+15,obj_playerBroke.layer,oBattleEffect)
+				with instance_create_depth(obj_playerzBroke.x+10,obj_playerzBroke.y+15,obj_playerzBroke.layer,oBattleEffect)
 				{
 					sprite_index = sAttackHeal
 				}

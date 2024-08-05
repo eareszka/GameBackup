@@ -16,6 +16,10 @@ switch battleBackground
 	case spr_battleBackground4:
 		global.battleBox=sBox4
 	break
+	
+	case spr_battleBackground5:
+		global.battleBox=sBox5
+	break
 }
 
 image_speed = .5

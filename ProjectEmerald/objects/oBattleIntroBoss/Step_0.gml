@@ -1,6 +1,6 @@
 obj_playerEmory.depth = -16000
 obj_playerFinn.depth = -16000
-obj_playerBroke.depth = -16000
+obj_playerzBroke.depth = -16000
 obj_playerJen.depth = -16000
 boss.depth = -16000
 var _emory = layer_get_id("Emory")
@@ -19,7 +19,7 @@ else
 	{
 		obj_playerEmory.layer = _emory
 		obj_playerFinn.layer = _player
-		obj_playerBroke.layer = _player
+		obj_playerzBroke.layer = _player
 		obj_playerJen.layer = _player
 		boss.depth = obj_playerEmory.depth-10
 		done = true

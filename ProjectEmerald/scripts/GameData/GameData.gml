@@ -139,6 +139,8 @@ global.flag =
 	0,
 	//computerTalk1 42
 	0,
+	//rebeccaGiveShoes 43
+	0,
 ]
 	
 	

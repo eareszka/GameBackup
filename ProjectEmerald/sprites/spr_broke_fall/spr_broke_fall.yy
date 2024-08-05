@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":29,
   "bbox_left":1,
-  "bbox_right":17,
+  "bbox_right":16,
   "bbox_top":3,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -19,7 +19,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"b981e1dc-7071-4623-9f1c-f2a84708df61","blendMode":0,"displayName":"default","isLocked":false,"name":"b981e1dc-7071-4623-9f1c-f2a84708df61","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"b6622304-a78c-4f92-b112-aa3e9debd7cf","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"b6622304-a78c-4f92-b112-aa3e9debd7cf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_broke_fall",
   "nineSlice":null,

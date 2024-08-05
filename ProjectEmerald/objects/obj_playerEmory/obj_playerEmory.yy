@@ -18,8 +18,8 @@
   "name":"obj_playerEmory",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"PARTY",
+    "path":"folders/Objects/PARTY.yy",
   },
   "parentObjectId":null,
   "persistent":true,

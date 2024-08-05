@@ -1,8 +1,8 @@
 if(global.fin = 1)
 {
-	if obj_playerEmory.battleStart{visible=false}else{visible=true}
+	if obj_playerEmory.battleStart||obj_playerEmory.array_size<15{visible=false}else{visible=true}
 	
-	if (obj_playerEmory.hSpeed != 0 || obj_playerEmory.vSpeed != 0) {
+	if (obj_playerEmory.hSpeed != 0 || obj_playerEmory.vSpeed != 0)&&(followerDistance=15){
 	switch(obj_playerEmory.toRecordSprite[followerDistance]){
 	
 		case emory_f_walking: sprite_index = finn_f_walking; image_xscale = obj_playerEmory.toRecord_Xscale[followerDistance]; break;
@@ -21,19 +21,19 @@ if(global.fin = 1)
 	
 	x = obj_playerEmory.pos_x[followerDistance];
 	y = obj_playerEmory.pos_y[followerDistance];
-	
-	if followerDistance != 15
+		
+	if followerDistance != 15&&obj_playerEmory.array_size>=15
 	{
 		if obj_playerEmory.x != obj_playerEmory.xprevious
 		{
-			followerDistance+=.1
+			followerDistance+=1
 		}
 	}
-	if followerDistance != 15
+	if followerDistance != 15&&obj_playerEmory.array_size>=15
 	{
 		if obj_playerEmory.y != obj_playerEmory.yprevious
 		{
-			followerDistance+=.1
+			followerDistance+=1
 		}	
 	}
 	

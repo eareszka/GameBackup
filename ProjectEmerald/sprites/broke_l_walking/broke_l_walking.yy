@@ -3,7 +3,7 @@
   "%Name":"broke_l_walking",
   "bboxMode":0,
   "bbox_bottom":29,
-  "bbox_left":1,
+  "bbox_left":2,
   "bbox_right":18,
   "bbox_top":2,
   "collisionKind":1,

@@ -91,7 +91,7 @@ if place_meeting(x, y + vSpeed, obj_coll) || place_meeting (x, y + vSpeed, obj_c
 {
 	vSpeed = 0
 }
-if layer_exists("tcCOLL")
+if layer_exists("tcCOLL")&&!blown
 {
 	if tile_meeting(x + hSpeed, y, "tcCOLL", obj_precise_tile_checker) == true
 	{
@@ -166,22 +166,23 @@ unit following tracker
 *********************/
 if (x != xprevious or y != yprevious)
 {
-	for(var i = array_size-1; i > 0; i--){
 	
-	pos_x[i] = pos_x[i-1];
-	pos_y[i] = pos_y[i-1];
+	if array_size<94{array_size++}
 	
-	toRecordSprite[i] = toRecordSprite[i-1];
-	toRecord_Xscale[i] = toRecord_Xscale[i-1];
-
-		}
+	for(var i = array_size-1; i > 0; i--)
+	{
+		pos_x[i] = pos_x[i-1];
+		pos_y[i] = pos_y[i-1];
+	
+		toRecordSprite[i] = toRecordSprite[i-1];
+		toRecord_Xscale[i] = toRecord_Xscale[i-1];
+	}
+	
 	pos_x[0] = x;
 	pos_y[0] = y;
 	toRecordSprite[0] = sprite_index;
 	toRecord_Xscale[0] = image_xscale;
-
 }
-
 /*********************************
 player stationary when menu opened
 **********************************/
@@ -320,6 +321,26 @@ if layer_exists("tcSWIM")
 		swimming = false	
 	}
 }
+
+if place_meeting(x,y,obj_wind)
+{
+	blown=true
+}
+if blown
+{
+	speedWalk = 0;
+	blownTimer--
+	blownSprite--
+	obj_playerEmory.y+=1.5
+	
+	if blownSprite>=40{sprite_index=emory_b_idle}
+	else if blownSprite>=30{sprite_index=emory_l_idle}
+	else if blownSprite>=20{sprite_index=emory_f_idle}
+	else if blownSprite>=10{sprite_index=emory_r_idle}
+	else if blownSprite>=0{blownSprite=50}
+		
+	if blownTimer<0{blownSprite=50 blown=false}
+}
 	
 
 
@@ -344,7 +365,7 @@ if swimming
 //dead party member overworld
 if global.EcurrentHP<=0&&!emoryDead{with instance_create_layer(x,y+25,"Player",obj_deadParty){player=0}}
 if global.FcurrentHP<=0&&!finDead{with instance_create_layer(obj_playerFinn.x,obj_playerFinn.y+25,"Player",obj_deadParty){player=1}}
-if global.BcurrentHP<=0&&!brokeDead{with instance_create_layer(obj_playerBroke.x,obj_playerBroke.y+25,"Player",obj_deadParty){player=2}}
+if global.BcurrentHP<=0&&!brokeDead{with instance_create_layer(obj_playerzBroke.x,obj_playerzBroke.y+25,"Player",obj_deadParty){player=2}}
 if global.JcurrentHP<=0&&!jenDead{with instance_create_layer(obj_playerJen.x,obj_playerJen.y+25,"Player",obj_deadParty){player=3}}
 
 //checks overworld dead
@@ -377,7 +398,7 @@ if battleStart
 	if instance_exists(oExclamationMark){instance_destroy(oExclamationMark)}
 	if !instance_exists(obj_emoryFall)&&!emoryDead{instance_create_depth(x+10,y+10,-16000,obj_emoryFall)}
 	if !instance_exists(obj_finnFall)&&!finDead&&global.fin=1{instance_create_depth(obj_playerFinn.x+10,obj_playerFinn.y+10,-16000,obj_finnFall)}
-	if !instance_exists(obj_brokeFall)&&!brokeDead&&global.broke=1{instance_create_depth(obj_playerBroke.x+10,obj_playerBroke.y+10,-16000,obj_brokeFall)}
+	if !instance_exists(obj_brokeFall)&&!brokeDead&&global.broke=1{instance_create_depth(obj_playerzBroke.x+10,obj_playerzBroke.y+10,-16000,obj_brokeFall)}
 	if !instance_exists(obj_jenFall)&&!jenDead&&global.jen=1{instance_create_depth(obj_playerJen.x+10,obj_playerJen.y+10,-16000,obj_jenFall)}
 }
 

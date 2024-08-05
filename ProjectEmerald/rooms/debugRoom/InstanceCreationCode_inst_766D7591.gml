@@ -1,4 +1,4 @@
-target_x =111
-target_y = 160
-target_rm = RM_ANAHhouse3
+target_x =720
+target_y = 64
+target_rm = RM_HOTELvent1
 target_face = UP

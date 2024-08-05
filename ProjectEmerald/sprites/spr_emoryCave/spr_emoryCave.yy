@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_emoryCave",
   "bboxMode":0,
-  "bbox_bottom":127,
+  "bbox_bottom":163,
   "bbox_left":0,
   "bbox_right":511,
   "bbox_top":0,

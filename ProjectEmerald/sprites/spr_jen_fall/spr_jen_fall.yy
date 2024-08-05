@@ -3,7 +3,7 @@
   "%Name":"spr_jen_fall",
   "bboxMode":0,
   "bbox_bottom":29,
-  "bbox_left":1,
+  "bbox_left":2,
   "bbox_right":17,
   "bbox_top":3,
   "collisionKind":1,
@@ -19,7 +19,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"b981e1dc-7071-4623-9f1c-f2a84708df61","blendMode":0,"displayName":"default","isLocked":false,"name":"b981e1dc-7071-4623-9f1c-f2a84708df61","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"e3b15505-290e-46f4-82f5-8358f6b1c5d8","blendMode":0,"displayName":"default","isLocked":false,"name":"e3b15505-290e-46f4-82f5-8358f6b1c5d8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_jen_fall",
   "nineSlice":null,

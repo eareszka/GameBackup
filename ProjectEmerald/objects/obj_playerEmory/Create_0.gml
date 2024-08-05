@@ -6,6 +6,9 @@ hit = false
 swimming = false
 battleStart=false
 fall=false
+blown=false
+blownTimer=0
+blownSprite=50
 
 //unit flasher
 flash = 0
@@ -77,7 +80,6 @@ face = DOWN;
 //characters checks if they are part of party or not
 //updates position so player can go back after battle
 //unit following tracker
-
 array_size = 94;
 for(var i = array_size-1; i >= 0; i--)
 {
@@ -94,9 +96,9 @@ if !instance_exists(obj_playerJen)
 	follower_1.followerDistance = 45;
 }
 
-if !instance_exists(obj_playerBroke)
+if !instance_exists(obj_playerzBroke)
 {
-	var follower_2 = instance_create_layer(x,y, "Player", obj_playerBroke);
+	var follower_2 = instance_create_layer(x,y, "Player", obj_playerzBroke);
 	follower_2.followerDistance = 30;
 }
 
@@ -162,7 +164,7 @@ global.MainMenu =
 			instance_destroy(obj_playerEmory)
 			instance_destroy(obj_camera)
 			instance_destroy(obj_playerFinn)
-			instance_destroy(obj_playerBroke)
+			instance_destroy(obj_playerzBroke)
 			instance_destroy(obj_playerJen)
 		}	
 	},

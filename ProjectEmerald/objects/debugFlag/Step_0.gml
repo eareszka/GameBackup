@@ -15,8 +15,4 @@ if place_meeting(x,y,obj_playerEmory)
 	global.sacredAnimals.dog = true
 	global.quest.hotelKey.available = true
 	global.quest.helicopter.available=true
-	
-	//global.fin=1
-	//global.broke=1
-	//global.jen=1
 }

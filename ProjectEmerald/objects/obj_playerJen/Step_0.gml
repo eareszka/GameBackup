@@ -1,8 +1,8 @@
 if(global.jen = 1)
 {
-	if obj_playerEmory.battleStart{visible=false}else{visible=true}
+	if obj_playerEmory.battleStart||obj_playerEmory.array_size<25{visible=false}else{visible=true}
 	
-	if (obj_playerEmory.hSpeed != 0 || obj_playerEmory.vSpeed != 0) {
+	if (obj_playerEmory.hSpeed != 0 || obj_playerEmory.vSpeed != 0)&&(followerDistance=45){
 	switch(obj_playerEmory.toRecordSprite[followerDistance])
 	{
 	
@@ -23,13 +23,28 @@ if(global.jen = 1)
 	x = obj_playerEmory.pos_x[followerDistance];
 	y = obj_playerEmory.pos_y[followerDistance];
 	
-	if y < obj_playerBroke.y+5
+	if followerDistance != 45&&obj_playerEmory.array_size>=25
 	{
-		depth = obj_playerBroke.depth+1
+		if obj_playerEmory.x != obj_playerEmory.xprevious
+		{
+			followerDistance+=1
+		}
+	}
+	if followerDistance != 45&&obj_playerEmory.array_size>=25
+	{
+		if obj_playerEmory.y != obj_playerEmory.yprevious
+		{
+			followerDistance+=1
+		}	
+	}
+	
+	if y < obj_playerzBroke.y+5
+	{
+		depth = obj_playerzBroke.depth+1
 	}
 	else
 	{
-		depth = obj_playerBroke.depth-1
+		depth = obj_playerzBroke.depth-1
 	}
 	
 	//overworld damage

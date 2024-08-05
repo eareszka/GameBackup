@@ -12,7 +12,7 @@ if place_meeting(x,y,obj_playerEmory)
 		switch global.prevRoom
 		{
 			case RM_BROWNSTOWN:
-				CreateShopMenu([global.ShopSystem.goBack,global.ShopSystem.bottledWater,global.ShopSystem.crackers,global.ShopSystem.flashlight,global.ShopSystem.dogTreat])
+				CreateShopMenu([global.ShopSystem.goBack,global.ShopSystem.bottledWater,global.ShopSystem.crackers,global.ShopSystem.flashlight])
 			break;
 			
 			case RM_PLAINVILL:

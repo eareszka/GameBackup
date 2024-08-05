@@ -28,7 +28,7 @@ function OverworldDamage(_obj,_damage)
 				}
 			}
 		break;
-		case obj_playerBroke:
+		case obj_playerzBroke:
 			if global.BcurrentHP > 0
 			{
 				_obj.hit = true
@@ -36,7 +36,7 @@ function OverworldDamage(_obj,_damage)
 				global.BcurrentHP -= _damage
 				if !instance_exists(oFloatingText)
 				{
-					instance_create_depth(obj_playerBroke.x,obj_playerBroke.y,-16000, oFloatingText, {subtraction: 0.02, font: fnM5x7, col: c_white, text: "-"+string(_damage)})
+					instance_create_depth(obj_playerzBroke.x,obj_playerzBroke.y,-16000, oFloatingText, {subtraction: 0.02, font: fnM5x7, col: c_white, text: "-"+string(_damage)})
 				}
 			}
 		break;

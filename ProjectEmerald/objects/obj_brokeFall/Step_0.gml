@@ -1,6 +1,6 @@
 sprite_index=spr_broke_fall
 	
-if y < obj_playerBroke.y-10
+if y < obj_playerzBroke.y-10
 {
 	fall = true	
 }

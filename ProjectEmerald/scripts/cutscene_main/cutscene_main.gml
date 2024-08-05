@@ -576,7 +576,7 @@ function cutscene_main(_cutscene,_scene)
 					if global.fin=1
 					{cutscene_move_obj(obj_playerFinn,699,135,1.5,false)}	
 					if global.broke=1
-					{cutscene_move_obj(obj_playerBroke,695,135,1.5,false)}
+					{cutscene_move_obj(obj_playerzBroke,695,135,1.5,false)}
 				break
 				
 				case 1:

@@ -25,47 +25,67 @@ function scr_game_text(_text_id)
 		
 		
 		case "Anna":
-		if global.quest.annasFlashLight.available = false
-		{
-			scr_name("Anna")
-			scr_text("Ugh, this outfit is so mid")
-			scr_text("Would you be willing to help me out")
-			scr_text("And give me some money so I can buy new clothes?")
-			scr_text("Maybe like $20?")	
-			scr_option("Yes", "Anna - yes")
-			scr_option("No", "Anna - no")
-		break
-		}
-		else
-		{
-			scr_name("Anna")
-			scr_text("Oh, hi again Emory")
-		break
-		}
-			case "Anna - yes":
+			if global.quest.dogTreat.available = false
+			{
+				if global.flag[43]=0
+				{
+					scr_name("Anna")
+					scr_text("Ugh, i'm so annoyed")
+					scr_text("I left my new shoes over at my friends house last night")
+					scr_text("And I just bought them yesterday")
+					scr_text("Can you please go get them for me?")	
+					scr_option("Yes", "Anna - yes")
+					scr_option("No", "Anna - no")
+					break
+				}
+				if global.flag[43]=1
+				{
+					scr_name("Anna")
+					scr_text("Please bring my shoes back.")
+					break;
+				}
+				if global.flag[43]=2
+				{
+					scr_name("Anna")
+					scr_text("Thank you. I knew I left them over there last night.")
+					scr_text("Wait before you go I need one more favor")
+					scr_text("Can you give this toy to our dog 'Loki' that I bought for him?")
+					scr_text("I would give it to him but i'm just way too lazy.")
+					scr_option("Sure", "Anna - yes2")
+					scr_option("No", "Anna - no2")
+					break;
+				}
+			}
+			else
+			{
 				scr_name("Anna")
-				if global.my_Money >= 20
-				{
-					scr_name("Anna")
-					scr_text("*Emory handed Anna a merely $20*")
-					scr_text("Yay thanks!")
-					scr_text("Here take this flashlight")
-					scr_text("*Emory recieved Flashlight*")	
-					scr_text("*Emory can now see in dark places*")	
-					global.quest.annasFlashLight.available = true
-					break
-				}
-				else
-				{
-					scr_name("Anna")
-					scr_text("You don't even have $20")
-					scr_text("Stop wasting my time and go away!")	
-					break
-				}
+				scr_text("Oh, hi again Emory")
+				break
+			}
+				
+			case "Anna - yes":
+				global.flag[43]=1
+				scr_name("Anna")
+				scr_text("Ok thanks")
+				scr_text("Just please find them for me")
 			break
+			
 			case "Anna - no":
 				scr_name("Anna")
 				scr_text("Shoo than")
+			break
+				
+			case "Anna - yes2":
+				global.flag[43]=1
+				scr_name("Anna")
+				scr_text("Ok thanks")
+				scr_text("*Emory recieved Dog Toy*")
+				global.quest.dogTreat.available = true
+			break
+			
+			case "Anna - no2":
+				scr_name("Anna")
+				scr_text("Oh ok, well at least I got my shoes")
 			break
 			
 			
@@ -352,10 +372,45 @@ function scr_game_text(_text_id)
 		break
 		
 		case "Rebecca":
-			scr_name("Rebecca")
-			scr_text("My siblings are too scared to go outside")
-			scr_text("They sound like a bunch of sissys! I'm not scared of giant frogs!")
+			if global.flag[43]=0||global.flag[43]=2
+			{
+				scr_name("Rebecca")
+				scr_text("My siblings are too scared to go outside")
+				scr_text("They sound like a bunch of sissys! I'm not scared of giant frogs!")
+			}
+			else
+			{
+				scr_name("Rebecca")
+				scr_text("Oh... hi Annas brother... i'm not hiding anything I promise")
+				scr_option("Where are Annas shoes.", "Rebecca - yes")
+			}
 		break
+			
+			case "Rebecca - yes":
+				scr_name("Rebecca")
+				scr_text("Ok fine. You can have them but only for 1$")
+				scr_option("uh ok..", "Rebecca - yes2")
+			break;
+			
+			case "Rebecca - yes2":
+				if global.my_Money>=1
+				{
+					global.my_Money-=1
+					scr_name("Rebecca")
+					scr_text("Ok thanks")	
+					scr_text("*Emory got Annas shoes back*")	
+					global.flag[43]=2
+				}
+				else
+				{
+					scr_name("Rebecca")
+					scr_text("Dang you're poor,")	
+					scr_text("Well not I feel bad.")	
+					scr_text("Just take the shoes back.")	
+					scr_text("*Emory got Annas shoes back*")	
+					global.flag[43]=2
+				}
+			break;
 		
 		case "Jacob":
 			scr_name("Jacob")
