@@ -2,6 +2,82 @@ function cutscene_main(_cutscene,_scene)
 {
 	switch _cutscene
 	{
+		
+		case "magician":
+			switch _scene
+			{
+				case 0:
+					if !instance_exists(obj_textBox){create_textbox("rabbitTalk1")}
+					obj_hotelTopDoorOpenClose.image_index=0
+				break
+				case 1:
+					obj_playerEmory.sprite_index=emory_l_idle
+					if !instance_exists(obj_magicianOverworld){instance_create_depth(117,130,-16000,obj_magicianOverworld)}
+					else{obj_magicianOverworld.image_index=0}
+					obj_hotelTopDoorOpenClose.image_index=1
+					cutscene_timer(40,2)
+				break
+				case 2:
+					obj_hotelTopDoorOpenClose.image_index=0
+					obj_magicianOverworld.image_speed=.070
+					instance_destroy(inst_3C41BDBF)
+					cutscene_setSprite(obj_magicianOverworld,spr_magicianOverworld,1,3)
+					if !instance_exists(obj_textBox){create_textbox("magicianTalk1")}
+				break;
+				case 3:
+					obj_hotelTopDoorOpenClose.image_index=0
+					obj_magicianOverworld.image_speed=.6
+					cutscene_setSprite(obj_magicianOverworld,spr_magicianOverworld,3,7)
+					if obj_magicianOverworld.image_index=6{cutscene_end_action()}
+				break;
+				case 4:
+					if !instance_exists(obj_magicianHat){instance_create_depth(obj_magicianOverworld.x+22,obj_magicianOverworld.y+26,-16000,obj_magicianHat)}
+					obj_magicianOverworld.image_index=7
+					obj_hotelTopDoorOpenClose.image_index=0
+					cutscene_end_action()
+				break;
+				case 5:
+					obj_magicianOverworld.image_index=7
+					obj_hotelTopDoorOpenClose.image_index=0
+					cutscene_move_obj(obj_magicianHat,obj_playerEmory.x,obj_playerEmory.y,3,false)
+					if(point_distance(obj_magicianHat.x,obj_magicianHat.y,obj_playerEmory.x,obj_playerEmory.y)<3){cutscene_end_action()}
+				break;
+				case 6:
+					obj_magicianOverworld.image_index=7
+					obj_hotelTopDoorOpenClose.image_index=0
+					NewEncounter(
+						choose(	
+								[global.bosses.magician],
+						), 
+						spr_battleBackground4,
+						battle2,
+						true,
+						7,
+						obj_magicianOverworld
+					);
+				break
+				case 7:
+					if instance_exists(obj_magicianHat){instance_destroy(obj_magicianHat)}
+					global.flag[46]=1
+					obj_hotelTopDoorOpenClose.image_index=0
+					if !instance_exists(obj_magicianOverworld)
+					{
+						instance_destroy(oCutscene)
+					}
+					else
+					{
+						obj_magicianOverworld.image_index=1
+						obj_magicianOverworld.x=216
+						obj_magicianOverworld.y=137
+						obj_playerEmory.x=288
+						obj_playerEmory.y=147
+						obj_playerEmory.sprite_index=emory_l_idle
+						obj_magicianOverworld.dead=true
+					}
+				break
+			}
+		break
+		
 		case "computerTalk1":
 			switch _scene
 			{

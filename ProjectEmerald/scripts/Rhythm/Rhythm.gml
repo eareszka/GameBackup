@@ -25,6 +25,10 @@ function RhythmCreate(_action,_targets)
 							var _ran = irandom_range(0,3)
 							var _ran2 = irandom_range(0,99)
 							arrow[i] = instance_create_depth(0,0,-10001,oRhythmArrow,global.arrowVar[_ran])
+							
+							//edits selected arrow
+							if variable_struct_exists(_targets,"disappear"){if _targets.disappear=true{arrow[i].disappear=true arrow[i].alpha=0}}
+							
 							//changes x pos of each index
 							if i > 0
 							{
@@ -174,6 +178,10 @@ function RhythmCreate(_action,_targets)
 						var _ran = irandom_range(0,3)
 						var _ran2 = irandom_range(0,99)
 						arrow[i] = instance_create_depth(0,0,-10001,oRhythmArrow,global.arrowVar[_ran])	
+						
+						//edits selected arrow
+						if variable_struct_exists(_targets,"disappear"){if _targets.disappear=true{arrow[i].disappear=true arrow[i].alpha=0}}
+							
 						//changes x pos of each index
 						if i > 0
 						{

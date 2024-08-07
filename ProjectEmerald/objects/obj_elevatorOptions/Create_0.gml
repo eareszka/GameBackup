@@ -1,4 +1,5 @@
 display_set_gui_size(384, 216);
+visible=true
 width = 64;
 height = 104;
 //position & selects options

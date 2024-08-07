@@ -2,9 +2,14 @@ if keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)
 {	
 	if !instance_exists(oMainMenu)
 	{
-		if !opened
+		if !global.chestOpened[chest_id] = 1
 		{
-			item = true
+			switch item
+			{
+				case global.quest.annasFlashLight:
+					global.quest.annasFlashLight.available=true
+				break;
+			}
 			if !instance_exists(obj_textBox)
 			{
 				create_textbox(text_id)	
@@ -13,7 +18,7 @@ if keyboard_check_pressed(vk_space) || keyboard_check_pressed(vk_enter)
 					instance_destroy(obj_partyStatMenu)	
 				}
 			}
-			opened = true
+			global.chestOpened[chest_id] = 1
 		}
 	}
 }

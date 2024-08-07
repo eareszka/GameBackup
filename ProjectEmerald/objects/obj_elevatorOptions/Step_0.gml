@@ -9,9 +9,9 @@ left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
 right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
 accept_key = keyboard_check_pressed(vk_space)
 
-if global.quest.hotelKey = true
+if global.quest.hotelKey.available=true
 {
-	if global.sacredAnimals.rabbit = false
+	if global.flag[46]=0
 	{
 		option[0, 0] = "Return";
 		option[0, 1] = "Lobby";
@@ -31,6 +31,37 @@ else
 	option[0, 1] = "Lobby";	
 }
 
+
+//changes floor
+if global.flag[4]=0
+{
+	with inst_6BA42727
+	{
+		target_x = 356
+		target_y = 147
+		target_rm = RM_HOTEL
+	}
+}
+if global.flag[4]=1
+{
+	with inst_6BA42727
+	{
+		target_x = 150
+		target_y = 115
+		target_rm = RM_HOTELemory	
+	}
+}
+if global.flag[4]=2
+{
+	with inst_6BA42727
+	{
+		target_x = 120
+		target_y = 150
+		target_rm = RM_HOTELtop	
+	}
+}
+	
+	
 //store # of options in current menu
 op_length = array_length(option[menu_level]);
 
@@ -52,47 +83,28 @@ if accept_key
 			{
 				//return
 				case 0: 
-					alarm[0] = room_speed *.1
+					instance_destroy(self)
 				break;
 				
+				//floor 1
 				case 1:
-					if global.flag[4] != 1
-					{
-						global.flag[4] = 1
-						instance_create_depth(0,0,-9999,oShakeCamera)
-						with inst_6BA42727
-						{
-							target_x = 356
-							target_y = 147
-							target_rm = RM_HOTEL
-						}
-					}
-					else
-					{
-						alarm[0] = room_speed *.1	
-					}
+					if global.flag[4]!=0{instance_create_depth(0,0,-9999,oShakeCamera)}
+					global.flag[4] = 0
+					instance_destroy(self)
 				break;
 
+				//floor 2
 				case 2:
-					if global.flag[4] != 2
-					{
-						global.flag[4] = 2
-						instance_create_depth(0,0,-9999,oShakeCamera)
-						with inst_6BA42727
-						{
-							target_x = 150
-							target_y = 115
-							target_rm = RM_HOTELemory	
-						}
-					}
-					else
-					{
-						alarm[0] = room_speed *.1	
-					}
+					if global.flag[4]!=1{instance_create_depth(0,0,-9999,oShakeCamera)}
+					global.flag[4] = 1
+					instance_destroy(self)
 				break;
 				
+				//floor 3
 				case 3:
-					
+					if global.flag[4]!=2{instance_create_depth(0,0,-9999,oShakeCamera)}
+					global.flag[4] = 2
+					instance_destroy(self)
 				break;
 			}
 		break;

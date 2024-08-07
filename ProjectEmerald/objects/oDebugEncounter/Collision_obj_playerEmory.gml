@@ -6,7 +6,7 @@ if (global.escapeImmunity == 0) && (!dead)
 		NewEncounter(
 			choose(	
 					//[global.enemies.thunderBird,global.enemies.notDeer,global.enemies.thunderBird],
-					[global.bosses.ancientKing],
+					[global.bosses.magician],
 			), 
 			spr_battleBackground4,
 			battle2,

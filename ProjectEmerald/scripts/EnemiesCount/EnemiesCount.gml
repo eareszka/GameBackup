@@ -1,44 +1,29 @@
 //checks how often random encounters spawn in each room
-function EnemiesCount(_enemy)
+function EnemiesCount(room)
 {
 	//checks how many enemies are killed
-	switch _enemy.name
+	switch room
 	{
-		case "Typha":
+		case RM_BROWNSTOWN:
 			global.enemyKills[0]+=1
 		break
-		case "Itty-Bitty Ant":
+		case RM_BROWNSTOWNcave:
 			global.enemyKills[1]+=1
 		break;
-		case "Bull Frog":
+		case RM_HOTELvent1:
 			global.enemyKills[2]+=1
 		break
-		case "Crude Spider":
+		case RM_HOTELvent2:
+			global.enemyKills[2]+=1
+		break
+		case RM_FINfarm:
 			global.enemyKills[3]+=1
 		break;
-		case "Grinning Rock":
+		case RM_CATACOMBS:
 			global.enemyKills[4]+=1
 		break;
-		case "Armored Beetle":
+		case RM_PLAINVILL:
 			global.enemyKills[5]+=1
-		break;
-		case "Mogging Mole":
-			global.enemyKills[6]+=1
-		break;
-		case "Poison Thornster":
-			global.enemyKills[8]+=1
-		break;
-		case "Amalbonemation":
-			global.enemyKills[9]+=1
-		break;
-		case "Bane Bat":
-			global.enemyKills[10]+=1
-		break;
-		case "Not Deer":
-			global.enemyKills[11]+=1
-		break;
-		case "Thunder Bird":
-			global.enemyKills[12]+=1
 		break;
 	}	
 }

@@ -16,6 +16,24 @@ if (room == RM_BROWNSTOWN)
 	false
 	);
 }
+if (room == RM_HOTELvent2)||(room == RM_HOTELvent1)
+{
+	NewEncounter(
+	choose
+	(
+	[global.enemies.spider],
+	[global.enemies.spider],
+	[global.enemies.spider],
+	[global.enemies.spider],
+	[global.enemies.spider,global.enemies.spider],
+	[global.enemies.spider,global.enemies.spider],
+	[global.enemies.spider,global.enemies.spider,global.enemies.spider],
+	), 
+	spr_battleBackground5,
+	battle1,
+	false
+	);
+}
 if (room == RM_BROWNSTOWNcave)
 {
 	NewEncounter(
@@ -29,7 +47,7 @@ if (room == RM_BROWNSTOWNcave)
 		[global.enemies.spider,global.enemies.rock,global.enemies.spider],
 		[global.enemies.rock,global.enemies.spider,global.enemies.rock],
 	), 
-	spr_battleBackground1,
+	spr_battleBackground5,
 	battle1,
 	false
 	);

@@ -26,7 +26,7 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRTileLayer":"","%Name":"tcCOLL","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tcCOLL","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":17,"SerialiseWidth":39,"TileCompressedData":[
+    {"$GMRTileLayer":"","%Name":"tcCOLL","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tcCOLL","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":17,"SerialiseWidth":39,"TileCompressedData":[
           -54,-2147483648,-6,129,-33,-2147483648,6,132,129,-2147483648,-2147483648,96,132,-33,-2147483648,6,132,
           129,-2147483648,-2147483648,96,132,-10,-2147483648,2,133,130,-21,-2147483648,8,132,129,-2147483648,-2147483648,
           96,132,-2147483648,132,-4,-2147483648,1,130,-4,133,1,130,-18,-2147483648,-4,132,4,168,-2147483648,-2147483648,

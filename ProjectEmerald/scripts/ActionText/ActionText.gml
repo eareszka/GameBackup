@@ -40,6 +40,10 @@ function ActionText(_user,_action,_targets)
 					return string(_user.name)+" Strikes At "+string(_targets[0].name)+"!";
 				break;
 				
+				case "The Magician":
+					return string(_user.name)+" Bashes At "+string(_targets[0].name)+"!";
+				break;
+				
 				case "Armored Beetle":
 					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
 				break;

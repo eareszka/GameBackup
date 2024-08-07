@@ -645,6 +645,14 @@ function scr_game_text(_text_id)
 			scr_text("*Soul of Sacred Rooster collected*")
 			global.sacredAnimals.rooster = true
 		break
+		
+		case "SacredBunny":
+			scr_name("")
+			scr_text("Overfilled with joy the bunny escaped its enclosure and abusive master")
+			scr_text("However the presence of the animal lingered on.")
+			scr_text("*Soul of Sacred Bunny collected*")
+			global.sacredAnimals.rabbit = true
+		break
 				
 		
 		
@@ -976,6 +984,12 @@ function scr_game_text(_text_id)
 			scr_text(string(global.inventory[10][0].name)+" was found")
 		break	
 		
+		case "itemFlashlight":
+			scr_name("")
+			scr_text("You opened the big chest")
+			scr_text("Flashlight was found!")
+		break	
+		
 		
 		//tutorial
 		case "AttackTutorial":
@@ -1084,6 +1098,120 @@ function scr_game_text(_text_id)
 		case "computerTalk5":
 			scr_name("McIntosh Computer") 
 			scr_text("Maybe finding a way to leave town would be a good way to start. It's not like this place has much to offer anyway.")
+		break;
+		
+		case "magicianTalk1":
+			scr_name("Magician") 
+			scr_text("Ahhh I see you're trying to free my rabbit.")
+			scr_text("This next act won't need such a worthless animal at all however..")
+			scr_text("Prepare to witness a disappearing act... but this time, its your turn to vanish.")
+		break;
+		
+		case "magicianTalk2":
+			scr_name("Magician") 
+			scr_text("Presto Arrow Disappearo!")
+
+		break;
+		
+		case "rabbitTalk1":
+			scr_name("Rabbit") 
+			scr_text("Help me Help!")
+			scr_text("Please free me from my abusive master. He's draining me of all my power.")
+			scr_text("Eekkk, here he comes!")
+		break;	
+		
+		case "hotelOwner1":
+			if global.quest.hotelKey.available=false
+			{
+				scr_name("")
+				scr_text("Hello welcome to the BrownsTown grand hotel!")
+				scr_text("Would you like to purchase a room for $50?")
+				scr_option("Yes", "hotelOwner1 - yes")
+				scr_option("No", "hotelOwner1 - no")
+			}
+			else
+			{
+				if global.flag[46]=0
+				{
+					scr_name("")
+					scr_text("Make sure to stop by the lobby tomorrow night.")
+					scr_text("A world-renowned magician is paying a visit here and is offering a show to all hotel guests, featuring their magical bunny.")	
+					scr_text("Isn't that something..!")	
+					scr_text("Anyways enjoy your stay!")
+				}
+				else
+				{
+					scr_name("")
+					scr_text("We regret to inform our guest that the magician show tomorrow is cancelled.")
+					scr_text("Apparently they lost there magical bunny oh the pitty..")	
+					scr_text("Anyways enjoy your stay!")
+				}
+			}
+		break
+		
+			case "hotelOwner1 - yes":
+				if global.my_Money<50
+				{
+					scr_name("")
+					scr_text("oh that's too bad it seems you don't have enough money.")		
+				}
+				else
+				{
+					global.my_Money-=50
+					global.quest.hotelKey.available=true
+					scr_name("")
+					scr_text("Great. You may now access your room from the elevator to your left")	
+					scr_text("Also, make sure to stop by the lobby tomorrow night.")
+					scr_text("A world-renowned magician is paying a visit here and is offering a show to all hotel guests, featuring their magical bunny.")	
+					scr_text("Isn't that something..!")	
+					scr_text("Anyways enjoy your stay!")	
+					scr_text("*Hotel Key has been added to quest inventory*")	
+				}
+			break
+			case "hotelOwner1 - no":
+				scr_name("")
+				scr_text("oh that's too bad..")	
+			break
+			
+		case "hotelVent":
+			if global.quest.annasFlashLight.available=true
+			{
+				scr_name("")
+				scr_text("There's a large vent opening right here.")		
+				scr_text("Crawl into the vent?")	
+				scr_option("Yes", "hotelVent - yes")
+				scr_option("No", "hotelVent - no")
+			}
+			else
+			{
+				scr_name("")
+				scr_text("There's a large vent opening right here.")		
+				scr_text("But it's way too dark in there to enter.")
+			}
+		break;
+		
+			case "hotelVent - yes":
+				with instance_create_depth(287,112,-16000,obj_warpBlockDoor)
+				{
+					image_xscale=0.17 image_yscale=0.27 
+					before_face = LEFT
+					target_x = 750;
+					target_y = 64;
+					target_rm = RM_HOTELvent1;
+					target_face = LEFT
+					instance_destroy(obj_textBox)
+					instance_destroy(inst_2E39A34F)
+				}
+			break;
+			
+			case "hotelVent - no":
+				instance_destroy(obj_textBox)
+			break;
+			
+		case "Elevator1":
+			scr_name("")
+			scr_text("You called the Elevator")	
+			scr_text("It's currently being used.")		
 		break;
 	}
 }

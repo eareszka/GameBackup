@@ -7,33 +7,51 @@ function encounterRate(_group=undefined)
 			if _group = 1
 			{
 				
-				if (global.enemyKills[0] >= 25 && global.enemyKills[2] >= 25) {return 0}
-				if (global.enemyKills[0] >= 20 || global.enemyKills[2] >= 20) {return 1}
-				if (global.enemyKills[0] >= 10 || global.enemyKills[2] >= 10) {return 5}
-				if (global.enemyKills[0] >= 5 || global.enemyKills[2] >= 5) {return 7.5}
-				if (global.enemyKills[0] < 5 && global.enemyKills[2] < 5) {return 10}	
+				if (global.enemyKills[0] >= 25) {return 0}
+				if (global.enemyKills[0] >= 20) {return 1}
+				if (global.enemyKills[0] >= 10) {return 5}
+				if (global.enemyKills[0] >= 5) {return 7.5}
+				if (global.enemyKills[0] < 5) {return 10}	
 				
 			}
 			if _group = 2
 			{
 				
-				if (global.enemyKills[0] >= 25 && global.enemyKills[1] >= 25) {return 0}
-				if (global.enemyKills[0] >= 20 || global.enemyKills[1] >= 20) {return 1}
-				if (global.enemyKills[0] >= 10 || global.enemyKills[1] >= 10) {return 5}
-				if (global.enemyKills[0] >= 5 || global.enemyKills[1] >= 5) {return 7.5}
-				if (global.enemyKills[0] < 5 && global.enemyKills[1] < 5) {return 10}
+				if (global.enemyKills[0] >= 25) {return 0}
+				if (global.enemyKills[0] >= 20) {return 1}
+				if (global.enemyKills[0] >= 10) {return 5}
+				if (global.enemyKills[0] >= 5) {return 7.5}
+				if (global.enemyKills[0] < 5) {return 10}
 				
 			}
+		break;
+		
+		case RM_HOTELvent1:
+			if (global.enemyKills[2] >= 25) {return 0}
+			if (global.enemyKills[2] >= 20) {return 1}
+			if (global.enemyKills[2] >= 10) {return 5}
+			if (global.enemyKills[2] >= 5) {return 7.5}
+			if (global.enemyKills[2] < 5) {return 10}	
+
+		break;
+		
+		case RM_HOTELvent2:
+			if (global.enemyKills[2] >= 25) {return 0}
+			if (global.enemyKills[2] >= 20) {return 1}
+			if (global.enemyKills[2] >= 10) {return 5}
+			if (global.enemyKills[2] >= 5) {return 7.5}
+			if (global.enemyKills[2] < 5) {return 10}	
+
 		break;
 		
 		
 		case RM_BROWNSTOWNcave:
 		
-			if (global.enemyKills[3] >= 25 && global.enemyKills[4] >= 12) {return 0}
-			if (global.enemyKills[3] >= 20 || global.enemyKills[4] >= 8) {return 1}
-			if (global.enemyKills[3] >= 10 || global.enemyKills[4] >= 4) {return 5}
-			if (global.enemyKills[3] >= 5 || global.enemyKills[4] >= 2) {return 7.5}
-			if (global.enemyKills[3] < 5 && global.enemyKills[4] < 2) {return 10}	
+			if (global.enemyKills[1] >= 25) {return 0}
+			if (global.enemyKills[3] >= 20) {return 1}
+			if (global.enemyKills[3] >= 10) {return 5}
+			if (global.enemyKills[3] >= 5) {return 7.5}
+			if (global.enemyKills[3] < 5) {return 10}	
 			
 		break;
 		

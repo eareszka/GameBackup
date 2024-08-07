@@ -6,3 +6,5 @@ if global.flag[0]<1
 		global.flag[0]=1
 	}
 }
+
+if global.flag[0]=1&&!instance_exists(oCutscene){instance_destroy()}

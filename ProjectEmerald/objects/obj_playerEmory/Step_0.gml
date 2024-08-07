@@ -385,7 +385,7 @@ if global.fin=1&&global.broke=0&&global.jen=0
 }
 
 //checks carrying/only carry in that room
-if room=RM_BROWNSTOWNcave || room=RM_CRAWLSPACE2
+if room=RM_BROWNSTOWNcave||room=RM_CRAWLSPACE2||room=RM_HOTELvent2
 {
 	if global.flag[29]>0{carryingObj()}
 }
@@ -401,5 +401,3 @@ if battleStart
 	if !instance_exists(obj_brokeFall)&&!brokeDead&&global.broke=1{instance_create_depth(obj_playerzBroke.x+10,obj_playerzBroke.y+10,-16000,obj_brokeFall)}
 	if !instance_exists(obj_jenFall)&&!jenDead&&global.jen=1{instance_create_depth(obj_playerJen.x+10,obj_playerJen.y+10,-16000,obj_jenFall)}
 }
-
-show_debug_message(global.flag[39])

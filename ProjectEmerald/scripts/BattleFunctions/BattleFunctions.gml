@@ -172,6 +172,25 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 				}
 			break;
 			
+			case "The Magician":
+				if _targets.hp <= round(_targets.hpMax/3) && oBattleUnitEnemy.flag1 = false
+				{				
+					oBattleUnitEnemy.flag1 = true
+					_targets.arrows = 5
+					_targets.spd=2
+					_targets.disappear=true	
+					create_textboxBattle("magicianTalk2",0,_user)
+				}
+				else
+				{
+					RhythmCreate(_action.rhythm,_targets)
+					with (_user)
+					{
+						acting = true;
+					}
+				}
+			break;
+			
 			case "Horned Beetle":
 				if _targets.hp <= round(_targets.hpMax/3) && oBattleUnitEnemy.flag1 = false
 				{

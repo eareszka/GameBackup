@@ -10,7 +10,9 @@ if room = RM_CRAWLSPACE1{draw_clear_alpha(c_black,.3)}
 if room = RM_CRAWLSPACE2{draw_clear_alpha(c_black,.3)}
 if room = RM_CRAWLSPACE3{draw_clear_alpha(c_black,.3)}
 if room = RM_CRAWLSPACE4{draw_clear_alpha(c_black,.3)}
+if room = RM_HOTELtop{draw_clear_alpha(c_black,.3)}
 if room = RM_CATACOMBS{draw_clear_alpha(c_black,.3)}
+
 
 with obj_lightingCutout
 {

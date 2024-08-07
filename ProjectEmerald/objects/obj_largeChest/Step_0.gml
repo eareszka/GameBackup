@@ -1,4 +1,4 @@
-if !opened
+if !global.chestOpened[chest_id] = 1
 {
 	image_index = 0	
 }

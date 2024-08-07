@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"openDoor",
-    "path":"folders/Actors/openDoor.yy",
+    "name":"sharkSkybox",
+    "path":"folders/Actors/openDoor/sharkSkybox.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

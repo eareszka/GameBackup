@@ -14,6 +14,8 @@ throwArrow = false
 release = false
 fade=false
 setup=false
+disappear=-1
+sinTimer=0
 
 
 //for throwing arrow

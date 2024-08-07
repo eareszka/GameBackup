@@ -40,6 +40,7 @@ global.chestOpened =
 	0,//14
 	0,//15	
 	0,//16
+	0,//17
 ]
 
 //FLAGS FOR IN GAME SEQUENCES
@@ -141,24 +142,30 @@ global.flag =
 	0,
 	//rebeccaGiveShoes 43
 	0,
+	//PressurePlate3 44
+	0,
+	//PressurePlate4 45
+	0,
+	//MagicianDefeated 46
+	0,
 ]
 	
 	
 
-//tracks how many of each ene is killed
+//tracks how many of each ene is killed in each area
 global.enemyKills =
 [
-	//typha: 0,
+	//brownstown: 0,
 	0,
-	//ant: 1,
+	//brownstownCave: 1,
 	0,
-	//bullfrog: 2,
+	//hotelVent: 2,
 	0,
-	//spider: 3,
+	//finFarm: 3,
 	0,
-	//rock: 4,
+	//catacombs: 4,
 	0,
-	//beetle: 5,
+	//plainville: 5,
 	0,
 	//mole: 6,
 	0,
@@ -741,7 +748,6 @@ global.specialLibrary =
 		userAnimation : "cast",
 		effectSprite: sAttackFire,
 		effectOnTarget: true,
-		rhythm: false,
 		func : function(_user, _targets)
 		{
 			for (var i = 0; i < array_length(_targets); i++)
@@ -766,7 +772,6 @@ global.specialLibrary =
 		userAnimation : "cast",
 		effectSprite: sAttackIce,
 		effectOnTarget: true,
-		rhythm: false,
 		func : function(_user, _targets)
 		{
 			var _damage = irandom_range(10,15);
@@ -2259,6 +2264,37 @@ global.bosses =
 		sprites: { intro: spr_babyWormIntro, idle: spr_babyWorm, attack: spr_babyWormAttack, defend: spr_babyWorm},
 		scripted: true, 
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.taunt],
+		moneyValue : 5,
+		experinceValue : 11,
+		AIscript : function ()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	//moderate
+	magician : 
+	{
+		name: "The Magician",
+		hp: 150,
+		hpMax: 150,
+		mp: 0,
+		mpMax: 0,
+		strength: 5,
+		arrows: 3,
+		disappear: false,
+		frequency: 1,
+		spd: 3,
+		sprites: { intro: spr_magicianBattleIdle, idle: spr_magicianBattleIdle, attack: spr_magicianBattleIdle, defend: spr_magicianBattleIdle},
+		scripted: true, 
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.stealItem],
 		moneyValue : 5,
 		experinceValue : 11,
 		AIscript : function ()

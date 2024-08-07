@@ -9,8 +9,8 @@
   "name":"oDoorOpenClose",
   "overriddenProperties":[],
   "parent":{
-    "name":"openDoor",
-    "path":"folders/Actors/openDoor.yy",
+    "name":"sharkSkybox",
+    "path":"folders/Actors/openDoor/sharkSkybox.yy",
   },
   "parentObjectId":null,
   "persistent":false,

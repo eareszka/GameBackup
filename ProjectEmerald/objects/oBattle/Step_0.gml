@@ -210,9 +210,10 @@ if (battleState == 1)
 					{
 						battleMoneyGained += enemyUnits[i].moneyValue;
 						battleExperinceGained +=enemyUnits[i].experinceValue;
+						//tracks how many ene killed in each room
 						if !bossBattle
 						{
-							EnemiesCount(enemyUnits[i])
+							EnemiesCount(room)
 						}	
 					}
 					battleEndMessages[1] = string("Gained {0} $", battleMoneyGained);

@@ -1,0 +1,1 @@
+Light_Type = "Directional Light"

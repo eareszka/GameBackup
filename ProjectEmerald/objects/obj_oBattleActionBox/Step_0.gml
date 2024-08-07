@@ -13,6 +13,6 @@ if action=2
 //talking
 if action=3
 {
-	if !mirror{cutscene_setSprite(self,spr_oBattleActionBox,2,6)}
-	if mirror{cutscene_setSprite(self,spr_oBattleActionBoxMirror,2,6)}
+	if !mirror{cutscene_setSprite(self,spr_oBattleActionBox,2,5)}
+	if mirror{cutscene_setSprite(self,spr_oBattleActionBoxMirror,2,5)}
 }

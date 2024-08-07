@@ -38,9 +38,17 @@ else
 	}
 }
 
-if flicker
+if disappear&&!hit
 {
-	alpha = (sin(get_timer()/50000)+1)
+	if x<(camera_get_view_width(view_camera[0])/2)-75
+	{
+		alpha=0
+	}
+	else
+	{
+		
+		alpha+=.025
+	}
 }
 
 if hitHold

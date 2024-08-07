@@ -9,6 +9,12 @@ flag1 = false
 flag2 = false
 flag3 = false
 
+//for body parts
+rotation=0
+timer=0
+alpha=1
+color=c_white
+
 AIscript = function(_unit)
 {
 	//attack random party member
@@ -27,6 +33,12 @@ AIscript = function(_unit)
 				var _target = chooseTarget(_action)
 				return [_action, _target];
 			break;	
+			
+			case "The Magician":
+				var _action = chooseAttack(_unit)
+				var _target = chooseTarget(_action)
+				return [_action, _target];
+			break;
 			
 			case "Horned Beetle":
 				var _action = chooseAttack(_unit)
@@ -75,5 +87,19 @@ AIscript = function(_unit)
 		}
 	}
 }
+
+
+
+if name="The Magician"
+{
+	//instance_create_depth(x-21,y,-16000,oBattleUnitEnemyPart,{part: "magicianWand"})
+	
+	draw_sprite_ext(spr_magicianWand,-16000,x,y,1,1,rotation,c_white,1)
+		
+		var _ammount=2
+		rotation=rotation-sin(timer*0.025)*_ammount
+		timer+=3
+}
+
 
 

@@ -1,17 +1,16 @@
 sprite_index=spr_wind1
 y++
-image_alpha-=.005
 if !flip
 {
 	image_angle=270
-	if y>ystart+100{instance_destroy()}
+	if y>ystart+windDistance{instance_destroy()}
 	else{image_index+=.01}
 }
 if flip
 {
 	image_angle=270
 	image_yscale=-1
-	if y>ystart+100{instance_destroy()}
+	if y>ystart+windDistance{instance_destroy()}
 	else{image_index+=.01}
 }
 
