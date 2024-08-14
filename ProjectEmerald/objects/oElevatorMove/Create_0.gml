@@ -1,1 +1,1 @@
-createTimer=25
+createTimer=1

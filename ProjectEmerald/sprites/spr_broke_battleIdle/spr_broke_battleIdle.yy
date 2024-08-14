@@ -3,7 +3,7 @@
   "%Name":"spr_broke_battleIdle",
   "bboxMode":0,
   "bbox_bottom":41,
-  "bbox_left":8,
+  "bbox_left":9,
   "bbox_right":23,
   "bbox_top":15,
   "collisionKind":1,

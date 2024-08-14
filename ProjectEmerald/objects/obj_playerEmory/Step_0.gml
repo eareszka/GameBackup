@@ -69,16 +69,66 @@ if instance_exists(obj_danceBar)
 /*************
 movement input
 **************/
+if !instance_exists(obj_carryingObj){if keyboard_check(vk_lshift){sprintSpeed=1.5}else{sprintSpeed=1}}else{sprintSpeed=1}
+
 if (!instance_exists(oMainMenu) && !instance_exists(obj_textBox))
 {
-right_key = keyboard_check(vk_right) || keyboard_check(ord("D"));
-left_key = keyboard_check(vk_left) || keyboard_check(ord("A"));
-up_key = keyboard_check(vk_up) || keyboard_check(ord("W"));
-down_key = keyboard_check(vk_down) || keyboard_check(ord("S"));
+	right_key = keyboard_check(vk_right) || keyboard_check(ord("D"));
+	left_key = keyboard_check(vk_left) || keyboard_check(ord("A"));
+	up_key = keyboard_check(vk_up) || keyboard_check(ord("W"));
+	down_key = keyboard_check(vk_down) || keyboard_check(ord("S"));
 }
 
-hSpeed = (right_key - left_key) * speedWalk*.80;
-vSpeed = (down_key - up_key) * speedWalk*.80;
+if !place_meeting(x,y,obj_staircaseClimb1)&&!place_meeting(x,y,obj_staircaseClimb2)
+{
+	hSpeed = ((right_key - left_key) * (speedWalk*.80)*sprintSpeed)
+	vSpeed = ((down_key - up_key) * (speedWalk*.80)*sprintSpeed)
+}
+//for staircase
+if !place_meeting(x,y,obj_staircaseClimb1)&&place_meeting(x,y,obj_staircaseClimb2)
+{
+	if (up_key&&left_key)||(down_key&&right_key)
+	{
+		hSpeed = (right_key - left_key) * speedWalk*.60;
+		vSpeed = (down_key - up_key) * speedWalk*.60;
+	}
+	else
+	{
+		//right to left
+		if !up_key&&!down_key
+		{
+			hSpeed = (right_key - left_key) * speedWalk*.60;
+			vSpeed = (right_key - left_key) * speedWalk*.60;
+		}
+		if !left_key&&!right_key
+		{
+			hSpeed = (down_key - up_key) * speedWalk*.60;
+			vSpeed = (down_key - up_key) * speedWalk*.60;
+		}
+	}
+}
+if place_meeting(x,y,obj_staircaseClimb1)&&!place_meeting(x,y,obj_staircaseClimb2)
+{
+	if (up_key&&right_key)||(down_key&&left_key)
+	{
+		hSpeed = (right_key - left_key) * speedWalk*.60;
+		vSpeed = (down_key - up_key) * speedWalk*.60;
+	}
+	else
+	{
+		//left to right
+		if !up_key&&!down_key
+		{
+			hSpeed = ((right_key - left_key) * speedWalk*.60)
+			vSpeed = ((left_key - right_key) * speedWalk*.60)
+		}
+		if !left_key&&!right_key
+		{
+			hSpeed = (up_key - down_key) * speedWalk*.60;
+			vSpeed = (down_key - up_key) * speedWalk*.60;
+		}
+	}
+}
 
 /********
 collision objects
@@ -102,6 +152,8 @@ if layer_exists("tcCOLL")&&!blown
 		vSpeed = 0		
 	}
 }
+
+if right_key&&up_key||right_key&&down_key||left_key&&up_key||left_key||down_key{hSpeed*=.85 vSpeed*=.85}
 
 x+= hSpeed;
 y+= vSpeed; 
@@ -203,7 +255,7 @@ else
 	}
 }
 
-if keyboard_check_pressed(vk_escape)
+if keyboard_check_pressed(vk_escape)&&room!=RM_hotelELEVATOR&&room!=RM_MOUNTAINtent&&room!=RM_MOUNTAINtentBomber&&room!=RM_MOUNTAINigloo&&room!=RM_MOUNTAINiglooshop
 {
 	if !instance_exists(oMainMenu) && !instance_exists(oShopMenu) && !instance_exists(obj_textBox) && !instance_exists(oCutscene)
 	{
@@ -256,6 +308,7 @@ if vSpeed !=0 || hSpeed !=0
 		global.escapeImmunity-=10
 	}
 }	
+show_debug_message(global.escapeImmunity)
 
 if !swimming
 {
@@ -264,11 +317,11 @@ if !swimming
 		sprite[RIGHT] = emory_r_walkingBLUE
 		sprite[UP] = emory_b_walkingBLUE
 		sprite[LEFT] = emory_l_walkingBLUE
-		sprite[DOWN] = emory_f_walkingBLUE
+		sprite[DOWN] = emory_f_idleBLUE
 		sprite[UPr] = emory_b_walkingBLUE
-		sprite[DOWNr] = emory_f_walkingBLUE
+		sprite[DOWNr] = emory_f_idleBLUE
 		sprite[UPl] = emory_b_walkingBLUE
-		sprite[DOWNl] = emory_f_walkingBLUE
+		sprite[DOWNl] = emory_f_idleBLUE
 		sprite[DOWNi] = emory_f_idleBLUE
 		sprite[RIGHTi] = emory_r_idleBLUE
 		sprite[LEFTi] = emory_l_idleBLUE
@@ -279,11 +332,11 @@ if !swimming
 		sprite[RIGHT] = emory_r_walkingBLACK
 		sprite[UP] = emory_b_walkingBLACK
 		sprite[LEFT] = emory_l_walkingBLACK
-		sprite[DOWN] = emory_f_walkingBLACK
+		sprite[DOWN] = emory_f_idleBLACK
 		sprite[UPr] = emory_b_walkingBLACK
-		sprite[DOWNr] = emory_f_walkingBLACK
+		sprite[DOWNr] = emory_f_idleBLACK
 		sprite[UPl] = emory_b_walkingBLACK
-		sprite[DOWNl] = emory_f_walkingBLACK
+		sprite[DOWNl] = emory_f_idleBLACK
 		sprite[DOWNi] = emory_f_idleBLACK
 		sprite[RIGHTi] = emory_r_idleBLACK
 		sprite[LEFTi] = emory_l_idleBLACK
@@ -291,14 +344,14 @@ if !swimming
 	}
 	if global.quest.blackRing.available = false && global.quest.blueRing.available = false
 	{
-		sprite[RIGHT] = emory_r_walking
-		sprite[UP] = emory_b_walking
-		sprite[LEFT] = emory_l_walking
-		sprite[DOWN] = emory_f_walking
+		if keyboard_check(vk_lshift){sprite[RIGHT] = emory_r_running}else{sprite[RIGHT] = emory_r_walking}
+		if keyboard_check(vk_lshift){sprite[UP] = emory_b_running}else{sprite[UP] = emory_b_walking}
+		if keyboard_check(vk_lshift){sprite[LEFT] = emory_l_running}else{sprite[LEFT] = emory_l_walking}
+		if keyboard_check(vk_lshift){sprite[DOWN] = emory_f_running}else{sprite[DOWN] = emory_f_walking}
 		sprite[UPr] = emory_b_walking
-		sprite[DOWNr] = emory_f_walking
+		sprite[DOWNr] = emory_f_idle
 		sprite[UPl] = emory_b_walking
-		sprite[DOWNl] = emory_f_walking
+		sprite[DOWNl] = emory_f_idle
 		sprite[DOWNi] = emory_f_idle
 		sprite[RIGHTi] = emory_r_idle
 		sprite[LEFTi] = emory_l_idle
@@ -350,11 +403,11 @@ if swimming
 	sprite[RIGHT] = emory_r_walking_swim
 	sprite[UP] = emory_b_walking_swim
 	sprite[LEFT] = emory_l_walking_swim
-	sprite[DOWN] = emory_f_walking_swim
+	sprite[DOWN] = emory_f_idle_swim
 	sprite[UPr] = emory_b_walking_swim
-	sprite[DOWNr] = emory_f_walking_swim
+	sprite[DOWNr] = emory_f_idle_swim
 	sprite[UPl] = emory_b_walking_swim
-	sprite[DOWNl] = emory_f_walking_swim
+	sprite[DOWNl] = emory_f_idle_swim
 	sprite[DOWNi] = emory_f_idle_swim
 	sprite[RIGHTi] = emory_r_idle_swim
 	sprite[LEFTi] = emory_l_idle_swim
@@ -401,3 +454,15 @@ if battleStart
 	if !instance_exists(obj_brokeFall)&&!brokeDead&&global.broke=1{instance_create_depth(obj_playerzBroke.x+10,obj_playerzBroke.y+10,-16000,obj_brokeFall)}
 	if !instance_exists(obj_jenFall)&&!jenDead&&global.jen=1{instance_create_depth(obj_playerJen.x+10,obj_playerJen.y+10,-16000,obj_jenFall)}
 }
+
+//for blinking when idle
+//if hSpeed=0&&vSpeed=0
+//{
+//	var _ran=irandom_range(0,1000)
+//	if blinkTimer<0
+//	{
+//		if _ran=0{image_index=1 blinkTimer=25}
+//		else{image_index=0}
+//	}
+//	blinkTimer--
+//}

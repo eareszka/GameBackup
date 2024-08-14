@@ -1,2 +1,2 @@
-bedType=0
+bedType=2
 bedImg=0

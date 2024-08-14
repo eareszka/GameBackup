@@ -9,6 +9,8 @@ fall=false
 blown=false
 blownTimer=0
 blownSprite=50
+blinkTimer=25
+sprintSpeed=1
 
 //unit flasher
 flash = 0
@@ -34,11 +36,11 @@ if global.quest.blueRing.available = true
 	sprite[RIGHT] = emory_r_walkingBLUE
 	sprite[UP] = emory_b_walkingBLUE
 	sprite[LEFT] = emory_l_walkingBLUE
-	sprite[DOWN] = emory_f_walkingBLUE
+	sprite[DOWN] = emory_f_idleBLUE
 	sprite[UPr] = emory_b_walkingBLUE
-	sprite[DOWNr] = emory_f_walkingBLUE
+	sprite[DOWNr] = emory_f_idleBLUE
 	sprite[UPl] = emory_b_walkingBLUE
-	sprite[DOWNl] = emory_f_walkingBLUE
+	sprite[DOWNl] = emory_f_idleBLUE
 	sprite[DOWNi] = emory_f_idleBLUE
 	sprite[RIGHTi] = emory_r_idleBLUE
 	sprite[LEFTi] = emory_l_idleBLUE
@@ -49,11 +51,11 @@ if global.quest.blackRing.available = true
 	sprite[RIGHT] = emory_r_walkingBLACK
 	sprite[UP] = emory_b_walkingBLACK
 	sprite[LEFT] = emory_l_walkingBLACK
-	sprite[DOWN] = emory_f_walkingBLACK
+	sprite[DOWN] = emory_f_idleBLACK
 	sprite[UPr] = emory_b_walkingBLACK
-	sprite[DOWNr] = emory_f_walkingBLACK
+	sprite[DOWNr] = emory_f_idleBLACK
 	sprite[UPl] = emory_b_walkingBLACK
-	sprite[DOWNl] = emory_f_walkingBLACK
+	sprite[DOWNl] = emory_f_idleBLACK
 	sprite[DOWNi] = emory_f_idleBLACK
 	sprite[RIGHTi] = emory_r_idleBLACK
 	sprite[LEFTi] = emory_l_idleBLACK
@@ -64,11 +66,11 @@ if global.quest.blackRing.available = false && global.quest.blueRing.available =
 	sprite[RIGHT] = emory_r_walking
 	sprite[UP] = emory_b_walking
 	sprite[LEFT] = emory_l_walking
-	sprite[DOWN] = emory_f_walking
+	sprite[DOWN] = emory_f_idle
 	sprite[UPr] = emory_b_walking
-	sprite[DOWNr] = emory_f_walking
+	sprite[DOWNr] = emory_f_idle
 	sprite[UPl] = emory_b_walking
-	sprite[DOWNl] = emory_f_walking
+	sprite[DOWNl] = emory_f_idle
 	sprite[DOWNi] = emory_f_idle
 	sprite[RIGHTi] = emory_r_idle
 	sprite[LEFTi] = emory_l_idle
@@ -86,7 +88,7 @@ for(var i = array_size-1; i >= 0; i--)
 	pos_x[i] = x;
 	pos_y[i] = y;
 	
-	toRecordSprite[i] = emory_f_walking;
+	toRecordSprite[i] = emory_f_idle;
 	toRecord_Xscale[i] = image_xscale;	
 }
 

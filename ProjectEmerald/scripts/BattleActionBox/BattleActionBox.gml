@@ -39,6 +39,23 @@ function BattleActionBox(_user,_action)
 					break;	
 				}
 			break;
+			
+			case "Nightcrawler":
+				switch _action.action
+				{
+					case 1:
+						CreateActionBox(_user,1,5,-15)
+					break;	
+				
+					case 2:
+						CreateActionBox(_user,2,5,-15)
+					break;	
+				
+					case 3:
+						CreateActionBox(_user,3,5,-15)
+					break;	
+				}
+			break;
 		
 		
 			case "Horned Beetle":

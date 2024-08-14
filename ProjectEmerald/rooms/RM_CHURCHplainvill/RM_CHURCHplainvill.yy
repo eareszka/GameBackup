@@ -22,6 +22,8 @@
     {"name":"inst_4B45EF3B_1","path":"rooms/RM_CHURCHplainvill/RM_CHURCHplainvill.yy",},
     {"name":"inst_1B70DF9E","path":"rooms/RM_CHURCHplainvill/RM_CHURCHplainvill.yy",},
     {"name":"inst_44B0AF83","path":"rooms/RM_CHURCHplainvill/RM_CHURCHplainvill.yy",},
+    {"name":"inst_1975B41B","path":"rooms/RM_CHURCHplainvill/RM_CHURCHplainvill.yy",},
+    {"name":"inst_4DFEC0A8","path":"rooms/RM_CHURCHplainvill/RM_CHURCHplainvill.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -46,6 +48,8 @@
       ],"layers":[],"name":"warp","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"manOBJ","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_10C7250D","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_10C7250D","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":288.0,},
+        {"$GMRInstance":"","%Name":"inst_1975B41B","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1975B41B","objectId":{"name":"obj_staircaseClimb2","path":"objects/obj_staircaseClimb2/obj_staircaseClimb2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":-1.25,"scaleY":1.25,"x":381.0,"y":230.0,},
+        {"$GMRInstance":"","%Name":"inst_4DFEC0A8","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4DFEC0A8","objectId":{"name":"obj_staircaseClimb2","path":"objects/obj_staircaseClimb2/obj_staircaseClimb2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":180.0,"scaleX":-1.25,"scaleY":1.25,"x":322.0,"y":251.0,},
       ],"layers":[],"name":"manOBJ","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Emory","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Emory","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

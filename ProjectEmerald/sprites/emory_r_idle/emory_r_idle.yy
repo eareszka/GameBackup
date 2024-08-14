@@ -19,7 +19,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ac4822ca-4a66-4aba-ba46-f49b4352a866","blendMode":0,"displayName":"default","isLocked":false,"name":"ac4822ca-4a66-4aba-ba46-f49b4352a866","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"6aec683c-553b-4326-88a9-2ba965ba3e9d","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"6aec683c-553b-4326-88a9-2ba965ba3e9d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"emory_r_idle",
   "nineSlice":null,

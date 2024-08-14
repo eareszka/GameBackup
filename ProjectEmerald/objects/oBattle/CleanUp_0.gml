@@ -38,7 +38,7 @@ if (bossBattle = false)
 		with (creator)
 		{
 			instance_create_depth(0,0,-9999,oFadeOut)
-			global.escapeImmunity = irandom_range(1000,3000)	
+			global.escapeImmunity = encounterRate()/2
 			visible = true;
 		}
 	}
@@ -52,7 +52,7 @@ if (bossBattle = false)
 				obj_camera.follow = obj_playerEmory
 			}
 			instance_create_depth(0,0,-9999,oFadeOut)
-			global.escapeImmunity = irandom_range(3000,6000)
+			global.escapeImmunity = encounterRate()
 			dead = true;
 			visible = true;
 		}

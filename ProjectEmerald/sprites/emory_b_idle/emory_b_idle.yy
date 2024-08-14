@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":29,
   "bbox_left":1,
-  "bbox_right":18,
+  "bbox_right":17,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -19,7 +19,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"82912ee5-3e45-40da-acd6-10e4d0ff4f23","blendMode":0,"displayName":"default","isLocked":false,"name":"82912ee5-3e45-40da-acd6-10e4d0ff4f23","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"6da43bee-9adc-4879-980f-053b23b4e794","blendMode":0,"displayName":"default","isLocked":false,"name":"6da43bee-9adc-4879-980f-053b23b4e794","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"emory_b_idle",
   "nineSlice":null,

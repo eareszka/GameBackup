@@ -4,7 +4,10 @@ column = 0
 pos1 = 0
 subimg = -1
 
-op_length = array_length(global.quest)
+item=-1
+draw_char = 0
+text_spd = 2
+textBoxHeight = 23
 
 right_key = keyboard_check(vk_right) || keyboard_check(ord("D"));
 left_key = keyboard_check(vk_left) || keyboard_check(ord("A"));

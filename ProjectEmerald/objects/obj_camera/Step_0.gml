@@ -28,3 +28,6 @@ else
 	camera_set_view_size(view_camera[0],camWidth,camHeight)
 	camera_set_view_pos(view_camera[0],x-(camWidth*0.5),y-(camHeight*0.5));
 }
+
+show_debug_message(x)
+show_debug_message(y)

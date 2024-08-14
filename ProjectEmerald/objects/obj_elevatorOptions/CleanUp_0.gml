@@ -26,4 +26,4 @@ if global.flag[4]=2
 		target_rm = RM_HOTELtop	
 	}
 }
-oElevatorMove.createTimer=25
+oElevatorMove.createTimer=1

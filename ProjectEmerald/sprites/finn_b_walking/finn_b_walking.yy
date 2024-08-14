@@ -20,7 +20,7 @@
   "height":31,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"6b01e0e1-0ee3-4eb2-8dcf-b2c140b93c66","blendMode":0,"displayName":"default","isLocked":false,"name":"6b01e0e1-0ee3-4eb2-8dcf-b2c140b93c66","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"fdfff7bb-ae79-4e4b-ae88-ea894c0a3b80","blendMode":0,"displayName":"default","isLocked":false,"name":"fdfff7bb-ae79-4e4b-ae88-ea894c0a3b80","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"finn_b_walking",
   "nineSlice":null,

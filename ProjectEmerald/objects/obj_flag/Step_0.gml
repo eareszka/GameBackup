@@ -2,6 +2,42 @@ if action
 {
 	switch flag
 	{
+		//catacombs summon abone
+		case 49:
+			if place_meeting(x,y,obj_playerEmory)
+			{
+				if global.flag[47]=100&&global.flag[48]=100//makes sure torches are moved
+				{
+					if global.flag[flag]=0
+					{
+						create_cutscene("createAmalbonemation")	
+					}
+				}
+			}
+		break;
+		
+		//move torch3
+		case 47:
+			if place_meeting(x,y,obj_playerEmory)
+			{
+				if keyboard_check_pressed(vk_space)&&global.flag[flag]!=100//100=success
+				{
+					if global.flag[flag]<3{global.flag[flag]+=1}else{global.flag[flag]=0}
+				}
+			}
+		break;
+		
+		//move torch4
+		case 48:
+			if place_meeting(x,y,obj_playerEmory)
+			{
+				if keyboard_check_pressed(vk_space)&&global.flag[flag]!=100//100=success
+				{
+					if global.flag[flag]<3{global.flag[flag]+=1}else{global.flag[flag]=0}
+				}
+			}
+		break;
+		
 		case 1:
 			if global.flag[flag]<1
 			{

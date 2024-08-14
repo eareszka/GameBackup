@@ -12,6 +12,10 @@ function ActionText(_user,_action,_targets)
 					return "Continuous Attacks!";
 				break;
 				
+				case "Nightcrawler":
+					return string(_user.name)+" Attacks "+string(_targets[0].name)+"!";
+				break
+				
 				case "Mutant Worm":
 					return string(_user.name)+" Strikes At "+string(_targets[0].name)+"!";
 				break

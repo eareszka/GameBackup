@@ -50,13 +50,20 @@ if section = 1
 			switch (column)
 			{
 				case 0:
-				//top left
+					//top left
+					if global.quest.annasFlashLight.available=true{item=global.quest.annasFlashLight}
+					else{item=-1}
 				break;
 				case 1:
 				//middle left
+					item=-1
 				break;
 				case 2:
 				//bottom left
+					if global.quest.dogTreat.available=true{item=global.quest.dogTreat}
+					else if global.quest.crown.available=true{item=global.quest.crown}
+					else{item=-1}
+					
 				break;
 			}
 		break;
@@ -65,12 +72,15 @@ if section = 1
 			{
 				case 0:
 				//top middle
+					item=-1
 				break;
 				case 1:
 				//middle middle
+					item=-1
 				break;
 				case 2:
 				//bottom middle
+					item=-1
 				break;
 			}
 		break;
@@ -79,12 +89,15 @@ if section = 1
 			{
 				case 0:
 				//top right
+					item=-1
 				break;
 				case 1:
 				//middle right
+					item=-1
 				break;
 				case 2:
 				//bottom right
+					item=-1
 				break;
 			}
 		break
@@ -92,10 +105,7 @@ if section = 1
 }
 else if section = 2
 {
-	if !instance_exists(obj_textBox)
-	{
-		create_textbox("SacredAnimalsMenu")
-	}
+	item=global.quest.Emerald
 }
 else if section = 3
 {
@@ -109,6 +119,65 @@ else if section = 3
 	
 	//3rd row on section 3 only has 2 columns
 	if row = 2 && column = 2 {column = 0};
+	
+	//menu2
+	switch (row)
+	{
+		case 0:
+			switch (column)
+			{
+				case 0:
+					//top left
+					if global.quest.hotelKey.available=true{item=global.quest.hotelKey}
+					else{item=-1}
+				break;
+				case 1:
+				//middle left
+					if global.quest.helicopter.available=true{item=global.quest.helicopter}
+					else{item=-1}
+				break;
+				case 2:
+				//bottom left
+					
+				break;
+			}
+		break;
+		case 1:
+			switch (column)
+			{
+				case 0:
+				//top middle
+					if global.quest.farmKey.available=true{item=global.quest.farmKey}
+					else{item=-1}
+				break;
+				case 1:
+					if global.quest.boatKey.available=true{item=global.quest.boatKey}
+					else{item=-1}
+				break;
+				case 2:
+				//bottom middle
+					item=-1
+				break;
+			}
+		break;
+		case 2:
+			switch (column)
+			{
+				case 0:
+				//top right
+					item=-1
+				break;
+				case 1:
+				//middle right
+					item=-1
+				break;
+				case 2:
+				//bottom right
+					item=-1
+				break;
+			}
+		break
+	}
 }
 
 
@@ -132,10 +201,17 @@ if go_back
 //audio
 if up_key || down_key || right_key || left_key
 {
-	audio_play_sound(moveArrow2,1,false)	
+	audio_play_sound(moveArrow2,1,false)
+	draw_char = 0
+	textBoxHeight = 23
 }
 
 if select_key || go_back
 {
 	audio_play_sound(select2,1,false)	
+}
+
+if go_back
+{
+	item=-1	
 }

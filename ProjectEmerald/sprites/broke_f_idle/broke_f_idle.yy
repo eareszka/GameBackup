@@ -3,7 +3,7 @@
   "%Name":"broke_f_idle",
   "bboxMode":0,
   "bbox_bottom":29,
-  "bbox_left":1,
+  "bbox_left":2,
   "bbox_right":16,
   "bbox_top":3,
   "collisionKind":1,

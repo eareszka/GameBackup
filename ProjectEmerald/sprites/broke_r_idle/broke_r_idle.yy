@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":29,
   "bbox_left":1,
-  "bbox_right":19,
+  "bbox_right":17,
   "bbox_top":2,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -19,6 +19,7 @@
   "height":30,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"60c90b14-d35a-4768-a9a2-b8b149518ed5","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"60c90b14-d35a-4768-a9a2-b8b149518ed5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"f4adeec5-a43d-4fcd-b9d0-3fb819400e14","blendMode":0,"displayName":"default","isLocked":false,"name":"f4adeec5-a43d-4fcd-b9d0-3fb819400e14","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"broke_r_idle",

@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"sBaneBatIdle",
   "bboxMode":0,
-  "bbox_bottom":30,
+  "bbox_bottom":36,
   "bbox_left":6,
   "bbox_right":43,
   "bbox_top":16,

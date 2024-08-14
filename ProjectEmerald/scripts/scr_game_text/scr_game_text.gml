@@ -528,6 +528,34 @@ function scr_game_text(_text_id)
 				instance_destroy(obj_textBox)
 			break;
 			
+		case "SaveProgress3":
+			scr_name("")
+			scr_text("This bed looks very comfy")
+			scr_text("Rest and save all progress?")
+			scr_option("Yes", "SaveProgress3 - yes")
+			scr_option("No", "SaveProgress3 - no")
+		break
+			case "SaveProgress3 - yes":
+				scr_name("")
+				//hp
+				global.EcurrentHP = 20+global.hpAdd
+				global.FcurrentHP = round(50+(global.hpAdd*1.2))
+				global.BcurrentHP = round(10+(global.hpAdd*.5))
+				global.JcurrentHP = round(100+(global.hpAdd*1.5))
+				//mp
+				global.EcurrentMP = 20+global.mpAdd
+				global.FcurrentMP = 0
+				global.BcurrentMP = round(50+(global.mpAdd*2))
+				global.JcurrentMP = round(50+(global.mpAdd*1.8))
+				saveGame()
+				scr_text("Game Saved And Fully Rested,")
+				scr_text("Your MP has also been fully Restored!")
+				
+			break
+			case "SaveProgress3 - no":
+				instance_destroy(obj_textBox)
+			break;
+			
 		case "BedUsed":
 			scr_name("")
 			scr_text("This bed is being used")

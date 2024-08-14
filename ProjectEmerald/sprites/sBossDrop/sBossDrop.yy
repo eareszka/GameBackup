@@ -21,6 +21,7 @@
   "height":18,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"df6ad29f-2099-4aa7-b77e-916b60fb42a6","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"df6ad29f-2099-4aa7-b77e-916b60fb42a6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"9eb9a9b7-b148-4f91-bcbf-4c199f728d8c","blendMode":0,"displayName":"default","isLocked":false,"name":"9eb9a9b7-b148-4f91-bcbf-4c199f728d8c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sBossDrop",

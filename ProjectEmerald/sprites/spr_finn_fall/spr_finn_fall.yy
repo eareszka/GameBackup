@@ -19,7 +19,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"b981e1dc-7071-4623-9f1c-f2a84708df61","blendMode":0,"displayName":"default","isLocked":false,"name":"b981e1dc-7071-4623-9f1c-f2a84708df61","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"31ad28fd-1b4a-4542-a128-f6d259d3816d","blendMode":0,"displayName":"default","isLocked":false,"name":"31ad28fd-1b4a-4542-a128-f6d259d3816d","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_finn_fall",
   "nineSlice":null,

@@ -6,7 +6,7 @@ if(global.jen = 1)
 	switch(obj_playerEmory.toRecordSprite[followerDistance])
 	{
 	
-		case emory_f_walking: sprite_index = jen_f_walking; image_xscale = obj_playerEmory.toRecord_Xscale[followerDistance]; break;
+		case emory_f_idle: sprite_index = jen_f_walking; image_xscale = obj_playerEmory.toRecord_Xscale[followerDistance]; break;
 		case emory_b_walking: sprite_index = jen_b_walking; image_xscale = 1; break;	
 		case emory_l_walking: sprite_index = jen_l_walking; image_xscale = 1; break;	
 		case emory_r_walking: sprite_index = jen_r_walking; image_xscale = 1; break;
@@ -14,7 +14,7 @@ if(global.jen = 1)
 	} else
 	switch(obj_playerEmory.toRecordSprite[followerDistance])
 	{
-		case emory_f_walking: sprite_index = jen_f_idle; image_xscale = obj_playerEmory.toRecord_Xscale[followerDistance]; break;
+		case emory_f_idle: sprite_index = jen_f_idle; image_xscale = obj_playerEmory.toRecord_Xscale[followerDistance]; break;
 		case emory_b_walking: sprite_index = jen_b_idle; image_xscale = 1; break;	
 		case emory_l_walking: sprite_index = jen_l_idle; image_xscale = 1; break;	
 		case emory_r_walking: sprite_index = jen_r_idle; image_xscale = 1; break;

@@ -3,7 +3,6 @@ if !(instance_exists(obj_emoryIntro))
 	draw_self()
 }
 
-
 if flash > 0
 {
 	flash-=subtract

@@ -2,6 +2,150 @@ function cutscene_main(_cutscene,_scene)
 {
 	switch _cutscene
 	{
+		case "createAmalbonemation":
+			switch _scene
+			{
+				case 0:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					obj_playerEmory.sprite_index=emory_b_idle
+					ShakeObject(obj_AmalbonemationOverworld,.5,600)
+					cutscene_timer(30,1)
+				break
+				case 1:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					obj_playerEmory.sprite_index=emory_f_idle
+					cutscene_move_obj(obj_camera,2556,267,1,false)
+					cutscene_timer(80,2)
+				break;
+				case 2:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					cutscene_timer(30,3)
+				break;
+				case 3:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					obj_AmalbonemationOverworld.activate=true
+					cutscene_timer(50,4)
+				break
+				case 4:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					if instance_exists(oShake){instance_destroy(oShake)}
+					ObjFlash(obj_AmalbonemationOverworld,3,.2,255,255,255)
+					obj_AmalbonemationOverworld.done=true
+					obj_AmalbonemationOverworld.x+=10
+					obj_AmalbonemationOverworld.y+=10
+					cutscene_end_action()
+				break
+				case 5:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					if !instance_exists(oExclamationMark){instance_create_depth(obj_playerEmory.x+8,obj_playerEmory.y-20,-16000,oExclamationMark)}
+					obj_playerEmory.y-=.5
+					cutscene_timer(5,6)
+				break
+				case 6:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					obj_AmalbonemationOverworld.depth=-16000
+					obj_AmalbonemationOverworld.roll=true
+					cutscene_move_obj(obj_AmalbonemationOverworld,obj_playerEmory.x+8,obj_playerEmory.y+25,2,true)
+				break
+				case 7:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					obj_AmalbonemationOverworld.roll=false
+					NewEncounter(
+						choose(	
+								[global.enemies.amalbonemation],
+						), 
+						spr_battleBackground3,
+						battle2,
+						true,
+						8,
+						obj_AmalbonemationOverworld
+					);
+				break;
+				case 8:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					obj_playerEmory.y+=5
+					obj_AmalbonemationOverworld.y=obj_playerEmory.y+60
+					cutscene_end_action()
+				break;
+				case 9:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					if !instance_exists(obj_AmalbonemationOverworld)
+					{
+						cutscene_end_action()
+					}
+					else
+					{
+						obj_AmalbonemationOverworld.dead=true
+					}
+				break;
+				case 10:
+					global.flag[49]=1
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					cutscene_move_obj(obj_camera,2500,430,2,true)
+				break;
+				case 11:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=0
+					ShakeObject(inst_69AD4C08,.25,30)
+					cutscene_timer(30,12)
+				break;
+				case 12:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.activate=true
+					inst_69AD4C08.image_speed=1.75
+					if inst_69AD4C08.image_index>=26
+					{
+						inst_69AD4C08.image_index=26
+						cutscene_end_action()
+					}
+					else
+					{
+					cutscene_setSprite(inst_69AD4C08,spr_ladderCreate1,0,27)}
+				break;
+				case 13:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=26
+					cutscene_move_obj(obj_camera,2700,430,4,true)
+				break;
+				case 14:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=26
+					cutscene_timer(5,15)
+				break;
+				case 15:
+					inst_69AD4C08.image_index=26
+				
+					inst_7CF91B9F.activate=true
+					inst_7CF91B9F.image_speed=1.75
+					if inst_7CF91B9F.image_index>=26
+					{
+						inst_7CF91B9F.image_index=26
+						cutscene_timer(20,16)
+					}
+					else
+					{
+					cutscene_setSprite(inst_7CF91B9F,spr_ladderCreate1,0,27)}
+				break;
+				case 16:
+					inst_69AD4C08.image_index=26
+					inst_7CF91B9F.image_index=26
+					obj_camera.follow=obj_playerEmory
+					instance_destroy(oCutscene)
+				break;
+			
+			}
+		break
 		
 		case "magician":
 			switch _scene
@@ -157,7 +301,7 @@ function cutscene_main(_cutscene,_scene)
 				
 				case 3:
 	
-					obj_playerEmory.sprite_index=emory_f_walking
+					obj_playerEmory.sprite_index=emory_f_idle
 					cutscene_move_obj(obj_playerEmory,107,150,.40,true)
 				break;
 				
@@ -642,6 +786,7 @@ function cutscene_main(_cutscene,_scene)
 			switch _scene
 			{
 				case 0:
+					oMacintosh.image_index=6
 					obj_playerEmory.face = RIGHT
 					inst_3623BBF4.index = 1
 					if !instance_exists(oTheCoachOverworld)
@@ -656,6 +801,7 @@ function cutscene_main(_cutscene,_scene)
 				break
 				
 				case 1:
+					oMacintosh.image_index=6
 					obj_playerEmory.sprite_index = emory_r_idle
 					if !instance_exists(obj_textBox)
 					{
@@ -664,6 +810,7 @@ function cutscene_main(_cutscene,_scene)
 				break
 				
 				case 2:
+					oMacintosh.image_index=6
 					if !instance_exists(obj_textBox)
 					{
 						create_textbox("CoachTalk1")
@@ -671,6 +818,7 @@ function cutscene_main(_cutscene,_scene)
 				break
 				
 				case 3:
+					oMacintosh.image_index=6
 					if !instance_exists(obj_textBox)
 					{
 						create_textbox("EmoryTalk2")
@@ -678,11 +826,13 @@ function cutscene_main(_cutscene,_scene)
 				break
 				
 				case 4:
+					oMacintosh.image_index=6
 					oTheCoachOverworld.walk = true
 					cutscene_move_obj(oTheCoachOverworld,704,135,1.5,true)	
 				break;
 				
 				case 5:
+					oMacintosh.image_index=6
 					NewEncounter(
 						choose(	
 								[global.bosses.theCoach],
@@ -696,10 +846,18 @@ function cutscene_main(_cutscene,_scene)
 				break;
 				
 				case 6:
-					inst_3623BBF4.index = 2
 					global.flag[2] = 1
-					instance_destroy(oTheCoachOverworld)
-					instance_destroy(oCutscene)
+					if !instance_exists(oTheCoachOverworld)
+					{
+						instance_destroy(oCutscene)	
+					}
+					else
+					{
+						oTheCoachOverworld.walk=false
+						oTheCoachOverworld.dead=true
+					}
+					if instance_exists(oMacintosh){oMacintosh.image_index=6}
+					if instance_exists(inst_3623BBF4){inst_3623BBF4.index = 2}
 				break
 			}
 		break
@@ -805,7 +963,7 @@ function cutscene_main(_cutscene,_scene)
 				break;
 				case 2:
 					obj_camera.follow=noone
-					obj_playerEmory.sprite_index=emory_f_walking
+					obj_playerEmory.sprite_index=emory_f_idle
 					cutscene_move_obj(obj_playerEmory,2830,3000,1.5,true)
 				break;
 				case 3:

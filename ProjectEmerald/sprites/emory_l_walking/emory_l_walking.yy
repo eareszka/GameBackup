@@ -4,7 +4,7 @@
   "bboxMode":0,
   "bbox_bottom":29,
   "bbox_left":1,
-  "bbox_right":18,
+  "bbox_right":17,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -20,7 +20,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"77fbf9a0-a1c6-4237-a178-2464170f9f42","blendMode":0,"displayName":"default","isLocked":false,"name":"77fbf9a0-a1c6-4237-a178-2464170f9f42","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"54a9c1d6-8199-4bf0-954e-121be697cd50","blendMode":0,"displayName":"default","isLocked":false,"name":"54a9c1d6-8199-4bf0-954e-121be697cd50","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"emory_l_walking",
   "nineSlice":null,

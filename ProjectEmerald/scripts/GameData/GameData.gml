@@ -41,6 +41,8 @@ global.chestOpened =
 	0,//15	
 	0,//16
 	0,//17
+	0,//18
+	0,//19
 ]
 
 //FLAGS FOR IN GAME SEQUENCES
@@ -148,6 +150,12 @@ global.flag =
 	0,
 	//MagicianDefeated 46
 	0,
+	//MoveTorch3 47
+	0,
+	//MoveTorch4 48
+	0,
+	//KilledAbone 49
+	0,
 ]
 	
 	
@@ -167,7 +175,7 @@ global.enemyKills =
 	0,
 	//plainville: 5,
 	0,
-	//mole: 6,
+	//mountains: 6,
 	0,
 	//dodo: 7,
 	0,
@@ -191,6 +199,7 @@ global.quest =
 	{
 		name : "Flashlight",
 		subMenu : -1,
+		info : "Flashlight that allows you to see in the dark.",
 		available : false,
 		menuFunc :
 		{
@@ -202,6 +211,7 @@ global.quest =
 	{
 		name : "Dog Treat",
 		subMenu : -1,
+		info : "Dog Toy used to make any mans best friend happy. You should buy it for your dog 'loki'!",
 		available : false,
 		menuFunc :
 		{
@@ -213,6 +223,7 @@ global.quest =
 	{
 		name : "Hotel Key",
 		subMenu : -1,
+		info : "Key used to access hotel room in BrownsTown's grand hotel.",
 		available : false,
 		menuFunc :
 		{
@@ -224,6 +235,7 @@ global.quest =
 	{
 		name : "Farm Key",
 		subMenu : -1,
+		info : "Key used to unlock farm gate.",
 		available : false,
 		menuFunc :
 		{
@@ -246,6 +258,7 @@ global.quest =
 	{
 		name : "Priceless Crown",
 		subMenu : -1,
+		info : "Crown that belonged to an Ancient King. Some people would give anything to have this.",
 		available : false,
 		menuFunc :
 		{
@@ -257,6 +270,19 @@ global.quest =
 	{
 		name : "Heli Key",
 		subMenu : -1,
+		info : "Key used to operate helicopter at Plainville's airport.",
+		available : false,
+		menuFunc :
+		{
+					
+		}
+	}
+	,
+	boatKey: 
+	{
+		name : "Boat Key",
+		subMenu : -1,
+		info : "Key used to operate Boat at Saratoga's docks.",
 		available : false,
 		menuFunc :
 		{
@@ -268,6 +294,7 @@ global.quest =
 	{
 		name : "Swimmimg Fins",
 		subMenu : -1,
+		info : "Swimming fins that can be used to swim in swamp and shallow water.",
 		available : false,
 		menuFunc :
 		{
@@ -301,6 +328,7 @@ global.quest =
 	{
 		name : "Emerald",
 		subMenu : -1,
+		info : "A gemstone that fell from the sky. Has twelve distinct scratch markings on it.",
 		available : false,
 		menuFunc :
 		{
@@ -2113,7 +2141,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		hold: 1,
-		sprites: { intro: sBaneBatIntro, idle: sBaneBatIdle, attack: sBaneBatAttack},
+		sprites: { intro: sBaneBatIntro, idle: sBaneBatIdle, attack: sBaneBatIdle},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.poison],
 		moneyValue : 30,
 		experinceValue : irandom_range(20,40),
@@ -2246,6 +2274,35 @@ global.enemies =
 			return [_action, _target];
 		}
 	}
+	,
+	nightcrawler: 
+	{
+		name: "Nightcrawler",
+		hp: 50,
+		hpMax: 50,
+		mp: 0,
+		mpMax: 0,
+		strength: 5,
+		arrows: 5,
+		frequency: 1,
+		spd: 3,
+		sprites: { intro: spr_nightcrawlersIdle, idle: spr_nightcrawlersIdle, attack: spr_nightcrawlersIdle, defend: spr_nightcrawlersIdle},
+		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
+		moneyValue : 30,
+		experinceValue : irandom_range(10,20),
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
 }
 global.bosses =
 {

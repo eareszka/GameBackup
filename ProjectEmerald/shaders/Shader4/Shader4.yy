@@ -1,0 +1,12 @@
+{
+  "$GMShader":"",
+  "%Name":"Shader4",
+  "name":"Shader4",
+  "parent":{
+    "name":"BROWNSTOWN",
+    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN.yy",
+  },
+  "resourceType":"GMShader",
+  "resourceVersion":"2.0",
+  "type":1,
+}

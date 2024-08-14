@@ -20,7 +20,7 @@
   "height":30,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"f4adeec5-a43d-4fcd-b9d0-3fb819400e14","blendMode":0,"displayName":"default","isLocked":false,"name":"f4adeec5-a43d-4fcd-b9d0-3fb819400e14","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c8ac180b-7f2a-4688-8aa5-9425f770a0a6","blendMode":0,"displayName":"default","isLocked":false,"name":"c8ac180b-7f2a-4688-8aa5-9425f770a0a6","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"broke_l_walking",
   "nineSlice":null,

@@ -20,6 +20,7 @@
   "height":176,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"5bcd19bf-47e0-489f-8b4a-b05fd62940d7","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"5bcd19bf-47e0-489f-8b4a-b05fd62940d7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"a64f3a2c-e1c0-41be-b99f-fa26c6216bbd","blendMode":0,"displayName":"default","isLocked":false,"name":"a64f3a2c-e1c0-41be-b99f-fa26c6216bbd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sCliffs2",

@@ -3,7 +3,57 @@
 function createFlavorText(_enemy,_text)
 {
 	switch _enemy.name
-	{	
+	{
+		case "Nightcrawler":
+			if _enemy.hp<_enemy.hpMax/4 //low hp
+			{
+				switch _text
+				{
+					case 0:
+						return string(_enemy.name)+" looks frail"
+					break;
+					
+					case 1:
+						return string(_enemy.name)+" isn't standing strong"
+					break;
+					
+					case 2:
+						return string(_enemy.name)+" looks weak"
+					break;
+				}
+			}
+			if _enemy.hp>=_enemy.hpMax/2
+			{
+				switch _text
+				{
+					case 0:
+						return "You should've went to bed.."
+					break;
+					case 1:
+						return "Smells sussy"
+					break;
+					case 2:
+						return string(_enemy.name)+" is standing strong"
+					break;
+				}
+			}
+			else
+			{
+				switch _text
+				{
+					case 0:
+						return "You should've went to bed.."
+					break;
+					case 1:
+						return "Smells sussy"
+					break;
+					case 2:
+						return string(_enemy.name)+" is standing strong"
+					break;
+				}
+			}
+		break
+		
 		case "The Magician":
 			if _enemy.hp<_enemy.hpMax/4 //low hp
 			{

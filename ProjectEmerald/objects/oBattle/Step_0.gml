@@ -425,8 +425,11 @@ function battleFlavorText(_enemyUnits,_flavorText)
 		{
 			return (_unit.hp > 0);
 		});
-		var _unit = _possibleUnit[irandom(array_length(_possibleUnit)-1)];
-		battleEndMessages[0] = createFlavorText(_unit,_flavorText)
-		battleText = battleEndMessages[battleEndMessageProg];
+		if array_length(_possibleUnit)>0
+		{
+			var _unit = _possibleUnit[irandom(array_length(_possibleUnit)-1)];
+			battleEndMessages[0] = createFlavorText(_unit,_flavorText)
+			battleText = battleEndMessages[battleEndMessageProg];
+		}
 	}
 }

@@ -19,7 +19,7 @@
   "height":512,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"67a2f8b0-c75d-483c-a738-37b522b29b07","blendMode":0,"displayName":"default","isLocked":false,"name":"67a2f8b0-c75d-483c-a738-37b522b29b07","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c2a4e87f-8cba-42cb-98bc-d8e202d5a028","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"c2a4e87f-8cba-42cb-98bc-d8e202d5a028","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_emoryCave",
   "nineSlice":null,

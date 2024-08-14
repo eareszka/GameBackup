@@ -16,9 +16,10 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":30,
+  "height":35,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"37e99696-f4bf-4ca2-bee2-3fc16eafaeae","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"37e99696-f4bf-4ca2-bee2-3fc16eafaeae","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"b4d57cf5-6a60-4a78-bbc9-a33f5f972460","blendMode":0,"displayName":"default","isLocked":false,"name":"b4d57cf5-6a60-4a78-bbc9-a33f5f972460","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"emory_f_idleBLUE",
