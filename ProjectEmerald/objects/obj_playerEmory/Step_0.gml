@@ -466,3 +466,26 @@ if battleStart
 //	}
 //	blinkTimer--
 //}
+
+show_debug_message(x)
+show_debug_message(y)
+
+
+
+//day and night cycle
+if !instance_exists(obj_dayNight){instance_create_depth(0,0,-9998,obj_dayNight)}
+if global.timeOfDay<8
+{
+	if room=RM_EMORY||room=RM_BROWNSTOWN
+	{
+		obj_dayNight.drawDaylight=true
+	}
+	else
+	{
+		obj_dayNight.drawDaylight=false
+	}
+}
+else
+{
+	obj_dayNight.drawDaylight=false	
+}

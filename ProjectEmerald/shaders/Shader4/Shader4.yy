@@ -4,7 +4,7 @@
   "name":"Shader4",
   "parent":{
     "name":"BROWNSTOWN",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN.yy",
+    "path":"folders/Rooms/BROWNSTOWN.yy",
   },
   "resourceType":"GMShader",
   "resourceVersion":"2.0",

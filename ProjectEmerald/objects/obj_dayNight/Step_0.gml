@@ -1,4 +1,5 @@
-//timer+=.02
+timer=global.timeOfDay
+
 if (drawDaylight)
 {
 	var _darks,_colors,_pStart,_pEnd
@@ -63,3 +64,64 @@ if (drawDaylight)
 		darkness = merge_number(_d1,_d2,_dd-floor(_dd))
 	}
 }
+
+show_debug_message(global.timeOfDay)
+
+if room=RM_BROWNSTOWN
+{
+	if global.timeOfDay<8
+	{
+		obj_lightingCutout.visible=true
+		obj_parentNPC.activated=false
+	}
+	else
+	{
+		obj_lightingCutout.visible=false
+		obj_parentNPC.activated=true
+		inst_779021A6.activate=true
+		inst_4EE7D08.activate=true
+		inst_1FA32AC4.activate=true
+		inst_12259BFD.activate=true
+	}
+}	
+
+if room=RM_EMORY
+{
+	if global.timeOfDay<8
+	{
+		obj_lightingCutout.visible=true
+	}
+	else
+	{
+		obj_lightingCutout.visible=false
+	}
+}
+
+if room=RM_ANAHhouse1
+{
+	if global.timeOfDay<8&&global.flag[41]=0
+	{
+		inst_4B466D20.activate=false
+	}
+	else
+	{
+		inst_4B466D20.activate=true
+	}
+}
+
+if room=RM_HOSPITALbrownsTown
+{
+	if global.timeOfDay<8
+	{
+		
+	}
+	else
+	{
+		instance_destroy(inst_5E5924C0)
+		instance_destroy(inst_752F097B)
+	}	
+}
+	
+	
+
+show_debug_message(global.timeOfDay)

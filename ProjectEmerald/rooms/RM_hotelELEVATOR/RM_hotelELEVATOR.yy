@@ -55,7 +55,7 @@
   "name":"RM_hotelELEVATOR",
   "parent":{
     "name":"HOTEL",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN/HOTEL.yy",
+    "path":"folders/Rooms/BROWNSTOWN/HOTEL.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

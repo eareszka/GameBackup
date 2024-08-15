@@ -112,7 +112,7 @@
   "name":"RM_ANAHhouse4",
   "parent":{
     "name":"ANAHhouse",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN/ANAHhouse.yy",
+    "path":"folders/Rooms/BROWNSTOWN/ANAHhouse.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

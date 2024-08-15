@@ -189,7 +189,7 @@
   "name":"RM_HOTELvent2",
   "parent":{
     "name":"vent",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN/HOTEL/vent.yy",
+    "path":"folders/Rooms/BROWNSTOWN/HOTEL/vent.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

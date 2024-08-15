@@ -1,10 +1,10 @@
 lighting_surface=-1
 
-drawDaylight=true
+drawDaylight=false
 
 timer=0
 
-maxDarkness=.7
+maxDarkness=.77
 
 lightColor=c_black
 

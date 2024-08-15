@@ -28,3 +28,8 @@ option_pos = 0;
 option_number = 0;
 
 setup = false;
+
+setupTimer=10
+
+accept_key = -1
+esc_key = -1

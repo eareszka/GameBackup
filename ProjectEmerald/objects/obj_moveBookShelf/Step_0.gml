@@ -1,16 +1,23 @@
 image_speed = .25
-if global.flag[40] = 1
+if global.flag[52]=0
 {
-	if obj_moveBookShelf.image_index>image_number-1
+	if global.flag[40] = 1
 	{
-		image_index = image_number-1
+		if obj_moveBookShelf.image_index>image_number-1
+		{
+			image_index = image_number-1
+		}
+		if cutscene = false
+		{
+			create_cutscene("moveBookShelf")
+		}
 	}
-	if cutscene = false
+	else
 	{
-		create_cutscene("moveBookShelf")
+		image_index = 0
 	}
 }
 else
 {
-	image_index = 0
+	image_index = image_number-1
 }

@@ -1,3 +1,8 @@
+event_inherited()
+
+if activated
+{
+visible=true
 if place_meeting(x,y,obj_playerEmory)
 {
 	if keyboard_check_pressed(vk_space) && !instance_exists(obj_textBox) && !instance_exists(oMainMenu)
@@ -35,6 +40,13 @@ else
 
 
 //coll
+instance_activate_object(inst_2B481CAA)
 inst_2B481CAA.x = x-7
 inst_2B481CAA.y = y-2
+}
+else
+{
+instance_deactivate_object(inst_2B481CAA)
+visible=false	
+}
 

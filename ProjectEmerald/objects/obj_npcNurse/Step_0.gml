@@ -7,6 +7,13 @@ if place_meeting(x,y,obj_playerEmory)
 		{
 			audio_play_sound(textBoxOpen,1,false)
 		}
-		create_textbox(text_id)		
+		if global.timeOfDay<8
+		{
+			create_textbox("NurseNight")		
+		}
+		else
+		{
+			create_textbox("Nurse")			
+		}
 	}
 }

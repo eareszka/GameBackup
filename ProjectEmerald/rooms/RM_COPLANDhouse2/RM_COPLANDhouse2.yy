@@ -105,7 +105,7 @@
   "name":"RM_COPLANDhouse2",
   "parent":{
     "name":"COPLANDhouse",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN/COPLANDhouse.yy",
+    "path":"folders/Rooms/BROWNSTOWN/COPLANDhouse.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

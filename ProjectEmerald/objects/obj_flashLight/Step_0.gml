@@ -21,3 +21,10 @@ if room = RM_BROWNSTOWNcave
 	light [|eLight.Width]=1.5	
 	light [|eLight.Range]=1000
 }
+
+if room = RM_BACKROOMS1||room=RM_BACKROOMS2||room=RM_BACKROOMS3
+{
+	light [|eLight.Intensity]=1.5
+	light [|eLight.Width]=5	
+	light [|eLight.Range]=1000
+}

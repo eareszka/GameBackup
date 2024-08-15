@@ -44,7 +44,7 @@
   "name":"RM_MOUNTAINtent",
   "parent":{
     "name":"HOTEL",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN/HOTEL.yy",
+    "path":"folders/Rooms/BROWNSTOWN/HOTEL.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

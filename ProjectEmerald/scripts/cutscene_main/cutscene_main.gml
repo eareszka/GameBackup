@@ -301,7 +301,7 @@ function cutscene_main(_cutscene,_scene)
 				
 				case 3:
 	
-					obj_playerEmory.sprite_index=emory_f_idle
+					obj_playerEmory.sprite_index=emory_f_walking
 					cutscene_move_obj(obj_playerEmory,107,150,.40,true)
 				break;
 				
@@ -1015,6 +1015,7 @@ function cutscene_main(_cutscene,_scene)
 					obj_moveBookShelf.cutscene = true
 					global.flag[26]=0
 					global.flag[40]=1
+					global.flag[52]=1
 					instance_destroy(oCutscene)
 				break;
 			}

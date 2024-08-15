@@ -13,7 +13,10 @@
     "name":"brownstown",
     "path":"folders/Objects/npc's/brownstown.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parentNPC",
+    "path":"objects/obj_parentNPC/obj_parentNPC.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

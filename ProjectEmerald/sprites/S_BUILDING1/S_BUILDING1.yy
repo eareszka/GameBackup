@@ -19,7 +19,7 @@
   "height":1200,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"e41393d1-4142-46bd-b315-92a89a2e21cb","blendMode":0,"displayName":"default","isLocked":false,"name":"e41393d1-4142-46bd-b315-92a89a2e21cb","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"8d7106f4-565c-4a6c-ae8f-3d9017314017","blendMode":0,"displayName":"default","isLocked":false,"name":"8d7106f4-565c-4a6c-ae8f-3d9017314017","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"S_BUILDING1",
   "nineSlice":null,

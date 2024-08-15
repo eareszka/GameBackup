@@ -162,12 +162,7 @@ global.MainMenu =
 		subMenu : -1,
 		menuFunc : function()
 		{
-			room_goto(RM_TITLE)
-			instance_destroy(obj_playerEmory)
-			instance_destroy(obj_camera)
-			instance_destroy(obj_playerFinn)
-			instance_destroy(obj_playerzBroke)
-			instance_destroy(obj_playerJen)
+			create_textbox("quitGame")
 		}	
 	},
 }

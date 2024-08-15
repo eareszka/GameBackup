@@ -18,4 +18,5 @@ if place_meeting(x,y,obj_playerEmory)
 	global.quest.crown.available=true
 	global.quest.hotelKey.available=true
 	global.quest.boatKey.available=true
+	global.timeOfDay=9
 }

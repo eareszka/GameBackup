@@ -92,7 +92,7 @@
   "name":"RM_DRUG",
   "parent":{
     "name":"BROWNSTOWN",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN.yy",
+    "path":"folders/Rooms/BROWNSTOWN.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

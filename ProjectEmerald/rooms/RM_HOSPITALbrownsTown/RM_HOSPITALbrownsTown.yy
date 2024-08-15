@@ -69,6 +69,8 @@
     {"name":"inst_1C6D43C1","path":"rooms/RM_HOSPITALbrownsTown/RM_HOSPITALbrownsTown.yy",},
     {"name":"inst_8916771","path":"rooms/RM_HOSPITALbrownsTown/RM_HOSPITALbrownsTown.yy",},
     {"name":"inst_5B3B00F1","path":"rooms/RM_HOSPITALbrownsTown/RM_HOSPITALbrownsTown.yy",},
+    {"name":"inst_752F097B","path":"rooms/RM_HOSPITALbrownsTown/RM_HOSPITALbrownsTown.yy",},
+    {"name":"inst_5E5924C0","path":"rooms/RM_HOSPITALbrownsTown/RM_HOSPITALbrownsTown.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -143,7 +145,10 @@
         {"$GMRInstance":"","%Name":"inst_5B3B00F1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5B3B00F1","objectId":{"name":"obj_staircaseClimb2","path":"objects/obj_staircaseClimb2/obj_staircaseClimb2.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":180.0,"scaleX":-1.25,"scaleY":1.25,"x":356.0,"y":398.0,},
       ],"layers":[],"name":"manOBJ","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Emory","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Emory","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"Player","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Player","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_752F097B","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_752F097B","objectId":{"name":"obj_sign","path":"objects/obj_sign/obj_sign.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":465.0,"y":461.0,},
+        {"$GMRInstance":"","%Name":"inst_5E5924C0","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5E5924C0","objectId":{"name":"obj_coll6","path":"objects/obj_coll6/obj_coll6.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":455.0,"y":448.0,},
+      ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"furniture","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"furniture","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":39,"SerialiseWidth":50,"TileCompressedData":[
           -277,-2147483648,2,595,596,-5,-2147483648,2,595,596,-41,-2147483648,2,630,631,-5,-2147483648,2,630,631,
           -34,-2147483648,6,562,1,2,3,4,5,-10,-2147483648,6,268435461,268435460,268435459,268435458,268435457,
@@ -245,7 +250,7 @@
   "name":"RM_HOSPITALbrownsTown",
   "parent":{
     "name":"BROWNSTOWN",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN.yy",
+    "path":"folders/Rooms/BROWNSTOWN.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

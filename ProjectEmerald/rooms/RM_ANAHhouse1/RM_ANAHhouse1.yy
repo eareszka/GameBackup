@@ -20,6 +20,7 @@
     {"name":"inst_4B466D20","path":"rooms/RM_ANAHhouse1/RM_ANAHhouse1.yy",},
     {"name":"inst_3FED8AA","path":"rooms/RM_ANAHhouse1/RM_ANAHhouse1.yy",},
     {"name":"inst_4C04DCE9","path":"rooms/RM_ANAHhouse1/RM_ANAHhouse1.yy",},
+    {"name":"inst_77990D69","path":"rooms/RM_ANAHhouse1/RM_ANAHhouse1.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -40,8 +41,9 @@
         {"$GMRInstance":"","%Name":"inst_4B466D20","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4B466D20","objectId":{"name":"obj_warpBlockDoor","path":"objects/obj_warpBlockDoor/obj_warpBlockDoor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.21875,"scaleY":0.40625,"x":274.0,"y":66.0,},
         {"$GMRInstance":"","%Name":"inst_3FED8AA","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_3FED8AA","objectId":{"name":"obj_warpBlockDoor","path":"objects/obj_warpBlockDoor/obj_warpBlockDoor.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.21875,"scaleY":0.40625,"x":162.0,"y":66.0,},
       ],"layers":[],"name":"warp","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"manOBJ","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"","%Name":"inst_408D2EE4","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_408D2EE4","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":344.0,"y":591.0,},
+    {"$GMRInstanceLayer":"","%Name":"manOBJ","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_408D2EE4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_408D2EE4","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":344.0,"y":591.0,},
+        {"$GMRInstance":"","%Name":"inst_77990D69","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_77990D69","objectId":{"name":"obj_flag","path":"objects/obj_flag/obj_flag.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":5.266667,"x":640.0,"y":96.0,},
       ],"layers":[],"name":"manOBJ","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Emory","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Emory","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Player","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
@@ -84,7 +86,7 @@
   "name":"RM_ANAHhouse1",
   "parent":{
     "name":"ANAHhouse",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN/ANAHhouse.yy",
+    "path":"folders/Rooms/BROWNSTOWN/ANAHhouse.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

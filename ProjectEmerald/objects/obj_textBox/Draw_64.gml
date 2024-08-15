@@ -1,6 +1,4 @@
 draw_set_colour(c_white);
-accept_key = keyboard_check_pressed(vk_space);
-esc_key = keyboard_check_pressed(vk_escape)
 
 textbox_x = 0;
 textbox_y = 186;

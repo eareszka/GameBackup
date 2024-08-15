@@ -1,0 +1,1 @@
+if instance_exists(oMainMenu){oMainMenu.active=true}

@@ -2,6 +2,34 @@ if action
 {
 	switch flag
 	{
+		case 51:
+			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]=0
+			{
+				if global.flag[41]=1
+				{
+					if global.timeOfDay<8
+					{
+						global.flag[26]=1
+						global.timeOfDay+=.01
+						obj_playerEmory.speedWalk=0
+					}
+					else
+					{
+						global.flag[26]=0
+						if instance_exists(obj_dayNight){instance_destroy(obj_dayNight)}
+						global.timeOfDay=8
+						global.flag[flag]=1
+					}
+				}
+			}
+		break
+		case 50:
+			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]=0
+			{
+				if !instance_exists(obj_textBox){create_textbox("goToSleep")}
+				global.flag[flag]=1
+			}
+		break;
 		//catacombs summon abone
 		case 49:
 			if place_meeting(x,y,obj_playerEmory)

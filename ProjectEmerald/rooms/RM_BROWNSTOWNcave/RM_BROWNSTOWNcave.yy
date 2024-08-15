@@ -937,7 +937,7 @@
           -49,-2147483648,2,528,529,-110,-2147483648,2,603,604,-110,-2147483648,2,603,604,-110,-2147483648,2,678,
           679,-9966,-2147483648,4,69,70,71,72,-108,-2147483648,4,144,145,146,147,-59,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"TC_OVERWORLD","path":"tilesets/TC_OVERWORLD/TC_OVERWORLD.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
-    {"$GMRTileLayer":"","%Name":"wall","depth":1000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"wall","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":94,"SerialiseWidth":112,"TileCompressedData":[
+    {"$GMRTileLayer":"","%Name":"wall","depth":1000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"wall","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":94,"SerialiseWidth":112,"TileCompressedData":[
           -47,0,6,268435477,268435463,268435462,268435463,268435462,268435469,-106,0,9,268435489,268435463,268435462,
           268435463,268435462,268435481,268435469,268435458,268435457,-102,0,11,268435477,25,268435472,268435471,
           268435472,268435471,268435481,268435481,268435463,268435462,21,-101,0,2,268435477,25,-4,0,5,268435493,
@@ -1134,7 +1134,7 @@
   "name":"RM_BROWNSTOWNcave",
   "parent":{
     "name":"BROWNSTOWN",
-    "path":"folders/Rooms/BETHYAPOLIS/BROWNSTOWN.yy",
+    "path":"folders/Rooms/BROWNSTOWN.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

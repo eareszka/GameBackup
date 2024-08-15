@@ -1,20 +1,36 @@
 if (room == RM_BROWNSTOWN)
 {
-	NewEncounter(
-	choose
-	(
-	[global.enemies.catTails],
-	[global.enemies.catTails],
-	[global.enemies.frog],
-	[global.enemies.frog],
-	[global.enemies.frog,global.enemies.catTails],
-	[global.enemies.frog,global.enemies.catTails],
-	[global.enemies.frog,global.enemies.catTails,global.enemies.catTails],
-	), 
-	spr_battleBackground2,
-	battle1,
-	false
-	);
+	if global.timeOfDay>=8
+	{
+		NewEncounter(
+		choose
+		(
+		[global.enemies.catTails],
+		[global.enemies.catTails],
+		[global.enemies.frog],
+		[global.enemies.frog],
+		[global.enemies.frog,global.enemies.catTails],
+		[global.enemies.frog,global.enemies.catTails],
+		[global.enemies.frog,global.enemies.catTails,global.enemies.catTails],
+		), 
+		spr_battleBackground2,
+		battle1,
+		false
+		);
+	}
+	else
+	{
+		NewEncounter(
+		choose
+		(
+		[global.enemies.nightcrawler],
+		[global.enemies.nightcrawler,global.enemies.nightcrawler],
+		), 
+		spr_battleBackground1,
+		battle1,
+		false
+		);	
+	}
 }
 if (room == RM_HOTELvent2)||(room == RM_HOTELvent1)
 {

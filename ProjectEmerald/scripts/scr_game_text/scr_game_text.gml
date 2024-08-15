@@ -146,6 +146,7 @@ function scr_game_text(_text_id)
 			scr_text("*His bark echoed around the world*")
 			scr_text("*Now wherever you go the presence of Loki lingers on*")
 			scr_text("*Sound of Sacred Dog collected*")
+			global.quest.dogTreat.available = false
 			global.sacredAnimals.dog = true;
 			
 			
@@ -172,6 +173,36 @@ function scr_game_text(_text_id)
 				global.JcurrentHP = round(100+(global.hpAdd*1.5))
 			break	
 			case "Nurse - no":
+				instance_destroy(obj_textBox)	
+			break
+			
+		case "NurseNight":
+			if global.EcurrentHP<=(power(20+global.hpAdd,1/1.5))
+			{
+				scr_name("Nurse")
+				scr_text("Hello,")
+				scr_text("We are currently only providing assistance for emergencies at this time.")
+				scr_text("And you look badly injured.. Would you like assistance?")
+				scr_option("Yes", "Nurse - yes")
+				scr_option("No", "Nurse - no")
+			}
+			else
+			{
+				scr_name("Nurse")
+				scr_text("Hello,")
+				scr_text("We are currently only providing assistance for emergencies at this time.")
+			}
+		break
+			case "NurseNight - yes":
+				scr_name("Nurse")
+				scr_text("And.... there you go..")
+				scr_text("Stay in the light, and don't let the Nightcrawlers bite.")
+				global.EcurrentHP = 20+global.hpAdd
+				global.FcurrentHP = round(50+(global.hpAdd*1.2))
+				global.BcurrentHP = round(10+(global.hpAdd*.5))
+				global.JcurrentHP = round(100+(global.hpAdd*1.5))
+			break	
+			case "NurseNight - no":
 				instance_destroy(obj_textBox)	
 			break
 				
@@ -493,6 +524,7 @@ function scr_game_text(_text_id)
 			case "SaveProgress - yes":
 				scr_name("")
 				global.flag[41]=1
+				global.flag[50]=1
 				global.EcurrentHP = 20+global.hpAdd
 				global.FcurrentHP = round(50+(global.hpAdd*1.2))
 				global.BcurrentHP = round(10+(global.hpAdd*.5))
@@ -935,6 +967,11 @@ function scr_game_text(_text_id)
 			scr_text("To open the door, you must step in rhythm, for the pad that glows unlocks the way.")
 		break
 		
+		case "sign5":
+			scr_name("")
+			scr_text("Access to the top floor is closed at this time.")
+		break
+		
 		//bottled water
 		case "item0":
 			scr_name("")
@@ -1241,5 +1278,38 @@ function scr_game_text(_text_id)
 			scr_text("You called the Elevator")	
 			scr_text("It's currently being used.")		
 		break;
+		
+		case "closedStore":
+			scr_name("")
+			scr_text("They're closed at this hour.")		
+		break;
+		
+		case "sisterSleeping":
+			scr_name("")
+			scr_text("Your sister is sleeping at this hour.")		
+		break;
+		
+		case "goToSleep":
+			scr_name("Emory")
+			scr_text("I should really go to bed,")
+			scr_text("Going outside can be dangerous at this time...")
+		break
+		
+		case "quitGame":
+			scr_name("")
+			scr_text("Are you sure you want to quit? All unsaved progress will be lost.")
+			scr_option("No", "quitGame - no")
+			scr_option("Yes", "quitGame - yes")
+		break;
+			case "quitGame - no":
+				instance_destroy(obj_textBox)
+			break
+			
+			case "quitGame - yes":
+				scr_name("")
+				scr_text("Qutting...")
+				instance_deactivate_all(true)
+				game_end()
+			break
 	}
 }

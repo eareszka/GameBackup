@@ -10,7 +10,7 @@ global.success = 0
 global.continuous = 0
 global.boyToys = 0
 global.comboAmmount=1
-global.timeOfDay = 400
+global.timeOfDay = 4
 global.overworldDamage=-1
 global.bombTimer=180
 global.my_Money = 0;
@@ -155,6 +155,12 @@ global.flag =
 	//MoveTorch4 48
 	0,
 	//KilledAbone 49
+	0,
+	//Should go to bed 50
+	0,
+	//sunrising brownstown 51
+	0,
+	//moveBookshelfComplete 52
 	0,
 ]
 	
@@ -1911,7 +1917,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: spr_antIntro, idle: spr_antIdle, attack: spr_antAttack, defend: spr_antIdle},
 		actions: [global.enemyLibrary.attack],
-		moneyValue : 2,
+		moneyValue : 5,
 		experinceValue : 1,
 		AIscript : function ()
 		{
@@ -1939,7 +1945,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: spr_frogIdle, idle: spr_frogIdle, attack: spr_frogIdle, defend: spr_frogIdle},
 		actions: [global.enemyLibrary.attack],
-		moneyValue : 5,
+		moneyValue : 10,
 		experinceValue : irandom_range(3,5),
 		AIscript : function ()
 		{
@@ -1967,7 +1973,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: spr_caveSpiderIntro, idle: spr_caveSpiderIdle, attack: spr_caveSpiderAttack},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.betrayal,global.enemyLibrary.betrayal,global.enemyLibrary.stealItem],
-		moneyValue : 5,
+		moneyValue : 12,
 		experinceValue : irandom_range(3,6),
 		summonAmt: 1,
 		AIscript : function()
@@ -1996,7 +2002,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: spr_grinningRockIntro, idle: spr_grinningRockIdle, attack: spr_grinningRockIdle,},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.taunt],
-		moneyValue : 10,
+		moneyValue : 15,
 		experinceValue : irandom_range(5,7),
 		AIscript : function()
 		{
@@ -2025,7 +2031,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: sBeetleIntro, idle: sBeetleIdle, attack: sBeetleIdle, defend: sBeetleIdle},
 		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
-		moneyValue : 30,
+		moneyValue : 20,
 		experinceValue : irandom_range(10,20),
 		AIscript : function()
 		{
@@ -2054,7 +2060,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: spr_mogMole, idle: spr_mogMole, attack: spr_mogMole},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.intimidate,global.enemyLibrary.intimidate,global.enemyLibrary.taunt],
-		moneyValue : 30,
+		moneyValue : 20,
 		experinceValue : irandom_range(20,40),
 		AIscript : function()
 		{
@@ -2084,7 +2090,7 @@ global.enemies =
 		sprites: { intro: spr_catTailsIntro, idle: spr_catTailsIdle, attack: spr_catTailsAttack},
 		actions: [global.enemyLibrary.flee],
 		//give a lot of money & xp
-		moneyValue : 999,
+		moneyValue : 100,
 		experinceValue : irandom_range(300,500),
 		AIscript : function()
 		{
@@ -2113,7 +2119,7 @@ global.enemies =
 		spd: 3,
 		sprites: { intro: spr_poisonThornsIdle, idle: spr_poisonThornsIdle, attack: spr_poisonThornsIdle, defend: spr_poisonThornsIdle},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.poison,global.actionLibrary.defend],
-		moneyValue : 30,
+		moneyValue : 25,
 		experinceValue : irandom_range(20,40),
 		AIscript : function()
 		{
@@ -2143,7 +2149,7 @@ global.enemies =
 		hold: 1,
 		sprites: { intro: sBaneBatIntro, idle: sBaneBatIdle, attack: sBaneBatIdle},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.poison],
-		moneyValue : 30,
+		moneyValue : 25,
 		experinceValue : irandom_range(20,40),
 		AIscript : function()
 		{
@@ -2172,7 +2178,7 @@ global.enemies =
 		spd: 3,
 		sprites: choose(({ intro: spr_AmalbonemationIdle1, idle: spr_AmalbonemationIdle1, attack: spr_AmalbonemationIdle1}),({ intro: spr_AmalbonemationIdle2, idle: spr_AmalbonemationIdle2, attack: spr_AmalbonemationIdle2}),({ intro: spr_AmalbonemationIdle3, idle: spr_AmalbonemationIdle3, attack: spr_AmalbonemationIdle3})),
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.toss,global.enemyLibrary.toss],
-		moneyValue : 60,
+		moneyValue : 35,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
 		{
@@ -2202,7 +2208,7 @@ global.enemies =
 		sprites: { intro: spr_NotDeerIdle, idle: spr_NotDeerIdle, attack: spr_NotDeerIdle},
 		scripted : true,
 		actions: [global.enemyLibrary.continuousAttack,global.enemyLibrary.flee],
-		moneyValue : 60,
+		moneyValue : 40,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
 		{
@@ -2231,7 +2237,7 @@ global.enemies =
 		hold: 1,
 		sprites: { intro: spr_thunderBirdIdle, idle: spr_thunderBirdIdle, attack: spr_thunderBirdIdle, defend : spr_thunderBirdIdle, special : spr_thunderBirdIdle},
 		actions: [global.enemyLibrary.attackAll,global.enemyLibrary.attackAll,global.enemyLibrary.attackAll,global.actionLibrary.defend],
-		moneyValue : 60,
+		moneyValue : 50,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
 		{
@@ -2260,7 +2266,7 @@ global.enemies =
 		hold: false,
 		sprites: { intro: spr_TheOtherIdle, idle: spr_TheOtherIdle, attack: spr_TheOtherIdle, defend : spr_TheOtherIdle, special : spr_TheOtherIdle},
 		actions: [global.enemyLibrary.continuousAttack],
-		moneyValue : 60,
+		moneyValue : 50,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
 		{
@@ -2289,7 +2295,7 @@ global.enemies =
 		sprites: { intro: spr_nightcrawlersIdle, idle: spr_nightcrawlersIdle, attack: spr_nightcrawlersIdle, defend: spr_nightcrawlersIdle},
 		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
 		moneyValue : 30,
-		experinceValue : irandom_range(10,20),
+		experinceValue : irandom_range(10,15),
 		AIscript : function()
 		{
 			//attack random party member
@@ -2352,8 +2358,8 @@ global.bosses =
 		sprites: { intro: spr_magicianBattleIdle, idle: spr_magicianBattleIdle, attack: spr_magicianBattleIdle, defend: spr_magicianBattleIdle},
 		scripted: true, 
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.stealItem],
-		moneyValue : 5,
-		experinceValue : 11,
+		moneyValue : 50,
+		experinceValue : 30,
 		AIscript : function ()
 		{
 			//attack random party member
@@ -2381,7 +2387,7 @@ global.bosses =
 		spd: 3,
 		sprites: { intro: spr_mommaWormIntro, idle: spr_mommaWorm, attack: spr_mommaWorm, defend: spr_mommaWorm},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.stealItem,global.enemyLibrary.healSelf],
-		moneyValue : 100,
+		moneyValue : 60,
 		experinceValue : 50,
 		AIscript : function ()
 		{
@@ -2412,7 +2418,7 @@ global.bosses =
 		sprites: { intro: sHornedBeetleIntro, idle: sHornedBeetleIdle, attack: sHornedBeetleIdle},
 		scripted: true, 
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.summonEne,global.enemyLibrary.summonEne,global.enemyLibrary.continuousAttack,global.enemyLibrary.taunt],
-		moneyValue : 300,
+		moneyValue : 100,
 		experinceValue : 100,
 		summonAmt: 2,
 		AIscript : function ()
@@ -2445,8 +2451,8 @@ global.bosses =
 		scripted: true,
 		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.windGust],
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.actionLibrary.defend,global.enemyLibrary.windGust],
-		moneyValue : 1000,
-		experinceValue : 1000,
+		moneyValue : 300,
+		experinceValue : 300,
 		AIscript : function ()
 		{	
 		}
@@ -2466,8 +2472,8 @@ global.bosses =
 		spd: 3,
 		sprites: { intro: spr_mommaWormIntro, idle: spr_mommaWorm, attack: spr_mommaWorm, defend: spr_mommaWorm},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.stealItem,global.enemyLibrary.healSelf],
-		moneyValue : 100,
-		experinceValue : 50,
+		moneyValue : 700,
+		experinceValue : 500,
 		AIscript : function ()
 		{
 			//attack random party member
@@ -2499,8 +2505,8 @@ global.bosses =
 		scripted: true,
 		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.windGust],
 		actions: [global.enemyLibrary.attack],
-		moneyValue : 0,
-		experinceValue : 0,
+		moneyValue : 1000,
+		experinceValue : 1000,
 		AIscript : function ()
 		{	
 		}
