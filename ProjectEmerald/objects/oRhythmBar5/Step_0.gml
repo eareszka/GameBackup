@@ -5,6 +5,15 @@ if (place_meeting(x,y,oRhythmUnitBoyToy))
 	if space_key
 	{
 		oRhythmUnitBoyToy.hit = true
+		global.success=1
+	}
+}
+if (place_meeting(x,y,oRhythmUnitBoyToy2))
+{
+	if space_key
+	{
+		oRhythmUnitBoyToy2.hit = true
+		global.success=1
 	}
 }
 
@@ -20,7 +29,11 @@ else
 
 x+=3
 
-if x > (camera_get_view_x(view_camera[0])+400)
+if x > (camera_get_view_x(view_camera[0])+350)
 {
-	instance_destroy()
+	oRhythmVisual5.fade=true
+	if instance_exists(obj_comboNumber){obj_comboNumber.fade=true}
+	image_alpha-=.1
+	if image_alpha<0
+	{instance_destroy()}
 }

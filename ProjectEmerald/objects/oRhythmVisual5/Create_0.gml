@@ -10,3 +10,5 @@ rhythmScore = 0
 scalex = false
 
 grow = false
+alpha=1
+fade=false

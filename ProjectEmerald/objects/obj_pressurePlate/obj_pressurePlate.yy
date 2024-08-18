@@ -10,8 +10,8 @@
   "name":"obj_pressurePlate",
   "overriddenProperties":[],
   "parent":{
-    "name":"pressurePlate",
-    "path":"folders/Actors/pressurePlate.yy",
+    "name":"object",
+    "path":"folders/Actors/pressurePlate/object.yy",
   },
   "parentObjectId":null,
   "persistent":false,

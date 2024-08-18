@@ -7,7 +7,7 @@ function cutscene_move_obj(_obj,_x,_y,_speed,_end)
 	_obj.y += lengthdir_y(_speed, dir);
 
 
-	if (point_distance(_obj.x, _obj.y, _x, _y) <= 1) 
+	if (point_distance(_obj.x, _obj.y, _x, _y) <= _speed) 
 	{	
 		if _end
 		{

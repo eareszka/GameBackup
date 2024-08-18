@@ -28,3 +28,8 @@ fade=false
 alpha=1
 nextArrow=0
 color=c_white
+
+
+//for perfect
+perfect=false
+perfectFail=false

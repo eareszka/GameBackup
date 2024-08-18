@@ -20,6 +20,7 @@ name_length[0] =  string_length(name[0]);
 text_length[0] = string_length(text[0]);
 draw_char = 0;
 text_spd = 1;
+multipleText=-1
 
 //branching options
 option[0] = "";

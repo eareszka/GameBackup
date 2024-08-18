@@ -1,6 +1,7 @@
 //stops all music
 audio_stop_all()
 global.success = 1
+global.perfect=0
 //Transition setup
 transitionProg = 0;
 transitionTransparency = 1;
@@ -56,6 +57,21 @@ poisonedTargets = 0
 poisonedDamage = 0
 poisonedTimer = 300
 poisonedFreq = 0
+
+//perfect arrows
+perfectCurse=false
+perfectFail=false
+perfectArrowAbsorbed=false
+
+//scatterRageActive
+scatterRageActive=false
+scatterRageTarget=false
+
+//boyToy
+boyToy1Attack=false
+boyToy2Attack=false
+boyToyAttackTimer=60
+boyToyAttackEndTimer=0
 
 //stats menu
 if !instance_exists(oBattleStats)
@@ -168,31 +184,45 @@ DoTurn = function(_unit)
 		//Reset any one turn effects
 		_unit.defending = false;
 		
-		//Resets strength boost
-		if _unit.strBoost = true && roundCount > chargeTurn + 1
-		{
-			var _ran = irandom_range(0,1)
-			if _ran = 1
-			{
-				battleText = "Status has worn off"
-				battleMessageClear = 20
-				_unit.strBoost = false; 
-				BattleChangeSTR(_unit, -_unit.strength/2)
-				with _unit
-				{
-					sprite_index = sprites.idle;
-				}
-				battleWaitTimeFrames = 75
-			}			
-		}
+		//boyToyStuff
+		boyToyStuff()
+		
 		//Player
 		if (_unit.enemy == false)
 		{
-			battleFlavorText(enemies,flavorText)
+			if oBattle.partyUnits[0].myTurn=true
+			{
+				if scatterRageActive
+				{
+					global.actionLibrary.attackRhythm.targetAll=1	
+				}
+			}
+			//Resets strength boost
+			if _unit.strBoost = true && roundCount > chargeTurn + 1
+			{
+				var _ran = irandom_range(0,1)
+				if _ran = 1
+				{
+					_unit.strBoost = false; 
+					BattleChangeSTR(_unit, -_unit.strength/2)
+					with _unit
+					{
+						sprite_index = sprites.idle;
+					}
+					battleFlavorText(enemies,flavorText,1)
+				}	
+				else
+				{
+					battleFlavorText(enemies,flavorText)
+				}
+			}
+			else
+			{
+				battleFlavorText(enemies,flavorText)
+			}
+			
 			if (!instance_exists(oMenu)) && endTimer = 80
 			{
-				//resets timer after battleText over
-				//battleWaitTimeFrames = 75
 				
 				//Compile the action menu
 				var _menuOptions = [];
@@ -300,6 +330,21 @@ DoTurn = function(_unit)
 
 function EndTurn(_unit)
 {
+	//resets statuses
+	global.actionLibrary.attackRhythm.targetAll=0	
+	if scatterRageActive=false{scatterRageTarget=false}
+	
+	if global.boyToys=1{boyToy1Attack=true boyToyAttackTimer=20}
+	if global.boyToys=2{boyToy1Attack=true boyToy2Attack=true boyToyAttackTimer=40}
+	if instance_exists(oRhythmUnitBoyToy){instance_destroy(oRhythmUnitBoyToy)}
+	if instance_exists(oRhythmUnitBoyToy2){instance_destroy(oRhythmUnitBoyToy2)}
+
+	battleActionInProgress=false
+	battleWaitTimeRemaining = 0;
+	perfectFail=false
+	perfectCurse=false
+	perfectArrowAbsorbed=false
+	
 	with (_unit) myTurn = false;
 	turnCount++; //total turns
 	turn++;
@@ -309,6 +354,7 @@ function EndTurn(_unit)
 		turn = 0;
 		roundCount++;
 	}
+	
 	WaitTime = false
 	battleEndMessages = -1
 	battleEndMessages = []
@@ -472,15 +518,29 @@ function ContinueAction(_user, _action, _targets)
 					{
 						if instance_exists(oRhythmBar1)&&_targets[0].hp>0
 						{
-							battleMessageClear = 20
-							if success >=1
+							if !perfectFail
 							{
-								_action.func(_user, _targets);	
-								success-=1
+								battleMessageClear = 20
+								if success >=1
+								{
+									_action.func(_user, _targets);	
+									success-=1
+								}
+								else
+								{
+								
+								}
 							}
 							else
 							{
-								
+								if perfectArrowAbsorbed=true
+								{
+									oRhythmBar1.fade=true 
+									oRhythmVisual.fade=true
+									oRhythmBar1.perfectFail=false
+									_action.funcPerfectFail(_user, _targets) 
+									_user.acting=false
+								}
 							}
 						}
 						else //ene is killed
@@ -500,14 +560,54 @@ function ContinueAction(_user, _action, _targets)
 							}
 							if !instance_exists(oRhythmVisual)
 							{
-								if damageDone<=0
+								if !perfectFail
 								{
-									_action.funcFailed(_user, _targets) _user.acting=false
+									//boy toys attack
+									if oBattle.partyUnits[2].myTurn=true&&global.boyToys>0&&boyToyAttackTimer>oBattle.boyToyAttackEndTimer
+									{
+										boyToyAttackTimer--	
+										if boyToyAttackTimer<40
+										{
+											if instance_exists(oBattleUnitBoyToy2)&&boyToy2Attack=false
+											{
+												ObjFlash(oBattleUnitBoyToy2,1.5,.05,255,255,255)
+												_action.funcBoyToy(_user, _targets);boyToy1Attack=false
+											}
+										}
+										if boyToyAttackTimer<20
+										{
+											if instance_exists(oBattleUnitBoyToy)&&boyToy1Attack=false
+											{
+												ObjFlash(oBattleUnitBoyToy,1.5,.05,255,255,255)
+												_action.funcBoyToy(_user, _targets);boyToy1Attack=false
+											}
+										}
+									}
+									else
+									{
+										if damageDone<=0
+										{
+											_action.funcFailed(_user, _targets) _user.acting=false
+										}
+										else
+										{
+											_user.acting=false
+										}
+									}
 								}
 								else
 								{
-									_user.acting=false
+									if perfectArrowAbsorbed=true
+									{
+										_action.funcPerfectFail(_user, _targets) 
+										_user.acting=false
+									}
+									else
+									{
+				
+									}
 								}
+								
 							}
 						}
 					}
@@ -546,6 +646,9 @@ function ContinueAction(_user, _action, _targets)
 	}
 	else
 	{
+		//if perfect curse is defeated ene dies
+		if perfectCurse {checkDeadPerfectCurse(_targets)}
+		
 		//wait for delay and then end the turn
 		if instance_exists(oRhythmArrow){instance_destroy(oRhythmArrow)}
 		if (_user.image_index >= _user.image_number -1)

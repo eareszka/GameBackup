@@ -46,11 +46,12 @@ switch interactive
 		if global.flag[48]=3{rotation=90}	
 		if global.flag[48]=100{rotation=180}
 	break;
-	
-	//case 2:
-	//	if global.flag[32]=0{rotation=0}	
-	//	if global.flag[32]=1{rotation=270}	
-	//	if global.flag[32]=2{rotation=180}	
-	//	if global.flag[32]=3{rotation=90}	
-	//break;
+	//catacombs3
+	case 4:
+		if global.flag[56]=0{rotation=0}	
+		if global.flag[56]=1{rotation=270}	
+		if global.flag[56]=2{rotation=180 global.flag[56]=100}	
+		if global.flag[56]=3{rotation=90}	
+		if global.flag[56]=100{rotation=180}
+	break;
 }

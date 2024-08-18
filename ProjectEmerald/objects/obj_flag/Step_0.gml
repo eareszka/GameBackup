@@ -2,6 +2,32 @@ if action
 {
 	switch flag
 	{
+		case 56:
+			if place_meeting(x,y,obj_playerEmory)
+			{
+				if keyboard_check_pressed(vk_space)&&global.flag[flag]!=100//100=success
+				{
+					if global.flag[flag]<3{global.flag[flag]+=1}else{global.flag[flag]=0}
+				}
+				
+				if global.flag[flag]=100&&global.flag[55]=0
+				{
+					create_cutscene("ladderFallCatacombsBottom")
+				}
+			}
+		break
+		
+		case 54:
+			if place_meeting(x,y,obj_playerEmory)
+			{
+				if keyboard_check_pressed(vk_space)&&global.flag[flag]!=1//1=success
+				{
+					create_cutscene("ladderFallStatueSwitch")
+					global.flag[flag]=1
+				}
+			}
+		break;
+		
 		case 51:
 			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]=0
 			{

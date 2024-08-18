@@ -12,7 +12,10 @@ function end_text(_self)
 {	
 	if instance_exists(oCutscene)
 	{
-		oCutscene.scene+=1	
+		if instance_exists(obj_textBox)
+		{
+			if obj_textBox.multipleText=-1{oCutscene.scene+=1}	
+		}
 	}
 	//for quest menu
 	if instance_exists(oQuestMenu)
@@ -73,4 +76,10 @@ function scr_option(_option, _link_id)
 	option_link_id[option_number] = _link_id
 	
 	option_number++;
+}
+
+function new_textbox(_link_id)
+{
+	obj_textBox.multipleText=true
+	option_link_id = _link_id
 }

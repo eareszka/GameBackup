@@ -4,7 +4,7 @@ if room=RM_HOTELvent2 {global.ambientShadowIntensity=1}
 if room=RM_HOTELvent3 {global.ambientShadowIntensity=1}
 if room=RM_HOTELtop {global.ambientShadowIntensity=2}
 
-if room=RM_BACKROOMS1||room=RM_BACKROOMS2||room=RM_BACKROOMS3||room=RM_BACKROOMS4
+if room=RM_BACKROOMS1||room=RM_BACKROOMS2||room=RM_BACKROOMS3||room=RM_BACKROOMS4||room=RM_BACKROOMS5||room=RM_BACKROOMS6
 {
 	global.ambientShadowIntensity=1
 }

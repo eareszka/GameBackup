@@ -18,6 +18,11 @@ if activate
 
 if roll{image_angle-=7}
 
+var _amplitude=3
+var _frequency=.005
+if float{y = ystart + _amplitude * sin(current_time * _frequency);}
+
+
 if dead
 {
 	image_index = 9

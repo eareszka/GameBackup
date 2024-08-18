@@ -1,7 +1,7 @@
 acting = false;
 defending = false;
 strBoost = false
-scatter = false
+scatterSelected = false
 flee = false
 myTurn = false;
 enemy = false;

@@ -14,6 +14,7 @@ rotation=0
 timer=0
 alpha=1
 color=c_white
+perfect=false
 
 AIscript = function(_unit)
 {
@@ -54,6 +55,13 @@ AIscript = function(_unit)
 					var _target = [0]
 					return [_action, _target];
 				}
+				else if _unit.hp<=_unit.hpMax/1.5&&flag2=false
+				{
+					var _action = actionsScripted[1]
+					var _target = [0]
+					flag2=true
+					return [_action, _target];	
+				}
 				else
 				{
 					var _action = chooseAttack(_unit)
@@ -87,19 +95,3 @@ AIscript = function(_unit)
 		}
 	}
 }
-
-
-
-if name="The Magician"
-{
-	//instance_create_depth(x-21,y,-16000,oBattleUnitEnemyPart,{part: "magicianWand"})
-	
-	draw_sprite_ext(spr_magicianWand,-16000,x,y,1,1,rotation,c_white,1)
-		
-		var _ammount=2
-		rotation=rotation-sin(timer*0.025)*_ammount
-		timer+=3
-}
-
-
-

@@ -95,6 +95,13 @@ function SelectAction(_user, _action)
 				if variable_struct_exists(_action,"targetGroup"){cursorGroup=true}
 				cursorUser = _user;
 				cursorActive = true;
+				
+				//for scatter rage
+				if _action.name="Attack" && oBattle.partyUnits[0].myTurn=true && oBattle.scatterRageActive=true
+				{
+					oBattle.scatterRageTarget=true
+				}
+				
 				if (_action.targetDefault == 1) //cursorTarget enemy by default
 				{
 					cursorIndex = 0;
@@ -123,6 +130,10 @@ function SelectAction(_user, _action)
 
 function IsActionAvailable(_unit, _action)
 {
+	if _action.name="Scatter Rage"
+	{
+		if oBattle.scatterRageActive=true{return false;}
+	}
 	if (variable_struct_exists(_action, "strBoost"))
 	{
 		if (variable_struct_exists(_action, "mpCost"))
@@ -212,10 +223,18 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 			break;
 			
 			case "Ancient King":
-				RhythmCreate(_action.rhythm,_targets)
-				with (_user)
+				if _targets.perfect=true&&oBattleUnitEnemy.flag1 = false
 				{
-					acting = true;
+					oBattleUnitEnemy.flag1 = true
+					create_textboxBattle("AncientKingText3",0,_user)
+				}
+				else
+				{
+					RhythmCreate(_action.rhythm,_targets)
+					with (_user)
+					{
+						acting = true;
+					}
 				}
 			break;
 			
@@ -263,5 +282,36 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 			{
 				acting = true;
 			}
+	}
+}
+
+
+function checkDeadPerfectCurse(_targets)
+{
+	if _targets[0].name="Ancient King"&&global.perfect=3
+	{
+		oBattle.enemyUnits[0].hp=0
+	}
+}
+
+function boyToyStuff()
+{
+	if instance_exists(oBattleUnitBoyToy)&&instance_exists(oBattleUnitBoyToy2)
+	{
+		oBattle.boyToyAttackTimer=60
+		oBattle.boyToyAttackEndTimer=0
+	}
+	else
+	{
+		if instance_exists(oBattleUnitBoyToy)&&!instance_exists(oBattleUnitBoyToy2)
+		{
+			oBattle.boyToyAttackTimer=40
+			oBattle.boyToyAttackEndTimer=0
+		}
+		if !instance_exists(oBattleUnitBoyToy)&&instance_exists(oBattleUnitBoyToy2)
+		{
+			oBattle.boyToyAttackTimer=60
+			oBattle.boyToyAttackEndTimer=20
+		}
 	}
 }

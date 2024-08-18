@@ -29,3 +29,12 @@ radius_of_circle = 42
 n = 0
 
 //path_start(arrowPath1,1,path_action_continue,false)
+
+
+//perfect arrow
+perfectAbsorbed=false
+rot=0
+slowDown=false
+slowDownAmmt=0
+perfectFailYOffset=8
+perfectEndTimer=100

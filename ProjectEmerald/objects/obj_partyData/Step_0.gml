@@ -71,7 +71,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mpMax: round(50+(global.mpAdd*2)),
 	strength: 1,
 	sprites: { idle: spr_broke_battleIdle, attack: spr_broke_attack, defend: spr_broke_defend, cast: spr_broke_cast},
-	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.summonBoyToys, global.actionLibrary.escape]
+	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.summonBoyToys, global.specialLibrary.summonBoyToys2,	global.actionLibrary.escape]
 	}
 	];
 	

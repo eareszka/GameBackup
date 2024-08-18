@@ -3,6 +3,8 @@ yPlace = 25
 xScaleExpand = 0
 yScaleExpand = 0
 arrowsCreated = false
+fade=false
+alpha=1
 //timer = 180
 
 timer2 = 40

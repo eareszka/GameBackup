@@ -25,8 +25,6 @@ if (defending) sprite_index = sprites.defend;
 
 if (strBoost) sprite_index = sprites.special;
 
-if (scatter) sprite_index = sprites.special;
-
 //if moving!=-1
 //{
 //	if moving=0{path_start(infinityLoop,1,1,false)}

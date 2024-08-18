@@ -18,6 +18,7 @@ leg4y=-19
 
 flash=0
 roll=false
+float=false
 
 dead = false
 timer =15

@@ -2,6 +2,76 @@ function cutscene_main(_cutscene,_scene)
 {
 	switch _cutscene
 	{
+		case "ladderFallCatacombsBottom":
+			switch _scene
+			{
+				case 0:
+					cutscene_setSprite(inst_63FF9EA3,spr_ladderCreate3,0,inst_63FF9EA3.image_number-1)	
+					cutscene_setSprite(inst_63FF9EA3,spr_ladderCreate3,0,inst_63FF9EA3.image_number-1)	
+					cutscene_timer(30,1)
+				break
+				
+				case 1:
+					global.flag[55]=1
+					obj_camera.follow=obj_playerEmory
+					instance_destroy(oCutscene)
+				break
+			}
+		break
+		
+		case "ladderFallStatueSwitch":
+			switch _scene
+			{
+				case 0:
+					cutscene_timer(15,1)
+				break
+				
+				case 1:
+					inst_60358FA3.image_index=0
+					cutscene_move_obj(obj_camera,2500,1295,4.5,true)
+					cutscene_timer(150,2)
+				break
+				
+				case 2:
+					ShakeObject(inst_60358FA3,.25,30)
+					cutscene_timer(30,3)
+					inst_60358FA3.image_index=0
+				break;
+				
+				case 3:
+					show_debug_message(inst_60358FA3.image_index)
+					inst_60358FA3.image_speed=1.75
+					if inst_60358FA3.image_index>36
+					{
+						cutscene_end_action()	
+					}
+					else
+					{
+						inst_60358FA3.image_index+=.05
+					}
+				break;
+				
+				case 4:
+					inst_60358FA3.image_index=inst_60358FA3.image_number-1
+					cutscene_move_obj(obj_camera,1528,1357,4.5,false)
+					cutscene_timer(130,5)
+				break;
+				
+				case 5:
+					inst_60358FA3.image_index=inst_60358FA3.image_number-1
+					obj_camera.follow=obj_playerEmory
+					instance_destroy(oCutscene)
+				break;
+			}
+			
+		break
+			
+		
+		
+		
+		break
+		
+		
 		case "createAmalbonemation":
 			switch _scene
 			{
@@ -36,25 +106,37 @@ function cutscene_main(_cutscene,_scene)
 					if instance_exists(oShake){instance_destroy(oShake)}
 					ObjFlash(obj_AmalbonemationOverworld,3,.2,255,255,255)
 					obj_AmalbonemationOverworld.done=true
-					obj_AmalbonemationOverworld.x+=10
-					obj_AmalbonemationOverworld.y+=10
+					obj_AmalbonemationOverworld.x+=8
+					obj_AmalbonemationOverworld.y+=8
 					cutscene_end_action()
 				break
 				case 5:
+					obj_AmalbonemationOverworld.float=true
+					if !instance_exists(obj_textBox){create_textbox("aboneTalk1")}
+				break;
+				
+				case 6:
+					if global.fin=1{if !instance_exists(obj_textBox){create_textbox("aboneTalk2")}}
+					else{cutscene_end_action()}
+				break
+				
+				
+				case 7:
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
 					if !instance_exists(oExclamationMark){instance_create_depth(obj_playerEmory.x+8,obj_playerEmory.y-20,-16000,oExclamationMark)}
 					obj_playerEmory.y-=.5
-					cutscene_timer(5,6)
+					cutscene_timer(5,8)
 				break
-				case 6:
+				case 8:
+					obj_AmalbonemationOverworld.float=false
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
 					obj_AmalbonemationOverworld.depth=-16000
 					obj_AmalbonemationOverworld.roll=true
 					cutscene_move_obj(obj_AmalbonemationOverworld,obj_playerEmory.x+8,obj_playerEmory.y+25,2,true)
 				break
-				case 7:
+				case 9:
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
 					obj_AmalbonemationOverworld.roll=false
@@ -65,18 +147,18 @@ function cutscene_main(_cutscene,_scene)
 						spr_battleBackground3,
 						battle2,
 						true,
-						8,
+						10,
 						obj_AmalbonemationOverworld
 					);
 				break;
-				case 8:
+				case 10:
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
 					obj_playerEmory.y+=5
 					obj_AmalbonemationOverworld.y=obj_playerEmory.y+60
 					cutscene_end_action()
 				break;
-				case 9:
+				case 11:
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
 					if !instance_exists(obj_AmalbonemationOverworld)
@@ -88,19 +170,20 @@ function cutscene_main(_cutscene,_scene)
 						obj_AmalbonemationOverworld.dead=true
 					}
 				break;
-				case 10:
+				case 12:
 					global.flag[49]=1
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
-					cutscene_move_obj(obj_camera,2500,430,2,true)
+					cutscene_timer(80,13)
+					cutscene_move_obj(obj_camera,2500,430,3,false)
 				break;
-				case 11:
+				case 13:
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.image_index=0
 					ShakeObject(inst_69AD4C08,.25,30)
-					cutscene_timer(30,12)
+					cutscene_timer(30,14)
 				break;
-				case 12:
+				case 14:
 					inst_7CF91B9F.image_index=0
 					inst_69AD4C08.activate=true
 					inst_69AD4C08.image_speed=1.75
@@ -113,17 +196,18 @@ function cutscene_main(_cutscene,_scene)
 					{
 					cutscene_setSprite(inst_69AD4C08,spr_ladderCreate1,0,27)}
 				break;
-				case 13:
-					inst_7CF91B9F.image_index=0
-					inst_69AD4C08.image_index=26
-					cutscene_move_obj(obj_camera,2700,430,4,true)
-				break;
-				case 14:
-					inst_7CF91B9F.image_index=0
-					inst_69AD4C08.image_index=26
-					cutscene_timer(5,15)
-				break;
 				case 15:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=26
+					cutscene_timer(50,16)
+					cutscene_move_obj(obj_camera,2700,430,4,false)
+				break;
+				case 16:
+					inst_7CF91B9F.image_index=0
+					inst_69AD4C08.image_index=26
+					cutscene_timer(2,17)
+				break;
+				case 17:
 					inst_69AD4C08.image_index=26
 				
 					inst_7CF91B9F.activate=true
@@ -131,13 +215,13 @@ function cutscene_main(_cutscene,_scene)
 					if inst_7CF91B9F.image_index>=26
 					{
 						inst_7CF91B9F.image_index=26
-						cutscene_timer(20,16)
+						cutscene_timer(15,18)
 					}
 					else
 					{
 					cutscene_setSprite(inst_7CF91B9F,spr_ladderCreate1,0,27)}
 				break;
-				case 16:
+				case 18:
 					inst_69AD4C08.image_index=26
 					inst_7CF91B9F.image_index=26
 					obj_camera.follow=obj_playerEmory
@@ -473,6 +557,10 @@ function cutscene_main(_cutscene,_scene)
 		case "helicopterRide":
 			switch _scene
 			{
+				case 0:
+					cutscene_timer(1,1)
+				break
+				
 				case 1:
 					cutscene_move_obj(obj_playerEmory,735,266,1,true)
 				break;

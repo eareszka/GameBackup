@@ -21,7 +21,7 @@ if !fade
 	{
 		if !mirror
 		{
-			if !hold
+			if !hold&&!perfectFail
 			{
 				if array_last(arr).x > 250
 				{
@@ -75,88 +75,110 @@ if !fade
 	/*********
 	checks hit
 	*********/
-	for(i = 0; i < array_length(arr); i++)
+	if !perfectFail
 	{
-		//checks if any reverse arrows
-		if arr[i].reverse = false
+		for(i = 0; i < array_length(arr); i++)
 		{
-			//checks based off arrow subimg
-			switch arr[i].subimg
+			//checks if any reverse arrows
+			if arr[i].reverse = false
 			{
-				case 0:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && right_key && !left_hold && !up_hold && !down_key)
-					{
-						if  arr[i].hold
+				//checks based off arrow subimg
+				switch arr[i].subimg
+				{
+					case 0:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && right_key && !left_hold && !up_hold && !down_key)
 						{
-							holding=true
-							arr[i].hitHold=true
+							if  arr[i].hold
+							{
+								holding=true
+								arr[i].hitHold=true
 							
-						}
-						if !arr[i].hold
-						{
-							arr[i].color = c_lime
-							arr[i].hit = true
-							if instance_exists(obj_comboNumber)
+							}
+							if !arr[i].hold
 							{
-								obj_comboNumber.xscale=1.75
-								obj_comboNumber.yscale=1.75
-								global.comboAmmount+=1
+								arr[i].color = c_lime
+								arr[i].hit = true
+								if instance_exists(obj_comboNumber)
+								{
+									obj_comboNumber.xscale=1.75
+									obj_comboNumber.yscale=1.75
+									global.comboAmmount+=1
+								}
 							}
 						}
-					}
-				break;
-				case 1:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && left_key && !right_hold && !up_hold && !down_key)
-					{
-						if  arr[i].hold
+					break;
+					case 1:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && left_key && !right_hold && !up_hold && !down_key)
 						{
-							holding=true
-							arr[i].hitHold=true
-						}
-						if !arr[i].hold
-						{
-							arr[i].color = c_lime
-							arr[i].hit = true
-							if instance_exists(obj_comboNumber)
+							if  arr[i].hold
 							{
-								obj_comboNumber.xscale=1.75
-								obj_comboNumber.yscale=1.75
-								global.comboAmmount+=1
+								holding=true
+								arr[i].hitHold=true
+							}
+							if !arr[i].hold
+							{
+								arr[i].color = c_lime
+								arr[i].hit = true
+								if instance_exists(obj_comboNumber)
+								{
+									obj_comboNumber.xscale=1.75
+									obj_comboNumber.yscale=1.75
+									global.comboAmmount+=1
+								}
 							}
 						}
-					}
-				break
-				case 2:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && down_key && !right_hold && !left_hold && !up_hold)
-					{
-						if  arr[i].hold
+					break
+					case 2:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && down_key && !right_hold && !left_hold && !up_hold)
 						{
-							holding=true
-							arr[i].hitHold=true
-						}
-						if !arr[i].hold
-						{
-							arr[i].color = c_lime
-							arr[i].hit = true
-							if instance_exists(obj_comboNumber)
+							if  arr[i].hold
 							{
-								obj_comboNumber.xscale=1.75
-								obj_comboNumber.yscale=1.75
-								global.comboAmmount+=1
+								holding=true
+								arr[i].hitHold=true
+							}
+							if !arr[i].hold
+							{
+								arr[i].color = c_lime
+								arr[i].hit = true
+								if instance_exists(obj_comboNumber)
+								{
+									obj_comboNumber.xscale=1.75
+									obj_comboNumber.yscale=1.75
+									global.comboAmmount+=1
+								}
 							}
 						}
-					}
-				break;
-				case 3:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && up_key && !right_hold && !left_hold && !down_key)
-					{
-						if  arr[i].hold
+					break;
+					case 3:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 10,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && up_key && !right_hold && !left_hold && !down_key)
 						{
-							holding=true
-							arr[i].hitHold=true
+							if  arr[i].hold
+							{
+								holding=true
+								arr[i].hitHold=true
 						
+							}
+							if !arr[i].hold
+							{
+								arr[i].color = c_lime
+								arr[i].hit = true
+								if instance_exists(obj_comboNumber)
+								{
+									obj_comboNumber.xscale=1.75
+									obj_comboNumber.yscale=1.75
+									global.comboAmmount+=1
+								}
+							}
 						}
-						if !arr[i].hold
+					break;
+				}
+			}
+			else
+			{
+				switch arr[i].subimg
+				{
+					case 0:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && left_key && !right_hold && !up_hold && !down_key)
 						{
 							arr[i].color = c_lime
 							arr[i].hit = true
@@ -167,69 +189,50 @@ if !fade
 								global.comboAmmount+=1
 							}
 						}
-					}
-				break;
-			}
+					break;
+					case 1:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && right_key && !left_hold && !up_hold && !down_key)
+						{
+							oBattle.success+=1
+							arr[i].color = c_lime
+							arr[i].hit = true
+							if instance_exists(obj_comboNumber)
+							{
+								obj_comboNumber.xscale=1.75
+								obj_comboNumber.yscale=1.75
+								global.comboAmmount+=1
+							}
+						}
+					break
+					case 2:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && up_key && !right_hold && !left_hold && !down_hold)
+						{
+							arr[i].color = c_lime
+							arr[i].hit = true
+							if instance_exists(obj_comboNumber)
+							{
+								obj_comboNumber.xscale=1.75
+								obj_comboNumber.yscale=1.75
+								global.comboAmmount+=1
+							}
+						}
+					break;
+					case 3:
+						if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && down_key && !right_hold && !left_hold && !up_key)
+						{
+							arr[i].color = c_lime
+							arr[i].hit = true
+							if instance_exists(obj_comboNumber)
+							{
+								obj_comboNumber.xscale=1.75
+								obj_comboNumber.yscale=1.75
+								global.comboAmmount+=1
+							}
+						}
+					break;
+				}
+			}		
 		}
-		else
-		{
-			switch arr[i].subimg
-			{
-				case 0:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && left_key && !right_hold && !up_hold && !down_key)
-					{
-						arr[i].color = c_lime
-						arr[i].hit = true
-						if instance_exists(obj_comboNumber)
-						{
-							obj_comboNumber.xscale=1.75
-							obj_comboNumber.yscale=1.75
-							global.comboAmmount+=1
-						}
-					}
-				break;
-				case 1:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && right_key && !left_hold && !up_hold && !down_key)
-					{
-						oBattle.success+=1
-						arr[i].color = c_lime
-						arr[i].hit = true
-						if instance_exists(obj_comboNumber)
-						{
-							obj_comboNumber.xscale=1.75
-							obj_comboNumber.yscale=1.75
-							global.comboAmmount+=1
-						}
-					}
-				break
-				case 2:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && up_key && !right_hold && !left_hold && !down_hold)
-					{
-						arr[i].color = c_lime
-						arr[i].hit = true
-						if instance_exists(obj_comboNumber)
-						{
-							obj_comboNumber.xscale=1.75
-							obj_comboNumber.yscale=1.75
-							global.comboAmmount+=1
-						}
-					}
-				break;
-				case 3:
-					if (collision_rectangle(camera_get_view_width(view_camera[0]) / 2 - 7,0,camera_get_view_width(view_camera[0]) / 2 + 10,50,arr[i],true,true) && down_key && !right_hold && !left_hold && !up_key)
-					{
-						arr[i].color = c_lime
-						arr[i].hit = true
-						if instance_exists(obj_comboNumber)
-						{
-							obj_comboNumber.xscale=1.75
-							obj_comboNumber.yscale=1.75
-							global.comboAmmount+=1
-						}
-					}
-				break;
-			}
-		}		
 	}
 
 
@@ -356,94 +359,98 @@ if !fade
 	}
 
 
-	//hold
-	for(var i = 0; i < array_length(arr); i++)
+	
+	if !perfectFail
 	{
-		if arr[i].hold = true 
-		{	
-			if arr[i].hitHold&&!holdFail
-			{
-				if !holdSetup{xOff=arr[i].x-182 holdSetup=true}//bar is locked onto arrow
-				switch arr[i].subimg
+		//hold
+		for(var i = 0; i < array_length(arr); i++)
+		{
+			if arr[i].hold = true 
+			{	
+				if arr[i].hitHold&&!holdFail
 				{
-					case 0:
-						if right_release
-						{holding=false holdFail=true}
-						xOff+=arr[i].xSpeed
-						if subimg<33{subimg+=arr[i].xSpeed/4}
-						else{holdSuccess=true}
-					break;
-					
-					case 1:
-						if left_release
-						{holding=false holdFail=true}
-						xOff+=arr[i].xSpeed
-						if subimg<33{subimg+=arr[i].xSpeed/4}
-						else{holdSuccess=true}
-					break;
-					
-					case 2:
-						if down_release
-						{holding=false holdFail=true}
-						xOff+=arr[i].xSpeed
-						if subimg<33{subimg+=arr[i].xSpeed/4}
-						else{holdSuccess=true}
-					break;
-					
-					case 3:
-						if up_release
-						{holding=false holdFail=true}
-						xOff+=arr[i].xSpeed 
-						if subimg<33{subimg+=arr[i].xSpeed/4}
-						else{holdSuccess=true}
-					break;
-				}
-			}
-			else
-			{
-				arr[i].hitHold=false	
-			}
-			
-			if holdSuccess
-			{
-				arr[i].hit=true global.flag[11]=1 	
-				if !holdSuccessSetup
-				{
-					if instance_exists(obj_comboNumber)
+					if !holdSetup{xOff=arr[i].x-182 holdSetup=true}//bar is locked onto arrow
+					switch arr[i].subimg
 					{
-						obj_comboNumber.xscale=1.75
-						obj_comboNumber.yscale=1.75
-						global.comboAmmount+=1
+						case 0:
+							if right_release
+							{holding=false holdFail=true}
+							xOff+=arr[i].xSpeed
+							if subimg<33{subimg+=arr[i].xSpeed/4}
+							else{holdSuccess=true}
+						break;
+					
+						case 1:
+							if left_release
+							{holding=false holdFail=true}
+							xOff+=arr[i].xSpeed
+							if subimg<33{subimg+=arr[i].xSpeed/4}
+							else{holdSuccess=true}
+						break;
+					
+						case 2:
+							if down_release
+							{holding=false holdFail=true}
+							xOff+=arr[i].xSpeed
+							if subimg<33{subimg+=arr[i].xSpeed/4}
+							else{holdSuccess=true}
+						break;
+					
+						case 3:
+							if up_release
+							{holding=false holdFail=true}
+							xOff+=arr[i].xSpeed 
+							if subimg<33{subimg+=arr[i].xSpeed/4}
+							else{holdSuccess=true}
+						break;
 					}
-					holdSuccessSetup=true
 				}
+				else
+				{
+					arr[i].hitHold=false	
+				}
+			
+				if holdSuccess
+				{
+					arr[i].hit=true global.flag[11]=1 	
+					if !holdSuccessSetup
+					{
+						if instance_exists(obj_comboNumber)
+						{
+							obj_comboNumber.xscale=1.75
+							obj_comboNumber.yscale=1.75
+							global.comboAmmount+=1
+						}
+						holdSuccessSetup=true
+					}
 				
+				}
 			}
 		}
-	}
 
-	/**********
-	throw arrow
-	**********/
-	if mirror
-	{
-		if arr[0].n > -70 && !arr[_last].n > 0
+		/**********
+		throw arrow
+		**********/
+		if mirror
 		{
-			targets.sprite_index = targets.sprites.throwing
-			targets.depth = oBattle.unitDepth	
-		}
-		var _last = array_length(arr)-2
-		if arr[_last].n > 0
-		{
-			targets.sprite_index = targets.sprites.idle
-			targets.depth = oBattle.unitDepth
+			if arr[0].n > -70 && !arr[_last].n > 0
+			{
+				targets.sprite_index = targets.sprites.throwing
+				targets.depth = oBattle.unitDepth	
+			}
+			var _last = array_length(arr)-2
+			if arr[_last].n > 0
+			{
+				targets.sprite_index = targets.sprites.idle
+				targets.depth = oBattle.unitDepth
+			}
 		}
 	}
 
 }
 
 //changes index based on next arrow
-if(nextArrow<array_length(arr))&&!fade
+if(nextArrow<array_length(arr))&&!fade&&!perfectFail
 {
 	if ((arr[nextArrow].x>((camera_get_view_width(view_camera[0]) / 2)-7))||arr[nextArrow].hit=true)
 	{
@@ -468,10 +475,42 @@ else
 
 
 //end
-if fade
+if fade&&!perfectFail
 {
 	if instance_exists(obj_comboNumber){obj_comboNumber.fade=true}
 	alpha-=.1
 	if alpha<0
 	{instance_destroy()}
+}
+
+
+
+if perfect&&!fade
+{
+	for(i = 0; i < array_length(arr); i++)
+	{
+		//checks if arrows fail
+		if perfect&&arr[i].x>camera_get_view_width(view_camera[0]) / 2 + 30&& arr[i].hit=false
+		{
+			oBattle.perfectFail=true
+			perfect=false
+			perfectFail=true
+			//instance_create_depth(camera_get_view_width(view_camera[0]) / 2,y+15,-16000, oFloatingText, {subtraction: 0.02, font: fnM5x7, col: c_lime, text: "Missed!"})
+			arr[i].perfectAbsorbed=true
+		}
+	}	
+}
+
+if perfectFail
+{
+	for(i = 0; i < array_length(arr); i++)
+	{
+		if instance_exists(oRhythmArrow)
+		{
+			if arr[i].perfectAbsorbed=false
+			{
+				arr[i].slowDown=true
+			}
+		}
+	}
 }

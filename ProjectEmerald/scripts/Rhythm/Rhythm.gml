@@ -4,7 +4,15 @@ function RhythmCreate(_action,_targets)
 	{
 		//attack
 		case "attack":	
+			//for scatterrage
+			if is_array(_targets){_targets=_targets[0]}
+			
 			global.comboAmmount=0
+			//scripted arrows for perfect attack
+			if _targets.perfect=true{perfectArrows(_targets)}
+			else
+			{
+				
 			var _arr = []
 			
 			//throwing arrow 
@@ -14,7 +22,7 @@ function RhythmCreate(_action,_targets)
 			}
 			else
 			{
-				if variable_struct_exists(_targets,"arrowPath"){global.arrowPath=_targets.arrowPath}
+				//if variable_struct_exists(_targets,"arrowPath"){global.arrowPath=_targets.arrowPath}
 				
 				//checks to see if any effect on arrows
 				if variable_struct_exists(_targets,"reverse") || variable_struct_exists(_targets,"hold")
@@ -304,6 +312,7 @@ function RhythmCreate(_action,_targets)
 					if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: false})}
 				}
 			}
+			}
 		break;
 		
 		
@@ -499,16 +508,16 @@ function RhythmCreate(_action,_targets)
 		//summon boyToys 1
 		case "summonBoyToys":
 			instance_create_depth(0,0,-10000,oRhythmVisual5)	
-			instance_create_depth(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0])+10,-10001,oRhythmBar5)	
-			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = irandom_range(-50,50) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}
+			instance_create_depth(camera_get_view_x(view_camera[0])-50,camera_get_view_y(view_camera[0])+8,-10001,oRhythmBar5)	
+			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = choose(-80,-40,0,40,80) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}
 		break;
 		
 		//summon boyToys 2
 		case "summonBoyToys2":
 			instance_create_depth(0,0,-10000,oRhythmVisual5)	
 			instance_create_depth(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0])+10,-10001,oRhythmBar5)	
-			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = irandom_range(-50,50)}
-			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = irandom_range(-50,50)}
+			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = choose(-40,40) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}
+			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy2) {xPos = choose(-80,0,80) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}
 		break;
 	}
 }
@@ -855,5 +864,134 @@ function DanceRhythm(_targets)
 			array_copy(arr,0,_arr,0,array_length(_arr))
 		}
 		if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: true})}
+	}
+}
+
+
+
+
+function perfectArrows(_targets)
+{
+	switch _targets.name
+	{
+		case "Ancient King":
+			switch global.perfect
+			{
+				case 0:
+					var _arr = []
+					var _ammount=3
+					for (var i = 0; i < _ammount+1; i++)
+					{
+						arrow[i] = instance_create_depth(0,0,-10001,oRhythmArrow)
+						arrow[i].xSpeed=3
+						array_push(_arr,arrow[i])
+					}
+					for (var i = 0; i < _ammount+1; i++)
+					{
+						//subimg
+						arrow[0].subimg=3
+						arrow[1].subimg=3
+						arrow[2].subimg=2
+						arrow[3].subimg=2
+						
+						//distance
+						if i > 0
+						{
+							arrow[i].x = arrow[i-1].x - 50
+						}
+					}
+					oBattle.perfectCurse=true
+					with instance_create_depth(0,0,-10001,oRhythmBar1)
+					{
+						perfect=true
+						array_copy(arr,0,_arr,0,array_length(_arr))
+					}
+					with instance_create_depth(0,0,-10000,oRhythmVisual)	
+					{
+						array_copy(arr,0,_arr,0,array_length(_arr))
+					}
+					if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: false})}
+				break;
+				
+				case 1:
+					var _arr = []
+					var _ammount=5
+					for (var i = 0; i < _ammount+1; i++)
+					{
+						arrow[i] = instance_create_depth(0,0,-10001,oRhythmArrow)
+						arrow[i].xSpeed=3
+						array_push(_arr,arrow[i])
+					}
+					for (var i = 0; i < _ammount+1; i++)
+					{
+						//subimg
+						arrow[0].subimg=3
+						arrow[1].subimg=3
+						arrow[2].subimg=2
+						arrow[3].subimg=2
+						arrow[4].subimg=1
+						arrow[5].subimg=0
+						
+						//distance
+						if i > 0
+						{
+							arrow[i].x = arrow[i-1].x - 50
+						}
+					}
+					oBattle.perfectCurse=true
+					with instance_create_depth(0,0,-10001,oRhythmBar1)
+					{
+						perfect=true
+						array_copy(arr,0,_arr,0,array_length(_arr))
+					}
+					with instance_create_depth(0,0,-10000,oRhythmVisual)	
+					{
+						array_copy(arr,0,_arr,0,array_length(_arr))
+					}
+					if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: false})}	
+				
+				break;
+				
+				case 2:
+					var _arr = []
+					var _ammount=7
+					for (var i = 0; i < _ammount+1; i++)
+					{
+						arrow[i] = instance_create_depth(0,0,-10001,oRhythmArrow)
+						arrow[i].xSpeed=3
+						array_push(_arr,arrow[i])
+					}
+					for (var i = 0; i < _ammount+1; i++)
+					{
+						//subimg
+						arrow[0].subimg=3
+						arrow[1].subimg=3
+						arrow[2].subimg=2
+						arrow[3].subimg=2
+						arrow[4].subimg=1
+						arrow[5].subimg=0
+						arrow[6].subimg=1
+						arrow[7].subimg=0
+						
+						//distance
+						if i > 0
+						{
+							arrow[i].x = arrow[i-1].x - 50
+						}
+					}
+					oBattle.perfectCurse=true
+					with instance_create_depth(0,0,-10001,oRhythmBar1)
+					{
+						perfect=true
+						array_copy(arr,0,_arr,0,array_length(_arr))
+					}
+					with instance_create_depth(0,0,-10000,oRhythmVisual)	
+					{
+						array_copy(arr,0,_arr,0,array_length(_arr))
+					}
+					if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: false})}	
+				break;	
+			}
+		break;
 	}
 }

@@ -333,11 +333,28 @@ if (targetCursor.cursorActive) && endTimer = 80
 		}
 		else //target all mode
 		{
-			cursorTarget = cursorSide;
-			cursorError = false;
-			if (cursorAction.targetAll == 2) && (_keyToggle) //switch to single mode
+			if oBattle.scatterRageTarget=false
 			{
-				cursorMode = 0; 
+				cursorTarget = cursorSide;
+				cursorError = false;
+				if (cursorAction.targetAll == 2) && (_keyToggle) //switch to single mode
+				{
+					cursorMode = 0; 
+				}
+			}
+			//scatterRage
+			else
+			{
+				cursorSide = array_filter(cursorSide, function(_element, _index)
+				{
+					return _element.scatterSelected = true;
+				});
+				cursorTarget = cursorSide;
+				cursorError = false;
+				if (cursorAction.targetAll == 2) && (_keyToggle) //switch to single mode
+				{
+					cursorMode = 0; 
+				}
 			}
 		}
 		
@@ -351,6 +368,8 @@ if (targetCursor.cursorActive) && endTimer = 80
 				cursorGroup = false;
 				cursorActive = false;	
 				cursorConfirmDelay = 0;
+				
+				if oBattle.scatterRageTarget{oBattle.scatterRageActive=false}
 			}
 		}
 		
@@ -361,6 +380,8 @@ if (targetCursor.cursorActive) && endTimer = 80
 			cursorGroup = false;
 			cursorActive = false;
 			cursorConfirmDelay = 0;
+			
+			scatterRageTarget=false
 		}
 	}
 }
@@ -396,40 +417,58 @@ if poisoned = true&&!escaped
 }
 
 
-function battleFlavorText(_enemyUnits,_flavorText)
+function battleFlavorText(_enemyUnits,_flavorText,_wornOff=0)
 {
-	if roundCount=0&&oBattle.partyUnits[0].myTurn=true
+	//makes sure only 1 message a time
+	if array_length(battleEndMessages)<1
 	{
-		battleEndMessageProg=0
-		if (bossBattle = false)
+		if _wornOff=0
 		{
-			if array_length(enemyUnits)>1
+			if roundCount=0&&oBattle.partyUnits[0].myTurn=true
 			{
-				battleEndMessages[0] = string(enemyUnits[0].name)+" And Cohorts Emerge!"
+				battleEndMessageProg=0
+				if (bossBattle = false)
+				{
+					if array_length(enemyUnits)>1
+					{
+						battleEndMessages[0] = string(enemyUnits[0].name)+" And Cohorts Emerge!"
+					}
+					else
+					{
+						battleEndMessages[0] = string(enemyUnits[0].name)+" Draws Near!"	
+					}
+				}
+				else
+				{
+					battleEndMessages[0] = string(enemyUnits[0].name)+" Approaches Confidently!"
+				}
+				battleText = battleEndMessages[battleEndMessageProg];
 			}
 			else
 			{
-				battleEndMessages[0] = string(enemyUnits[0].name)+" Draws Near!"	
+				var _possibleUnit = array_filter
+				(oBattle.enemyUnits, function(_unit, _index)
+				{
+					return (_unit.hp > 0);
+				});
+				if array_length(_possibleUnit)>0
+				{
+					var _unit = _possibleUnit[irandom(array_length(_possibleUnit)-1)];
+					battleEndMessages[0] = createFlavorText(_unit,_flavorText)
+					battleText = battleEndMessages[battleEndMessageProg];
+				}
 			}
 		}
 		else
 		{
-			battleEndMessages[0] = string(enemyUnits[0].name)+" Approaches Confidently!"
-		}
-		battleText = battleEndMessages[battleEndMessageProg];
-	}
-	else
-	{
-		var _possibleUnit = array_filter
-		(oBattle.enemyUnits, function(_unit, _index)
-		{
-			return (_unit.hp > 0);
-		});
-		if array_length(_possibleUnit)>0
-		{
-			var _unit = _possibleUnit[irandom(array_length(_possibleUnit)-1)];
-			battleEndMessages[0] = createFlavorText(_unit,_flavorText)
-			battleText = battleEndMessages[battleEndMessageProg];
-		}
+			if _wornOff=1
+			{
+				battleEndMessages[0] = string(partyUnits[0].name)+" Status has worn off.."
+				battleText = battleEndMessages[battleEndMessageProg];
+			}
+		}	
 	}
 }
+
+
+show_debug_message(battleWaitTimeRemaining)

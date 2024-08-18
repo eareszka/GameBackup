@@ -22,8 +22,8 @@
   "layers":[
     {"$GMRTileLayer":"","%Name":"tcCOLL","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tcCOLL","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":17,"SerialiseWidth":30,"TileCompressedData":[
           -183,0,1,129,-22,132,1,129,-6,0,2,129,134,-20,0,2,96,129,-3,0,-4,132,1,134,-20,0,2,96,129,-28,0,2,96,
-          129,-28,0,2,96,129,-3,0,-4,129,1,134,-20,0,2,96,129,-6,0,2,129,134,-20,0,2,96,129,-6,0,1,129,-22,132,
-          1,129,-93,0,
+          129,-3,0,-4,99,1,7,-20,0,2,96,129,-3,0,-4,129,1,134,-20,0,2,96,129,-6,0,2,129,34,-20,99,2,36,129,-6,
+          0,1,129,-22,132,1,129,-93,0,
         ],"TileDataFormat":1,},"tilesetId":{"name":"tcCOLL","path":"tilesets/tcCOLL/tcCOLL.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"lighting","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_4B18EC73","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4B18EC73","objectId":{"name":"obj_lighting_init","path":"objects/obj_lighting_init/obj_lighting_init.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},

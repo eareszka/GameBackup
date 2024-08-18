@@ -711,7 +711,6 @@ function scr_game_text(_text_id)
 			scr_text("Overfilled with joy the bunny escaped its enclosure and abusive master")
 			scr_text("However the presence of the animal lingered on.")
 			scr_text("*Soul of Sacred Bunny collected*")
-			global.sacredAnimals.rabbit = true
 		break
 				
 		
@@ -851,14 +850,15 @@ function scr_game_text(_text_id)
 			scr_name("Ancient King")
 			scr_text("What's this?")
 			scr_text("I see you possess an animal essence!")
-			scr_text("Unfortunate for you, I must now rip it from your very being.")
+			scr_text("How about a trade now..")
+			scr_text("You give me that animal essence!")
+			scr_text("And I give you my cofin to rot in for eternity!")
 		break
 		
 		case "AncientKingText3":
 			scr_name("Ancient King")
-			scr_text("How about a trade now..")
-			scr_text("You give me that animal essence!")
-			scr_text("And I give you my cofin to rot in for eternity!")
+			scr_text("Now you're truly cursed!")
+			scr_text("By my command let every strike be TRUE!")
 		break;
 		
 		case "AncientKingText4":
@@ -1311,5 +1311,29 @@ function scr_game_text(_text_id)
 				instance_deactivate_all(true)
 				game_end()
 			break
+			
+		case "aboneTalk1":
+			scr_name("")
+			scr_text("Intruder alert!!!")
+			scr_text("May me and my fallen brothern attack you with all our calcium rich might! For our king must be protected at all cost.")
+		break
+		
+		case "aboneTalk2":
+			scr_name("Fin")
+			scr_text("King... Would he like some funny fungi?")	
+			new_textbox("aboneTalk3")
+		break
+		
+		case "aboneTalk3":
+			scr_name("")
+			scr_text("No thank you as he would rather see any living beings dead.")
+			scr_text("Now get ready as your bones may join ours sooner than what you'd like!")
+		break
+		
+		case "kingStatue":
+			scr_name("")
+			scr_text("Here stands our great leader. Crowned in shadow, he commands a kingdom where death is but the beginning.")
+			scr_text("His reign endures in silence, yet the path forward lies where his back meets the stone.")
+		break
 	}
 }

@@ -21,7 +21,7 @@ if !throwArrow
 
 if hit
 {
-	alpha-=.05
+	alpha-=.1
 	color = c_lime
 	
 	if !set{oBattle.success+=1 set=true}
@@ -51,15 +51,17 @@ if disappear&&!hit
 	}
 }
 
-if hitHold
-{	
-	xSpeed=xSpeedTemp*.5
-}
-else
+if !slowDown&&!perfectAbsorbed
 {
-	xSpeed=xSpeedTemp
+	if hitHold
+	{	
+		xSpeed=xSpeedTemp*.5
+	}
+	else
+	{
+		xSpeed=xSpeedTemp
+	}
 }
-
 
 
 
@@ -107,4 +109,37 @@ if fade
 	image_alpha-=.1
 	if image_alpha<0
 	{instance_destroy()}
+}
+
+
+if perfectAbsorbed
+{
+	rot=rot-sin(20*0.1)*1
+	perfectEndTimer-=.5
+	
+	//initual absorbed point
+	if perfectEndTimer<65
+	{
+		oBattle.perfectArrowAbsorbed=true
+		color=c_lime
+		xSpeed=0
+		slowDownAmmt=0
+		//alpha-=.025
+		fade=true
+	}
+	else
+	{
+		//moving arrow
+		move_towards_point((camera_get_view_width(view_camera[0])/2)+10,(camera_get_view_height(view_camera[0])/2)-40,(3))	
+		xSpeed-=slowDownAmmt
+		slowDownAmmt+=(0.0003*xSpeedTemp)
+	}
+}
+
+if slowDown
+{
+	xSpeed-=slowDownAmmt	
+	slowDownAmmt+=(0.0003*xSpeedTemp)
+
+	alpha-=.05	
 }

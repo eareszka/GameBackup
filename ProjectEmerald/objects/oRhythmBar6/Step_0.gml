@@ -22,13 +22,14 @@ else
 
 if !lastPass
 {
-	if array_last(spaceArr).x > camera_get_view_x(view_camera[0])+230
+	if array_last(spaceArr).x > camera_get_view_x(view_camera[0])+230||array_last(spaceArr).image_alpha<0
 	{
 		lastPass = true
 	}
 }
 
-if lastPass
+//sees how many were hit
+if lastPass&&!check
 {
 	for(var i = 0; i < array_length(spaceArr); i++)
 	{
@@ -36,20 +37,36 @@ if lastPass
 		{
 			array_push(spaceArr2,spaceArr[i])
 		}
+		check=true
 	}	
-	instance_destroy(self)
 }
 
-if lastPass
+if check
 {
-	if array_length(spaceArr2) = array_length(spaceArr)
+	if array_length(spaceArr2)>0
 	{
+		//changes how many units can be targeted
+		oBattle.scatterRageActive=true
+		
 		global.success = 1	
+		fade=true
+		oRhythmVisual6.fade=true
 	}
 	else
 	{
 		global.success = 0
+		fade=true
+		oRhythmVisual6.fade=true
 	}
 }
+
+if fade
+{
+	if instance_exists(obj_comboNumber){obj_comboNumber.fade=true}
+	image_alpha-=.1
+	if image_alpha<0
+	{instance_destroy()}
+}
+
 
 image_index = 0

@@ -8,6 +8,7 @@ global.broke = 0;
 global.jen = 0;
 global.success = 0
 global.continuous = 0
+global.perfect=0
 global.boyToys = 0
 global.comboAmmount=1
 global.timeOfDay = 4
@@ -162,6 +163,14 @@ global.flag =
 	0,
 	//moveBookshelfComplete 52
 	0,
+	//spinningBackroomsRoom 53
+	0,
+	//catacombsStatueSwitch 54
+	0,
+	//catacombsLadder1 55
+	0,
+	//MoveTorch5 56
+	0,
 ]
 	
 	
@@ -192,9 +201,9 @@ global.enemyKills =
 	//bat: 10,
 	0,
 	//deer: 11,
-	7,
+	0,
 	//thunderbird: 12,
-	7,
+	0,
 ]
 
 
@@ -347,7 +356,7 @@ global.quest =
 global.abilities = 
 {
 	wrath1: false,
-	wrath2: true,
+	wrath2: false,
 	scatterRage: false,
 	growMushrooms: false,
 	mpSucker: false,
@@ -700,31 +709,64 @@ global.actionLibrary =
 		rhythm: "attack",
 		func : function(_user, _targets)
 		{
-			instance_create_depth(_targets[0].x,_targets[0].y,_targets[0].depth-1,oBattleEffect,{sprite_index : sAttackBonk});	
-			var _damage = RanDamage((_user.strength),0)
-			
-			var _crit = irandom_range(0,10)
-			
-			if _crit=10
+			//no scatterage
+			if targetAll=0
 			{
-				if (_targets[0].defending) _damage = ceil(_damage * 0.70);
-				_damage=ceil(_damage*2)
-				BattleChangeHP(_targets[0], -_damage,,true);
+				instance_create_depth(_targets[0].x,_targets[0].y,_targets[0].depth-1,oBattleEffect,{sprite_index : sAttackBonk});	
+				var _damage = RanDamage((_user.strength),0)
+			
+				var _crit = irandom_range(0,10)
+			
+				if _crit=10
+				{
+					if (_targets[0].defending) _damage = ceil(_damage * 0.70);
+					_damage=ceil(_damage*2)
+					BattleChangeHP(_targets[0], -_damage,,true);
+				}
+				else
+				{
+					if (_targets[0].defending) _damage = ceil(_damage * 0.70);
+					BattleChangeHP(_targets[0], -_damage);
+				}
+			
+				oBattle.damageDone+=_damage
+				oBattle.battleEndMessages[0] = string(oBattle.damageDone)+" Damage To "+string(_targets[0].name)+"!";
 			}
 			else
 			{
-				if (_targets[0].defending) _damage = ceil(_damage * 0.70);
-				BattleChangeHP(_targets[0], -_damage);
+				for (var i = 0; i < array_length(_targets); i++)
+				{
+					var _damage = RanDamage((_user.strength),0)
+					if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
+					MoveH(_targets[i],6,1,true,true,true)
+					BattleChangeHP(_targets[i], -_damage,,,false);
+					instance_create_depth(_targets[i].x,_targets[i].y,_targets[i].depth-1,oBattleEffect,{sprite_index : sAttackBonk});	
+				}
+				oBattle.battleEndMessages[0] = string(oBattle.damageDone)+" Damage Scattered!";
 			}
-			
-			oBattle.damageDone+=_damage
-			oBattle.battleEndMessages[0] = string(oBattle.damageDone)+" Damage To "+string(_targets[0].name)+"!";
 		}	
 		,
 		funcFailed : function(_user, _targets)
 		{
 			oBattle.battleEndMessages[0] = "missed.";
 		}	
+		,
+		funcPerfectFail : function(_user, _targets)
+		{
+			var _hp = oBattle.damageDone
+			BattleChangeHP(_targets[0], +_hp);
+			oBattle.battleEndMessages[0] = string(_targets[0].name+" recovered lost HP!")
+		}
+		,
+		funcBoyToy : function(_user, _targets)
+		{
+			instance_create_depth(_targets[0].x,_targets[0].y,_targets[0].depth-1,oBattleEffect,{sprite_index : sAttackBonk});	
+			var _damage = _user.strength
+			oBattle.damageDone+=_damage
+			BattleChangeHP(_targets[0], -_damage);
+			oBattle.damageDone+=_damage
+			oBattle.battleEndMessages[0] = string(oBattle.damageDone)+" Damage To "+string(_targets[0].name)+"!";
+		}
 	}
 	,
 	defend : 
@@ -821,8 +863,8 @@ global.specialLibrary =
 		description : "",
 		subMenu : "Special",
 		mpCost : 0,
-		targetDefault: 1, //0: party/self, 1: enemy
-		targetAll: 1,
+		targetDefault: 0, //0: party/self, 1: enemy
+		targetAll: 0,
 		targetRequired: true,
 		targetSelf: true,
 		targetGroup: true,
@@ -831,8 +873,37 @@ global.specialLibrary =
 		func : function(_user, _targets)
 		{
 			oBattle.battleEndMessages[0] = string(_user.name)+ " Summons Boy Toys!"
-			instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy);
-			global.boyToys = 1
+			instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy,{sprite_index: oRhythmUnitBoyToy.sprite_index});
+			var _strAdd = (round(_user.strength)*50)-1
+			BattleChangeMP(_user, -mpCost)
+			BattleChangeSTR(_user, _strAdd)
+		}	
+		,
+		funcFailed : function(_user, _targets)
+		{
+			oBattle.battleEndMessages[0] = "missed.";
+		}
+	}
+	,
+	//brokes special
+	summonBoyToys2 : 
+	{
+		name : "Boy Toys II",
+		description : "",
+		subMenu : "Special",
+		mpCost : 0,
+		targetDefault: 0, //0: party/self, 1: enemy
+		targetAll: 0,
+		targetRequired: true,
+		targetSelf: true,
+		targetGroup: true,
+		userAnimation: "cast",
+		rhythm: "summonBoyToys2",
+		func : function(_user, _targets)
+		{
+			oBattle.battleEndMessages[0] = string(_user.name)+ " Summons Boy Toys!"
+			if oRhythmUnitBoyToy.hit=true{instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy,{sprite_index: oRhythmUnitBoyToy.sprite_index});}
+			if oRhythmUnitBoyToy2.hit=true{instance_create_depth(oBattle.partyUnits[2].x-38,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy2,{sprite_index: oRhythmUnitBoyToy2.sprite_index});}
 			var _strAdd = (round(_user.strength)*50)-1
 			BattleChangeMP(_user, -mpCost)
 			BattleChangeSTR(_user, _strAdd)
@@ -928,15 +999,8 @@ global.specialLibrary =
 		rhythm: "scatterRage",
 		func : function(_user, _targets)
 		{
-			oBattle.battleEndMessages[0] = string(_user.name)+" Rage Can Now Be Dispursed!";
-			for (var i = 0; i < array_length(_targets); i++)
-			{
-				var _damage = ceil(_user.strength/2)
-				if (array_length(_targets) > 1) _damage = ceil(_damage*0.75);
-				MoveH(_targets[i],6,1,true,true,true)
-				BattleChangeHP(_targets[i], -_damage,,,false);
-			}
-			BattleChangeMP(_user, -mpCost)
+			
+			oBattle.battleEndMessages[0] = string(_user.name)+"'s Rage Can Now Be Dispursed!";
 		}
 		,
 		funcFailed : function(_user, _targets)
@@ -1127,6 +1191,26 @@ global.specialLibrary =
 	
 global.enemyLibrary =
 {
+	perfectStrikeCurse: 
+	{
+		name : "Cursum Praecisum",
+		//textBeforeAct: true,
+		description : "",
+		subMenu : "Special",
+		sound: takeDamage1,
+		action: 3, //1: attack, 2: taunt, 3: talk/heal
+		targetDefault: 1, //0: party/self, 1: enemy
+		targetAll: 0,
+		targetRequired: false,
+		effectOnTarget: false,
+		userAnimation : "special",
+		func : function(_user, _targets)
+		{	
+			oBattle.battleEndMessages[0] = string(_user.name)+ " Casted Cursum Praecisum" 
+			_user.perfect=true
+		}	
+	}
+	,
 	//ene attack
 	attack : 
 	{
@@ -2438,8 +2522,8 @@ global.bosses =
 	ancientKing: 
 	{
 		name: "Ancient King",
-		hp: 610,
-		hpMax: 610,
+		hp: 900,
+		hpMax: 900,
 		mp: 150,
 		mpMax: 150,
 		strength: 25,
@@ -2447,9 +2531,10 @@ global.bosses =
 		frequency: 2,
 		spd: 3,
 		reverse: false,
+		perfect: false,
 		sprites: {  intro: sAncientKingIdle, idle: sAncientKingIdle, attack: sAncientKingIdle, special: sAncientKingSpecial, defend: sAncientKingDefend},
 		scripted: true,
-		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.windGust],
+		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.perfectStrikeCurse],
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.actionLibrary.defend,global.enemyLibrary.windGust],
 		moneyValue : 300,
 		experinceValue : 300,

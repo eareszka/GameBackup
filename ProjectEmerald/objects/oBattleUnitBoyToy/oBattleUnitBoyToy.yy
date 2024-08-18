@@ -13,7 +13,10 @@
     "name":"Combat",
     "path":"folders/Objects/Combat.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parentFlasher",
+    "path":"objects/obj_parentFlasher/obj_parentFlasher.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

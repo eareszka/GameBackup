@@ -21,14 +21,14 @@
   "height":25,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"0174ee7d-9e7d-40e7-bd02-fc5f1123c9ab","blendMode":0,"displayName":"default","isLocked":false,"name":"0174ee7d-9e7d-40e7-bd02-fc5f1123c9ab","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ab010ae4-e6b5-43d5-b14f-3aacf0c9cb78","blendMode":0,"displayName":"default","isLocked":false,"name":"ab010ae4-e6b5-43d5-b14f-3aacf0c9cb78","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_pressurePlate",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"pressurePlate",
-    "path":"folders/Actors/pressurePlate.yy",
+    "name":"object",
+    "path":"folders/Actors/pressurePlate/object.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

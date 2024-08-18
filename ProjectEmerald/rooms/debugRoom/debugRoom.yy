@@ -45,6 +45,8 @@
     {"name":"inst_7450504E","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_FA8C928","path":"rooms/debugRoom/debugRoom.yy",},
     {"name":"inst_439011D8","path":"rooms/debugRoom/debugRoom.yy",},
+    {"name":"inst_2FEA7717","path":"rooms/debugRoom/debugRoom.yy",},
+    {"name":"inst_5DE1AA45","path":"rooms/debugRoom/debugRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -105,7 +107,10 @@
     {"$GMRInstanceLayer":"","%Name":"Emory","depth":1200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_191F4AB3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_191F4AB3","objectId":{"name":"obj_playerEmory","path":"objects/obj_playerEmory/obj_playerEmory.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":224.0,"y":128.0,},
       ],"layers":[],"name":"Emory","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRInstanceLayer":"","%Name":"Player","depth":1300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"Player","depth":1300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"","%Name":"inst_2FEA7717","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2FEA7717","objectId":{"name":"obj_spinningBackroomsRoom","path":"objects/obj_spinningBackroomsRoom/obj_spinningBackroomsRoom.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":320.0,},
+        {"$GMRInstance":"","%Name":"inst_5DE1AA45","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5DE1AA45","objectId":{"name":"obj_pressurePlatePlayerRelease","path":"objects/obj_pressurePlatePlayerRelease/obj_pressurePlatePlayerRelease.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":416.0,},
+      ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"lighting","depth":1400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_24397BA8","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_24397BA8","objectId":{"name":"obj_lightingCutout","path":"objects/obj_lightingCutout/obj_lightingCutout.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_lightingCutout","path":"objects/obj_lightingCutout/obj_lightingCutout.yy",},"propertyId":{"name":"color","path":"objects/obj_lightingCutout/obj_lightingCutout.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"$FFFFFFFF",},

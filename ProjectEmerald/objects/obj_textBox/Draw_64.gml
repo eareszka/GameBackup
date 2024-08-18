@@ -59,6 +59,7 @@ if accept_key
 			{
 				create_textbox(option_link_id[option_pos])
 			}
+			if multipleText{create_textbox(option_link_id)}
 			end_text(self)
 		}
 	}

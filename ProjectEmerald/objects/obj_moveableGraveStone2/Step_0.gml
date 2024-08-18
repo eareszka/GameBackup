@@ -1,5 +1,5 @@
 image_speed = 1
-if place_meeting(x,y,obj_playerEmory) && global.flag[8]<1
+if place_meeting(x,y,obj_playerEmory)&&global.flag[8]=0
 {
 	if keyboard_check_pressed(vk_space) && !instance_exists(obj_textBox) && !instance_exists(oMainMenu)
 	{
@@ -12,25 +12,32 @@ if place_meeting(x,y,obj_playerEmory) && global.flag[8]<1
 	}
 }
 
-if global.flag[8]>=1 && !instance_exists(obj_textBox)
+if global.flag[8]!=2
 {
-	if image_index < 16
+	if global.flag[8]=1 && !instance_exists(obj_textBox)
 	{
-		cutscene_setSprite(obj_moveableGraveStone2,spr_moveGraveStone,1,17)
+		if image_index < 16
+		{
+			cutscene_setSprite(obj_moveableGraveStone2,spr_moveGraveStone,1,17)
+		}
+		else
+		{
+			inst_158C55D.x = 1896
+			inst_158C55D.y = 1295
+			global.flag[8]=2
+		}
 	}
 	else
 	{
-		inst_158C55D.x = 1896
-		inst_158C55D.y = 1295
-		image_index = 15
+		image_index = 1	
 	}
 }
 else
 {
-	image_index = 1	
+	image_index=image_number-1
 }
 
-if place_meeting(x,y,obj_playerEmory) && global.flag[8]>=1 && image_index = 15
+if place_meeting(x,y,obj_playerEmory) && global.flag[8]=2
 {
 	global.escapeImmunity = 2500
 	global.prevRoom = room
@@ -40,5 +47,6 @@ if place_meeting(x,y,obj_playerEmory) && global.flag[8]>=1 && image_index = 15
 		alarm[0] = room_speed*.2
 	}		
 }
+
 
 ObjDepth(self,obj_playerEmory,-5,10)
