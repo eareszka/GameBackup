@@ -30,19 +30,30 @@ if hit
 	direction = random_range(85,95);
 	speed = 1.5;
 }
-else
+
+if y > camera_get_view_y(view_camera[0])+200&&!instance_exists(oRhythmUnitBoyToy2)
 {
-	
+	oBattle.battleStopFlow=false
+}
+
+//if both are summoned
+if instance_exists(oRhythmUnitBoyToy2)
+{
+	if oRhythmUnitBoyToy2.y > camera_get_view_y(view_camera[0])+200&&y > camera_get_view_y(view_camera[0])+200
+	{
+		oBattle.battleStopFlow=false
+	}
 }
 
 if !hit
 {
 	if instance_exists(oRhythmBar5)
 	{
-		if oRhythmBar5.x > camera_get_view_x(view_camera[0])+300
+		if oRhythmBar5.miss=true
 		{
 			if image_alpha > 0
 			{
+				oBattle.battleStopFlow=false
 				image_alpha -= .1	
 			}
 		}

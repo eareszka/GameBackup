@@ -873,7 +873,10 @@ global.specialLibrary =
 		func : function(_user, _targets)
 		{
 			oBattle.battleEndMessages[0] = string(_user.name)+ " Summons Boy Toys!"
-			instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy,{sprite_index: oRhythmUnitBoyToy.sprite_index});
+			
+			if instance_exists(oRhythmUnitBoyToy){instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-24,oBattle.unitDepth,oBattleUnitBoyToy,{sprite_index: oRhythmUnitBoyToy.sprite_index});}
+			if instance_exists(oRhythmUnitBoyToy2){instance_create_depth(oBattle.partyUnits[2].x-38,oBattle.partyUnits[2].y-24,oBattle.unitDepth,oBattleUnitBoyToy2,{sprite_index: oRhythmUnitBoyToy2.sprite_index});}
+			
 			var _strAdd = (round(_user.strength)*50)-1
 			BattleChangeMP(_user, -mpCost)
 			BattleChangeSTR(_user, _strAdd)
@@ -902,8 +905,8 @@ global.specialLibrary =
 		func : function(_user, _targets)
 		{
 			oBattle.battleEndMessages[0] = string(_user.name)+ " Summons Boy Toys!"
-			if oRhythmUnitBoyToy.hit=true{instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy,{sprite_index: oRhythmUnitBoyToy.sprite_index});}
-			if oRhythmUnitBoyToy2.hit=true{instance_create_depth(oBattle.partyUnits[2].x-38,oBattle.partyUnits[2].y-25,oBattle.unitDepth,oBattleUnitBoyToy2,{sprite_index: oRhythmUnitBoyToy2.sprite_index});}
+			if oRhythmUnitBoyToy.hit=true{instance_create_depth(oBattle.partyUnits[2].x+8,oBattle.partyUnits[2].y-24,oBattle.unitDepth,oBattleUnitBoyToy,{sprite_index: oRhythmUnitBoyToy.sprite_index});}
+			if oRhythmUnitBoyToy2.hit=true{instance_create_depth(oBattle.partyUnits[2].x-38,oBattle.partyUnits[2].y-24,oBattle.unitDepth,oBattleUnitBoyToy2,{sprite_index: oRhythmUnitBoyToy2.sprite_index});}
 			var _strAdd = (round(_user.strength)*50)-1
 			BattleChangeMP(_user, -mpCost)
 			BattleChangeSTR(_user, _strAdd)

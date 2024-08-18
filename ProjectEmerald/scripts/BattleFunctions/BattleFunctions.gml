@@ -130,6 +130,20 @@ function SelectAction(_user, _action)
 
 function IsActionAvailable(_unit, _action)
 {
+	if _action.name="Boy Toys I"
+	{
+		if instance_exists(oBattleUnitBoyToy)&&instance_exists(oBattleUnitBoyToy2)
+		{
+			return false
+		}
+	}
+	if _action.name="Boy Toys II"
+	{
+		if instance_exists(oBattleUnitBoyToy)||instance_exists(oBattleUnitBoyToy2)
+		{
+			return false
+		}
+	}
 	if _action.name="Scatter Rage"
 	{
 		if oBattle.scatterRageActive=true{return false;}
@@ -296,6 +310,9 @@ function checkDeadPerfectCurse(_targets)
 
 function boyToyStuff()
 {
+	if instance_exists(oBattleUnitBoyToy){boyToy1Attack=false}
+	if instance_exists(oBattleUnitBoyToy){boyToy2Attack=false}
+	
 	if instance_exists(oBattleUnitBoyToy)&&instance_exists(oBattleUnitBoyToy2)
 	{
 		oBattle.boyToyAttackTimer=60

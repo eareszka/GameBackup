@@ -1,4 +1,7 @@
 global.boyToys = 0
+if instance_exists(oBattleUnitBoyToy){instance_destroy(oBattleUnitBoyToy)}
+if instance_exists(oBattleUnitBoyToy2){instance_destroy(oBattleUnitBoyToy2)}
+
 global.battleBox=sBox
 with (oMenu) instance_destroy();
 with (oBattleStats) instance_destroy();

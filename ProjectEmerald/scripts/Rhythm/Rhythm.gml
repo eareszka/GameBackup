@@ -509,7 +509,9 @@ function RhythmCreate(_action,_targets)
 		case "summonBoyToys":
 			instance_create_depth(0,0,-10000,oRhythmVisual5)	
 			instance_create_depth(camera_get_view_x(view_camera[0])-50,camera_get_view_y(view_camera[0])+8,-10001,oRhythmBar5)	
-			with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = choose(-80,-40,0,40,80) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}
+			//makes sure we only have 1 boy toy on left and right
+			if !instance_exists(oBattleUnitBoyToy){with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy) {xPos = choose(-80,-40,0,40,80) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}}
+			else{with instance_create_depth(camera_get_view_x(view_camera[0])+180,camera_get_view_y(view_camera[0])+10,oBattle.unitDepth,oRhythmUnitBoyToy2) {xPos = choose(-80,0,80) sprite_index = choose(spr_boyToy1,spr_boyToy2,spr_boyToy3)}}
 		break;
 		
 		//summon boyToys 2

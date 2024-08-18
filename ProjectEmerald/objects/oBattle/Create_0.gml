@@ -1,6 +1,6 @@
 //stops all music
 audio_stop_all()
-global.success = 1
+global.success = 0
 global.perfect=0
 //Transition setup
 transitionProg = 0;
@@ -331,11 +331,10 @@ DoTurn = function(_unit)
 function EndTurn(_unit)
 {
 	//resets statuses
+	global.success = 0
 	global.actionLibrary.attackRhythm.targetAll=0	
 	if scatterRageActive=false{scatterRageTarget=false}
-	
-	if global.boyToys=1{boyToy1Attack=true boyToyAttackTimer=20}
-	if global.boyToys=2{boyToy1Attack=true boyToy2Attack=true boyToyAttackTimer=40}
+
 	if instance_exists(oRhythmUnitBoyToy){instance_destroy(oRhythmUnitBoyToy)}
 	if instance_exists(oRhythmUnitBoyToy2){instance_destroy(oRhythmUnitBoyToy2)}
 
@@ -563,7 +562,7 @@ function ContinueAction(_user, _action, _targets)
 								if !perfectFail
 								{
 									//boy toys attack
-									if oBattle.partyUnits[2].myTurn=true&&global.boyToys>0&&boyToyAttackTimer>oBattle.boyToyAttackEndTimer
+									if oBattle.partyUnits[2].myTurn=true&&boyToyAttackTimer>boyToyAttackEndTimer&&_targets[0].hp>0
 									{
 										boyToyAttackTimer--	
 										if boyToyAttackTimer<40
@@ -571,7 +570,7 @@ function ContinueAction(_user, _action, _targets)
 											if instance_exists(oBattleUnitBoyToy2)&&boyToy2Attack=false
 											{
 												ObjFlash(oBattleUnitBoyToy2,1.5,.05,255,255,255)
-												_action.funcBoyToy(_user, _targets);boyToy1Attack=false
+												_action.funcBoyToy(_user, _targets);boyToy2Attack=true
 											}
 										}
 										if boyToyAttackTimer<20
@@ -579,7 +578,7 @@ function ContinueAction(_user, _action, _targets)
 											if instance_exists(oBattleUnitBoyToy)&&boyToy1Attack=false
 											{
 												ObjFlash(oBattleUnitBoyToy,1.5,.05,255,255,255)
-												_action.funcBoyToy(_user, _targets);boyToy1Attack=false
+												_action.funcBoyToy(_user, _targets);boyToy1Attack=true
 											}
 										}
 									}
