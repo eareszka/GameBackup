@@ -10,8 +10,8 @@
   "name":"oRhythmArrow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Rhythm1",
-    "path":"folders/Objects/Combat/Rhythm1.yy",
+    "name":"RhythmArrowAttack",
+    "path":"folders/Objects/Combat/RhythmArrowAttack.yy",
   },
   "parentObjectId":null,
   "persistent":false,

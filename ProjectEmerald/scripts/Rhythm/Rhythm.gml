@@ -2,8 +2,21 @@ function RhythmCreate(_action,_targets)
 {
 	switch _action
 	{
+		case "attack":
+			global.comboAmmount=0
+			if is_array(_targets){_targets=_targets[0]}
+			if _targets.perfect=true{perfectArrows(_targets)}
+			else
+			{
+				createArrows(_targets)	
+			}
+		break;
+		
+		
+		
+		
 		//attack
-		case "attack":	
+		case "attackOLD":	
 			//for scatterrage
 			if is_array(_targets){_targets=_targets[0]}
 			
@@ -995,5 +1008,151 @@ function perfectArrows(_targets)
 				break;	
 			}
 		break;
+	}
+}
+
+
+function createArrows(_targets)
+{
+	var _arr = []
+	for (var i = 0; i < _targets.arrows; i++)
+	{
+		var _ran = irandom_range(0,3)
+		var _ran2 = irandom_range(0,99)
+		arrow[i] = instance_create_depth(oBattle.x-250,oBattle.y+8,-16000,oRhythmArrow,{img: _ran})
+		
+		//changes x pos of each index 
+		if i > 0
+		{
+			switch _targets.frequency
+			{
+				case 1:
+					if _ran2 < 15
+					{
+						arrow[i].x = arrow[i-1].x - 50
+					}
+					if _ran2 >= 15 && _ran2 < 50
+					{
+						arrow[i].x = arrow[i-1].x - 100
+					}
+					else
+					{
+						arrow[i].x = arrow[i-1].x - 75		
+					}
+				break;
+									
+									
+				case 2:
+					if _ran2 < 15
+					{
+						arrow[i].x = arrow[i-1].x - 35
+					}
+					if _ran2 >= 15 && _ran2 < 50
+					{
+						arrow[i].x = arrow[i-1].x - 65
+					}
+					else
+					{
+						arrow[i].x = arrow[i-1].x - 50	
+					}
+				break;
+									
+									
+				case 3:
+					if _ran2 < 15
+					{
+						arrow[i].x = arrow[i-1].x - 25
+					}
+					if _ran2 >= 15 && _ran2 < 50
+					{
+						arrow[i].x = arrow[i-1].x - 50
+					}
+					else
+					{
+						arrow[i].x = arrow[i-1].x - 30		
+					}
+				break;
+									
+									
+				case 4:
+					if _ran2 < 15
+					{
+						arrow[i].x = arrow[i-1].x - 25
+					}
+					if _ran2 >= 15 && _ran2 < 50
+					{
+						arrow[i].x = arrow[i-1].x - 33
+					}
+					else
+					{
+						arrow[i].x = arrow[i-1].x - 30	
+					}
+				break;
+									
+				//highest freq
+				case 5:
+					if _ran2 < 15
+					{
+						arrow[i].x = arrow[i-1].x - 25
+					}
+					if _ran2 >= 15 && _ran2 < 50
+					{
+						arrow[i].x = arrow[i-1].x - 25
+					}
+					else
+					{
+						arrow[i].x = arrow[i-1].x - 25		
+					}
+				break;
+			}
+		}
+		array_push(_arr,arrow[i])
+	}	
+	editArrows(_arr,_targets)
+}
+
+function editArrows(_arr,_targets)
+{
+	for (var i = 0; i < array_length(_arr); i++)
+	{	
+		//fixes repeating arrow problem
+		if i > 0
+		{
+			if arrow[i-1].img!=3
+			{
+				arrow[i].img=arrow[i-1].img+1
+			}
+			else
+			{
+				arrow[i].img=0	
+			}
+		}
+		
+		//changes speed of arrow based on ene spd
+		arrow[i].xSpeed = 4
+		
+		//disappear arrows
+		if variable_struct_exists(_targets,"disappear"){if _targets.disappear=true{arrow[i].disappear=true arrow[i].image_alpha=0}}
+		
+		
+		//the lower the number, the more reversed
+		if variable_struct_exists(_targets,"reverse") && _targets.reverse != false
+		{
+			var _ran3 = irandom_range(0,_targets.reverse)
+			if _ran3 = 0
+			{
+				arrow[i].reverse = true	
+							
+				if variable_struct_exists(_targets,"hold")
+				{
+					array_last(_arr).reverse = false
+				}
+			}
+		}
+	}
+	if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: false})}
+	with instance_create_depth(_targets.x,_targets.y,-10001,obj_RhythmArrowAttackBar,{target: _targets})
+	{
+		array_copy(arrows,0,_arr,0,array_length(_arr))
 	}
 }

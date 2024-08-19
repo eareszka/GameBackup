@@ -1,7 +1,7 @@
 if place_meeting(x,y,obj_playerEmory)
 {
-	global.fin=1
-	global.broke=1
+	//global.fin=1
+	//global.broke=1
 	global.flag[0]=1
 	global.abilities.wrath1 = true
 	global.abilities.scatterRage = true
@@ -10,7 +10,7 @@ if place_meeting(x,y,obj_playerEmory)
 	global.BcurrentHP=1000
 	global.EcurrentHP=300
 	global.mpAdd = 280;
-	global.strengthAdd = 1;
+	global.strengthAdd = 60;
 	global.levels.level60 = true;
 	global.battleExperince = 120
 	global.my_Money = 100000

@@ -3,7 +3,7 @@
 function RanDamage(_strength,_hit)
 {
 	//damage is based on how many arrows you hit
-	return round(((_strength)+irandom_range(-power(_strength, 1/6),power(_strength, 1/6)))/(array_length(oRhythmBar1.arr)))
+	return round(((_strength)+irandom_range(-power(_strength, 1/6),power(_strength, 1/6)))/(array_length(obj_RhythmArrowAttackBar.arrows)))
 
 }
 

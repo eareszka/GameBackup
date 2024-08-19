@@ -8,7 +8,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.EcurrentMP,
 	mpMax: 20+global.mpAdd,
 	strength: 10+global.strengthAdd,
-	sprites : { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special},
+	sprites : { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special, dodge: spr_emory_battleDodge},
 	actions : [],
 	}
 	];

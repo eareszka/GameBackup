@@ -10,136 +10,170 @@ left_wrong = keyboard_check(vk_left) || keyboard_check(ord("A"));
 up_wrong = keyboard_check(vk_up) || keyboard_check(ord("W"));
 down_wrong = keyboard_check(vk_down) || keyboard_check(ord("S"));
 
-if !setup{xSpeedTemp=xSpeed setup=true}
+image_index=img
+x+=xSpeed
 
-
-if !throwArrow
-{
-	x+=xSpeed
-}
-
-
+//for ending
 if hit
 {
-	alpha-=.1
-	color = c_lime
+	image_alpha-=.1
+	image_blend	= c_lime
 	
 	if !set{oBattle.success+=1 set=true}
-}
-else
-{
-	if reverse = true
-	{
-		color = c_red	
-	}
-	if hold = true
-	{
-		color = c_yellow
-	}
+	
+	done=true
 }
 
+if x>(camera_get_view_x(view_camera[0])+250)&&!hit
+{
+	image_alpha-=.1
+	done=true
+}
+
+
+
+
+
+
+
+//effects on arrows
 if disappear&&!hit
 {
 	if x<(camera_get_view_width(view_camera[0])/2)-75
 	{
-		alpha=0
+		image_alpha=0
 	}
 	else
 	{
 		
-		alpha+=.025
+		image_alpha+=.025
 	}
 }
 
-if !slowDown&&!perfectAbsorbed
-{
-	if hitHold
-	{	
-		xSpeed=xSpeedTemp*.5
-	}
-	else
-	{
-		xSpeed=xSpeedTemp
-	}
-}
+//if place_meeting(x,y,obj_RhythmArrowAttackSpeedBar)
+//{
+//	if xSpeed>2.5{xSpeed-=.5}	
+//}
 
 
 
+//if !setup{xSpeedTemp=xSpeed setup=true}
 
-if throwArrow
-{
-	//makes sure you cant hit before top
-	if n < 50
-	{
-		hit = false	
-	}
+
+//if !throwArrow
+//{
+//	x+=xSpeed
+//}
+
+
+//if hit
+//{
+//	alpha-=.1
+//	color = c_lime
 	
-	if n < -96
-	{
-		alpha = 0
-	}
-	else
-	{
-		if !hit
-		{
-			alpha = 1
-		}
-	}
+//	if !set{oBattle.success+=1 set=true}
+//}
+//else
+//{
+//	if reverse = true
+//	{
+//		color = c_red	
+//	}
+//	if hold = true
+//	{
+//		color = c_yellow
+//	}
+//}
+
+//if !slowDown&&!perfectAbsorbed
+//{
+//	if hitHold
+//	{	
+//		xSpeed=xSpeedTemp*.5
+//	}
+//	else
+//	{
+//		xSpeed=xSpeedTemp
+//	}
+//}
+
+
+
+
+//if throwArrow
+//{
+//	//makes sure you cant hit before top
+//	if n < 50
+//	{
+//		hit = false	
+//	}
 	
-	if n < 106
-	{
-		x = circle_center_x + lengthdir_x(radius_of_circle, n);
-		y = circle_center_y + lengthdir_y(radius_of_circle, n);
-		n += movement_speed;	
-	}
-	else
-	{
-		throwDone = true
-		x-=movement_speed	
-	}
-}
-
-if dontShow
-{
-	instance_destroy(self)
-}
-
-if fade
-{
-	image_alpha-=.1
-	if image_alpha<0
-	{instance_destroy()}
-}
-
-
-if perfectAbsorbed
-{
-	rot=rot-sin(20*0.1)*1
-	perfectEndTimer-=.5
+//	if n < -96
+//	{
+//		alpha = 0
+//	}
+//	else
+//	{
+//		if !hit
+//		{
+//			alpha = 1
+//		}
+//	}
 	
-	//initual absorbed point
-	if perfectEndTimer<65
-	{
-		oBattle.perfectArrowAbsorbed=true
-		color=c_lime
-		xSpeed=0
-		slowDownAmmt=0
-		//alpha-=.025
-		fade=true
-	}
-	else
-	{
-		//moving arrow
-		move_towards_point((camera_get_view_width(view_camera[0])/2)+10,(camera_get_view_height(view_camera[0])/2)-40,(3))	
-		xSpeed-=slowDownAmmt
-		slowDownAmmt+=(0.0003*xSpeedTemp)
-	}
-}
+//	if n < 106
+//	{
+//		x = circle_center_x + lengthdir_x(radius_of_circle, n);
+//		y = circle_center_y + lengthdir_y(radius_of_circle, n);
+//		n += movement_speed;	
+//	}
+//	else
+//	{
+//		throwDone = true
+//		x-=movement_speed	
+//	}
+//}
 
-if slowDown
-{
-	xSpeed-=slowDownAmmt	
-	slowDownAmmt+=(0.0003*xSpeedTemp)
+//if dontShow
+//{
+//	instance_destroy(self)
+//}
 
-	alpha-=.05	
-}
+//if fade
+//{
+//	image_alpha-=.1
+//	if image_alpha<0
+//	{instance_destroy()}
+//}
+
+
+//if perfectAbsorbed
+//{
+//	rot=rot-sin(20*0.1)*1
+//	perfectEndTimer-=.5
+	
+//	//initual absorbed point
+//	if perfectEndTimer<65
+//	{
+//		oBattle.perfectArrowAbsorbed=true
+//		color=c_lime
+//		xSpeed=0
+//		slowDownAmmt=0
+//		//alpha-=.025
+//		fade=true
+//	}
+//	else
+//	{
+//		//moving arrow
+//		move_towards_point((camera_get_view_width(view_camera[0])/2)+10,(camera_get_view_height(view_camera[0])/2)-40,(3))	
+//		xSpeed-=slowDownAmmt
+//		slowDownAmmt+=(0.0003*xSpeedTemp)
+//	}
+//}
+
+//if slowDown
+//{
+//	xSpeed-=slowDownAmmt	
+//	slowDownAmmt+=(0.0003*xSpeedTemp)
+
+//	alpha-=.05	
+//}

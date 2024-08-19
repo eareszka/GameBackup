@@ -115,3 +115,9 @@ else
 {
 	wait--	
 }
+
+
+
+
+x=user.x-23
+y=user.y-57

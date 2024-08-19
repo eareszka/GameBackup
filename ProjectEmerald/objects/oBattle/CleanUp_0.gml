@@ -2,6 +2,9 @@ global.boyToys = 0
 if instance_exists(oBattleUnitBoyToy){instance_destroy(oBattleUnitBoyToy)}
 if instance_exists(oBattleUnitBoyToy2){instance_destroy(oBattleUnitBoyToy2)}
 
+if instance_exists(obj_projectileGenerator){instance_destroy(obj_projectileGenerator)}
+if instance_exists(obj_defendProjectileParent){instance_destroy(obj_defendProjectileParent)}
+
 global.battleBox=sBox
 with (oMenu) instance_destroy();
 with (oBattleStats) instance_destroy();

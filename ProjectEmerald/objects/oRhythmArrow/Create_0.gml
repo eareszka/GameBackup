@@ -17,6 +17,7 @@ setup=false
 disappear=-1
 sinTimer=0
 
+done=false
 
 //for throwing arrow
 dontShow = false

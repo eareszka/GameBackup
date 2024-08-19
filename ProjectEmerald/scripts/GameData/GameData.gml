@@ -1224,8 +1224,8 @@ global.enemyLibrary =
 		action: 1, //1: attack, 2: taunt, 3: talk/heal
 		targetAll: 0,
 		targetRequired: true,
-		effectSprite: sAttackSlash,
 		effectOnTarget: true,
+		rhythmDefend: true,
 		func : function(_user, _targets)
 		{		
 			var _damage = ceil(_user.strength + random_range(-_user.strength * 0.25, _user.strength * 0.25));
@@ -2380,7 +2380,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_nightcrawlersIdle, idle: spr_nightcrawlersIdle, attack: spr_nightcrawlersIdle, defend: spr_nightcrawlersIdle},
-		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
+		actions: [global.enemyLibrary.attack],
 		moneyValue : 30,
 		experinceValue : irandom_range(10,15),
 		AIscript : function()

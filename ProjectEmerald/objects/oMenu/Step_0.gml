@@ -20,7 +20,7 @@ if (active)
 			//all available
 			if(string(options[1][0]) == "Special"||string(options[1][0]) == "Create")&&(string(options[2][0]) == "Inventory")
 			{
-				if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu)}
+				if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu,{user:user})}
 				specialAvailable=true
 				itemAvailable=true
 			
@@ -35,7 +35,7 @@ if (active)
 			//inv not aval
 			if(string(options[2][0] != "Inventory"))
 			{
-				if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu)}
+				if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu,{user:user})}
 				specialAvailable=true
 				itemAvailable=false
 			
@@ -47,7 +47,7 @@ if (active)
 			//special not aval
 			if(string(options[1][0]) != "Special"&&string(options[1][0]) != "Create")
 			{
-				if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu)}
+				if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu,{user:user})}
 				specialAvailable=false
 				itemAvailable=true
 			
@@ -58,7 +58,7 @@ if (active)
 		}
 		if array_length(options)<=2
 		{
-			if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu)}
+			if !instance_exists(obj_battleMenu){instance_create_depth(user.x-23,user.y-57,-16000,obj_battleMenu,{user:user})}
 			specialAvailable=false
 			itemAvailable=false
 			

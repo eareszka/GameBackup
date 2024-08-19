@@ -471,4 +471,19 @@ function battleFlavorText(_enemyUnits,_flavorText,_wornOff=0)
 }
 
 
-show_debug_message(battleWaitTimeRemaining)
+
+//resets defensive stance
+if defendSetup&&playerTurn
+{
+	ResetUI()
+}
+
+if !defendSetup&&!playerTurn&&defendStart
+{
+	DefendUI()
+}
+
+if !highlightEnemy&&!playerTurn
+{
+	ResetAlpha()
+}

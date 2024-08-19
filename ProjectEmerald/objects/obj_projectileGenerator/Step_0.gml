@@ -1,0 +1,1 @@
+if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}

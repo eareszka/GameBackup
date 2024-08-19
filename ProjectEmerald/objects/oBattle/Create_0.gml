@@ -73,6 +73,13 @@ boyToy2Attack=false
 boyToyAttackTimer=60
 boyToyAttackEndTimer=0
 
+//for defending
+defendSetup=false
+playerTurn=false
+highlightEnemy=false
+defendStart=false
+defendEnd=false
+
 //stats menu
 if !instance_exists(oBattleStats)
 {
@@ -174,7 +181,7 @@ RefreshRenderOrder();
 
 //Perform a turn
 DoTurn = function(_unit)
-{
+{	
 	//Is this unit alive and able to act?
 	if (instance_exists(_unit)) && (_unit.hp > 0)
 	{
@@ -189,7 +196,12 @@ DoTurn = function(_unit)
 		
 		//Player
 		if (_unit.enemy == false)
-		{
+		{	
+			playerTurn=true
+			
+			//ResetUI()
+			if defendSetup=false{defendSetup=true}
+				
 			if oBattle.partyUnits[0].myTurn=true
 			{
 				if scatterRageActive
@@ -313,6 +325,7 @@ DoTurn = function(_unit)
 		else
 		//Enemy
 		{
+			playerTurn=false
 			//run ai script for that enemy
 			var _enemyAction = _unit.AIscript(_unit); 
 			if (_enemyAction != -1) 
@@ -330,6 +343,11 @@ DoTurn = function(_unit)
 
 function EndTurn(_unit)
 {
+	highlightEnemy=false
+	if instance_exists(obj_projectileGenerator){instance_destroy(obj_projectileGenerator)}
+	if instance_exists(obj_defendProjectileParent){instance_destroy(obj_defendProjectileParent)}
+	defendEnd=false
+	
 	//resets statuses
 	global.success = 0
 	global.actionLibrary.attackRhythm.targetAll=0	
@@ -337,6 +355,10 @@ function EndTurn(_unit)
 
 	if instance_exists(oRhythmUnitBoyToy){instance_destroy(oRhythmUnitBoyToy)}
 	if instance_exists(oRhythmUnitBoyToy2){instance_destroy(oRhythmUnitBoyToy2)}
+	
+	if instance_exists(obj_RhythmArrowAttackSpeedBar){instance_destroy(obj_RhythmArrowAttackSpeedBar)}
+	if instance_exists(obj_RhythmArrowAttackBar){instance_destroy(obj_RhythmArrowAttackBar)}
+	if instance_exists(oRhythmArrow){instance_destroy(oRhythmArrow)}
 
 	battleActionInProgress=false
 	battleWaitTimeRemaining = 0;
@@ -435,7 +457,6 @@ function BeginAction(_user, _action, _targets)
 			}
 		}
 	}
-	
 	/************
 	Action Bubble
 	************/
@@ -452,6 +473,10 @@ function ContinueAction(_user, _action, _targets)
 		{
 			battleEndMessages[0]=ActionText(_user,_action,_targets)
 		}
+		
+		show_debug_message(oBattleStats.x)
+		show_debug_message(oBattleStats.y)
+		
 		//performs action after textbox
 		if battleEndMessageProg >= array_length(battleEndMessages) || !variable_struct_exists(_action,"textBeforeAct")
 		{
@@ -460,15 +485,17 @@ function ContinueAction(_user, _action, _targets)
 			{
 				with (_user)
 				{
-					
-					if _user.enemy=true{ObjFlash(_user,1.5,.025,255,255,255)}
-					
 					//resets to idle if not already in idle
 					if _user.sprite_index != _user.sprites.idle
 					{
 						sprite_index = sprites.idle;
 						image_index = 0;
 					}
+				}
+				
+				if _action.name!="Attack"
+				{
+					if _user.enemy=true{ObjFlash(_user,1.5,.025,255,255,255)}
 				}
 			
 				if (variable_struct_exists(_action, "effectSprite"))
@@ -515,7 +542,7 @@ function ContinueAction(_user, _action, _targets)
 				{
 					if _action.rhythm="attack"
 					{
-						if instance_exists(oRhythmBar1)&&_targets[0].hp>0
+						if instance_exists(obj_RhythmArrowAttackBar)&&_targets[0].hp>0
 						{
 							if !perfectFail
 							{
@@ -534,8 +561,8 @@ function ContinueAction(_user, _action, _targets)
 							{
 								if perfectArrowAbsorbed=true
 								{
-									oRhythmBar1.fade=true 
-									oRhythmVisual.fade=true
+									obj_RhythmArrowAttackBar.fade=true 
+									obj_RhythmArrowAttackSpeedBar.fade=true
 									oRhythmBar1.perfectFail=false
 									_action.funcPerfectFail(_user, _targets) 
 									_user.acting=false
@@ -545,40 +572,40 @@ function ContinueAction(_user, _action, _targets)
 						else //ene is killed
 						{
 							//destroys objects if killed
-							if instance_exists(oRhythmVisual)
+							if instance_exists(obj_RhythmArrowAttackSpeedBar)
 							{
-								oRhythmVisual.fade=true
+								obj_RhythmArrowAttackSpeedBar.fade=true
 							}
-							if instance_exists(oRhythmBar1)
+							if instance_exists(obj_RhythmArrowAttackBar)
 							{
-								oRhythmBar1.fade=true
+								obj_RhythmArrowAttackBar.fade=true
 							}
-							if instance_exists(oRhythmArrow)
-							{
-								oRhythmArrow.fade=true
-							}
-							if !instance_exists(oRhythmVisual)
+							if !instance_exists(obj_RhythmArrowAttackSpeedBar)
 							{
 								if !perfectFail
 								{
 									//boy toys attack
-									if oBattle.partyUnits[2].myTurn=true&&boyToyAttackTimer>boyToyAttackEndTimer&&_targets[0].hp>0
+									#region boytoy
+									if instance_exists(oBattleUnitBoyToy)||instance_exists(oBattleUnitBoyToy2)
 									{
-										boyToyAttackTimer--	
-										if boyToyAttackTimer<40
+										if oBattle.partyUnits[2].myTurn=true&&boyToyAttackTimer>boyToyAttackEndTimer&&_targets[0].hp>0
 										{
-											if instance_exists(oBattleUnitBoyToy2)&&boyToy2Attack=false
+											boyToyAttackTimer--	
+											if boyToyAttackTimer<40
 											{
-												ObjFlash(oBattleUnitBoyToy2,1.5,.05,255,255,255)
-												_action.funcBoyToy(_user, _targets);boyToy2Attack=true
+												if instance_exists(oBattleUnitBoyToy2)&&boyToy2Attack=false
+												{
+													ObjFlash(oBattleUnitBoyToy2,1.5,.05,255,255,255)
+													_action.funcBoyToy(_user, _targets);boyToy2Attack=true
+												}
 											}
-										}
-										if boyToyAttackTimer<20
-										{
-											if instance_exists(oBattleUnitBoyToy)&&boyToy1Attack=false
+											if boyToyAttackTimer<20
 											{
-												ObjFlash(oBattleUnitBoyToy,1.5,.05,255,255,255)
-												_action.funcBoyToy(_user, _targets);boyToy1Attack=true
+												if instance_exists(oBattleUnitBoyToy)&&boyToy1Attack=false
+												{
+													ObjFlash(oBattleUnitBoyToy,1.5,.05,255,255,255)
+													_action.funcBoyToy(_user, _targets);boyToy1Attack=true
+												}
 											}
 										}
 									}
@@ -624,7 +651,43 @@ function ContinueAction(_user, _action, _targets)
 				}
 				else
 				{
-					_action.func(_user, _targets) {_user.acting=false}
+				
+					if (_user.enemy == true)
+					{
+						//doding attack mechanic
+						if variable_struct_exists(_action,"rhythmDefend")
+						{
+							RhythmDefend(_user,_targets[0])	
+							
+							if _targets[0].hp>0
+							{
+								if success >=1
+								{
+									_action.func(_user, _targets);	
+									success-=1
+								}
+								else
+								{
+									if defendEnd=true
+									{
+										{_user.acting=false}	
+									}
+								}
+							}
+							else
+							{
+								{_user.acting=false}	
+							}
+						}
+						else
+						{
+							_action.func(_user, _targets) {_user.acting=false}	
+						}
+					}
+					else
+					{
+						_action.func(_user, _targets) {_user.acting=false}
+					}
 				}
 			}
 		}
