@@ -178,7 +178,8 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 		{
 			case "Mutant Worm":
 				if _targets.hp <= round(_targets.hpMax/2) && oBattleUnitEnemy.flag1 = false
-				{				
+				{		
+					global.defendDodgeWave=1
 					oBattleUnitEnemy.flag1 = true
 					_targets.arrows = 2
 					RhythmCreate(_action.rhythm,_targets)

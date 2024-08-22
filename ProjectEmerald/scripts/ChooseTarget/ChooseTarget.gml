@@ -10,6 +10,8 @@ function chooseTarget(_attack)
 			return (_unit.hp > 0);
 		});
 		var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+		
+		_target.targeted=true
 	}
 	else
 	{	

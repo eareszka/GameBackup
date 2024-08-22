@@ -11,6 +11,9 @@ instance_deactivate_all(true);
 var _camWidth = 384
 var _camHeight = 216
 camera_set_view_size(view_camera[0],_camWidth,_camHeight)
+
+
+instance_create_depth(x,y,depth+100,oBattleBackground,{battleBackground: battleBackground})
 with instance_create_depth(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]),-16000,oFadeOut){FadeSpeed=.05}
 
 //Battle setup
@@ -46,6 +49,7 @@ damageDone=0
 skipTurns = 0
 continousAttack = 0
 units = [];
+stats=[]
 unitRenderOrder = [];
 unitDepth = depth-10;
 starupTimer=20;
@@ -75,37 +79,45 @@ boyToyAttackEndTimer=0
 
 //for defending
 defendSetup=false
-playerTurn=false
+playerTurn=true
 highlightEnemy=false
 defendStart=false
 defendEnd=false
+defendStanceLine=5
 
-//stats menu
-if !instance_exists(oBattleStats)
-{
-	instance_create_depth(x,y,-16000,oBattleStats)	
-}
 	
 //Make party
 for (var i = 0; i < array_length(global.party); i++)
 {
 	if (global.jen == 1 && global.broke == 1 && global.fin == 1)
 	{
-		partyUnits[i] = instance_create_depth(x+92+(i*65),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
+		partyStats[i]=instance_create_depth(x,y,-16000,obj_characterStats,{PC: i+1, PSIZE: 4})
+		array_push(stats,partyStats[i])
+		
+		partyUnits[i] = instance_create_depth(x+92+(i*64),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
 		array_push(units, partyUnits[i]);
 	}
 	else if (global.jen == 0 && global.broke == 1 && global.fin == 1)
 	{
-		partyUnits[i] = instance_create_depth(x+124+(i*65),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
+		partyStats[i]=instance_create_depth(x,y,-16000,obj_characterStats,{PC: i+1, PSIZE: 3})
+		array_push(stats,partyStats[i])
+		
+		partyUnits[i] = instance_create_depth(x+128+(i*64),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
 		array_push(units, partyUnits[i]);
 	}
 	else if (global.jen == 0 && global.broke == 0 && global.fin == 1)
 	{
-		partyUnits[i] = instance_create_depth(x+156+(i*65),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
+		partyStats[i]=instance_create_depth(x,y,-16000,obj_characterStats,{PC: i+1, PSIZE: 2})
+		array_push(stats,partyStats[i])
+		
+		partyUnits[i] = instance_create_depth(x+156+(i*64),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
 		array_push(units, partyUnits[i]);
 	}
 	else
 	{
+		partyStats[i]=instance_create_depth(x,y,-16000,obj_characterStats,{PC: i+1, PSIZE: 1})	
+		array_push(stats,partyStats[i])
+		
 		partyUnits[i] = instance_create_depth(x+192+(i*65),y+158.5,unitDepth,oBattleUnitPC,global.party[i]);
 		array_push(units, partyUnits[i]);	
 	}
@@ -197,6 +209,29 @@ DoTurn = function(_unit)
 		//Player
 		if (_unit.enemy == false)
 		{	
+			if !playerTurn
+			{
+				//resets y pos of stats bar after ene turn
+				for (var i = 0; i < array_length(global.party); i++)
+				{
+					with oBattle.partyStats[i]
+					{
+						targeted=false
+						y=oBattle.y+25
+					}
+				
+				}
+				for (var i = 0; i < array_length(global.party); i++)
+				{
+					with oBattle.partyUnits[i]
+					{
+						x=DefenseX
+						y=nonDefenseY+45
+					}
+				
+				}
+			}
+			
 			playerTurn=true
 			
 			//ResetUI()
@@ -346,6 +381,7 @@ function EndTurn(_unit)
 	highlightEnemy=false
 	if instance_exists(obj_projectileGenerator){instance_destroy(obj_projectileGenerator)}
 	if instance_exists(obj_defendProjectileParent){instance_destroy(obj_defendProjectileParent)}
+	if instance_exists(obj_defendStanceLineGenerator){instance_destroy(obj_defendStanceLineGenerator)}
 	defendEnd=false
 	
 	//resets statuses
@@ -367,6 +403,7 @@ function EndTurn(_unit)
 	perfectArrowAbsorbed=false
 	
 	with (_unit) myTurn = false;
+	//if _unit.enemy == false{_unit.turnCompleted=true}
 	turnCount++; //total turns
 	turn++;
 	//Loop turns
@@ -474,8 +511,11 @@ function ContinueAction(_user, _action, _targets)
 			battleEndMessages[0]=ActionText(_user,_action,_targets)
 		}
 		
-		show_debug_message(oBattleStats.x)
-		show_debug_message(oBattleStats.y)
+		//sets up defense phase
+		if variable_struct_exists(_action,"rhythmDefend")
+		{
+			defendStart=true
+		}
 		
 		//performs action after textbox
 		if battleEndMessageProg >= array_length(battleEndMessages) || !variable_struct_exists(_action,"textBeforeAct")
@@ -708,6 +748,9 @@ function ContinueAction(_user, _action, _targets)
 	}
 	else
 	{
+		if _user.enemy == false{_user.turnCompleted=true}
+			
+			
 		//if perfect curse is defeated ene dies
 		if perfectCurse {checkDeadPerfectCurse(_targets)}
 		

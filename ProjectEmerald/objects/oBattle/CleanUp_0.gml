@@ -1,4 +1,6 @@
 global.boyToys = 0
+global.defendDodgeWave=0
+
 if instance_exists(oBattleUnitBoyToy){instance_destroy(oBattleUnitBoyToy)}
 if instance_exists(oBattleUnitBoyToy2){instance_destroy(oBattleUnitBoyToy2)}
 
@@ -6,8 +8,9 @@ if instance_exists(obj_projectileGenerator){instance_destroy(obj_projectileGener
 if instance_exists(obj_defendProjectileParent){instance_destroy(obj_defendProjectileParent)}
 
 global.battleBox=sBox
+
 with (oMenu) instance_destroy();
-with (oBattleStats) instance_destroy();
+with (obj_characterStats) instance_destroy();
 with (oBattleUnit) instance_destroy();
 with (oBattleUnitBoyToy) instance_destroy()
 instance_activate_all();
@@ -19,6 +22,8 @@ obj_playerEmory.battleStart=false
 if instance_exists(oBattleIntro){instance_destroy(oBattleIntro)}
 if instance_exists(oBattleIntroBoss){instance_destroy(oBattleIntroBoss)}
 obj_camera.follow=obj_playerEmory
+
+if instance_exists(oBattleBackground){instance_destroy(oBattleBackground)}
 
 if (bossBattle = false)
 {

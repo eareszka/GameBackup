@@ -1,1 +1,0 @@
-oBattle.defendEnd=true

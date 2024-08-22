@@ -2,70 +2,178 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function RhythmDefend(_user,_targets)
 {
-	oBattle.defendStart=true
 	if !instance_exists(obj_projectileGenerator)&&oBattle.defendEnd=false{instance_create_depth(0,0,0,obj_projectileGenerator,{enemy: _user, target: _targets})}
+	if !instance_exists(obj_defendStanceLineGenerator){instance_create_depth(_targets.xstart,_targets.y+32,0,obj_defendStanceLineGenerator)}
 }
 
-function DefendUI()
+
+function EnemyUI()
 {
-	oBattle.highlightEnemy=true
-	for (var i = 0; i < array_length(oBattle.enemyUnits); i++)
+	for (var i = 0; i < array_length(global.party); i++)
 	{
-		if enemyUnits[i].myTurn=false
+		with oBattle.partyUnits[i]
 		{
-			if enemyUnits[i].image_alpha>.1{enemyUnits[i].image_alpha-=.1}
+			turnCompleted=false
 		}
 	}
 	
 	
-	var _speed = 1.25
+	for (var i = 0; i < array_length(global.party); i++)
+	{
+		with oBattle.partyStats[i]
+		{
+			var _speed = 1
+			var _setupPointX=oBattle.partyStats[i].x
+			var _setupPointY=oBattle.y+25
+
+			move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+		}
+	}
+}
+
+
+function DefendUI()
+{
+	oBattle.highlightEnemy=true
 	
 	for (var i = 0; i < array_length(global.party); i++)
 	{
-		with oBattle.partyUnits[i]
-		{
-			var _setupPointX=oBattle.partyUnits[i].x
-			var _setupPointY=camera_get_view_y(view_camera[0])+182
-			
-			move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));
-		}	
+		with oBattle.partyStats[i]
+		{	
+			if !targeted
+			{
+				if alpha>.3
+				{
+					alpha-=.1
+				}
+			}
+		}
 	}
 	
-	with oBattleStats
-	{
-		var _setupPointX=oBattleStats.x
-		var _setupPointY=camera_get_view_y(view_camera[0])+22
+	//for (var i = 0; i < array_length(global.party); i++)
+	//{
+	//	with oBattle.partyUnits[i]
+	//	{
+	//		if targeted
+	//		{
+	//			if x!=oBattle.x+192
+	//			{
+	//				y++
+	//			}
+	//			else
+	//			{
+	//				defensiveStance=true
+	//			}
+	//		}	
+	//		else
+	//		{
+	//			defensiveStance=true
+	//		}
+	//	}
+	//}
+	//var _speed = 1
+	
+	//for (var i = 0; i < array_length(global.party); i++)
+	//{
+	//	with oBattle.partyStats[i]
+	//	{	
+	//		if targeted
+	//		{
+	//			var _speed = 1.5
+				
+	//			if oBattle.partyStats[i].defendSet=false
+	//			{
+	//				if xPos!=oBattle.partyStats[i].x+160
+	//				{
+	//					//if box is not in middle and is targeted
+	//					var _setupPointX=oBattle.partyStats[i].x
+	//					var _setupPointY=oBattle.y+50
+	//					if point_distance(x, y, _setupPointX, _setupPointY) > _speed
+	//					{
+	//						move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+	//					}
+	//					else
+	//					{
+	//						oBattle.partyStats[i].defendSet=true
+	//					}
+	//				}
+	//				else
+	//				{
+	//					var _speed = 1
+	//					//if box is already in middle and is targeted
+	//					var _setupPointX=oBattle.partyStats[i].x
+	//					var _setupPointY=oBattle.y+28
+	//					if point_distance(x, y, _setupPointX, _setupPointY) > _speed
+	//					{
+	//						move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+	//					}	
+	//					else
+	//					{
+	//						oBattle.partyStats[i].defendSet=true	
+	//					}
+	//				}
+	//			}
+	//		}
+	//		else
+	//		{
+	//			//for boxes that are not targeted
+	//			if oBattle.partyStats[i].alpha>.3
+	//			{
+	//				oBattle.partyStats[i].alpha-=.1
+	//			}
+	//			var _setupPointX=oBattle.partyStats[i].x
+	//			var _setupPointY=oBattle.y+35
 			
-		move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));
-		
-		if oBattleStats.y=_setupPointY{oBattle.defendSetup=true}
-	}
+	//			move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));
+	//		}
+	//	}
+	//}
 }
 
 function ResetUI()
 {
-	var _speed = 1.25
-	
 	for (var i = 0; i < array_length(global.party); i++)
 	{
 		with oBattle.partyUnits[i]
 		{
-			var _setupPointX=oBattle.partyUnits[i].x
-			var _setupPointY=camera_get_view_y(view_camera[0])+160
-			
-			move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));
-		}	
+			targeted=false
+		}
 	}
 	
-	with oBattleStats
+	for (var i = 0; i < array_length(global.party); i++)
 	{
-		var _setupPointX=oBattleStats.x
-		var _setupPointY=oBattle.y
+		with oBattle.partyStats[i]
+		{
+			oBattle.partyStats[i].defendSet=false
+			var _speed = 1
+			var _setupPointX=oBattle.partyStats[i].x
+			var _setupPointY=oBattle.y
+			move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
 			
-		move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));
-		
-		if oBattleStats.y=_setupPointY{oBattle.defendSetup=false}
+			if point_distance(x, y, _setupPointX, _setupPointY) > _speed	
+			{
+				oBattle.defendStart=false
+			}
+		}
 	}
+	
+	//for (var i = 0; i < array_length(global.party); i++)
+	//{
+	//	with oBattle.partyUnits[i]
+	//	{
+	//		defensiveStance=false	
+	//	}	
+	//}
+	
+	//with oBattleStats
+	//{
+	//	var _setupPointX=oBattleStats.x
+	//	var _setupPointY=oBattle.y
+			
+	//	move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));
+		
+	//	if oBattleStats.y=_setupPointY{oBattle.defendSetup=false}
+	//}
 }
 
 function ResetAlpha()
@@ -83,23 +191,38 @@ function ResetAlpha()
 	}	
 }
 
+//function InitProjectile(_sec, _steps, _user, _targets, _xx=0, _type=0)
+//{
+//	if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps
+//	{
+//		CreateProjectile(_user,_targets,_xx=0,_type=0)	
+//	}
+//}
 
-
-function CreateProjectile(_user,_targets)
+function CreateProjectile(_user,_targets,_xx=0,_type=0)
 {
 	ObjFlash(_user,1.5,.025,255,255,255)
 	switch _user.name
 	{
+		case "Mutant Worm":
+			instance_create_depth(_targets.xstart+_xx,_user.y,-16000,obj_projectileMud)
+		break;
+		
 		case "Itty-Bitty Ant":
-			instance_create_depth(_targets.x,_user.y,-16000,obj_projectileMud)
+			instance_create_depth(_targets.xstart+_xx,_user.y,-16000,obj_projectileMud)
 		break;
 		
 		case "Bull Frog":
-			instance_create_depth(_targets.x,_user.y,-16000,obj_projectileMud)
+			instance_create_depth(_targets.xstart+_xx,_user.y,-16000,obj_projectileMud)
 		break;
 		
 		case "Nightcrawler":
-			instance_create_depth(_targets.x,_user.y,-16000,obj_projectileAirrod,{path: path_projectileAirrod})
+			
+			switch _type
+			{
+				case 0: instance_create_depth(_targets.xstart+_xx,_user.y,-16000,obj_projectileAirrod,{path: path_projectileAirrod}) break
+				case 1: instance_create_depth(_targets.xstart+_xx,_user.y,-16000,obj_projectileAirrod,{path: path_projectileAirrod2}) break
+			}
 		break;
 	}
 }

@@ -1,17 +1,24 @@
+steps=0
+sec=0
+
 switch enemy.name
 {
-	case "Itty-Bitty Ant":
-		alarm[1]=1
-		alarm[2]=room_speed
-		alarm[3]=room_speed*2
+	case "Mutant Worm":
+		if global.defendDodgeWave=0
+		{
+			waveID=0
+		}
+		if global.defendDodgeWave=1
+		{
+			waveID=irandom_range(1,2)
+		}
 	break
 	
 	case "Bull Frog":
-		alarm[1]=1
-		alarm[2]=room_speed
+		waveID=irandom_range(0,1)
 	break
-	
-	case "Nightcrawler":
-		alarm[1]=1
-	break;
 }
+
+flag1=false
+flag2=false
+flag3=false

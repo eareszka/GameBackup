@@ -23,7 +23,7 @@ if (hp <= 0)
 
 if (defending) sprite_index = sprites.defend;
 
-if (strBoost) sprite_index = sprites.special;
+//if (strBoost) sprite_index = sprites.special;
 
 //if moving!=-1
 //{

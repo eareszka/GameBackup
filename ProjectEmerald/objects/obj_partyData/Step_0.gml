@@ -8,7 +8,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.EcurrentMP,
 	mpMax: 20+global.mpAdd,
 	strength: 10+global.strengthAdd,
-	sprites : { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special, dodge: spr_emory_battleDodge},
+	sprites : { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special, dodge: spr_emory_battleDefend},
 	actions : [],
 	}
 	];
@@ -24,7 +24,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.EcurrentMP,
 	mpMax: 20+global.mpAdd,
 	strength: 5+global.strengthAdd,
-	sprites: { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special},
+	sprites: { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special, dodge: spr_emory_battleDodge},
 	actions : [],
 	},
 	{
@@ -34,7 +34,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: 0,
 	mpMax: 0,
 	strength: round(10+(global.strengthAdd*.8)),
-	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle},
+	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, dodge: spr_emory_battleDodge},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	}
 	];
@@ -50,7 +50,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.EcurrentMP,
 	mpMax: 20+global.mpAdd,
 	strength: 5+global.strengthAdd,
-	sprites: { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special},
+	sprites: { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special, dodge: spr_emory_battleDodge},
 	actions : [],
 	},
 	{
@@ -60,7 +60,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: 0,
 	mpMax: 0,
 	strength: round(10+(global.strengthAdd*.8)),
-	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle},
+	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, dodge: spr_emory_battleDodge},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	},
 	{
@@ -70,7 +70,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.BcurrentMP,
 	mpMax: round(50+(global.mpAdd*2)),
 	strength: 1,
-	sprites: { idle: spr_broke_battleIdle, attack: spr_broke_attack, defend: spr_broke_defend, cast: spr_broke_cast},
+	sprites: { idle: spr_broke_battleIdle, attack: spr_broke_attack, defend: spr_broke_defend, cast: spr_broke_cast, dodge: spr_emory_battleDodge},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.summonBoyToys, global.specialLibrary.summonBoyToys2,	global.actionLibrary.escape]
 	}
 	];
@@ -86,7 +86,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.EcurrentMP,
 	mpMax: 20+global.mpAdd,
 	strength: 5+global.strengthAdd,
-	sprites: { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special},
+	sprites: { idle: spr_emory_battleIdle, attack: spr_emory_battleAttack, special: spr_emory_special, dodge: spr_emory_battleDodge},
 	actions : [],
 	},
 	{
@@ -96,7 +96,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: 0,
 	mpMax: 0,
 	strength: round(10+(global.strengthAdd*.8)),
-	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle},
+	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, dodge: spr_emory_battleDodge},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	},
 	{
@@ -106,7 +106,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.BcurrentMP,
 	mpMax: round(50+(global.mpAdd*2)),
 	strength: 1,
-	sprites: { idle: spr_broke_battleIdle, attack: spr_broke_attack, defend: spr_broke_defend, cast: spr_broke_cast},
+	sprites: { idle: spr_broke_battleIdle, attack: spr_broke_attack, defend: spr_broke_defend, cast: spr_broke_cast, dodge: spr_emory_battleDodge},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.summonBoyToys, global.actionLibrary.escape]
 	},
 	{
@@ -116,7 +116,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.JcurrentMP,
 	mpMax: round(50+(global.mpAdd*1.8)),
 	strength: round(10+(global.strengthAdd*.5)),
-	sprites: { idle: spr_jen_idle, attack: spr_jen_attack, cast: spr_jen_cast, defend: spr_jen_defend},
+	sprites: { idle: spr_jen_idle, attack: spr_jen_attack, cast: spr_jen_cast, defend: spr_jen_defend, dodge: spr_emory_battleDodge},
 	actions: [global.actionLibrary.attackRhythm, global.actionLibrary.defend, global.specialLibrary.caduceus]
 	}
 	];

@@ -126,7 +126,29 @@ if (battleState == 2)
 
 //Battle in progress
 if (battleState == 1) 
- {	
+{	
+	//resets defensive stance
+	if playerTurn
+	{
+		ResetUI()
+	}
+
+	if !playerTurn
+	{
+		EnemyUI()
+	}
+
+	if !playerTurn&&defendStart
+	{
+		DefendUI()
+	}
+
+	if !highlightEnemy&&!playerTurn
+	{
+		ResetAlpha()
+	}
+	
+	
 	//Is the battle over?
 	var _noEnemiesAlive = !array_any(enemyUnits, function(_unit)
 	{
@@ -468,22 +490,4 @@ function battleFlavorText(_enemyUnits,_flavorText,_wornOff=0)
 			}
 		}	
 	}
-}
-
-
-
-//resets defensive stance
-if defendSetup&&playerTurn
-{
-	ResetUI()
-}
-
-if !defendSetup&&!playerTurn&&defendStart
-{
-	DefendUI()
-}
-
-if !highlightEnemy&&!playerTurn
-{
-	ResetAlpha()
 }

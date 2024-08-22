@@ -21,6 +21,8 @@ global.prevRoom = 0
 global.font_main = fnM5x7
 global.battleBox=sBox
 
+global.defendDodgeWave=0
+
 //0 closed/1 opened
 global.chestOpened = 
 [
@@ -1259,8 +1261,8 @@ global.enemyLibrary =
 				BattleChangeHP(_targets[i], -_damage,,,false);
 			}
 			BattleChangeMP(_user, -mpCost)
-			MoveH(oBattleStats,6,1.5)
-			MoveV(oBattleStats,3,1)
+			//MoveH(oBattleStats,6,1.5)
+			//MoveV(oBattleStats,3,1)
 		}		
 	}
 	,
@@ -1520,8 +1522,8 @@ global.enemyLibrary =
 				BattleChangeHP(_targets[i], -_damage,,,false);
 			}
 			BattleChangeMP(_user, -mpCost)
-			MoveH(oBattleStats,6,1.5)
-			MoveV(oBattleStats,3,1)
+			//MoveH(oBattleStats,6,1.5)
+			//MoveV(oBattleStats,3,1)
 			
 			switch _user.name
 			{

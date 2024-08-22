@@ -30,6 +30,9 @@ AIscript = function(_unit)
 		switch _unit.name
 		{
 			case "Mutant Worm":
+			
+				if _unit.hp <= round(_unit.hpMax/2){global.defendDodgeWave=1}
+				
 				var _action = chooseAttack(_unit)
 				var _target = chooseTarget(_action)
 				return [_action, _target];

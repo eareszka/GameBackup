@@ -8,9 +8,12 @@ image_angle+=1
 
 if destroy&&!miss
 {
+	if image_xscale>0{image_xscale-=.01}
+	if image_yscale>0{image_yscale-=.01}
+	
 	image_index=1
 	image_blend = c_lime	
-	image_alpha-=.1
+	image_alpha-=.25
 }
 else
 {

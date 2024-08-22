@@ -1,0 +1,1 @@
+draw_sprite_tiled(spr_battleBackground,-1,x,y)

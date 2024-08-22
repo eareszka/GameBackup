@@ -1,12 +1,355 @@
 event_inherited();
 
 //for intro
-if oBattle.battleState=0&&y>camera_get_view_y(view_camera[0])+160
+if !setup
 {
-	y-=1;
+	if y>nonDefenseY
+	{
+		y-=1;
+	}
+	else
+	{
+		y=nonDefenseY
+		setup=true
+	}
 }
 
 
+//if setup
+//{
+//	switch name
+//	{
+//		case "Emory":
+//			if oBattle.playerTurn=true
+//			{
+//				x=oBattle.partyStats[0].xPos+32
+//				y=oBattle.partyStats[0].yPos-6
+//			}
+//			else
+//			{
+//				if oBattle.defendStart=false
+//				{
+//					y+=2	
+//				}
+//				else
+//				{
+//					if targeted
+//					{
+//						if !dodgeSetup
+//						{
+//							x=(oBattle.partyStats[0].xPos+32)
+//						}
+//						dodgePhase=true	
+//					}
+//					else
+//					{
+//						y+=2	
+//					}
+//				}
+//			}
+//		break;
+		
+//		case "Fin":
+//			if oBattle.playerTurn=true
+//			{
+//				x=oBattle.partyStats[1].xPos+32
+//				y=oBattle.partyStats[1].yPos-6
+//			}
+//			else
+//			{
+//				if oBattle.defendStart=false
+//				{
+//					y+=2	
+//				}
+//				else
+//				{
+//					if targeted
+//					{
+//						x=oBattle.partyStats[1].xPos+32
+//						y=oBattle.partyStats[1].yPos-6	
+//					}
+//					else
+//					{
+//						y+=2	
+//					}
+//				}
+//			}
+//		break;
+		
+//		case "Broke":
+//			if oBattle.playerTurn=true
+//			{
+//				x=oBattle.partyStats[2].xPos+32
+//				y=oBattle.partyStats[2].yPos-6
+//			}
+//			else
+//			{
+//				if oBattle.defendStart=false
+//				{
+//					y+=2	
+//				}
+//				else
+//				{
+//					if targeted
+//					{
+//						x=oBattle.partyStats[2].xPos+32
+//						y=oBattle.partyStats[2].yPos-6	
+//					}
+//					else
+//					{
+//						y+=2	
+//					}
+//				}
+//			}
+//		break;
+		
+//		case "Jen":
+//			if oBattle.playerTurn=true
+//			{
+//				x=oBattle.partyStats[3].xPos+32
+//				y=oBattle.partyStats[3].yPos-6
+//			}
+//			else
+//			{
+//				if oBattle.defendStart=false
+//				{
+//					y+=2	
+//				}
+//				else
+//				{
+//					if targeted
+//					{
+//						x=oBattle.partyStats[3].xPos+32
+//						y=oBattle.partyStats[3].yPos-6	
+//					}
+//					else
+//					{
+//						y+=2	
+//					}
+//				}
+//			}
+//		break;
+//	}
+//}
+
+
+//if dodgePhase=true
+//{
+//	if !dodgeSetup
+//	{
+//		y=DefenseY+5
+//		//if y<=DefenseY
+//		//{
+//		//	y+=.80
+//		//}
+//		//else
+//		//{
+//		//	//dodgeSetup=true	
+//		//	y=DefenseY
+//		//}
+
+			
+		
+//		sprite_index=sprites.dodge	
+	
+//		if image_index<=3
+//		{
+//			image_index++	
+//		}
+//		else
+//		{
+//			image_index=3	
+//		}
+//	}
+//	if dodgeSetup
+//	{
+		
+//		if left_key
+//		{
+//			image_index=5
+		
+//			if dodgePos!=0{dodgePos-=1}
+//		}
+	
+//		if right_key
+//		{
+//			image_index=6
+		
+//			if dodgePos!=2{dodgePos+=1}
+//		}
+	
+//		if dodgePos=2 //right
+//		{
+//			image_index=3
+		
+//			var _speed=2
+//			var _setupPointX=xstart+20
+			
+//			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+//		}
+//		if dodgePos=1
+//		{
+//			image_index=3
+		
+//			var _speed=2
+//			var _setupPointX=xstart
+			
+//			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+//		}
+//		if dodgePos=0 //left
+//		{
+//			image_index=3
+		
+//			var _speed=2
+//			var _setupPointX=xstart-20
+			
+//			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+//		}
+//	}
+//}
+if setup
+{
+	if oBattle.playerTurn
+	{
+		if turnCompleted
+		{
+			if y<DefenseY+32
+			{
+				y+=2
+			}
+		}
+		else
+		{
+			if y>nonDefenseY
+			{
+				y-=1
+			}
+			else
+			{
+				y=nonDefenseY
+			}
+		}
+	}
+
+
+
+	if !oBattle.playerTurn
+	{
+		if targeted&&oBattle.defendStart=true
+		{
+			y=DefenseY
+			x=DefenseX
+		}
+		else
+		{
+			y=DefenseY+32	
+		}
+	}
+}
+
+
+//if setup
+//{
+//	//for player dodging
+//	if instance_exists(obj_projectileGenerator)&&!targeted&&oBattle.defendStart=true
+//	{
+//		//y=oBattle.partyStats[0].yPos-6
+//		sprite_index=sprites.dodge
+	
+//		if left_key
+//		{
+//			image_index=1
+		
+//			if dodgePos!=0{dodgePos-=1}
+//		}
+	
+//		if right_key
+//		{
+//			image_index=3
+		
+//			if dodgePos!=2{dodgePos+=1}
+//		}
+	
+//		if dodgePos=2 //right
+//		{
+//			if image_index>=image_number-2{image_index=image_number-1}
+		
+//			var _speed=2
+//			var _setupPointX=xstart+20
+			
+//			move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
+//		}
+//		if dodgePos=1
+//		{
+//			image_index=0
+		
+//			var _speed=2
+//			var _setupPointX=xstart
+			
+//			move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
+//		}
+//		if dodgePos=0 //left
+//		{
+//			if image_index>=1{image_index=2}
+		
+//			var _speed=2
+//			var _setupPointX=xstart-20
+			
+//			move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
+//		}
+//	}
+//	else
+//	{
+//		sprite_index=sprites.idle
+	
+//		dodgePos=1
+	
+//		var _speed=1.25
+//		var _setupPointX=xstart
+			
+//		move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
+	
+//		sprite_index = sprites.idle	
+//	}
+
+//	if setup
+//	{
+//		if !defensiveStance&&!targeted
+//		{
+//			if image_alpha<1
+//			{
+//				image_alpha+=.1
+//			}
+//			yPos=nonDefenseY
+//		}
+//		else
+//		{
+//			if targeted
+//			{
+//				if oBattle.defendStart=true
+//				{
+//					yPos=nonDefenseY+24
+//				}
+//				else
+//				{
+//					yPos++	
+//				}
+//			}
+//			else
+//			{
+//				if image_alpha>0
+//				{
+//					image_alpha-=.1
+//				}
+//				yPos=nonDefenseY+52
+//			}
+//		}
+//	}
+
+//	dodgeTimer--
+//}
+
+//dead or escaped
 if (oBattle.escaped) && (hp > 0)
 {
 	y +=2;	
@@ -16,82 +359,8 @@ if (hp <= 0)
 {
 	y +=2;	
 }
-else
-{
-	//if (sprite_index == sprites.down) sprite_index = sprites.idle;	
-}
-
-
-//for player dodging
-if instance_exists(obj_projectileGenerator)&&oBattle.defendStart=true
-{
-	if !reverse{image_speed=1}
 	
-	if dodgeTimer<0
-	{
-		if left_hold
-		{
-			sprite_index = sprites.dodge 		
-			dodgeTimer=32
-			moving=true
-		}
-		if right_hold
-		{
-			image_xscale=-1 
-			sprite_index = sprites.dodge
-			dodgeTimer=32
-			moving=true
-		}
-	}
-	else
-	{
-		if reverse&&image_index=0
-		{
-			image_xscale=1
-			dodging=false
-			sprite_index = sprites.idle
-			reverse=false
-		}
-	}
 	
-	if moving
-	{
-		if image_index>25
-		{
-			reverse=true
-			image_speed=-1
-		}
-		
-		if image_index>10
-		{
-			dodging=true
-		}
-	}
-	
-}
-else
-{
-	image_xscale=1
-	sprite_index = sprites.idle	
-	dodgeTimer=0
-	moving=false
-	reverse=false
-	dodging=false
-}
-
-//fixes moving if defend has ended
-//if oBattle.defendEnd=true
-//{
-//	image_xscale=1
-//	sprite_index = sprites.idle	
-//	dodgeTimer=0
-//	moving=false
-//	reverse=false
-//	dodging=false
-//}
-
-dodgeTimer--
-
 //for correct keys 
 right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
 left_key = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));

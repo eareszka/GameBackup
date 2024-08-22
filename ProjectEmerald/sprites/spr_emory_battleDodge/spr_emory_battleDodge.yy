@@ -2,9 +2,9 @@
   "$GMSprite":"",
   "%Name":"spr_emory_battleDodge",
   "bboxMode":2,
-  "bbox_bottom":1,
-  "bbox_left":20,
-  "bbox_right":36,
+  "bbox_bottom":14,
+  "bbox_left":0,
+  "bbox_right":17,
   "bbox_top":1,
   "collisionKind":0,
   "collisionTolerance":0,
@@ -13,41 +13,10 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"5482d13e-8e9a-4480-8ba9-d1bfec3349b5","name":"5482d13e-8e9a-4480-8ba9-d1bfec3349b5","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e8939bac-ceb9-4090-9dcd-ee461e54e924","name":"e8939bac-ceb9-4090-9dcd-ee461e54e924","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"4bb1aa7d-d03d-46d4-ba52-d62ad65a4d73","name":"4bb1aa7d-d03d-46d4-ba52-d62ad65a4d73","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"85421885-a4d0-4349-a78d-baac1b7d956f","name":"85421885-a4d0-4349-a78d-baac1b7d956f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"56e9d7c1-ca78-4217-9df1-20b2adec1b87","name":"56e9d7c1-ca78-4217-9df1-20b2adec1b87","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"a2fef1bb-eb42-43be-b965-b87fb28efc20","name":"a2fef1bb-eb42-43be-b965-b87fb28efc20","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"251bde02-54ff-4b59-9fcc-a2fcd1d73519","name":"251bde02-54ff-4b59-9fcc-a2fcd1d73519","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b7d188da-a681-4ea8-a8a9-47251e3ce17c","name":"b7d188da-a681-4ea8-a8a9-47251e3ce17c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7243a5b7-aed3-4ea7-9221-50070eab8bc0","name":"7243a5b7-aed3-4ea7-9221-50070eab8bc0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c6a722d1-4df6-436a-b823-f562d2e6d0b7","name":"c6a722d1-4df6-436a-b823-f562d2e6d0b7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"8a6fd0d0-4c59-4e41-90f9-3f65aeb0eb73","name":"8a6fd0d0-4c59-4e41-90f9-3f65aeb0eb73","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"fc6787b0-3468-4b9b-aa23-cc2c35f2e0d8","name":"fc6787b0-3468-4b9b-aa23-cc2c35f2e0d8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b18f8ea5-31aa-4a81-9637-3433e313fb03","name":"b18f8ea5-31aa-4a81-9637-3433e313fb03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"5329268b-02b2-453d-aec0-de0c4c494a03","name":"5329268b-02b2-453d-aec0-de0c4c494a03","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"aceecca4-3e66-42c1-9b27-495c11802f2f","name":"aceecca4-3e66-42c1-9b27-495c11802f2f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"931f14d8-b054-49e8-b050-94ec6e2193bb","name":"931f14d8-b054-49e8-b050-94ec6e2193bb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1dc901c5-85f7-49ee-821f-ba4589ed916c","name":"1dc901c5-85f7-49ee-821f-ba4589ed916c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"cb87ab3e-6a39-4fa9-a985-b08e0d6ecf90","name":"cb87ab3e-6a39-4fa9-a985-b08e0d6ecf90","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d480d970-79fd-4c5c-b04a-07bba26ec416","name":"d480d970-79fd-4c5c-b04a-07bba26ec416","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b3946894-7830-441c-a19c-c20fcf7f6499","name":"b3946894-7830-441c-a19c-c20fcf7f6499","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7bb01b3a-e344-4bd9-bacc-17dd2f8a704a","name":"7bb01b3a-e344-4bd9-bacc-17dd2f8a704a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"37bc9d05-e648-4d69-a9a3-cd1d65522579","name":"37bc9d05-e648-4d69-a9a3-cd1d65522579","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d2e13acb-6b7e-4827-9c5c-44d904949471","name":"d2e13acb-6b7e-4827-9c5c-44d904949471","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"767b9216-c010-4a22-9772-75ee4885fcdc","name":"767b9216-c010-4a22-9772-75ee4885fcdc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"ad0c5b7e-a6bd-4ed1-92ed-1d7a890c78fb","name":"ad0c5b7e-a6bd-4ed1-92ed-1d7a890c78fb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f48f91dd-5323-40ed-b71b-12f9632e2dd7","name":"f48f91dd-5323-40ed-b71b-12f9632e2dd7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"935ca548-f563-4922-af48-1dbcce847146","name":"935ca548-f563-4922-af48-1dbcce847146","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"e997ddbb-ae61-4597-a86b-8ea71d07e18a","name":"e997ddbb-ae61-4597-a86b-8ea71d07e18a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"2c38b1d1-82b3-4ee2-828d-ee003368989c","name":"2c38b1d1-82b3-4ee2-828d-ee003368989c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"aae9eb86-8f49-4eba-83cd-d4e0da337c50","name":"aae9eb86-8f49-4eba-83cd-d4e0da337c50","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7d0be8d7-890f-408c-9c9e-afb9beab5f63","name":"7d0be8d7-890f-408c-9c9e-afb9beab5f63","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"6b7ac635-dd2e-4ffb-b917-19f91421335a","name":"6b7ac635-dd2e-4ffb-b917-19f91421335a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"ccd67c82-f3b9-430a-a049-b573dd461567","name":"ccd67c82-f3b9-430a-a049-b573dd461567","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"455af0de-530b-4ff1-9e22-182c4dcfd31a","name":"455af0de-530b-4ff1-9e22-182c4dcfd31a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"3410e720-3b7d-4012-93c3-97addba2a9c2","name":"3410e720-3b7d-4012-93c3-97addba2a9c2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"bc6b6776-151d-42b6-b8ec-68e623461068","name":"bc6b6776-151d-42b6-b8ec-68e623461068","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"3edfafe5-e4af-4cf5-8f6d-cb35a4e944f0","name":"3edfafe5-e4af-4cf5-8f6d-cb35a4e944f0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"dc92e3d0-847f-423c-ae70-61124aa49ef6","name":"dc92e3d0-847f-423c-ae70-61124aa49ef6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"32e3aa40-69bb-46b6-81dd-a0cee5635c1b","name":"32e3aa40-69bb-46b6-81dd-a0cee5635c1b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"c1c693d9-eb1f-4163-87e3-dd022b257d81","name":"c1c693d9-eb1f-4163-87e3-dd022b257d81","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -84,7 +53,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":36.0,
+    "length":5.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -94,7 +63,7 @@
     },
     "name":"spr_emory_battleDodge",
     "playback":1,
-    "playbackSpeed":100.0,
+    "playbackSpeed":16.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -107,115 +76,22 @@
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5482d13e-8e9a-4480-8ba9-d1bfec3349b5","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"40bca8f1-6f45-4e75-b60d-10ac7a918119","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e8939bac-ceb9-4090-9dcd-ee461e54e924","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"cf718993-fb0e-4e23-ace0-86c607907588","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3edfafe5-e4af-4cf5-8f6d-cb35a4e944f0","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"b8dfc211-b3fc-4f0a-a97d-de305eeb4122","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"4bb1aa7d-d03d-46d4-ba52-d62ad65a4d73","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6cd8dc58-cbc8-4d99-a87d-f01ac96d4d4b","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"dc92e3d0-847f-423c-ae70-61124aa49ef6","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"cd7a4554-2509-4128-aba6-8862022289cd","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"85421885-a4d0-4349-a78d-baac1b7d956f","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0415d831-0952-4e37-9720-299d69dc9020","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"32e3aa40-69bb-46b6-81dd-a0cee5635c1b","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f4ad3be8-b37e-456f-994e-bc2d11d28247","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"56e9d7c1-ca78-4217-9df1-20b2adec1b87","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6dd38767-0392-426d-9485-6b0ea49c7381","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a2fef1bb-eb42-43be-b965-b87fb28efc20","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3a06ee77-90ee-449f-a759-e723ec422937","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"251bde02-54ff-4b59-9fcc-a2fcd1d73519","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6ddb4409-988b-4a30-b6ca-237b62738e5f","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b7d188da-a681-4ea8-a8a9-47251e3ce17c","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"84c3b46a-cabd-48fe-a7d1-75578ec3e74b","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7243a5b7-aed3-4ea7-9221-50070eab8bc0","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"21c604e5-c335-473a-888c-84580c716424","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c6a722d1-4df6-436a-b823-f562d2e6d0b7","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"af771613-617e-4ffc-92dc-5a0b936c8d45","IsCreationKey":false,"Key":9.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8a6fd0d0-4c59-4e41-90f9-3f65aeb0eb73","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f11bc250-350c-4f36-84a2-40ccfd8b9c96","IsCreationKey":false,"Key":10.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fc6787b0-3468-4b9b-aa23-cc2c35f2e0d8","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6e5be96c-1e6a-4ed9-b9b9-da2238ae3dcd","IsCreationKey":false,"Key":11.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b18f8ea5-31aa-4a81-9637-3433e313fb03","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9ec72da7-00a0-4d6c-93a1-a8688028a6f9","IsCreationKey":false,"Key":12.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5329268b-02b2-453d-aec0-de0c4c494a03","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"8a6fdeec-7c3a-4b62-8fa7-e537c8a8241d","IsCreationKey":false,"Key":13.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aceecca4-3e66-42c1-9b27-495c11802f2f","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a76d44c4-63db-4ae7-b58d-8c7412e26501","IsCreationKey":false,"Key":14.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"931f14d8-b054-49e8-b050-94ec6e2193bb","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f6a9bb98-b381-42e4-9fb4-958a25f0ca74","IsCreationKey":false,"Key":15.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"1dc901c5-85f7-49ee-821f-ba4589ed916c","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2020e961-98e2-450f-a04e-0995667ed12f","IsCreationKey":false,"Key":16.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cb87ab3e-6a39-4fa9-a985-b08e0d6ecf90","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"78f59e85-3a83-420f-8f6e-82d51e375dce","IsCreationKey":false,"Key":17.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d480d970-79fd-4c5c-b04a-07bba26ec416","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"51d64a5f-d3af-4051-a2c1-4b2f171c19ef","IsCreationKey":false,"Key":18.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b3946894-7830-441c-a19c-c20fcf7f6499","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e3403dd8-045d-4fe0-b702-2d6bbb272d97","IsCreationKey":false,"Key":19.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7bb01b3a-e344-4bd9-bacc-17dd2f8a704a","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"cc3b74d8-3323-456d-9700-58a494d154f6","IsCreationKey":false,"Key":20.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"37bc9d05-e648-4d69-a9a3-cd1d65522579","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a3a46d1d-ef4f-4e53-9bea-91b6074eaaca","IsCreationKey":false,"Key":21.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d2e13acb-6b7e-4827-9c5c-44d904949471","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"257d667e-725d-4185-ba23-6dca64929fe3","IsCreationKey":false,"Key":22.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"767b9216-c010-4a22-9772-75ee4885fcdc","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"bf82a142-c6e7-407c-824f-eca84fae6e4b","IsCreationKey":false,"Key":23.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ad0c5b7e-a6bd-4ed1-92ed-1d7a890c78fb","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6a2203fe-5145-4c81-b428-8baa4f64fc72","IsCreationKey":false,"Key":24.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"f48f91dd-5323-40ed-b71b-12f9632e2dd7","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"cb92ee4d-ce76-4cc2-b04b-937cfa65675f","IsCreationKey":false,"Key":25.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"935ca548-f563-4922-af48-1dbcce847146","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"4b74ea6c-b3e9-416c-8f1d-d1833af524c0","IsCreationKey":false,"Key":26.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e997ddbb-ae61-4597-a86b-8ea71d07e18a","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a6eb7d09-85b9-4c35-8ef5-cbe5e7e04f0b","IsCreationKey":false,"Key":27.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2c38b1d1-82b3-4ee2-828d-ee003368989c","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2471c450-f00e-41a2-9f58-1691061318a4","IsCreationKey":false,"Key":28.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"aae9eb86-8f49-4eba-83cd-d4e0da337c50","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"fe40661a-f7ab-4e61-ab42-20ae8390c00b","IsCreationKey":false,"Key":29.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7d0be8d7-890f-408c-9c9e-afb9beab5f63","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0430e1e5-6493-46c2-8853-204365c8030d","IsCreationKey":false,"Key":30.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6b7ac635-dd2e-4ffb-b917-19f91421335a","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e04bc32e-2b4e-44cd-8a36-a868b738872e","IsCreationKey":false,"Key":31.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ccd67c82-f3b9-430a-a049-b573dd461567","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"273947fd-720c-4822-bab2-cc5984b73d78","IsCreationKey":false,"Key":32.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"455af0de-530b-4ff1-9e22-182c4dcfd31a","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"57481351-0cd0-4d18-ab0e-f4a6cd79cf8f","IsCreationKey":false,"Key":33.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3410e720-3b7d-4012-93c3-97addba2a9c2","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"eaeaf97f-efc1-44db-89f6-876d22ba5d32","IsCreationKey":false,"Key":34.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bc6b6776-151d-42b6-b8ec-68e623461068","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"de2dfdb9-8451-4ced-8ece-3962ff5201a0","IsCreationKey":false,"Key":35.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c1c693d9-eb1f-4163-87e3-dd022b257d81","path":"sprites/spr_emory_battleDodge/spr_emory_battleDodge.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f15270d5-eacf-4d9e-abae-45609f2e06cb","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":29,
+    "xorigin":9,
     "yorigin":12,
   },
   "swatchColours":null,
@@ -226,5 +102,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":37,
+  "width":18,
 }

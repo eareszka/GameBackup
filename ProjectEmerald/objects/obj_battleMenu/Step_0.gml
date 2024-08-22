@@ -120,4 +120,4 @@ else
 
 
 x=user.x-23
-y=user.y-57
+y=user.nonDefenseY-57

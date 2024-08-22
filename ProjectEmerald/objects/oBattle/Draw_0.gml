@@ -1,4 +1,3 @@
-draw_sprite_tiled(battleBackground,-1,x,y)
 switch battleBackground
 {
 	case spr_battleBackground1:
@@ -21,6 +20,8 @@ switch battleBackground
 		global.battleBox=sBox5
 	break
 }
+
+//draw_sprite(spr_gridDefend,-16000,x+113,y+142)
 
 image_speed = .5
 
