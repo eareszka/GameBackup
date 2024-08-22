@@ -22,3 +22,13 @@ switch enemy.name
 flag1=false
 flag2=false
 flag3=false
+
+
+row0=oBattle.x+172
+row1=oBattle.x+182
+row2=oBattle.x+192
+row3=oBattle.x+202
+row4=oBattle.x+212
+
+yStart=oBattle.y+75
+

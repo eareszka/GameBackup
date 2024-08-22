@@ -11,4 +11,9 @@ if (hp <= 0)
 }
 
 
+//if instance_exists(obj_defendStanceLine)
+//{
+//	depth=obj_defendStanceLine.depth+10	
+//}
+
 

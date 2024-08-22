@@ -7,7 +7,7 @@ switch enemy.name
 			{
 				if sec=0
 				{
-					CreateProjectile(enemy,target)
+					CreateProjectile(enemy,row2,yStart)
 					flag1=true
 				}
 			}
@@ -20,7 +20,7 @@ switch enemy.name
 			{
 				if sec=0
 				{
-					CreateProjectile(enemy,target)
+					CreateProjectile(enemy,row2,yStart)
 					flag1=true
 				}
 			}
@@ -29,7 +29,7 @@ switch enemy.name
 			{
 				if sec=0&&steps>=30
 				{
-					CreateProjectile(enemy,target,20)
+					CreateProjectile(enemy,row3,yStart)
 					flag2=true
 				}
 			}
@@ -42,7 +42,7 @@ switch enemy.name
 			{
 				if sec=0
 				{
-					CreateProjectile(enemy,target,-20)
+					CreateProjectile(enemy,row2,yStart)
 					flag1=true
 				}
 			}
@@ -51,7 +51,7 @@ switch enemy.name
 			{
 				if sec=0&&steps>=30
 				{
-					CreateProjectile(enemy,target)
+					CreateProjectile(enemy,row3,yStart)
 					flag2=true
 				}
 			}

@@ -21,3 +21,10 @@ if instance_exists(obj_projectileGenerator)
 		instance_destroy()	
 	}
 }
+
+
+var _speed = 1
+var _setupPointX=xDest
+var _setupPointY=obj_defendStanceLineGenerator.y
+
+move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	

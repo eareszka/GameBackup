@@ -7,7 +7,7 @@ if image_xscale>0
 
 image_speed=0
 
-image_alpha-=.05
+image_alpha-=.035 //distance
 
 if image_alpha<0
 {
@@ -15,7 +15,7 @@ if image_alpha<0
 }
 
 
-if !instance_exists(obj_projectileGenerator)
-{
-	image_alpha-=.25
-}
+//if !instance_exists(obj_projectileGenerator)
+//{
+//	image_alpha-=.25
+//}

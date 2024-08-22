@@ -208,7 +208,7 @@ DoTurn = function(_unit)
 		
 		//Player
 		if (_unit.enemy == false)
-		{	
+		{		
 			if !playerTurn
 			{
 				//resets y pos of stats bar after ene turn
@@ -225,14 +225,15 @@ DoTurn = function(_unit)
 				{
 					with oBattle.partyUnits[i]
 					{
-						x=DefenseX
-						y=nonDefenseY+45
+						x=oBattle.partyUnits[i].xstart
+						y=oBattle.partyUnits[i].nonDefenseY+45
 					}
 				
 				}
+				
+				playerTurn=true
 			}
 			
-			playerTurn=true
 			
 			//ResetUI()
 			if defendSetup=false{defendSetup=true}
@@ -498,6 +499,7 @@ function BeginAction(_user, _action, _targets)
 	Action Bubble
 	************/
 	if _user.enemy=true{BattleActionBox(_user,_action)}
+	
 }
 	
 //Continue the current action
@@ -514,6 +516,7 @@ function ContinueAction(_user, _action, _targets)
 		//sets up defense phase
 		if variable_struct_exists(_action,"rhythmDefend")
 		{
+			if !instance_exists(obj_defendStanceLineGenerator){instance_create_depth(oBattle.x+192,oBattle.y+188,0,obj_defendStanceLineGenerator)}
 			defendStart=true
 		}
 		

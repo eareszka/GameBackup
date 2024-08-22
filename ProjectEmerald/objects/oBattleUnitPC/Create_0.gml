@@ -20,7 +20,9 @@ dodging=false
 
 defensiveStance=false
 yPos=ystart
-dodgePos=1
+dodgePos=2
+
+moveTimer=0
 
 
 dodgePhase=false

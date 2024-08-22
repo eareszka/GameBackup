@@ -1,6 +1,5 @@
 event_inherited();
 
-y+=1
 if image_alpha<1{image_alpha+=.025}
 image_angle+=1
 

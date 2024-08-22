@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gridDefend_1",
-    "path":"sprites/spr_gridDefend_1/spr_gridDefend_1.yy",
+    "name":"spr_defendStanceLine",
+    "path":"sprites/spr_defendStanceLine/spr_defendStanceLine.yy",
   },
   "spriteMaskId":null,
   "visible":true,

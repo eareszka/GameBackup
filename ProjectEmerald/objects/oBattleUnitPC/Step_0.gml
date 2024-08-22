@@ -211,6 +211,10 @@ if setup
 {
 	if oBattle.playerTurn
 	{
+		dodgePhase=false
+		
+		x=xstart
+		
 		if turnCompleted
 		{
 			if y<DefenseY+32
@@ -219,7 +223,9 @@ if setup
 			}
 		}
 		else
-		{
+		{			
+			sprite_index=sprites.idle
+			
 			if y>nonDefenseY
 			{
 				y-=1
@@ -237,66 +243,120 @@ if setup
 	{
 		if targeted&&oBattle.defendStart=true
 		{
-			y=DefenseY
-			x=DefenseX
+			if !dodgePhase
+			{
+				y=DefenseY
+				x=DefenseX
+			}
+			
+			sprite_index=sprites.dodge
+			dodgePhase=true
 		}
 		else
 		{
+			x=xstart
 			y=DefenseY+32	
 		}
 	}
 }
 
 
-//if setup
-//{
-//	//for player dodging
-//	if instance_exists(obj_projectileGenerator)&&!targeted&&oBattle.defendStart=true
-//	{
-//		//y=oBattle.partyStats[0].yPos-6
-//		sprite_index=sprites.dodge
+
+if dodgePhase
+{
+	image_speed=0
 	
-//		if left_key
-//		{
-//			image_index=1
+	if left_key
+	{
+		image_index=1
 		
-//			if dodgePos!=0{dodgePos-=1}
-//		}
+		moveTimer=10
+		
+		if dodgePos!=0{dodgePos-=1}
+	}
 	
-//		if right_key
-//		{
-//			image_index=3
+	if right_key
+	{
+		image_index=2
 		
-//			if dodgePos!=2{dodgePos+=1}
-//		}
+		moveTimer=10
+		
+		if dodgePos!=4{dodgePos+=1}
+	}
 	
-//		if dodgePos=2 //right
-//		{
-//			if image_index>=image_number-2{image_index=image_number-1}
+	
+	
+	
+	if dodgePos=4 //far right
+	{
+		if moveTimer<0
+		{
+			image_index=0	
+		}
 		
-//			var _speed=2
-//			var _setupPointX=xstart+20
+		var _speed=3
+		var _setupPointX=DefenseX+60
 			
-//			move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
-//		}
-//		if dodgePos=1
-//		{
-//			image_index=0
+		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+	}
+	
+	if dodgePos=3 //right
+	{
+		if moveTimer<0
+		{
+			image_index=0	
+		}
 		
-//			var _speed=2
-//			var _setupPointX=xstart
+		var _speed=3
+		var _setupPointX=DefenseX+30
 			
-//			move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
-//		}
-//		if dodgePos=0 //left
-//		{
-//			if image_index>=1{image_index=2}
+		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+	}
+	
+	if dodgePos=2 //middle
+	{
+		if moveTimer<0
+		{
+			image_index=0	
+		}
 		
-//			var _speed=2
-//			var _setupPointX=xstart-20
+		var _speed=3
+		var _setupPointX=DefenseX
 			
-//			move_towards_point(_setupPointX, yPos, min(point_distance(x, y, _setupPointX, yPos), _speed));
-//		}
+		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+	}
+	
+	if dodgePos=1 //left
+	{
+		if moveTimer<0
+		{
+			image_index=0	
+		}
+		
+		var _speed=3
+		var _setupPointX=DefenseX-30
+			
+		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+	}
+	
+	if dodgePos=0 //farleft
+	{
+		if moveTimer<0
+		{
+			image_index=0	
+		}
+		
+		var _speed=3
+		var _setupPointX=DefenseX-60
+			
+		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+	}
+	
+	moveTimer-=1
+}
+
+
+	
 //	}
 //	else
 //	{
