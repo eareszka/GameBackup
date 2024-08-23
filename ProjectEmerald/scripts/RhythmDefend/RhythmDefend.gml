@@ -35,6 +35,11 @@ function DefendUI()
 {
 	oBattle.highlightEnemy=true
 	
+	if oBattleBackground.fadeAlpha<1
+	{
+		oBattleBackground.fadeAlpha+=.1
+	}
+	
 	for (var i = 0; i < array_length(global.party); i++)
 	{
 		with oBattle.partyStats[i]
@@ -53,6 +58,11 @@ function DefendUI()
 
 function ResetUI()
 {
+	if oBattleBackground.fadeAlpha>0
+	{
+		oBattleBackground.fadeAlpha-=.01
+	}
+	
 	for (var i = 0; i < array_length(global.party); i++)
 	{
 		with oBattle.partyUnits[i]
@@ -147,12 +157,7 @@ function CreateProjectile(_user,_row,_ystart,_type=0)
 		break;
 		
 		case "Nightcrawler":
-			
-			switch _type
-			{
-				case 0: instance_create_depth(_row,_ystart,-16000,obj_projectileAirrod,{path: path_projectileAirrod}) break
-				case 1: instance_create_depth(_row,_ystart,-16000,obj_projectileAirrod,{path: path_projectileAirrod2}) break
-			}
+			instance_create_depth(_row,_ystart,-16000,obj_projectileAirrod,{row: _row})
 		break;
 	}
 }

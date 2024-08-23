@@ -29,3 +29,5 @@ dodgePhase=false
 dodgeSetup=false
 
 targeted=false
+
+outlineAlpha=0

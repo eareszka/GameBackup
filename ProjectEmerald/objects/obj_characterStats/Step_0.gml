@@ -236,27 +236,25 @@ if PSIZE=4
 	}
 }
 
-
-//if defendSet
-//{
-//	depth=-17000
-//	xPos=x+160
-//	if yPos>oBattle.y+192	
-//	{
-//		yPos-=1
-//	}
-//}
-//else
-//{
-//	depth=-16000
-//}
-
-
-//if enemyUIset&&!defendSet
-//{
-//	yPos=oBattle.y+27
-//}
-
-//if !instance_exists(oMenu)||!(_char.myTurn){draw_text_transformed((x+92)+(i*65),y+166,_char.name,1.50,1.10,0);}
-//if !instance_exists(oMenu)&&(_char.myTurn){draw_set_color(c_yellow) draw_text_transformed((x+92)+(i*65),y+166,_char.name,1.50,1.10,0);}
-//if (_char.myTurn)&&instance_exists(oMenu){draw_set_color(c_yellow);	draw_text_transformed((x+92)+(i*65),y+166,oMenu.optionName,1.50,1.10,0);}
+switch oBattle.battleBackground
+{
+	case spr_battleBackground1:
+		subimg=1
+	break
+	
+	case spr_battleBackground2:
+		subimg=2
+	break
+	
+	case spr_battleBackground3:
+		subimg=3
+	break
+	
+	case spr_battleBackground4:
+		subimg=4
+	break;
+	
+	case spr_battleBackground5:
+		subimg=5
+	break;
+}

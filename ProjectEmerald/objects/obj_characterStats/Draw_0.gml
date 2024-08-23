@@ -1,5 +1,5 @@
-draw_sprite_stretched_ext(sBoxbu,1,xPos,yPos,64,50,c_white,1)
-draw_sprite_stretched_ext(sBoxbu,0,xPos,yPos,64,50,c_white,alpha)
+draw_sprite_stretched_ext(sBoxbu,0,xPos,yPos,64,50,c_white,1)
+draw_sprite_stretched_ext(sBoxbu,subimg,xPos,yPos,64,50,c_white,alpha)
 
 draw_set_alpha(alpha)
 

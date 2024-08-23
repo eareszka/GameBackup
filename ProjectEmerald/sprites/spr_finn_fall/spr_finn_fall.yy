@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"EMORY",
-    "path":"folders/Sprites/battleSprites/HEROS/EMORY.yy",
+    "name":"FINN",
+    "path":"folders/Sprites/battleSprites/HEROS/FINN.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

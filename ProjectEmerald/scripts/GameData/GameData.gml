@@ -22,6 +22,7 @@ global.font_main = fnM5x7
 global.battleBox=sBox
 
 global.defendDodgeWave=0
+global.DefendRows=3
 
 //0 closed/1 opened
 global.chestOpened = 

@@ -22,6 +22,10 @@ switch enemy.name
 flag1=false
 flag2=false
 flag3=false
+flag4=false
+flag5=false
+flag6=false
+flag7=false
 
 
 row0=oBattle.x+172

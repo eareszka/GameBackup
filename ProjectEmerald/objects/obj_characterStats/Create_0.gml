@@ -168,3 +168,4 @@ healthBarWidth=29
 healthBarHeight=6
 
 alpha=1
+subimg=0

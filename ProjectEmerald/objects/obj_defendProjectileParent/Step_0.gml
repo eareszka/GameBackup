@@ -8,23 +8,53 @@ if instance_exists(obj_projectileGenerator)
 
 	if !miss
 	{
-		if y>obj_projectileGenerator.target.y+3
+		if y>obj_projectileGenerator.target.y+15
 		{
 			destroy=true
 		}
 	}
-	
 	
 	//for whatever reason if it somehow misses and hits it gets destroyed
 	if miss&&destroy
 	{
 		instance_destroy()	
 	}
+	
+	if image_alpha<1{image_alpha+=.025}
+
+	if destroy&&!miss
+	{
+		if image_xscale>0{image_xscale-=.01}
+		if image_yscale>0{image_yscale-=.01}
+	
+		image_index=1
+		image_blend = c_lime	
+		image_alpha-=.1
+	}
+	else
+	{
+		image_index=0	
+	}
+
+
+	if miss&&!destroy
+	{
+		image_index=1
+		image_blend = c_red
+		image_alpha-=.1
+	}
+
+	if image_alpha<0
+	{
+		instance_destroy()
+	}
 }
 
+if instance_exists(obj_defendStanceLineGenerator)
+{
+	var _speed = 1
+	var _setupPointX=xDest
+	var _setupPointY=obj_defendStanceLineGenerator.y+50
 
-var _speed = 1
-var _setupPointX=xDest
-var _setupPointY=obj_defendStanceLineGenerator.y
-
-move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+	move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+}

@@ -1,9 +1,22 @@
 if oBattle.defendEnd=false
 {
-	if timer<0
+	switch global.DefendRows
 	{
-		timer=4.5
-		instance_create_depth(x,y,oBattle.unitDepth+10,obj_defendStanceLine,{image_index: subimg})	
+		case 3:
+			if timer<0
+			{
+				timer=4.5
+				instance_create_depth(x,y,oBattle.unitDepth+10,obj_defendStanceLine3,{image_index: subimg})	
+			}
+		break
+		
+		case 5:
+			if timer<0
+			{
+				timer=4.5
+				instance_create_depth(x,y,oBattle.unitDepth+10,obj_defendStanceLine5,{image_index: subimg})	
+			}
+		break
 	}
 }
 

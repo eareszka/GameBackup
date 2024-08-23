@@ -92,10 +92,42 @@ switch enemy.name
 		}
 	break
 	
-	//case "Nightcrawler":
-	//	alarm[1]=1
-	//	alarm[2]=room_speed
-	//break;
+	case "Nightcrawler":
+		if !flag1
+		{
+			CreateProjectile(enemy,row1,yStart)
+			CreateProjectile(enemy,row3,yStart)
+			flag1=true
+		}
+		
+		if (flag2=false)
+		{
+			if sec=0&&steps>=40
+			{
+				CreateProjectile(enemy,row2,yStart)
+				flag2=true
+			}
+		}
+		
+		if (flag3=false)
+		{
+			if sec=1
+			{
+				CreateProjectile(enemy,row1,yStart)
+				flag3=true
+			}
+		}
+		
+		if (flag4=false)
+		{
+			if sec=1&&steps>=20
+			{
+				CreateProjectile(enemy,row1,yStart)
+				CreateProjectile(enemy,row3,yStart)
+				flag4=true
+			}
+		}
+	break;
 }
 
 

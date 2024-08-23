@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_projectileAirrod",
-    "path":"sprites/spr_projectileAirrod/spr_projectileAirrod.yy",
+    "name":"spr_projectileAirrodBody",
+    "path":"sprites/spr_projectileAirrodBody/spr_projectileAirrodBody.yy",
   },
   "spriteMaskId":null,
   "visible":true,

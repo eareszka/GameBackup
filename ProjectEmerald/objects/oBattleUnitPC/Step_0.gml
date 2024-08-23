@@ -249,7 +249,7 @@ if setup
 				x=DefenseX
 			}
 			
-			sprite_index=sprites.dodge
+			sprite_index=sprites.defend
 			dodgePhase=true
 		}
 		else
@@ -266,92 +266,146 @@ if dodgePhase
 {
 	image_speed=0
 	
-	if left_key
+	if global.DefendRows=5
 	{
-		image_index=1
-		
-		moveTimer=10
-		
-		if dodgePos!=0{dodgePos-=1}
-	}
-	
-	if right_key
-	{
-		image_index=2
-		
-		moveTimer=10
-		
-		if dodgePos!=4{dodgePos+=1}
-	}
-	
-	
-	
-	
-	if dodgePos=4 //far right
-	{
-		if moveTimer<0
+		if left_key
 		{
-			image_index=0	
-		}
+			moveTimer=10
 		
-		var _speed=3
-		var _setupPointX=DefenseX+60
-			
-		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-	}
+			if dodgePos!=0{image_index=1 dodgePos-=1}
+		}
 	
-	if dodgePos=3 //right
-	{
-		if moveTimer<0
+		if right_key
 		{
-			image_index=0	
-		}
+			moveTimer=10
 		
-		var _speed=3
-		var _setupPointX=DefenseX+30
-			
-		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-	}
+			if dodgePos!=4{image_index=2 dodgePos+=1}
+		}
 	
-	if dodgePos=2 //middle
-	{
-		if moveTimer<0
+	
+	
+	
+		if dodgePos=4 //far right
 		{
-			image_index=0	
-		}
+			if moveTimer<0
+			{
+				image_index=0	
+			}
 		
-		var _speed=3
-		var _setupPointX=DefenseX
+			var _speed=3
+			var _setupPointX=DefenseX+60
 			
-		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-	}
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
 	
-	if dodgePos=1 //left
-	{
-		if moveTimer<0
+		if dodgePos=3 //right
 		{
-			image_index=0	
-		}
+			if moveTimer<0
+			{
+				image_index=0	
+			}
 		
-		var _speed=3
-		var _setupPointX=DefenseX-30
+			var _speed=3
+			var _setupPointX=DefenseX+30
 			
-		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-	}
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
 	
-	if dodgePos=0 //farleft
-	{
-		if moveTimer<0
+		if dodgePos=2 //middle
 		{
-			image_index=0	
-		}
+			if moveTimer<0
+			{
+				image_index=0	
+			}
 		
-		var _speed=3
-		var _setupPointX=DefenseX-60
+			var _speed=3
+			var _setupPointX=DefenseX
 			
-		move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-	}
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
 	
+		if dodgePos=1 //left
+		{
+			if moveTimer<0
+			{
+				image_index=0	
+			}
+		
+			var _speed=3
+			var _setupPointX=DefenseX-30
+			
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
+	
+		if dodgePos=0 //farleft
+		{
+			if moveTimer<0
+			{
+				image_index=0	
+			}
+		
+			var _speed=3
+			var _setupPointX=DefenseX-60
+			
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
+	}
+	if global.DefendRows=3
+	{
+		
+		if left_key
+		{	
+			moveTimer=10
+		
+			if dodgePos!=1{image_index=1 dodgePos-=1}
+		}
+	
+		if right_key
+		{
+			moveTimer=10
+		
+			if dodgePos!=3{image_index=2 dodgePos+=1}
+		}
+	
+		if dodgePos=3 //right
+		{
+			if moveTimer<0
+			{
+				image_index=0	
+			}
+		
+			var _speed=3
+			var _setupPointX=DefenseX+30
+			
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
+	
+		if dodgePos=2 //middle
+		{
+			if moveTimer<0
+			{
+				image_index=0	
+			}
+		
+			var _speed=3
+			var _setupPointX=DefenseX
+			
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
+	
+		if dodgePos=1 //left
+		{
+			if moveTimer<0
+			{
+				image_index=0	
+			}
+		
+			var _speed=3
+			var _setupPointX=DefenseX-30
+			
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+		}
+	}
 	moveTimer-=1
 }
 
