@@ -23,7 +23,8 @@ AIscript = function(_unit)
 	{
 		var _action = chooseAttack(_unit)
 		var _target = chooseTarget(_action)
-		return [_action, _target];
+		if _target=noone{return [_unit.actions[1], noone];}//force taunt is target is dead
+		else{return [_action, _target];}
 	}
 	else
 	{

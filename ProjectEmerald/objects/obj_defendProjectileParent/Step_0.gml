@@ -26,14 +26,7 @@ if instance_exists(obj_projectileGenerator)
 	{
 		if image_xscale>0{image_xscale-=.01}
 		if image_yscale>0{image_yscale-=.01}
-	
-		image_index=1
-		image_blend = c_lime	
-		image_alpha-=.1
-	}
-	else
-	{
-		image_index=0	
+		image_alpha-=.05
 	}
 
 
@@ -52,9 +45,10 @@ if instance_exists(obj_projectileGenerator)
 
 if instance_exists(obj_defendStanceLineGenerator)
 {
-	var _speed = 1
-	var _setupPointX=xDest
-	var _setupPointY=obj_defendStanceLineGenerator.y+50
+	
+		var _speed = spd
+		var _setupPointX=xDest
+		var _setupPointY=obj_defendStanceLineGenerator.y+50
 
-	move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+		move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
 }

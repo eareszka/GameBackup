@@ -1231,6 +1231,7 @@ global.enemyLibrary =
 		rhythmDefend: true,
 		func : function(_user, _targets)
 		{		
+			ObjFlash(_targets[0],1.5,.025,255,0,0)
 			var _damage = ceil(_user.strength + random_range(-_user.strength * 0.25, _user.strength * 0.25));
 			if (global.quest.blueRing.available = true && global.quest.blackRing.available = false) _damage = ceil(_damage * 0.5);
 			if (global.quest.blackRing.available = true) _damage = ceil(_damage * 0.1);
@@ -1632,6 +1633,18 @@ global.enemyLibrary =
 			ObjFlash(_user,.75,.01,255,255,255)
 			switch _user.name
 			{
+				case "Annoyed Ant":
+					oBattle.battleEndMessages[0] = string(_user.name)+" Doesn't want to be here"
+				break;
+				
+				case "Bull Frog":
+					oBattle.battleEndMessages[0] = string(_user.name)+" Sharpens it's horns"
+				break;
+				
+				case "Nightcrawler":
+					oBattle.battleEndMessages[0] = string(_user.name)+" just stares eerily"
+				break
+				
 				case "Mutant Worm":
 					var _ran = irandom_range(0,1)
 					if _ran = 0
@@ -1838,7 +1851,7 @@ global.itemLibrary =
 		func : function(_user, _targets)
 		{
 			oBattle.battleEndMessages[0] = string(_user.name)+" Sprayed Insecticide.";
-			if _targets[0].name = "Horned Beetle" || _targets[0].name = "Armored Beetle" || _targets[0].name = "Itty-Bitty Ant" || _targets[0].name = "Crude Spider"
+			if _targets[0].name = "Horned Beetle" || _targets[0].name = "Armored Beetle" || _targets[0].name = "Annoyed Ant" || _targets[0].name = "Crude Spider"
 			{
 				var _damage = 100;
 				BattleChangeHP(_targets[0], -_damage);
@@ -1978,7 +1991,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_catTailsIdle, idle: spr_catTailsIdle, attack: spr_catTailsAttack, defend: spr_catTailsIdle},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,],
 		moneyValue : 5,
 		experinceValue : 2,
 		AIscript : function ()
@@ -1996,7 +2009,7 @@ global.enemies =
 	,
 	ant: 
 	{
-		name: "Itty-Bitty Ant",
+		name: "Annoyed Ant",
 		hp: 14,
 		hpMax: 14,
 		mp: 0,
@@ -2005,8 +2018,8 @@ global.enemies =
 		arrows: 1,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_antIntro, idle: spr_antIdle, attack: spr_antAttack, defend: spr_antIdle},
-		actions: [global.enemyLibrary.attack],
+		sprites: { intro: spr_antIntro, idle: spr_annoyedAntIdle},
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 5,
 		experinceValue : 1,
 		AIscript : function ()
@@ -2033,8 +2046,8 @@ global.enemies =
 		arrows: 2,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_frogIdle, idle: spr_frogIdle, attack: spr_frogIdle, defend: spr_frogIdle},
-		actions: [global.enemyLibrary.attack],
+		sprites: { intro: spr_bullfrogIdle, idle: spr_bullfrogIdle, attack: spr_bullfrogIdle, defend: spr_bullfrogIdle},
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 10,
 		experinceValue : irandom_range(3,5),
 		AIscript : function ()
@@ -2062,7 +2075,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_caveSpiderIntro, idle: spr_caveSpiderIdle, attack: spr_caveSpiderAttack},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.betrayal,global.enemyLibrary.betrayal,global.enemyLibrary.stealItem],
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.betrayal,global.enemyLibrary.stealItem,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 12,
 		experinceValue : irandom_range(3,6),
 		summonAmt: 1,
@@ -2326,7 +2339,7 @@ global.enemies =
 		spd: 3,
 		hold: 1,
 		sprites: { intro: spr_thunderBirdIdle, idle: spr_thunderBirdIdle, attack: spr_thunderBirdIdle, defend : spr_thunderBirdIdle, special : spr_thunderBirdIdle},
-		actions: [global.enemyLibrary.attackAll,global.enemyLibrary.attackAll,global.enemyLibrary.attackAll,global.actionLibrary.defend],
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,global.actionLibrary.defend],
 		moneyValue : 50,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
@@ -2383,7 +2396,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_nightcrawlersIdle, idle: spr_nightcrawlersIdle, attack: spr_nightcrawlersIdle, defend: spr_nightcrawlersIdle},
-		actions: [global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack ,global.enemyLibrary.taunt],
 		moneyValue : 30,
 		experinceValue : irandom_range(10,15),
 		AIscript : function()
@@ -2416,7 +2429,7 @@ global.bosses =
 		spd: 3,
 		sprites: { intro: spr_babyWormIntro, idle: spr_babyWorm, attack: spr_babyWormAttack, defend: spr_babyWorm},
 		scripted: true, 
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack ,global.enemyLibrary.taunt],
 		moneyValue : 5,
 		experinceValue : 11,
 		AIscript : function ()

@@ -13,18 +13,18 @@ function ActionText(_user,_action,_targets)
 				break;
 				
 				case "Nightcrawler":
-					return string(_user.name)+" Attacks "+string(_targets[0].name)+"!";
+					return string(_user.name)+" Summon's Air Rod's At "+string(_targets[0].name)+"!";
 				break
 				
 				case "Mutant Worm":
-					return string(_user.name)+" Strikes At "+string(_targets[0].name)+"!";
+					return string(_user.name)+" Tosses Mud At "+string(_targets[0].name)+"!";
 				break
 				
 				case "Typha":
 					return string(_user.name)+" Attacks "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Itty-Bitty Ant":
+				case "Annoyed Ant":
 					return string(_user.name)+" Bites "+string(_targets[0].name)+"!";
 				break
 				

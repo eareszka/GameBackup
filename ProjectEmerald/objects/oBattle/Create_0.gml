@@ -2,6 +2,7 @@
 audio_stop_all()
 global.success = 0
 global.perfect=0
+
 //Transition setup
 transitionProg = 0;
 transitionTransparency = 1;
@@ -366,7 +367,14 @@ DoTurn = function(_unit)
 			var _enemyAction = _unit.AIscript(_unit); 
 			if (_enemyAction != -1) 
 			{
-				BeginAction(_unit.id, _enemyAction[0], _enemyAction[1]); 	
+				if _enemyAction[0]=noone
+				{
+					EndTurn(_unit);	
+				}
+				else
+				{
+					BeginAction(_unit.id, _enemyAction[0], _enemyAction[1]); 	
+				}
 			}
 		}
 	}

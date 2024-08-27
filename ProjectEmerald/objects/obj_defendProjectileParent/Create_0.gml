@@ -1,9 +1,26 @@
 destroy=false
 miss=false
 set=false
+	
 
-if row=oBattle.x+172{xDest=oBattle.x+132}
-if row=oBattle.x+182{xDest=oBattle.x+154}
-if row=oBattle.x+192{xDest=oBattle.x+192}
-if row=oBattle.x+202{xDest=oBattle.x+230}
-if row=oBattle.x+212{xDest=oBattle.x+252}
+//type0=regular
+//type1=covers 2 rows
+//type2=follows path
+
+if type=0
+{
+	if row=oBattle.x+156{xDest=oBattle.x+114}
+	if row=oBattle.x+180{xDest=oBattle.x+153}
+	if row=oBattle.x+192{xDest=oBattle.x+192}
+	if row=oBattle.x+204{xDest=oBattle.x+231}
+	if row=oBattle.x+228{xDest=oBattle.x+270}
+}
+if type=1
+{
+	if row=oBattle.x+156{xDest=oBattle.x+168}
+	if row=oBattle.x+180{xDest=oBattle.x+168}
+	if row=oBattle.x+192{xDest=oBattle.x+168}
+	if row=oBattle.x+204{xDest=oBattle.x+209}
+	if row=oBattle.x+228{xDest=oBattle.x+209}
+}
+

@@ -208,7 +208,7 @@ function createFlavorText(_enemy,_text)
 			}
 		break;
 				
-		case "Itty-Bitty Ant":
+		case "Annoyed Ant":
 			if _enemy.hp<_enemy.hpMax/4 //low hp
 			{
 				switch _text

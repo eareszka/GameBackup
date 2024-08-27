@@ -111,19 +111,19 @@ function BattleActionBox(_user,_action)
 				}
 			break;
 			
-			case "Itty-Bitty Ant":
+			case "Annoyed Ant":
 				switch _action.action
 				{
 					case 1:
-						CreateActionBox(_user,1,10,-5)
+						CreateActionBox(_user,1,-50,-5,true)
 					break;	
 				
 					case 2:
-						CreateActionBox(_user,2,10,-5)
+						CreateActionBox(_user,2,-50,-5,true)
 					break;	
 				
 					case 3:
-						CreateActionBox(_user,3,10,-5)
+						CreateActionBox(_user,3,-50,-5,true)
 					break;	
 				}
 			break;
