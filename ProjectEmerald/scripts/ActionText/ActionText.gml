@@ -33,7 +33,11 @@ function ActionText(_user,_action,_targets)
 				break
 				
 				case "Crude Spider":
-					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
+				
+					var _ran=irandom_range(0,1)
+					if _ran=0{oBattle.attackSubtype=0 return string(_user.name)+" Bites "+string(_targets[0].name)+"!";}
+					if _ran=1{attackSubtype=1 return string(_user.name)+" Shoots A Web At "+string(_targets[0].name)+"!";}
+					
 				break;
 				
 				case "Grinning Rock":

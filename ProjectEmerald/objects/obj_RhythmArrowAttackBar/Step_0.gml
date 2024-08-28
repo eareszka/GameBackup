@@ -1,24 +1,49 @@
-if !setup
+if !dance
 {
-	move_towards_point(setupPointX, setupPointY, min(point_distance(x, y, setupPointX, setupPointY), moveTowardsPointSpeed));
-	if x=setupPointX&&y=setupPointY
+	if !setup
 	{
-		image_angle=0
-		image_xscale=1
-		image_yscale=1
-		setup=true
+		move_towards_point(setupPointX, setupPointY, min(point_distance(x, y, setupPointX, setupPointY), moveTowardsPointSpeed));
+		if x=setupPointX&&y=setupPointY
+		{
+			image_angle=0
+			image_xscale=1
+			image_yscale=1
+			setup=true
+		}
+		else
+		{
+			if image_xscale<1{image_xscale+=.025}else{image_xscale=1}
+			if image_yscale<1{image_yscale+=.025}else{image_yscale=1}
+			image_angle+=imageAngleSpeed
+			imageAngleSpeed-=1
+			moveTowardsPointSpeed+=.15
+		}
+		image_index=4
 	}
-	else
-	{
-		if image_xscale<1{image_xscale+=.025}else{image_xscale=1}
-		if image_yscale<1{image_yscale+=.025}else{image_yscale=1}
-		image_angle+=imageAngleSpeed
-		imageAngleSpeed-=1
-		moveTowardsPointSpeed+=.15
-	}
-	image_index=4
 }
-
+if dance
+{
+	if !setup
+	{
+		move_towards_point(setupPointX, setupPointY, min(point_distance(x, y, setupPointX, setupPointY), moveTowardsPointSpeed));
+		if x=setupPointX&&y=setupPointY
+		{
+			image_angle=0
+			image_xscale=1
+			image_yscale=1
+			setup=true
+		}
+		else
+		{
+			if image_xscale<1{image_xscale+=.025}else{image_xscale=1}
+			if image_yscale<1{image_yscale+=.025}else{image_yscale=1}
+			image_angle+=imageAngleSpeed
+			imageAngleSpeed-=1
+			moveTowardsPointSpeed+=.15
+		}
+		image_index=4
+	}
+}
 
 ////changes index based on next arrow
 if setup
@@ -117,7 +142,6 @@ if fade
 	if image_alpha<0
 	{instance_destroy()}
 }
-
 
 
 //	if lastPass = false
@@ -592,6 +616,7 @@ if fade
 //		}
 //	}
 //}
+
 
 //for correct keys 
 right_key = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));

@@ -16,6 +16,8 @@ dodgeTimer=0
 moving=false
 reverse=false
 dodging=false
+stunned=false
+spd=3
 
 
 defensiveStance=false

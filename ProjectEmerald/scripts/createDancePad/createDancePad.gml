@@ -10,7 +10,9 @@ function createDancePad(_padNumber)
 				arrows:3,	
 				spd:3,
 				frequency:1,
-				padNumber:39
+				padNumber:39,
+				x: obj_playerEmory.x+10,
+				y: obj_playerEmory.y+15,
 			}
 			DanceRhythm(_specifications)
 		break;

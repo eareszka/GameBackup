@@ -24,9 +24,10 @@ if instance_exists(obj_projectileGenerator)
 
 	if destroy&&!miss
 	{
-		if image_xscale>0{image_xscale-=.01}
-		if image_yscale>0{image_yscale-=.01}
-		image_alpha-=.05
+		if image_xscale>0{image_xscale-=.05}
+		if image_yscale>0{image_yscale-=.05}
+		image_alpha-=.1
+		image_blend=c_green
 	}
 
 

@@ -595,291 +595,8 @@ function ThrowArrow(_arr,_targets)
 
 function DanceRhythm(_targets)
 {
-	
-	var _arr = []	
-	
-	if variable_struct_exists(_targets,"reverse") || variable_struct_exists(_targets,"hold")
-	{
-			//creates arrows
-			for (var i = 0; i < _targets.arrows; i++)
-			{
-				var _ran = irandom_range(0,3)
-				var _ran2 = irandom_range(0,99)
-				arrow[i] = instance_create_depth(0,0,-10001,oRhythmArrow,global.arrowVar[_ran])	
-				//changes x pos of each index
-				if i > 0
-				{
-					switch _targets.frequency
-					{
-						case 1:
-							if _ran2 < 15
-							{
-								arrow[i].x = arrow[i-1].x - 50
-							}
-							if _ran2 >= 15 && _ran2 < 50
-							{
-								arrow[i].x = arrow[i-1].x - 100
-							}
-							else
-							{
-								arrow[i].x = arrow[i-1].x - 75		
-							}
-						break;
-									
-									
-						case 2:
-							if _ran2 < 15
-							{
-								arrow[i].x = arrow[i-1].x - 35
-							}
-							if _ran2 >= 15 && _ran2 < 50
-							{
-								arrow[i].x = arrow[i-1].x - 65
-							}
-							else
-							{
-								arrow[i].x = arrow[i-1].x - 50	
-							}
-						break;
-									
-									
-						case 3:
-							if _ran2 < 15
-							{
-								arrow[i].x = arrow[i-1].x - 25
-							}
-							if _ran2 >= 15 && _ran2 < 50
-							{
-								arrow[i].x = arrow[i-1].x - 50
-							}
-							else
-							{
-								arrow[i].x = arrow[i-1].x - 30		
-							}
-						break;
-									
-									
-						case 4:
-							if _ran2 < 15
-							{
-								arrow[i].x = arrow[i-1].x - 25
-							}
-							if _ran2 >= 15 && _ran2 < 50
-							{
-								arrow[i].x = arrow[i-1].x - 33
-							}
-							else
-							{
-								arrow[i].x = arrow[i-1].x - 30	
-							}
-						break;
-									
-						//highest freq
-						case 5:
-							if _ran2 < 15
-							{
-								arrow[i].x = arrow[i-1].x - 25
-							}
-							if _ran2 >= 15 && _ran2 < 50
-							{
-								arrow[i].x = arrow[i-1].x - 25
-							}
-							else
-							{
-								arrow[i].x = arrow[i-1].x - 25		
-							}
-						break;
-					}
-				}
-				array_push(_arr,arrow[i])
-			}
-				
-					
-			//edits created arrows
-			for (var i = 0; i < array_length(_arr); i++)
-			{					
-				//changes speed of arrow based on ene spd
-				arrow[i].xSpeed = _targets.spd
-						
-				//the lower the number, the more reversed
-				if variable_struct_exists(_targets,"reverse") && _targets.reverse != false
-				{
-					var _ran3 = irandom_range(0,_targets.reverse)
-					if _ran3 = 0
-					{
-						arrow[i].reverse = true	
-							
-						if variable_struct_exists(_targets,"hold")
-						{
-							array_last(_arr).reverse = false
-						}
-					}
-				}
-			}
-			if variable_struct_exists(_targets,"hold") && _targets.hold != false
-			{
-				var _total_arrows = array_length(_arr);
-				var _arrows_to_hold = _targets.hold;
-
-					// ensure we do not select more arrows than we have
-					if (_arrows_to_hold > _total_arrows)
-					{
-						_arrows_to_hold = _total_arrows;
-					}
-							
-					//if arrow number is 1 then hold is last index
-					if _arrows_to_hold > 1
-					{
-						for (var i = 0; i < _arrows_to_hold; i++)
-						{
-							var _ran3 = irandom_range(0,_total_arrows-1)
-								
-							if arrow[_ran3].hold = false
-							{
-								arrow[_ran3].hold = true
-							}
-						}
-					}
-					else
-					{
-						array_last(_arr).hold = true
-					}
-			}
-	}
-	else
-	{
-				
-		//without effect
-		for (var i = 0; i < _targets.arrows; i++)
-		{
-			var _ran = irandom_range(0,3)
-			var _ran2 = irandom_range(0,99)
-			arrow[i] = instance_create_depth(0,0,-10001,obj_danceArrow,global.arrowVar[_ran])	
-			//changes x pos of each index
-			if i > 0
-			{
-				switch _targets.frequency
-				{
-					case 1:
-						if _ran2 < 15
-						{
-							arrow[i].x = arrow[i-1].x - 50
-						}
-						if _ran2 >= 15 && _ran2 < 50
-						{
-							arrow[i].x = arrow[i-1].x - 100
-						}
-						else
-						{
-							arrow[i].x = arrow[i-1].x - 75		
-						}
-					break;
-									
-									
-					case 2:
-						if _ran2 < 15
-						{
-							arrow[i].x = arrow[i-1].x - 35
-						}
-						if _ran2 >= 15 && _ran2 < 50
-						{
-							arrow[i].x = arrow[i-1].x - 65
-						}
-						else
-						{
-							arrow[i].x = arrow[i-1].x - 50	
-						}
-					break;
-									
-									
-					case 3:
-						if _ran2 < 15
-						{
-							arrow[i].x = arrow[i-1].x - 25
-						}
-						if _ran2 >= 15 && _ran2 < 50
-						{
-							arrow[i].x = arrow[i-1].x - 50
-						}
-						else
-						{
-							arrow[i].x = arrow[i-1].x - 30		
-						}
-					break;
-									
-									
-					case 4:
-						if _ran2 < 15
-						{
-							arrow[i].x = arrow[i-1].x - 25
-						}
-						if _ran2 >= 15 && _ran2 < 50
-						{
-							arrow[i].x = arrow[i-1].x - 33
-						}
-						else
-						{
-							arrow[i].x = arrow[i-1].x - 30	
-						}
-					break;
-									
-					//highest freq
-					case 5:
-						if _ran2 < 15
-						{
-							arrow[i].x = arrow[i-1].x - 25
-						}
-						if _ran2 >= 15 && _ran2 < 50
-						{
-							arrow[i].x = arrow[i-1].x - 25
-						}
-						else
-						{
-							arrow[i].x = arrow[i-1].x - 25		
-						}
-					break;
-				}
-			}
-			array_push(_arr,arrow[i])
-				
-			//changes speed of arrow based on ene spd
-			arrow[i].xSpeed = _targets.spd
-		}
-	}
-	
-	
-	//creates visual
-	if variable_struct_exists(_targets,"hold") && _targets.hold != false
-	{
-		with instance_create_depth(0,0,-10001,obj_danceBar)
-		{
-			dancePadIndex=_targets.padNumber
-			spd= _targets.spd
-			xSpeed = array_first(_arr).xSpeed
-			hold = true
-			array_copy(arr,0,_arr,0,array_length(_arr))
-		}
-		with instance_create_depth(0,0,-10000,obj_danceVisual)	
-		{
-			xSpeed = array_first(_arr).xSpeed
-			hold = true
-			array_copy(arr,0,_arr,0,array_length(_arr))
-		}
-		if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: true})}
-	}
-	else
-	{
-		with instance_create_depth(0,0,-10001,obj_danceBar)
-		{
-			dancePadIndex=_targets.padNumber
-			array_copy(arr,0,_arr,0,array_length(_arr))
-		}
-		with instance_create_depth(0,0,-10000,obj_danceVisual)	
-		{
-			array_copy(arr,0,_arr,0,array_length(_arr))
-		}
-		if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: true})}
-	}
+	global.comboAmmount=0
+	createArrows(_targets,true)	
 }
 
 
@@ -1012,14 +729,15 @@ function perfectArrows(_targets)
 }
 
 
-function createArrows(_targets)
+function createArrows(_targets,_dance=false)
 {
 	var _arr = []
 	for (var i = 0; i < _targets.arrows; i++)
 	{
 		var _ran = irandom_range(0,3)
 		var _ran2 = irandom_range(0,99)
-		arrow[i] = instance_create_depth(oBattle.x-250,oBattle.y+8,-16000,oRhythmArrow,{img: _ran})
+		if !_dance{arrow[i] = instance_create_depth(oBattle.x-250,oBattle.y+8,-16000,oRhythmArrow,{img: _ran})}
+		if _dance{arrow[i] = instance_create_depth(obj_camera.x-450,obj_camera.y-112,-10001,oRhythmArrow,{img: _ran})}
 		
 		//changes x pos of each index 
 		if i > 0
@@ -1108,10 +826,10 @@ function createArrows(_targets)
 		}
 		array_push(_arr,arrow[i])
 	}	
-	editArrows(_arr,_targets)
+	editArrows(_arr,_targets,_dance)
 }
 
-function editArrows(_arr,_targets)
+function editArrows(_arr,_targets,_dance)
 {
 	for (var i = 0; i < array_length(_arr); i++)
 	{	
@@ -1150,8 +868,8 @@ function editArrows(_arr,_targets)
 			}
 		}
 	}
-	if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: false})}
-	with instance_create_depth(_targets.x,_targets.y,-10001,obj_RhythmArrowAttackBar,{target: _targets})
+	if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: _dance})}
+	with instance_create_depth(_targets.x,_targets.y,-10001,obj_RhythmArrowAttackBar,{target: _targets, dance: _dance})
 	{
 		array_copy(arrows,0,_arr,0,array_length(_arr))
 	}

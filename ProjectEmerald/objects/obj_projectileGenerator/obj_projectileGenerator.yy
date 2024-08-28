@@ -10,8 +10,8 @@
   "name":"obj_projectileGenerator",
   "overriddenProperties":[],
   "parent":{
-    "name":"RhythmDefend",
-    "path":"folders/Objects/RhythmDefend.yy",
+    "name":"defendLine",
+    "path":"folders/Objects/RhythmDefend/defendLine.yy",
   },
   "parentObjectId":null,
   "persistent":false,

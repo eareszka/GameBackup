@@ -1,1 +1,1 @@
-oBattle.battleStopFlow=false
+if !dance{oBattle.battleStopFlow=false}

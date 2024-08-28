@@ -5,9 +5,9 @@ if (global.escapeImmunity == 0) && (!dead)
 	{
 		NewEncounter(
 			choose(	
-					[global.enemies.catTails,global.enemies.frog],
+					[global.enemies.spider,global.enemies.spider],
 			), 
-			spr_battleBackground2,
+			spr_battleBackground1,
 			battle2,
 			true,
 			,self

@@ -86,6 +86,9 @@ defendStart=false
 defendEnd=false
 defendStanceLine=5
 
+//attack
+attackSubtype=0
+
 	
 //Make party
 for (var i = 0; i < array_length(global.party); i++)
@@ -387,6 +390,8 @@ DoTurn = function(_unit)
 
 function EndTurn(_unit)
 {
+	attackSubtype=0
+	
 	highlightEnemy=false
 	if instance_exists(obj_projectileGenerator){instance_destroy(obj_projectileGenerator)}
 	if instance_exists(obj_defendProjectileParent){instance_destroy(obj_defendProjectileParent)}
@@ -516,7 +521,7 @@ function ContinueAction(_user, _action, _targets)
 	//if animation etc is still playing
 	if (_user.acting)
 	{	
-		if variable_struct_exists(_action,"textBeforeAct")
+		if variable_struct_exists(_action,"textBeforeAct")&&battleText=""
 		{
 			battleEndMessages[0]=ActionText(_user,_action,_targets)
 		}
@@ -761,7 +766,16 @@ function ContinueAction(_user, _action, _targets)
 	{
 		if _user.enemy == false{_user.turnCompleted=true}
 			
-			
+		//resets 1 turn effects on targets
+		for (var i = 0; i < array_length(global.party); i++)
+		{
+			with oBattle.partyUnits[i]
+			{
+				dodgePos=2
+				stunned=false
+			}
+		}
+		
 		//if perfect curse is defeated ene dies
 		if perfectCurse {checkDeadPerfectCurse(_targets)}
 		

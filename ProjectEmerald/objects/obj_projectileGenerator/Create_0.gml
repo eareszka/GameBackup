@@ -3,8 +3,17 @@ sec=0
 
 switch enemy.name
 {
+	case "Crude Spider":
+		if oBattle.attackSubtype=0{waveID=irandom_range(0,1)}
+		if oBattle.attackSubtype=1{waveID=irandom_range(2,4)}
+	break
+	
+	case "Grinning Rock":
+		waveID=irandom_range(0,1)
+	break
+	
 	case "Typha":
-		waveID=0
+		waveID=irandom_range(0,1)
 	break
 	
 	case "Annoyed Ant":

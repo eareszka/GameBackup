@@ -19,7 +19,14 @@ if hit
 	image_alpha-=.1
 	image_blend	= c_lime
 	
-	if !set{oBattle.success+=1 set=true}
+	//for battle
+	if instance_exists(obj_RhythmArrowAttackBar)
+	{
+		if obj_RhythmArrowAttackBar.dance=false
+		{
+			if !set{oBattle.success+=1 set=true}
+		}
+	}
 	
 	done=true
 }
@@ -29,10 +36,6 @@ if x>(camera_get_view_x(view_camera[0])+250)&&!hit
 	image_alpha-=.1
 	done=true
 }
-
-
-
-
 
 
 

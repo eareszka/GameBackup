@@ -6,12 +6,9 @@ if (room == RM_BROWNSTOWN)
 		choose
 		(
 		[global.enemies.catTails],
-		[global.enemies.catTails],
-		[global.enemies.frog],
 		[global.enemies.frog],
 		[global.enemies.frog,global.enemies.catTails],
-		[global.enemies.frog,global.enemies.catTails],
-		[global.enemies.frog,global.enemies.catTails,global.enemies.catTails],
+		[global.enemies.catTails,global.enemies.frog],
 		), 
 		spr_battleBackground2,
 		battle1,

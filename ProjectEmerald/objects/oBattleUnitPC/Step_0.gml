@@ -14,199 +14,6 @@ if !setup
 	}
 }
 
-
-//if setup
-//{
-//	switch name
-//	{
-//		case "Emory":
-//			if oBattle.playerTurn=true
-//			{
-//				x=oBattle.partyStats[0].xPos+32
-//				y=oBattle.partyStats[0].yPos-6
-//			}
-//			else
-//			{
-//				if oBattle.defendStart=false
-//				{
-//					y+=2	
-//				}
-//				else
-//				{
-//					if targeted
-//					{
-//						if !dodgeSetup
-//						{
-//							x=(oBattle.partyStats[0].xPos+32)
-//						}
-//						dodgePhase=true	
-//					}
-//					else
-//					{
-//						y+=2	
-//					}
-//				}
-//			}
-//		break;
-		
-//		case "Fin":
-//			if oBattle.playerTurn=true
-//			{
-//				x=oBattle.partyStats[1].xPos+32
-//				y=oBattle.partyStats[1].yPos-6
-//			}
-//			else
-//			{
-//				if oBattle.defendStart=false
-//				{
-//					y+=2	
-//				}
-//				else
-//				{
-//					if targeted
-//					{
-//						x=oBattle.partyStats[1].xPos+32
-//						y=oBattle.partyStats[1].yPos-6	
-//					}
-//					else
-//					{
-//						y+=2	
-//					}
-//				}
-//			}
-//		break;
-		
-//		case "Broke":
-//			if oBattle.playerTurn=true
-//			{
-//				x=oBattle.partyStats[2].xPos+32
-//				y=oBattle.partyStats[2].yPos-6
-//			}
-//			else
-//			{
-//				if oBattle.defendStart=false
-//				{
-//					y+=2	
-//				}
-//				else
-//				{
-//					if targeted
-//					{
-//						x=oBattle.partyStats[2].xPos+32
-//						y=oBattle.partyStats[2].yPos-6	
-//					}
-//					else
-//					{
-//						y+=2	
-//					}
-//				}
-//			}
-//		break;
-		
-//		case "Jen":
-//			if oBattle.playerTurn=true
-//			{
-//				x=oBattle.partyStats[3].xPos+32
-//				y=oBattle.partyStats[3].yPos-6
-//			}
-//			else
-//			{
-//				if oBattle.defendStart=false
-//				{
-//					y+=2	
-//				}
-//				else
-//				{
-//					if targeted
-//					{
-//						x=oBattle.partyStats[3].xPos+32
-//						y=oBattle.partyStats[3].yPos-6	
-//					}
-//					else
-//					{
-//						y+=2	
-//					}
-//				}
-//			}
-//		break;
-//	}
-//}
-
-
-//if dodgePhase=true
-//{
-//	if !dodgeSetup
-//	{
-//		y=DefenseY+5
-//		//if y<=DefenseY
-//		//{
-//		//	y+=.80
-//		//}
-//		//else
-//		//{
-//		//	//dodgeSetup=true	
-//		//	y=DefenseY
-//		//}
-
-			
-		
-//		sprite_index=sprites.dodge	
-	
-//		if image_index<=3
-//		{
-//			image_index++	
-//		}
-//		else
-//		{
-//			image_index=3	
-//		}
-//	}
-//	if dodgeSetup
-//	{
-		
-//		if left_key
-//		{
-//			image_index=5
-		
-//			if dodgePos!=0{dodgePos-=1}
-//		}
-	
-//		if right_key
-//		{
-//			image_index=6
-		
-//			if dodgePos!=2{dodgePos+=1}
-//		}
-	
-//		if dodgePos=2 //right
-//		{
-//			image_index=3
-		
-//			var _speed=2
-//			var _setupPointX=xstart+20
-			
-//			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-//		}
-//		if dodgePos=1
-//		{
-//			image_index=3
-		
-//			var _speed=2
-//			var _setupPointX=xstart
-			
-//			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-//		}
-//		if dodgePos=0 //left
-//		{
-//			image_index=3
-		
-//			var _speed=2
-//			var _setupPointX=xstart-20
-			
-//			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
-//		}
-//	}
-//}
 if setup
 {
 	if oBattle.playerTurn
@@ -237,14 +44,13 @@ if setup
 		}
 	}
 
-
-
 	if !oBattle.playerTurn
 	{
 		if targeted&&oBattle.defendStart=true
 		{
 			if !dodgePhase
 			{
+				ObjFlash(self,1.5,.025,255,255,255)
 				y=DefenseY
 				x=DefenseX
 			}
@@ -259,8 +65,6 @@ if setup
 		}
 	}
 }
-
-
 
 if dodgePhase
 {
@@ -292,10 +96,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX+60
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	
 		if dodgePos=3 //right
@@ -305,10 +108,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX+30
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	
 		if dodgePos=2 //middle
@@ -318,10 +120,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	
 		if dodgePos=1 //left
@@ -331,10 +132,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX-30
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	
 		if dodgePos=0 //farleft
@@ -344,10 +144,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX-60
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	}
 	if global.DefendRows=3
@@ -374,10 +173,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX+30
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	
 		if dodgePos=2 //middle
@@ -387,10 +185,9 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	
 		if dodgePos=1 //left
@@ -400,15 +197,24 @@ if dodgePhase
 				image_index=0	
 			}
 		
-			var _speed=3
 			var _setupPointX=DefenseX-30
 			
-			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), _speed));
+			move_towards_point(_setupPointX, DefenseY, min(point_distance(x, y, _setupPointX, DefenseY), spd));
 		}
 	}
 	moveTimer-=1
 }
 
+if stunned
+{
+	ObjFlash(self,1.5,.025,255,213,128)//stunned effect
+	
+	if moveTimer<0
+	{
+		spd=0	
+	}
+}
+else{spd=3}
 
 	
 //	}

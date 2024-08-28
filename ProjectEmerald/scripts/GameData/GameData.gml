@@ -1633,16 +1633,20 @@ global.enemyLibrary =
 			ObjFlash(_user,.75,.01,255,255,255)
 			switch _user.name
 			{
+				case "Crude Spider":
+					oBattle.battleEndMessages[0] = string(_user.name)+" Is creating a silken masterpiece."
+				break;
+				
 				case "Annoyed Ant":
-					oBattle.battleEndMessages[0] = string(_user.name)+" Doesn't want to be here"
+					oBattle.battleEndMessages[0] = string(_user.name)+" Doesn't want to be here."
 				break;
 				
 				case "Bull Frog":
-					oBattle.battleEndMessages[0] = string(_user.name)+" Sharpens it's horns"
+					oBattle.battleEndMessages[0] = string(_user.name)+" Sharpens it's horns."
 				break;
 				
 				case "Nightcrawler":
-					oBattle.battleEndMessages[0] = string(_user.name)+" just stares eerily"
+					oBattle.battleEndMessages[0] = string(_user.name)+" just stares eerily."
 				break
 				
 				case "Mutant Worm":
@@ -1653,7 +1657,7 @@ global.enemyLibrary =
 					}
 					if _ran = 1
 					{
-						oBattle.battleEndMessages[0] = string(_user.name)+" is cooking up an attack!"
+						oBattle.battleEndMessages[0] = string(_user.name)+" is cooking up an attack."
 					}
 				break;
 				

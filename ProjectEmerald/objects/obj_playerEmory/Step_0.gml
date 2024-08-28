@@ -62,7 +62,7 @@ if instance_exists(oShakeCamera)
 {
 	speedWalk = 0;		
 }
-if instance_exists(obj_danceBar)
+if instance_exists(obj_RhythmArrowAttackBar)
 {
 	speedWalk = 0;		
 }

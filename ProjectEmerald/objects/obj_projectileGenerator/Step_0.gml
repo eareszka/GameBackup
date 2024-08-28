@@ -1,9 +1,125 @@
 switch enemy.name
 {
+	case  "Crude Spider":
+	
+		if waveID=0
+		{
+			CreateProjectile(1,0,0,enemy,row1,1.5,yStart)
+			CreateProjectile(2,0,0,enemy,row2,1.5,yStart)
+			CreateProjectile(3,1,0,enemy,row1,1.5,yStart)
+			CreateProjectile(4,1,0,enemy,row3,1.5,yStart)
+			CreateProjectile(5,2,0,enemy,row1,1.5,yStart)
+			CreateProjectile(6,2,0,enemy,row2,1.5,yStart)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+		
+		if waveID=1
+		{
+			CreateProjectile(1,0,0,enemy,row1,1.5,yStart)
+			CreateProjectile(2,0,15,enemy,row2,1.5,yStart)
+			CreateProjectile(3,0,45,enemy,row3,1.5,yStart)
+			CreateProjectile(4,1,0,enemy,row2,1.5,yStart)
+			CreateProjectile(5,1,30,enemy,row1,1.5,yStart)
+			CreateProjectile(6,1,45,enemy,row2,1.5,yStart)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+		
+		if waveID=2
+		{
+			CreateProjectile(1,0,0,enemy,row1,1.25,yStart,,1)
+			CreateProjectile(2,0,0,enemy,row2,1.25,yStart,,1)
+			CreateProjectile(3,0,15,enemy,row3,1.25,yStart,,1) //right one
+			
+			//row 1
+			CreateProjectile(4,1,10,enemy,row1,1,yStart,,2)
+			CreateProjectile(5,1,30,enemy,row1,1,yStart,,2)
+			
+			//row 2
+			CreateProjectile(7,1,10,enemy,row2,1,yStart,,2)
+			CreateProjectile(8,1,30,enemy,row2,1,yStart,,2)
+			
+			if sec>=3&&steps>=30{instance_destroy(self)}
+		}
+		
+		if waveID=3
+		{
+			CreateProjectile(1,0,0,enemy,row1,1.25,yStart,,1)
+			CreateProjectile(2,0,0,enemy,row3,1.25,yStart,,1)
+			CreateProjectile(3,0,15,enemy,row2,1.25,yStart,,1) //right one
+			
+			//row 1
+			CreateProjectile(4,1,10,enemy,row1,1,yStart,,2)
+			CreateProjectile(5,1,30,enemy,row1,1,yStart,,2)
+			
+			//row 3
+			CreateProjectile(7,1,10,enemy,row3,1,yStart,,2)
+			CreateProjectile(8,1,30,enemy,row3,1,yStart,,2)
+			
+			if sec>=3&&steps>=30{instance_destroy(self)}
+		}
+		
+		if waveID=4
+		{
+			CreateProjectile(1,0,0,enemy,row3,1.25,yStart,,1)
+			CreateProjectile(2,0,0,enemy,row2,1.25,yStart,,1)
+			CreateProjectile(3,0,15,enemy,row1,1.25,yStart,,1) //right one
+			
+			//row 2
+			CreateProjectile(4,1,10,enemy,row2,1,yStart,,2)
+			CreateProjectile(5,1,30,enemy,row2,1,yStart,,2)
+			
+			//row 3
+			CreateProjectile(7,1,10,enemy,row3,1,yStart,,2)
+			CreateProjectile(8,1,30,enemy,row3,1,yStart,,2)
+			
+			if sec>=3&&steps>=30{instance_destroy(self)}
+		}
+		
+		
+	break
+	
+	case "Grinning Rock":
+		if waveID=0
+		{
+			CreateProjectile(1,0,0,enemy,row2,1.25,yStart)
+			CreateProjectile(2,0,0,enemy,row1,1.25,yStart)
+			CreateProjectile(3,0,40,enemy,row3,1.25,yStart)
+			CreateProjectile(4,0,40,enemy,row2,1.25,yStart)
+			CreateProjectile(5,1,20,enemy,row1,1.25,yStart)
+			CreateProjectile(6,1,20,enemy,row2,1.25,yStart)
+			CreateProjectile(7,2,0,enemy,row3,1.25,yStart)
+			CreateProjectile(8,2,0,enemy,row1,1.25,yStart)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+		if waveID=1
+		{
+			CreateProjectile(1,0,0,enemy,row2,1.25,yStart)
+			CreateProjectile(2,0,0,enemy,row3,1.25,yStart)
+			CreateProjectile(3,0,40,enemy,row1,1.25,yStart)
+			CreateProjectile(4,0,40,enemy,row2,1.25,yStart)
+			CreateProjectile(5,1,20,enemy,row3,1.25,yStart)
+			CreateProjectile(6,1,20,enemy,row2,1.25,yStart)
+			CreateProjectile(7,2,0,enemy,row1,1.25,yStart)
+			CreateProjectile(8,2,0,enemy,row2,1.25,yStart)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+	break
+	
+	
 	case "Typha":
 		if waveID=0
 		{
 			CreateProjectile(1,0,0,enemy,row2,1,yStart)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+		if waveID=1
+		{
+			CreateProjectile(1,0,0,enemy,row1,1,yStart)
 			
 			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
 		}

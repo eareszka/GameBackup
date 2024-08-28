@@ -145,6 +145,26 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 	
 	switch _user.name
 	{
+		case "Crude Spider":
+			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false
+			{
+				getFlag(_flag,1)
+				if _subType=0{instance_create_depth(_row,_ystart,-16000,obj_projectileAntBite,{type: _type, row: _row ,spd: _spd})}
+				if _subType=1{instance_create_depth(_row,_ystart,-16000,obj_projectileSpiderWeb,{type: _type, row: _row ,spd: _spd})}
+				if _subType=2{instance_create_depth(_row,_ystart,-16000,obj_projectileBabySpider,{type: _type, row: _row ,spd: _spd})}
+				ObjFlash(_user,1.5,.025,255,255,255)
+			}
+		break
+		
+		case "Grinning Rock":
+			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false
+			{
+				getFlag(_flag,1)
+				instance_create_depth(_row,_ystart,-16000,obj_projectileGrinningRock,{type: _type, row: _row ,spd: _spd})
+				ObjFlash(_user,1.5,.025,255,255,255)
+			}
+		break
+		
 		case "Typha":
 		
 			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false

@@ -6,7 +6,7 @@ set=false
 //type0=regular
 //type1=covers 2 rows
 //type2=follows path
-
+//type3=creates objects after touching
 if type=0
 {
 	if row=oBattle.x+156{xDest=oBattle.x+114}
