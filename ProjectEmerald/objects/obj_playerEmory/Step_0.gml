@@ -473,7 +473,7 @@ if battleStart
 
 
 //day and night cycle
-if !instance_exists(obj_dayNight){instance_create_depth(0,0,-9998,obj_dayNight)}
+if !instance_exists(obj_dayNight){instance_create_depth(0,0,depth+10,obj_dayNight)}
 if global.timeOfDay<8
 {
 	if room=RM_EMORY||room=RM_BROWNSTOWN

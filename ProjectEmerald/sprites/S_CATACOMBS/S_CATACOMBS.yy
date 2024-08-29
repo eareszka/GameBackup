@@ -20,6 +20,7 @@
   "height":512,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"e75a70fd-fc9f-473d-82aa-6f55aabc9af5","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"e75a70fd-fc9f-473d-82aa-6f55aabc9af5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"e0786083-3a04-4e2b-83dd-9eb4bef5ae3f","blendMode":0,"displayName":"default","isLocked":false,"name":"e0786083-3a04-4e2b-83dd-9eb4bef5ae3f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"S_CATACOMBS",

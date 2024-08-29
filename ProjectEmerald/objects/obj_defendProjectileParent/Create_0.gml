@@ -1,3 +1,5 @@
+event_inherited()
+
 destroy=false
 miss=false
 set=false

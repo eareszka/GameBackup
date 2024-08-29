@@ -76,6 +76,32 @@ if room=RM_BROWNSTOWN
 	}
 	else
 	{
+		if instance_exists(obj_dayNightOverlay){instance_destroy(obj_dayNightOverlay)}
+		
+		var _t_b1=layer_get_id("tBUILDINGS1")
+	
+		var _t_b2=layer_get_id("tBUILDINGS2")
+	
+		var _t_o1=layer_get_id("tOVERWORLD1")
+	
+		var _t_t1=layer_get_id("tTREES1")
+	
+		var _t_t2=layer_get_id("tTREES2")
+	
+		var _t_t3=layer_get_id("tTREES3")
+	
+		layer_set_visible(_t_b1,false)
+		
+		layer_set_visible(_t_b2,false)
+		
+		layer_set_visible(_t_o1,false)
+		
+		layer_set_visible(_t_t1,false)
+		
+		layer_set_visible(_t_t2,false)
+		
+		layer_set_visible(_t_t3,false)
+	
 		obj_lightingCutout.visible=false
 		obj_parentNPC.activated=true
 		inst_779021A6.activate=true
@@ -89,10 +115,11 @@ if room=RM_EMORY
 {
 	if global.timeOfDay<8
 	{
+		
 		obj_lightingCutout.visible=true
 	}
 	else
-	{
+	{	
 		obj_lightingCutout.visible=false
 	}
 }
@@ -121,7 +148,5 @@ if room=RM_HOSPITALbrownsTown
 		instance_destroy(inst_752F097B)
 	}	
 }
-	
-	
 
 show_debug_message(global.timeOfDay)

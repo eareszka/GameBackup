@@ -9,3 +9,5 @@ if row=oBattle.x+180{xDest=oBattle.x+153}
 if row=oBattle.x+192{xDest=oBattle.x+192}
 if row=oBattle.x+204{xDest=oBattle.x+231}
 if row=oBattle.x+228{xDest=oBattle.x+270}
+
+alpha=.8

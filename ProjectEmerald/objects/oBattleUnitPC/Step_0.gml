@@ -207,14 +207,14 @@ if dodgePhase
 
 if stunned
 {
-	ObjFlash(self,1.5,.025,255,213,128)//stunned effect
+	color=c_purple
 	
 	if moveTimer<0
 	{
 		spd=0	
 	}
 }
-else{spd=3}
+else{spd=3 color=c_white}
 
 	
 //	}

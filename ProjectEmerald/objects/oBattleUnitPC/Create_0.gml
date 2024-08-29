@@ -19,6 +19,7 @@ dodging=false
 stunned=false
 spd=3
 
+color=c_white
 
 defensiveStance=false
 yPos=ystart

@@ -52,3 +52,13 @@ else
 	ObjDepth(self,obj_playerEmory,-52,10)
 	image_index = 1	
 }
+
+
+if global.timeOfDay<8
+{
+	visible=false	
+}
+else
+{
+	visible=true		
+}

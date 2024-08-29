@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"dayNightShaderScript",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"dayNightShaderScript",
+  "parent":{
+    "name":"dayAndNight",
+    "path":"folders/Shaders/dayAndNight.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

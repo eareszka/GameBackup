@@ -50,3 +50,13 @@ if place_meeting(x,y,obj_playerEmory) && global.flag[8]=2
 
 
 ObjDepth(self,obj_playerEmory,-5,10)
+
+
+if global.timeOfDay<8
+{
+	visible=false	
+}
+else
+{
+	visible=true		
+}

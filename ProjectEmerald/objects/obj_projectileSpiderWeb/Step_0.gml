@@ -33,7 +33,6 @@ if instance_exists(obj_projectileGenerator)
 
 	if miss&&!destroy
 	{
-		image_index=1
 		image_blend = c_red
 		image_alpha-=.1
 	}
@@ -76,3 +75,5 @@ else
 		image_index=0	
 	}
 }
+
+alpha = 0.5 + 0.5 * sin(current_time * 0.0070);

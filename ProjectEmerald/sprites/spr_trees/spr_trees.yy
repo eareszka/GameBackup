@@ -22,8 +22,7 @@
   "height":110,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"398e5fc8-924a-4464-808e-7c09c6ed1db4","blendMode":0,"displayName":"default","isLocked":false,"name":"398e5fc8-924a-4464-808e-7c09c6ed1db4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
-    {"$GMImageLayer":"","%Name":"877bb376-d2a2-4638-ad43-3df1866471a8","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"877bb376-d2a2-4638-ad43-3df1866471a8","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"40867433-f389-4ed1-a9c7-3e1d4308799a","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"40867433-f389-4ed1-a9c7-3e1d4308799a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_trees",
   "nineSlice":null,

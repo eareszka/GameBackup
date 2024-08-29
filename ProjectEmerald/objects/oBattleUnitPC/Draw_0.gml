@@ -13,4 +13,4 @@ else
 	{outlineAlpha-=.05}
 }
 
-draw_sprite_ext(sprites.defendOutline,image_index,x,y,1,1,0,c_white,outlineAlpha)	
+draw_sprite_ext(sprites.defendOutline,image_index,x,y,1,1,0,color,outlineAlpha)	

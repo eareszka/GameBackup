@@ -34,7 +34,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: 0,
 	mpMax: 0,
 	strength: round(10+(global.strengthAdd*.8)),
-	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, defend: spr_emory_defend, defendOutline: spr_emory_defendOutline},
+	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, defend: spr_finn_defend, defendOutline: spr_finn_defendOutline},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	}
 	];
@@ -60,7 +60,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: 0,
 	mpMax: 0,
 	strength: round(10+(global.strengthAdd*.8)),
-	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, defend: spr_emory_defend, defendOutline: spr_emory_defendOutline},
+	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, defend: spr_finn_defend, defendOutline: spr_finn_defendOutline},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	},
 	{
@@ -96,7 +96,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: 0,
 	mpMax: 0,
 	strength: round(10+(global.strengthAdd*.8)),
-	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, defend: spr_emory_defend, defendOutline: spr_emory_defendOutline},
+	sprites: { idle: spr_finn_idle, attack: spr_finn_attack, cast: spr_finn_idle, defend: spr_finn_defend, defendOutline: spr_finn_defendOutline},
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	},
 	{
@@ -116,7 +116,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	mp: global.JcurrentMP,
 	mpMax: round(50+(global.mpAdd*1.8)),
 	strength: round(10+(global.strengthAdd*.5)),
-	sprites: { idle: spr_jen_idle, attack: spr_jen_attack, cast: spr_jen_cast, defend: spr_jen_defend, defend: spr_emory_defend, defendOutline: spr_emory_defendOutline},
+	sprites: { idle: spr_jen_idle, attack: spr_jen_attack, cast: spr_jen_cast, defend: spr_jen_defend, defend: spr_jen_defend, defendOutline: spr_jen_defendOutline},
 	actions: [global.actionLibrary.attackRhythm, global.actionLibrary.defend, global.specialLibrary.caduceus]
 	}
 	];

@@ -14,3 +14,12 @@ switch room
 }
 
 ObjDepth(self,obj_playerEmory,-34,10)
+
+if global.timeOfDay<8
+{
+	visible=false	
+}
+else
+{
+	visible=true		
+}
