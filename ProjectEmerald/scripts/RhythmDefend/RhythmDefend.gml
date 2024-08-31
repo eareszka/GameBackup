@@ -145,6 +145,14 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 	
 	switch _user.name
 	{
+		case "Wapaloosie":
+			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false
+			{
+				getFlag(_flag,1)
+				instance_create_depth(_row,_ystart,-16000,obj_projectileWapaloosieBubble,{type: _type, row: _row ,spd: _spd})
+			}
+		break
+
 		case "Crude Spider":
 			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false
 			{
@@ -152,7 +160,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 				if _subType=0{instance_create_depth(_row,_ystart,-16000,obj_projectileAntBite,{type: _type, row: _row ,spd: _spd})}
 				if _subType=1{instance_create_depth(_row,_ystart,-16000,obj_projectileSpiderWeb,{type: _type, row: _row ,spd: _spd})}
 				if _subType=2{instance_create_depth(_row,_ystart,-16000,obj_projectileBabySpider,{type: _type, row: _row ,spd: _spd})}
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 		break
 		
@@ -161,7 +168,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 			{
 				getFlag(_flag,1)
 				instance_create_depth(_row,_ystart,-16000,obj_projectileGrinningRock,{type: _type, row: _row ,spd: _spd})
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 		break
 		
@@ -171,7 +177,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 			{
 				getFlag(_flag,1)
 				instance_create_depth(_row,_ystart,-16000,obj_projectileLeaf,{type: _type, row: _row ,spd: _spd})
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 			
 		break;
@@ -182,7 +187,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 			{
 				getFlag(_flag,1)
 				instance_create_depth(_row,_ystart,-16000,obj_projectileMud,{type: _type, row: _row ,spd: _spd})
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 			
 		break;
@@ -193,7 +197,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 			{
 				getFlag(_flag,1)
 				instance_create_depth(_row,_ystart,-16000,obj_projectileAntBite,{type: _type, row: _row ,spd: _spd})
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 			
 		break;
@@ -205,7 +208,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 				getFlag(_flag,1)
 				if _type=0	{instance_create_depth(_row,_ystart,-16000,obj_projectileSlimeBall,{type: _type, row: _row ,spd: _spd})}
 				if _type=1	{instance_create_depth(_row,_ystart,-16000,obj_projectileHorns,{type: _type, row: _row ,spd: _spd})}
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 			
 		break;
@@ -216,7 +218,6 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 				getFlag(_flag,1)
 				if _subType=0	{instance_create_depth(_row,_ystart,-16000,obj_projectileAirrodShort,{type: _type, row: _row ,spd: _spd})}
 				if _subType=1	{instance_create_depth(_row,_ystart,-16000,obj_projectileAirrodLong,{type: _type, row: _row ,spd: _spd})}
-				ObjFlash(_user,1.5,.025,255,255,255)
 			}
 		break;
 	}

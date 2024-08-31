@@ -1,5 +1,16 @@
 switch enemy.name
 {
+	case  "Wapaloosie":
+		if waveID=0
+		{
+			CreateProjectile(1,0,0,enemy,wapaloosieMouth,2,yStart+25,1)
+			CreateProjectile(2,1,0,enemy,wapaloosieMouth,2,yStart+25,2)
+			CreateProjectile(3,2,0,enemy,wapaloosieMouth,2,yStart+25,3)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+	break
+	
 	case  "Crude Spider":
 	
 		if waveID=0
@@ -120,6 +131,13 @@ switch enemy.name
 		if waveID=1
 		{
 			CreateProjectile(1,0,0,enemy,row1,1,yStart)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+		if waveID=2
+		{
+			CreateProjectile(1,0,0,enemy,row1,1,yStart)
+			CreateProjectile(2,0,30,enemy,row2,1,yStart)
 			
 			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
 		}

@@ -185,12 +185,12 @@ array_sort(units,function(_1, _2)
 //Get render order
 RefreshRenderOrder = function()
 {
-	unitRenderOrder = [];
-	array_copy(unitRenderOrder,0,units,0,array_length(units));
-	//array_sort(unitRenderOrder,function(_1, _2)
-	//{
-	//	return _1.x - _2.x;
-	//});
+	//unitRenderOrder = [];
+	//array_copy(unitRenderOrder,0,units,0,array_length(units));
+	////array_sort(unitRenderOrder,function(_1, _2)
+	////{
+	////	return _1.x - _2.x;
+	////});
 }
 RefreshRenderOrder();
 

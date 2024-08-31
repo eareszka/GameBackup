@@ -5,10 +5,6 @@ if (battleState == 0)
 	{
 		audio_play_sound(music,2,true)
 	}
-	for (i=0;i<array_length(enemyUnits);i++)
-	{
-		enemyUnits[i].sprite_index = enemyUnits[i].sprites.intro
-	}
 	transitionProg += .1
 	if (transitionProg >= 1)
 	{

@@ -47,9 +47,9 @@ if instance_exists(obj_projectileGenerator)
 if instance_exists(obj_defendStanceLineGenerator)
 {
 	
-		var _speed = spd
-		var _setupPointX=xDest
-		var _setupPointY=obj_defendStanceLineGenerator.y+50
+	var _speed = spd
+	var _setupPointX=xDest
+	var _setupPointY=obj_defendStanceLineGenerator.y+50
 
-		move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
+	move_towards_point(_setupPointX, _setupPointY, min(point_distance(x, y, _setupPointX, _setupPointY), _speed));	
 }

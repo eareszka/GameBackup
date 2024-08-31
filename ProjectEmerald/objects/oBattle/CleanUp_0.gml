@@ -1,6 +1,8 @@
 global.boyToys = 0
 global.defendDodgeWave=0
 
+if !instance_exists(obj_caveSpiderWeb){instance_destroy(obj_caveSpiderWeb)}
+
 if instance_exists(oBattleUnitBoyToy){instance_destroy(oBattleUnitBoyToy)}
 if instance_exists(oBattleUnitBoyToy2){instance_destroy(oBattleUnitBoyToy2)}
 

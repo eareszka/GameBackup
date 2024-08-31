@@ -3,6 +3,10 @@ sec=0
 
 switch enemy.name
 {
+	case  "Wapaloosie":
+		waveID=0
+	break
+	
 	case "Crude Spider":
 		if oBattle.attackSubtype=0{waveID=irandom_range(0,1)}
 		if oBattle.attackSubtype=1{waveID=irandom_range(2,4)}
@@ -13,7 +17,7 @@ switch enemy.name
 	break
 	
 	case "Typha":
-		waveID=irandom_range(0,1)
+		waveID=irandom_range(0,2)
 	break
 	
 	case "Annoyed Ant":
@@ -60,6 +64,8 @@ row1=oBattle.x+180
 row2=oBattle.x+192
 row3=oBattle.x+204
 row4=oBattle.x+228
+
+wapaloosieMouth=enemy.x+15
 
 yStart=oBattle.y+75
 

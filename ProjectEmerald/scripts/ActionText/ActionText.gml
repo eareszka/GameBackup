@@ -5,34 +5,34 @@ function ActionText(_user,_action,_targets)
 	switch _action.name
 	{
 		case "Attack":
-			switch _user.name
+			switch _user.unitID
 			{
 				//the only reason broke would be attacking if continous attack
-				case "Broke":
+				case 2:
 					return "Continuous Attacks!";
 				break;
 				
-				case "Nightcrawler":
+				case 5:
 					return string(_user.name)+" Summon's Air Rod's At "+string(_targets[0].name)+"!";
 				break
 				
-				case "Mutant Worm":
+				case 4:
 					return string(_user.name)+" Tosses Mud At "+string(_targets[0].name)+"!";
 				break
 				
-				case "Typha":
+				case 6:
 					return string(_user.name)+" Attacks "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Annoyed Ant":
+				case 7:
 					return string(_user.name)+" Bites "+string(_targets[0].name)+"!";
 				break
 				
-				case "Bull Frog":
+				case 8:
 					return string(_user.name)+" Charges At "+string(_targets[0].name)+"!";
 				break
 				
-				case "Crude Spider":
+				case 9:
 				
 					var _ran=irandom_range(0,1)
 					if _ran=0{oBattle.attackSubtype=0 return string(_user.name)+" Bites "+string(_targets[0].name)+"!";}
@@ -40,52 +40,56 @@ function ActionText(_user,_action,_targets)
 					
 				break;
 				
-				case "Grinning Rock":
+				case 10:
 					return string(_user.name)+" Bashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Momma Worm":
+				case 19:
 					return string(_user.name)+" Strikes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "The Magician":
+				case 18:
 					return string(_user.name)+" Bashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Armored Beetle":
+				case 11:
 					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Horned Beetle":
+				case 20:
 					return string(_user.name)+" Stabs "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Poison Thornster":
+				case 13:
 					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Mogging Mole":
+				case 12:
 					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Bane Bat":
+				case 14:
 					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Amalbonemation":
+				case 15:
 					return string(_user.name)+" Bashes At "+string(_targets[0].name)+"!";
 				break;
 				
-				case "Ancient King":
+				case 21:
 					return string(_user.name)+" Slashes At "+string(_targets[0].name)+"!";
 				break;
+				
+				case 26:
+					return string(_user.name)+" Shoots Bubbles At "+string(_targets[0].name)+"!";
+				break
 			}
 		break
 		
 		case "attackAll":
-			switch _user.name
+			switch _user.unitID
 			{
-				case "Thunder Bird":
+				case 17:
 					return string(_user.name)+ " Created A Wind Gust With Their Wings!" 
 				break;
 			}

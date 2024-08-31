@@ -25,16 +25,6 @@ switch battleBackground
 
 image_speed = .5
 
-//Draw units in depth order
-for (var i = 0; i < array_length(unitRenderOrder); i++)
-{
-	with (unitRenderOrder[i])
-	{
-		draw_self();
-		if (myTurn) && (!enemy) && (instance_exists(oMenu)) draw_sprite(sTurnIndicator, 0, x, y);
-	}
-}
-
 if (targetCursor.cursorActive) && endTimer = 80
 {
 	with (targetCursor)
@@ -43,14 +33,19 @@ if (targetCursor.cursorActive) && endTimer = 80
 		{
 			if (is_array(cursorTarget))
 			{
-				draw_set_alpha(sin(get_timer()/50000)+1);
+				draw_set_alpha(sin(get_timer()/100000)+1);
 				for (var i = 0; i < array_length(cursorTarget); i++)
 				{
-					draw_sprite(spr_pointer,cursorError,cursorTarget[i].x,cursorTarget[i].y);
+					var _xx=getPointer(cursorTarget[i])
+					draw_sprite(spr_battlePointer,cursorError,cursorTarget[i].x+_xx,cursorTarget[i].y);
 				}
 				draw_set_alpha(1.0);
 			}
-			else draw_sprite_ext(spr_pointer,cursorError,cursorTarget.x,cursorTarget.y,1,1,0,c_white,1);
+			else
+			{
+				var _xx=getPointer(cursorTarget) 
+				draw_sprite_ext(spr_battlePointer,cursorError,cursorTarget.x+_xx,cursorTarget.y,1,1,0,c_white,1);
+			}
 			//else draw_sprite_ext(SselectedCharacterOutline,cursorError,cursorTarget.x,cursorTarget.y,1,1,0,c_white,1);
 
 		}

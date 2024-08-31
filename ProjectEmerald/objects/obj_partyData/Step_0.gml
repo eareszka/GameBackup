@@ -2,6 +2,7 @@
 if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	global.party = [
 	{
+	unitID:0,
 	name: "Emory",
 	hp: global.EcurrentHP,
 	hpMax: 20+global.hpAdd,
@@ -18,6 +19,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 } else if (global.fin == 1 && global.broke == 0 && global.jen == 0) {
 	global.party = [
 	{
+	unitID:0,
 	name: "Emory",
 	hp: global.EcurrentHP,
 	hpMax: 20+global.hpAdd,
@@ -28,6 +30,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	actions : [],
 	},
 	{
+	unitID:1,
 	name: "Fin",
 	hp: global.FcurrentHP,
 	hpMax: round(50+(global.hpAdd*1.2)),
@@ -44,6 +47,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 } else if (global.broke == 1 && global.fin == 1 && global.jen == 0) {
 	global.party = [
 	{
+	unitID:0,
 	name: "Emory",
 	hp: global.EcurrentHP,
 	hpMax: 20+global.hpAdd,
@@ -54,6 +58,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	actions : [],
 	},
 	{
+	unitID:1,
 	name: "Fin",
 	hp: global.FcurrentHP,
 	hpMax: round(50+(global.hpAdd*1.2)),
@@ -64,6 +69,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	},
 	{
+	unitID:2,
 	name: "Broke",
 	hp: global.BcurrentHP,
 	hpMax: round(10+(global.hpAdd*.5)),
@@ -80,6 +86,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 } else if (global.jen == 1 && global.broke == 1 && global.fin == 1) {
 	global.party = [
 	{
+	unitID:0,
 	name: "Emory",
 	hp: global.EcurrentHP,
 	hpMax: 20+global.hpAdd,
@@ -90,6 +97,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	actions : [],
 	},
 	{
+	unitID:1,
 	name: "Fin",
 	hp: global.FcurrentHP,
 	hpMax: round(50+(global.hpAdd*1.2)),
@@ -100,6 +108,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.GrowHemp, global.actionLibrary.escape]
 	},
 	{
+	unitID:2,
 	name: "Broke",
 	hp: global.BcurrentHP,
 	hpMax: round(10+(global.hpAdd*.5)),
@@ -110,6 +119,7 @@ if (global.fin == 0 && global.broke == 0 && global.jen == 0){
 	actions: [global.actionLibrary.attackRhythm, global.specialLibrary.summonBoyToys, global.actionLibrary.escape]
 	},
 	{
+	unitID:3,
 	name: "Jen",
 	hp: global.JcurrentHP,
 	hpMax: round(100+(global.hpAdd*1.5)),

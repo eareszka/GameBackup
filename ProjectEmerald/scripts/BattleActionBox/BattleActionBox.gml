@@ -4,9 +4,26 @@ function BattleActionBox(_user,_action)
 {
 	if variable_struct_exists(_action,"action")
 	{
-		switch _user.name
+		switch _user.unitID
 		{
-			case "The Magician":
+			case 26:
+				switch _action.action
+				{
+					case 1:
+						CreateActionBox(_user,1,20,10)
+					break;	
+				
+					case 2:
+						CreateActionBox(_user,2,20,10)
+					break;	
+				
+					case 3:
+						CreateActionBox(_user,3,20,10)
+					break;	
+				}
+			break
+			
+			case 18:
 				switch _action.action
 				{
 					case 1:
@@ -23,7 +40,7 @@ function BattleActionBox(_user,_action)
 				}
 			break
 			
-			case "Mutant Worm":
+			case 4:
 				switch _action.action
 				{
 					case 1:
@@ -40,7 +57,7 @@ function BattleActionBox(_user,_action)
 				}
 			break;
 			
-			case "Nightcrawler":
+			case 5:
 				switch _action.action
 				{
 					case 1:
@@ -58,7 +75,7 @@ function BattleActionBox(_user,_action)
 			break;
 		
 		
-			case "Horned Beetle":
+			case 20:
 				switch _action.action
 				{
 					case 1:
@@ -76,7 +93,7 @@ function BattleActionBox(_user,_action)
 			break;
 			
 			
-			case "Ancient King":
+			case 21:
 				switch _action.action
 				{
 					case 1:
@@ -94,7 +111,7 @@ function BattleActionBox(_user,_action)
 			break;
 		
 		
-			case "Typha":
+			case 6:
 				switch _action.action
 				{
 					case 1:
@@ -111,7 +128,7 @@ function BattleActionBox(_user,_action)
 				}
 			break;
 			
-			case "Annoyed Ant":
+			case 7:
 				switch _action.action
 				{
 					case 1:
@@ -129,7 +146,7 @@ function BattleActionBox(_user,_action)
 			break;
 		
 		
-			case "Bull Frog":
+			case 8:
 				switch _action.action
 				{
 					case 1:
@@ -147,7 +164,7 @@ function BattleActionBox(_user,_action)
 			break;
 		
 		
-			case "Grinning Rock":
+			case 10:
 				switch _action.action
 				{
 					case 1:
@@ -165,7 +182,7 @@ function BattleActionBox(_user,_action)
 			break
 		
 		
-			case "Crude Spider":
+			case 9:
 				switch _action.action
 				{
 					case 1:
@@ -182,7 +199,7 @@ function BattleActionBox(_user,_action)
 				}
 			break
 			
-			case "Armored Beetle":
+			case 11:
 				switch _action.action
 				{
 					case 1:
@@ -199,7 +216,7 @@ function BattleActionBox(_user,_action)
 				}
 			break
 		
-			case "Poison Thornster":
+			case 13:
 				switch _action.action
 				{
 					case 1:
@@ -216,7 +233,7 @@ function BattleActionBox(_user,_action)
 				}
 			break
 			
-			case "Mogging Mole":
+			case 12:
 				switch _action.action
 				{
 					case 1:
@@ -233,7 +250,7 @@ function BattleActionBox(_user,_action)
 				}
 			break
 			
-			case "Bane Bat":
+			case 14:
 				switch _action.action
 				{
 					case 1:
@@ -251,7 +268,7 @@ function BattleActionBox(_user,_action)
 			break
 			
 			
-			case "Amalbonemation":
+			case 15:
 				switch _action.action
 				{
 					case 1:
@@ -268,7 +285,7 @@ function BattleActionBox(_user,_action)
 				}
 			break
 			
-			case "Not Deer":
+			case 16:
 				switch _action.action
 				{
 					case 1:
@@ -285,7 +302,7 @@ function BattleActionBox(_user,_action)
 				}
 			break;
 			
-			case "Thunder Bird":
+			case 17:
 				switch _action.action
 				{
 					case 1:

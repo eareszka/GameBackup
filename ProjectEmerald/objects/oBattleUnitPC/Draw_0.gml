@@ -1,5 +1,6 @@
 event_inherited();
 
+draw_self()
 
 //outline during dodge phase
 if dodgePhase&&instance_exists(obj_defendProjectileParent)

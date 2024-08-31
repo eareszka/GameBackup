@@ -300,6 +300,56 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 	}
 }
 
+function getPointer(_targets)
+{
+	switch (_targets.unitID)
+	{
+	    case 0:
+	        return -15;
+	    break;
+
+	    case 1:
+	        return -15;
+	    break;
+
+	    case 2:
+	        return -15;
+	    break;
+
+	    case 3:
+	        return -15;
+	    break;
+		
+		case 4:
+	        return -17;
+	    break;
+
+	    case 5:
+	        return -16;
+	    break;
+
+	    case 6:
+	        return -20;
+	    break;
+
+	    case 7:
+	        return -25;
+	    break;
+
+	    case 8:
+	        return -22;
+	    break;
+		
+		case 9:
+	        return -22;
+	    break;
+		
+		case 26:
+	        return -22;
+	    break;
+	}
+}
+
 
 function checkDeadPerfectCurse(_targets)
 {

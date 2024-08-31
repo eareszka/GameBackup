@@ -14,5 +14,6 @@ if flash > 0
 	shader_set_uniform_f(alpha,flash)
 	
 	draw_self()
+	
 	shader_reset()
 }

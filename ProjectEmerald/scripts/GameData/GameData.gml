@@ -2,6 +2,7 @@ window_set_fullscreen(false)
 display_set_gui_size(384,216)
 game_set_speed(60, fps)
 randomize()
+
 //PARTY MEMBERS
 global.fin = 0;
 global.broke = 0;
@@ -1231,7 +1232,7 @@ global.enemyLibrary =
 		rhythmDefend: true,
 		func : function(_user, _targets)
 		{		
-			ObjFlash(_targets[0],1.5,.025,255,0,0)
+			ObjFlash(_targets[0],1.5,.075,255,0,0)
 			var _damage = ceil(_user.strength + random_range(-_user.strength * 0.25, _user.strength * 0.25));
 			if (global.quest.blueRing.available = true && global.quest.blackRing.available = false) _damage = ceil(_damage * 0.5);
 			if (global.quest.blackRing.available = true) _damage = ceil(_damage * 0.1);
@@ -1986,6 +1987,7 @@ global.enemies =
 	catTails: 
 	{
 		name: "Typha",
+		unitID:6,
 		hp: 15,
 		hpMax: 15,
 		mp: 0,
@@ -1994,7 +1996,7 @@ global.enemies =
 		arrows: 1,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_catTailsIdle, idle: spr_catTailsIdle, attack: spr_catTailsAttack, defend: spr_catTailsIdle},
+		sprites: { intro: spr_catTailsBody1, idle: spr_catTailsBody1, attack: spr_catTailsBody1, defend: spr_catTailsBody1},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,],
 		moneyValue : 5,
 		experinceValue : 2,
@@ -2014,6 +2016,7 @@ global.enemies =
 	ant: 
 	{
 		name: "Annoyed Ant",
+		unitID:7,
 		hp: 14,
 		hpMax: 14,
 		mp: 0,
@@ -2022,7 +2025,7 @@ global.enemies =
 		arrows: 1,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_antIntro, idle: spr_annoyedAntIdle},
+		sprites: { intro: spr_antIntro, idle: spr_annoyedAntBody},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 5,
 		experinceValue : 1,
@@ -2042,6 +2045,7 @@ global.enemies =
 	frog: 
 	{
 		name: "Bull Frog",
+		unitID:8,
 		hp: 20,
 		hpMax: 20,
 		mp: 0,
@@ -2050,7 +2054,7 @@ global.enemies =
 		arrows: 2,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_bullfrogIdle, idle: spr_bullfrogIdle, attack: spr_bullfrogIdle, defend: spr_bullfrogIdle},
+		sprites: { intro: spr_bullFrogBody, idle: spr_bullFrogBody, attack: spr_bullFrogBody, defend: spr_bullFrogBody},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 10,
 		experinceValue : irandom_range(3,5),
@@ -2070,6 +2074,7 @@ global.enemies =
   	spider:
 	{
 		name: "Crude Spider",
+		unitID:9,
 		hp: 17,
 		hpMax: 17,
 		mp: 0,
@@ -2078,7 +2083,7 @@ global.enemies =
 		arrows: 2,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_caveSpiderIntro, idle: spr_caveSpiderIdle, attack: spr_caveSpiderAttack},
+		sprites: { intro: spr_caveSpiderLegs, idle: spr_caveSpiderLegs, attack: spr_caveSpiderLegs},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.betrayal,global.enemyLibrary.stealItem,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 12,
 		experinceValue : irandom_range(3,6),
@@ -2096,9 +2101,68 @@ global.enemies =
 		}
 	}
 	,
+	wapaloosie:
+	{
+		name: "Wapaloosie",
+		unitID:26,
+		hp: 35,
+		hpMax: 35,
+		mp: 0,
+		mpMax: 0,
+		strength: 1,
+		arrows: 2,
+		frequency: 2,
+		spd: 3,
+		sprites: { intro: spr_wapaloosieBody1, idle: spr_wapaloosieBody1, attack: spr_wapaloosieBody1,},
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		moneyValue : 15,
+		experinceValue : irandom_range(5,7),
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	teakettler:
+	{
+		name: "Teakettler",
+		unitID:26,
+		hp: 35,
+		hpMax: 35,
+		mp: 0,
+		mpMax: 0,
+		strength: 1,
+		arrows: 2,
+		frequency: 2,
+		spd: 3,
+		sprites: { intro: spr_teakettlerBody, idle: spr_teakettlerBody, attack: spr_teakettlerBody,},
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		moneyValue : 15,
+		experinceValue : irandom_range(5,7),
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
 	rock: 
 	{
 		name: "Grinning Rock",
+		unitID:10,
 		hp: 35,
 		hpMax: 35,
 		mp: 0,
@@ -2128,6 +2192,7 @@ global.enemies =
 	beetle: 
 	{
 		name: "Armored Beetle",
+		unitID:11,
 		hp: 50,
 		hpMax: 50,
 		mp: 0,
@@ -2156,6 +2221,7 @@ global.enemies =
 	//dense small arrow ammt
 	mogMole: 
 	{
+		unitID:12,
 		name: "Mogging Mole",
 		hp: 35,
 		hpMax: 35,
@@ -2182,39 +2248,43 @@ global.enemies =
 		}
 	}
 	,
+	//dard
+	//scalyFeline
+	
+	
 	//super rare encounter
-	nineTailedFox: 
-	{
-		name: "Nine Tailed Fox",
-		hp: 300,
-		hpMax: 300,
-		mp: 0,
-		mpMax: 0,
-		strength: 0,
-		arrows: 9,
-		frequency: 2,
-		spd: 3,
-		sprites: { intro: spr_catTailsIntro, idle: spr_catTailsIdle, attack: spr_catTailsAttack},
-		actions: [global.enemyLibrary.flee],
-		//give a lot of money & xp
-		moneyValue : 100,
-		experinceValue : irandom_range(300,500),
-		AIscript : function()
-		{
-			//attack random party member
-			var _action = actions[0];
-			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
-			{
-				return (_unit.hp > 0);
-			});
-			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
-			return [_action, _target];
-		}
-	}
-	,
+	//nineTailedFox: 
+	//{
+	//	name: "Nine Tailed Fox",
+	//	hp: 300,
+	//	hpMax: 300,
+	//	mp: 0,
+	//	mpMax: 0,
+	//	strength: 0,
+	//	arrows: 9,
+	//	frequency: 2,
+	//	spd: 3,
+	//	sprites: { intro: spr_catTailsIntro, idle: spr_catTailsBody1, attack: spr_catTailsAttack},
+	//	actions: [global.enemyLibrary.flee],
+	//	//give a lot of money & xp
+	//	moneyValue : 100,
+	//	experinceValue : irandom_range(300,500),
+	//	AIscript : function()
+	//	{
+	//		//attack random party member
+	//		var _action = actions[0];
+	//		var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+	//		{
+	//			return (_unit.hp > 0);
+	//		});
+	//		var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+	//		return [_action, _target];
+	//	}
+	//}
 	//middle of road poisons party
 	poisonthorns: 
 	{
+		unitID:13,
 		name: "Poison Thornster",
 		hp: 35,
 		hpMax: 35,
@@ -2244,6 +2314,7 @@ global.enemies =
 	//middle of road poisons party
 	bat: 
 	{
+		unitID:14,
 		name: "Bane Bat",
 		hp: 50,
 		hpMax: 50,
@@ -2274,6 +2345,7 @@ global.enemies =
 	//glass cannon
 	amalbonemation: 
 	{
+		unitID:15,
 		name: "Amalbonemation",
 		hp: 100,
 		hpMax: 100,
@@ -2303,6 +2375,7 @@ global.enemies =
 	//deals fuck ton of damage then flees
 	notDeer: 
 	{
+		unitID:16,
 		name: "Not Deer",
 		hp: 100,
 		hpMax: 100,
@@ -2332,6 +2405,7 @@ global.enemies =
 	,
 	thunderBird: 
 	{
+		unitID:17,
 		name: "Thunder Bird",
 		hp: 250,
 		hpMax: 250,
@@ -2391,15 +2465,16 @@ global.enemies =
 	nightcrawler: 
 	{
 		name: "Nightcrawler",
-		hp: 50,
-		hpMax: 50,
+		unitID:5,
+		hp: 30,
+		hpMax: 30,
 		mp: 0,
 		mpMax: 0,
-		strength: 5,
-		arrows: 5,
+		strength: 2,
+		arrows: 3,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_nightcrawlersIdle, idle: spr_nightcrawlersIdle, attack: spr_nightcrawlersIdle, defend: spr_nightcrawlersIdle},
+		sprites: { intro: spr_nightcrawlersLegs, idle: spr_nightcrawlersLegs, attack: spr_nightcrawlersLegs, defend: spr_nightcrawlersLegs},
 		actions: [global.enemyLibrary.attack ,global.enemyLibrary.taunt],
 		moneyValue : 30,
 		experinceValue : irandom_range(10,15),
@@ -2422,6 +2497,7 @@ global.bosses =
 	//easiest
 	babyWorm: 
 	{
+		unitID:4,
 		name: "Mutant Worm",
 		hp: 35,
 		hpMax: 35,
@@ -2431,7 +2507,7 @@ global.bosses =
 		arrows: 1,
 		frequency: 1,
 		spd: 3,
-		sprites: { intro: spr_babyWormIntro, idle: spr_babyWorm, attack: spr_babyWormAttack, defend: spr_babyWorm},
+		sprites: { intro: spr_babyWormBody, idle: spr_babyWormBody, attack: spr_babyWormBody, defend: spr_babyWormBody},
 		scripted: true, 
 		actions: [global.enemyLibrary.attack ,global.enemyLibrary.taunt],
 		moneyValue : 5,
@@ -2452,6 +2528,7 @@ global.bosses =
 	//moderate
 	magician : 
 	{
+		unitID:18,
 		name: "The Magician",
 		hp: 150,
 		hpMax: 150,
@@ -2483,6 +2560,7 @@ global.bosses =
 	//easy
 	brownstownCaveBoss: 
 	{
+		unitID:19,
 		name: "Momma Worm",
 		hp: 150,
 		hpMax: 100,
@@ -2512,6 +2590,7 @@ global.bosses =
 	//hard
 	finFarmBoss: 
 	{
+		unitID:20,
 		name: "Horned Beetle",
 		hp: 300,
 		hpMax: 300,
@@ -2544,6 +2623,7 @@ global.bosses =
 	//medium
 	ancientKing: 
 	{
+		unitID:21,
 		name: "Ancient King",
 		hp: 900,
 		hpMax: 900,
@@ -2568,6 +2648,7 @@ global.bosses =
 	,
 	daddyWorm: 
 	{
+		unitID:22,
 		name: "Daddy Worm",
 		hp: 500,
 		hpMax: 500,
@@ -2598,6 +2679,7 @@ global.bosses =
 	//hard
 	theCoach: 
 	{
+		unitID:23,
 		name: "The Coach",
 		hp: 755,
 		hpMax: 755,
@@ -2623,6 +2705,7 @@ global.bosses =
 	//easier
 	sickSnake: 
 	{
+		unitID:24,
 		name: "Sacred Snake",
 		hp: 800,
 		hpMax: 800,
@@ -2632,7 +2715,7 @@ global.bosses =
 		arrows: 3,
 		frequency: 3,
 		spd: 3,
-		sprites: {	intro: spr_catTailsIdle, idle: spr_catTailsIdle, attack: spr_catTailsIdle},
+		sprites: {	intro: spr_catTailsBody1, idle: spr_catTailsBody1, attack: spr_catTailsBody1},
 		//scripted: true,
 		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.windGust],
 		actions: [global.enemyLibrary.maxHeal],
@@ -2646,6 +2729,7 @@ global.bosses =
 	//n/a (based on how much damage party can dish out)
 	jennaBoss: 
 	{
+		unitID:25,
 		name: "Jenna",
 		hp: 1000,
 		hpMax: 1000,

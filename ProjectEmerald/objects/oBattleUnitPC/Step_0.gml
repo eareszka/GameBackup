@@ -50,7 +50,7 @@ if setup
 		{
 			if !dodgePhase
 			{
-				ObjFlash(self,1.5,.025,255,255,255)
+				ObjFlash(self,1.5,.075,255,255,255)
 				y=DefenseY
 				x=DefenseX
 			}

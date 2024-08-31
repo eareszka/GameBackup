@@ -737,7 +737,7 @@ function createArrows(_targets,_dance=false)
 		var _ran = irandom_range(0,3)
 		var _ran2 = irandom_range(0,99)
 		if !_dance{arrow[i] = instance_create_depth(oBattle.x-250,oBattle.y+8,-16000,oRhythmArrow,{img: _ran})}
-		if _dance{arrow[i] = instance_create_depth(obj_camera.x-450,obj_camera.y-112,-10001,oRhythmArrow,{img: _ran})}
+		if _dance{arrow[i] = instance_create_depth(obj_camera.x-450,obj_camera.y-112,-16000,oRhythmArrow,{img: _ran})}
 		
 		//changes x pos of each index 
 		if i > 0
@@ -869,7 +869,7 @@ function editArrows(_arr,_targets,_dance)
 		}
 	}
 	if array_length(_arr)>1{instance_create_depth(0,0,-16000,obj_comboNumber,{dance: _dance})}
-	with instance_create_depth(_targets.x,_targets.y,-10001,obj_RhythmArrowAttackBar,{target: _targets, dance: _dance})
+	with instance_create_depth(_targets.x,_targets.y,-15000,obj_RhythmArrowAttackBar,{target: _targets, dance: _dance})
 	{
 		array_copy(arrows,0,_arr,0,array_length(_arr))
 	}

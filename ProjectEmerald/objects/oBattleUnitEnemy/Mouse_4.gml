@@ -1,1 +1,0 @@
-BattleChangeHP(id, irandom_range(-10,10))

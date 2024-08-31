@@ -120,6 +120,7 @@ if room=RM_EMORY
 	}
 	else
 	{	
+		if instance_exists(obj_dayNightOverlay){instance_destroy(obj_dayNightOverlay)}
 		obj_lightingCutout.visible=false
 	}
 }

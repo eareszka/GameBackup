@@ -1,20 +1,16 @@
 event_inherited();
 
-
-image_xscale = -1;
 sprite_index = sprites.idle;
+
 enemy = true;
 
 flag1 = false
 flag2 = false
 flag3 = false
 
-//for body parts
-rotation=0
-timer=0
-alpha=1
-color=c_white
+//for perfect curse
 perfect=false
+
 
 AIscript = function(_unit)
 {

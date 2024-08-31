@@ -35,12 +35,9 @@ if (room == RM_HOTELvent2)||(room == RM_HOTELvent1)
 	choose
 	(
 	[global.enemies.spider],
-	[global.enemies.spider],
-	[global.enemies.spider],
-	[global.enemies.spider],
-	[global.enemies.spider,global.enemies.spider],
-	[global.enemies.spider,global.enemies.spider],
-	[global.enemies.spider,global.enemies.spider,global.enemies.spider],
+	[global.enemies.wapaloosie],
+	[global.enemies.spider,global.enemies.wapaloosie],
+	[global.enemies.wapaloosie,global.enemies.spider],
 	), 
 	spr_battleBackground5,
 	battle1,
