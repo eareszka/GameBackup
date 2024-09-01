@@ -6,6 +6,44 @@ function BattleActionBox(_user,_action)
 	{
 		switch _user.unitID
 		{
+			case 28:
+				switch _action.action
+				{
+					case 1:
+						CreateActionBox(_user,1,-50,5,true)
+					break;	
+				
+					case 2:
+						CreateActionBox(_user,2,-50,5,true)
+					break;	
+				
+					case 3:
+						CreateActionBox(_user,3,-50,5,true)
+					break;	
+				}
+			break
+			
+			case 27:
+				switch _action.action
+				{
+					case 1:
+						CreateActionBox(_user,1,-40,0,true)
+					break;	
+				
+					case 2:
+						CreateActionBox(_user,2,-40,0,true)
+					break;	
+				
+					case 3:
+						CreateActionBox(_user,3,-40,0,true)
+					break;	
+					
+					case 4:
+						//null
+					break;
+				}
+			break
+			
 			case 26:
 				switch _action.action
 				{

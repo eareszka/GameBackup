@@ -145,6 +145,14 @@ function CreateProjectile(_flag, _sec, _steps, _user,_row,_spd,_ystart,_type=0,_
 	
 	switch _user.name
 	{
+		case  "Scaly Feline":
+			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false
+			{
+				getFlag(_flag,1)
+				instance_create_depth(_row,_ystart,-16000,obj_projectileScalyFelineBite,{type: _type, row: _row ,spd: _spd})
+			}
+		break
+		
 		case "Wapaloosie":
 			if obj_projectileGenerator.sec>=_sec&&obj_projectileGenerator.steps>=_steps&&_set=false
 			{

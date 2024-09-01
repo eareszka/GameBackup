@@ -83,6 +83,14 @@ function ActionText(_user,_action,_targets)
 				case 26:
 					return string(_user.name)+" Shoots Bubbles At "+string(_targets[0].name)+"!";
 				break
+				
+				case 27:
+					return string(_user.name)+" Puffs Steam At "+string(_targets[0].name)+"!";
+				break
+				
+				case 28:
+					return string(_user.name)+" Bites At "+string(_targets[0].name)+"!";
+				break
 			}
 		break
 		

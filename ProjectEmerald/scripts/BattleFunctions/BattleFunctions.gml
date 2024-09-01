@@ -344,8 +344,20 @@ function getPointer(_targets)
 	        return -22;
 	    break;
 		
+		case 10:
+	        return -28;
+	    break;
+		
 		case 26:
 	        return -22;
+	    break;
+		
+		case 27:
+	        return -22;
+	    break;
+		
+		case 28:
+	        return -30;
 	    break;
 	}
 }

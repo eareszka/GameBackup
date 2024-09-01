@@ -10,7 +10,7 @@ if place_meeting(x,y,obj_playerEmory)
 	global.BcurrentHP=10
 	global.EcurrentHP=10
 	global.mpAdd = 280;
-	global.strengthAdd = 1;
+	global.strengthAdd = 100;
 	global.levels.level60 = true;
 	global.battleExperince = 120
 	global.my_Money = 100000

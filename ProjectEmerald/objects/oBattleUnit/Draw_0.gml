@@ -1,24 +1,91 @@
-if name="Teakettler"
+if name="Grinning Rock"
 {
-	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+(xx/2),y+(yy/2),1,1,0,image_blend,image_alpha)
+	draw_self()
+}
+if name="Scaly Feline"
+{
+	subimg+=.2
 	
-	draw_sprite_ext(spr_teakettlerBody,subimg,x,y,1,1,0,image_blend,image_alpha)
+	var _xOff=15
 	
-	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+xx,y+yy,1,1,0,image_blend,image_alpha)
+	var _yOff=20
 	
-	draw_sprite_ext(spr_teakettlerTrunk,subimg,x+50,y+25,xxscale,yyscale,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_scalyFelineTail,subimg/2,(x-35+_xOff)+xxscale*50,y-30+yy+_yOff,1,1,rot*-1,image_blend,image_alpha)
 	
-	xx=1 - sin(sinTimer / (10*2)) * 2
+	draw_sprite_ext(spr_scalyFelineBody,subimg,x-11+_xOff,y-20+_yOff,xxscale,1,0,image_blend,image_alpha)	
 	
-	yy=1 - sin(sinTimer / (10*1)) * 1
+	draw_sprite_ext(spr_scalyFelineLegs1,subimg,x-11+_xOff,y-22+yy+_yOff,xxscale,1,0,image_blend,image_alpha)	
 	
-	xxscale=1 + sin(sinTimer / 20) * 0.1
+	draw_sprite_ext(spr_scalyFelineLegs2,subimg,x-11+_xOff,y-22+yy+_yOff,xxscale,1,0,image_blend,image_alpha)	
 	
-	yyscale=1 + sin(sinTimer / 20) * 0.1
+	draw_sprite_ext(spr_scalyFelineHead,subimg,(x+15+_xOff)-xxscale*25,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)
 	
-	rot=0 + sin(sinTimer /20) * 5
+	if (hp <= 0) 
+	{
+		yy=-1
+	}
+	if (hp > 0) 
+	{
+		xxscale=1 + sin(sinTimer / 50) * 0.1
+		
+		yy=3 + sin(sinTimer / 25) * 1
+		
+		rot=10 + sin(sinTimer / 50) * -15
+	}
+	
+	if yy>=3{set1=true}
 	
 	sinTimer++
+}
+if name="Teakettler"
+{
+	if yyyyscale<1{subimg=1}
+	else
+	{
+		subimg=0
+	}
+	
+	if 	hp>0&&!set1&&yyyscale>=1.19{set1=true instance_create_depth(x+18,y-22,-16000,obj_teakettlerSteam)}
+	else{set1=false}
+	
+	show_debug_message(yyyyscale)
+	
+	show_debug_message(yyyscale)
+	
+	//draw_sprite_ext(spr_teakettlerBackLegs,subimg,x-2,y,1,1,rot,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerTail,subimg,x-15,y+3,1,1,rot2,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,1,1,rot3,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,-1,1,rot3*-1,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x-3,y,1,1,rot,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+7,y,-1,1,rot*-1,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_teakettlerBody1,subimg,x+27,y+22,1,yyyyscale,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_teakettlerBody2,subimg,x+27,y+23,1,yyscale,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_teakettlerTrunk,subimg,x+41,y+3,1,yyyscale,0,image_blend,image_alpha)
+
+	if hp >0
+	{
+		rot2=-5 + sin(sinTimer / 10) * 10
+	
+		yyyscale=1 + sin(sinTimer / 10) * 0.2
+	
+		yyyyscale=1 + sin(sinTimer / 10) * 0.025
+	
+		rot3=-2 + sin(sinTimer /10) * 3
+	
+		sinTimer++
+	
+		if timer1>0{yyscale=1 + sin(sinTimer / 10) * 0.15 rot=-2 + sin(sinTimer /10) * 5}
+		else{yyscale=1.000001 rot=-2}
+	
+		if yyscale>=1{timer1=500 yyscale=1.000001}
+	
+		timer1--
+	}
 }
 
 if name="Wapaloosie"
@@ -234,8 +301,34 @@ if flash > 0
 	shader_set_uniform_f(g,green)
 	shader_set_uniform_f(b,blue)
 	shader_set_uniform_f(alpha,flash)
+	if name="Scaly Feline"
+	{
+		draw_sprite_ext(spr_scalyFelineTail,subimg/2,(x-35+_xOff)+xxscale*50,y-30+yy+_yOff,1,1,rot*-1,image_blend,image_alpha)
 	
-	draw_self()
+		draw_sprite_ext(spr_scalyFelineBody,subimg,x-11+_xOff,y-20+_yOff,xxscale,1,0,image_blend,image_alpha)	
+	
+		draw_sprite_ext(spr_scalyFelineLegs1,subimg,x-11+_xOff,y-22+yy+_yOff,xxscale,1,0,image_blend,image_alpha)	
+	
+		draw_sprite_ext(spr_scalyFelineLegs2,subimg,x-11+_xOff,y-22+yy+_yOff,xxscale,1,0,image_blend,image_alpha)	
+	
+		draw_sprite_ext(spr_scalyFelineHead,subimg,(x+15+_xOff)-xxscale*25,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)
+	}
+	if name="Teakettler"
+	{
+		draw_sprite_ext(spr_teakettlerTail,subimg,x-15,y+3,1,1,rot2,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,1,1,rot3,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,-1,1,rot3*-1,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x-3,y,1,1,rot,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+7,y,-1,1,rot*-1,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerBody1,subimg,x+27,y+22,1,yyyyscale,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerBody2,subimg,x+27,y+23,1,yyscale,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerTrunk,subimg,x+41,y+3,1,yyyscale,0,image_blend,image_alpha)
+	}
 	if name="Wapaloosie"
 	{
 		draw_sprite_ext(spr_wapaloosieTail,subimg,x-8,y-20,1,1,rot,image_blend,image_alpha)

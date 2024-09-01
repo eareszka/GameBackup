@@ -49,13 +49,10 @@ if (room == RM_BROWNSTOWNcave)
 	NewEncounter(
 	choose
 	(
-		[global.enemies.spider],
+		[global.enemies.scalyFeline],
 		[global.enemies.rock],
-		[global.enemies.rock,global.enemies.rock],
-		[global.enemies.rock,global.enemies.spider],
-		[global.enemies.spider,global.enemies.spider],
-		[global.enemies.spider,global.enemies.rock,global.enemies.spider],
-		[global.enemies.rock,global.enemies.spider,global.enemies.rock],
+		[global.enemies.rock,global.enemies.scalyFeline],
+		[global.enemies.spider,global.enemies.rock,global.enemies.scalyFeline],
 	), 
 	spr_battleBackground5,
 	battle1,
@@ -67,12 +64,11 @@ if (room == RM_FINfarm)
 	NewEncounter(
 	choose
 	(
+	[global.enemies.poisonthorns],
+	[global.enemies.beetle],
 	[global.enemies.beetle,global.enemies.poisonthorns],
 	[global.enemies.poisonthorns,global.enemies.beetle],
-	[global.enemies.poisonthorns],
-	[global.enemies.beetle,global.enemies.beetle],
-	[global.enemies.beetle,global.enemies.beetle],
-	[global.enemies.beetle,global.enemies.poisonthorns,global.enemies.beetle],
+	[global.enemies.teakettler], //rare
 	), 
 	spr_battleBackground2,
 	battle1,

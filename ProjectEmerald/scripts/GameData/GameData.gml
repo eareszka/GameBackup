@@ -1542,7 +1542,7 @@ global.enemyLibrary =
 		name : "flee",
 		description : "",
 		subMenu : "Special",
-		action: 3, //1: attack, 2: taunt, 3: talk/heal
+		action: 4, //1: attack, 2: taunt, 3: talk/heal 4: dont show
 		targetDefault: 0, //0: party/self, 1: enemy
 		targetRequired: false,
 		targetAll: 1,
@@ -1634,6 +1634,18 @@ global.enemyLibrary =
 			ObjFlash(_user,.75,.01,255,255,255)
 			switch _user.name
 			{
+				case "Scaly Feline":
+					oBattle.battleEndMessages[0] = string(_user.name)+" Is Whistling Violently."
+				break
+					
+				case "Teakettler":
+					var _ran=irandom_range(0,2)
+					{
+						if _ran=0{oBattle.battleEndMessages[0] = string(_user.name)+" Is creating a scandal under Warren G. Harding."}
+						if _ran=1{oBattle.battleEndMessages[0] = string(_user.name)+" Doesn't want to be here."}
+						if _ran=2{oBattle.battleEndMessages[0] = string(_user.name)+" Is suprised to see you."}
+					}
+				break
 				case "Crude Spider":
 					oBattle.battleEndMessages[0] = string(_user.name)+" Is creating a silken masterpiece."
 				break;
@@ -2130,10 +2142,10 @@ global.enemies =
 		}
 	}
 	,
-	teakettler:
+	scalyFeline:
 	{
-		name: "Teakettler",
-		unitID:26,
+		name: "Scaly Feline",
+		unitID:28,
 		hp: 35,
 		hpMax: 35,
 		mp: 0,
@@ -2142,8 +2154,38 @@ global.enemies =
 		arrows: 2,
 		frequency: 2,
 		spd: 3,
-		sprites: { intro: spr_teakettlerBody, idle: spr_teakettlerBody, attack: spr_teakettlerBody,},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		sprites: { intro: spr_scalyFelineBody, idle: spr_scalyFelineBody, attack: spr_scalyFelineBody,},
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		moneyValue : 15,
+		experinceValue : irandom_range(5,7),
+		AIscript : function()
+		{
+			//attack random party member
+			var _action = actions[0];
+			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
+			{
+				return (_unit.hp > 0);
+			});
+			var _target = _possibleTargets[irandom(array_length(_possibleTargets)-1)];
+			return [_action, _target];
+		}
+	}
+	,
+	//very rare encounter with lots of money and xp given
+	teakettler:
+	{
+		name: "Teakettler",
+		unitID:27,
+		hp: 35,
+		hpMax: 35,
+		mp: 0,
+		mpMax: 0,
+		strength: 1,
+		arrows: 2,
+		frequency: 2,
+		spd: 3,
+		sprites: { intro: spr_teakettlerBody1, idle: spr_teakettlerBody1, attack: spr_teakettlerBody1,},
+		actions: [global.enemyLibrary.taunt,global.enemyLibrary.taunt,global.enemyLibrary.flee,global.enemyLibrary.flee,global.enemyLibrary.flee,global.enemyLibrary.flee,global.enemyLibrary.flee],
 		moneyValue : 15,
 		experinceValue : irandom_range(5,7),
 		AIscript : function()

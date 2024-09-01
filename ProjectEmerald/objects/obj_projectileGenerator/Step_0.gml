@@ -1,5 +1,28 @@
 switch enemy.name
 {
+	case  "Scaly Feline":
+		if waveID=0
+		{
+			CreateProjectile(1,0,0,enemy,row1,1,yStart+25,1)
+			CreateProjectile(2,1,0,enemy,row3,1,yStart+25,1)
+			CreateProjectile(3,2,0,enemy,row1,1,yStart+25)
+			CreateProjectile(4,2,0,enemy,row2,1,yStart+25)
+			CreateProjectile(5,2,50,enemy,row3,1,yStart+25,1)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+		if waveID=1
+		{
+			CreateProjectile(1,0,0,enemy,row1,1,yStart+25)
+			CreateProjectile(2,0,0,enemy,row3,1,yStart+25)
+			CreateProjectile(3,0,45,enemy,row2,1,yStart+25)
+			CreateProjectile(4,1,45,enemy,row1,1,yStart+25,1)
+			CreateProjectile(5,2,45,enemy,row3,1,yStart+25,1)
+			
+			if !instance_exists(obj_defendProjectileParent){instance_destroy(self)}
+		}
+	break
+	
 	case  "Wapaloosie":
 		if waveID=0
 		{

@@ -3,6 +3,10 @@ sec=0
 
 switch enemy.name
 {
+	case  "Scaly Feline":
+		waveID=irandom_range(0,1)
+	break
+	
 	case  "Wapaloosie":
 		waveID=0
 	break

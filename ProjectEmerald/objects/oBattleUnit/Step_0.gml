@@ -35,10 +35,14 @@ if (flee)
 	//no value if fleeing
 	moneyValue = 0
 	experinceValue = 0
-	image_alpha -= 0.05
+	image_alpha -= 1
 	if image_alpha < 0
 	{
-		hp = 0 oBattle.RefreshRenderOrder()
+		hp = 0
+	}
+	else
+	{
+		ObjFlash(self,1.5,.01,255,255,255)	
 	}
 }
 
