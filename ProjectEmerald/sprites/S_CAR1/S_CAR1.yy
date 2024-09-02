@@ -29,7 +29,7 @@
   "origin":0,
   "parent":{
     "name":"CARSbrownstown",
-    "path":"folders/Actors/VISIBLE/BROWNSTOWN/CARSbrownstown.yy",
+    "path":"folders/Actors/openDoor/VISIBLE/BROWNSTOWN/CARSbrownstown.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

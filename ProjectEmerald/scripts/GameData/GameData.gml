@@ -161,7 +161,7 @@ global.flag =
 	0,
 	//KilledAbone 49
 	0,
-	//Should go to bed 50
+	//AnahCutscene1 50
 	0,
 	//sunrising brownstown 51
 	0,
@@ -174,6 +174,14 @@ global.flag =
 	//catacombsLadder1 55
 	0,
 	//MoveTorch5 56
+	0,
+	//EvaFollow 57
+	0,
+	//NightCrawler Cutscene 58
+	0,
+	//EvaReturnHome 59
+	0,
+	//mcintoshtalkDestinity 60
 	0,
 ]
 	

@@ -41,7 +41,14 @@ switch room
 				{
 					if keyboard_check_pressed(vk_space)
 					{
-						if !instance_exists(obj_textBox){create_textbox("computerTalk5")}
+						if global.flag[60]=0
+						{
+							if !instance_exists(obj_textBox){create_textbox("computerTalk6")}
+						}
+						else
+						{
+							if !instance_exists(obj_textBox){create_textbox("computerTalk9")}
+						}
 					}
 				}
 			}

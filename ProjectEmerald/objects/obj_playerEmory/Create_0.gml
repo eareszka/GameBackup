@@ -91,31 +91,31 @@ for(var i = array_size-1; i >= 0; i--)
 	toRecordSprite[i] = emory_f_idle;
 	toRecord_Xscale[i] = image_xscale;	
 }
-
 if !instance_exists(obj_playerJen)
 {
 	var follower_1 = instance_create_layer(x,y, "Player", obj_playerJen);
 	follower_1.followerDistance = 45;
 }
-
 if !instance_exists(obj_playerzBroke)
 {
 	var follower_2 = instance_create_layer(x,y, "Player", obj_playerzBroke);
 	follower_2.followerDistance = 30;
 }
-
 if !instance_exists(obj_playerFinn)
 {
 	var follower_3 = instance_create_layer(x,y, "Player", obj_playerFinn);
 	follower_3.followerDistance = 15;
 }
-
+if !instance_exists(obj_evaFollow)
+{
+	var follower_1 = instance_create_layer(x,y, "Player", obj_evaFollow);
+	follower_1.followerDistance = 15;
+}
 if !instance_exists(obj_beck)
 {
 	var follower_4 = instance_create_layer(x,y, "Player", obj_beck);
 	follower_4.followerDistance = 60;	
 }
-
 if !instance_exists(obj_ArgeninaSaurus)
 {
 	var follower_5 = instance_create_layer(x,y, "ArgeninaSaurus", obj_ArgeninaSaurus);

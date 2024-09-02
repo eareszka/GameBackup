@@ -1,7 +1,8 @@
-if (room == RM_ANAHhouse2 || room == debugRoom)
+if global.flag[50]=1
 {
 	draw_self()
-} else
+}
+else
 {
-	visible = false;
+	visible=false	
 }

@@ -1,5 +1,63 @@
-draw_sprite_stretched_ext(sBoxbu,0,xPos,yPos,64,50,c_white,1)
-draw_sprite_stretched_ext(sBoxbu,subimg,xPos,yPos,64,50,c_white,alpha)
+//size for each
+if PSIZE=1
+{
+	draw_sprite_stretched_ext(sBoxbu,0,xPos,yPos,64,50,c_white,1)
+	draw_sprite_stretched_ext(sBoxbu,subimg,xPos,yPos,64,50,c_white,alpha)
+}
+if PSIZE=2
+{
+	if PC=1
+	{
+		draw_sprite_stretched_ext(sBoxbu3,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu3,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+	if PC=2
+	{
+		draw_sprite_stretched_ext(sBoxbu4,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu4,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+}
+if PSIZE=3
+{
+	if PC=1
+	{
+		draw_sprite_stretched_ext(sBoxbu3,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu3,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+	if PC=2
+	{
+		draw_sprite_stretched_ext(sBoxbu2,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu2,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+	if PC=3
+	{
+		draw_sprite_stretched_ext(sBoxbu4,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu4,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+}
+if PSIZE=4
+{
+	if PC=1
+	{
+		draw_sprite_stretched_ext(sBoxbu3,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu3,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+	if PC=2
+	{
+		draw_sprite_stretched_ext(sBoxbu2,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu2,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+	if PC=3
+	{
+		draw_sprite_stretched_ext(sBoxbu2,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu2,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+	if PC=4
+	{
+		draw_sprite_stretched_ext(sBoxbu4,0,xPos,yPos,64,50,c_white,1)
+		draw_sprite_stretched_ext(sBoxbu4,subimg,xPos,yPos,64,50,c_white,alpha)
+	}
+}
 
 draw_set_alpha(alpha)
 

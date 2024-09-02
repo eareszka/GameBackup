@@ -49,6 +49,36 @@ if (drawDaylight)
 				gpu_set_blendmode(bm_normal)
 			}
 		}
+		if instance_exists(obj_nightCrawlerOverworld)
+		{
+			with obj_nightCrawlerOverworld
+			{
+				gpu_set_blendmode(bm_subtract)
+			
+				draw_self()
+	
+				gpu_set_blendmode(bm_add)
+			
+				draw_self()
+	
+				gpu_set_blendmode(bm_normal)
+			}
+		}
+		if instance_exists(obj_evaDog)
+		{
+			with obj_evaDog
+			{
+				gpu_set_blendmode(bm_subtract)
+			
+				draw_self()
+	
+				gpu_set_blendmode(bm_add)
+			
+				draw_self()
+	
+				gpu_set_blendmode(bm_normal)
+			}
+		}
 	}
 	
 	if instance_exists(oBossDropEmerald)

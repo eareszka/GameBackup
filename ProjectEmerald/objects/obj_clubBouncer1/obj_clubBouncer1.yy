@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"CLUB",
-    "path":"folders/Actors/VISIBLE/OSPRING/CLUB.yy",
+    "path":"folders/Actors/openDoor/VISIBLE/OSPRING/CLUB.yy",
   },
   "parentObjectId":null,
   "persistent":true,

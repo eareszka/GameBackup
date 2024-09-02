@@ -2,6 +2,196 @@ function cutscene_main(_cutscene,_scene)
 {
 	switch _cutscene
 	{
+		case "computerTalkDestiny":
+			switch _scene
+			{
+				case 0:
+					oMacintosh.image_index=11
+					cutscene_timer(40,1)
+				break
+				
+				case 1:
+					oMacintosh.image_index=12
+					if !instance_exists(obj_textBox){create_textbox("computerTalk7")}
+				break
+				
+				case 2:
+					oMacintosh.image_index=11
+					obj_playerEmory.sprite_index=emory_r_walking
+					cutscene_move_obj(obj_playerEmory,193,115,1.5,true)
+				break
+				
+				case 3:
+					obj_playerEmory.sprite_index=emory_b_idle
+					if !instance_exists(obj_textBox){create_textbox("computerTalk8")}
+					else
+					{
+						if obj_textBox.page=0{oMacintosh.image_index=13}
+						if obj_textBox.page=1{oMacintosh.image_index=11}
+						if obj_textBox.page=2{oMacintosh.image_index=11}
+						if obj_textBox.page=3{oMacintosh.image_index=12}
+						if obj_textBox.page=4{oMacintosh.image_index=11}
+						if obj_textBox.page=5{oMacintosh.image_index=11}
+					}
+				break	
+				
+				case 4:
+					obj_playerEmory.sprite_index=emory_f_idle
+					instance_destroy(oCutscene)
+				break
+			}
+		break
+		
+		case "evaReturn":
+			switch _scene
+			{
+				case 0:
+					obj_playerEmory.sprite_index=emory_l_idle
+					obj_evaFollow.sprite_index=spr_eva_l_walking
+					cutscene_move_obj(obj_evaFollow,57,336,1.5,true)
+				break	
+				case 1:
+					global.flag[57]=0
+					if !instance_exists(obj_textBox){create_textbox("Loki - yes")}
+				break
+				
+				case 2:
+					if !instance_exists(oSacredAnimalBackground)
+					{
+						instance_destroy(oCutscene)	
+					}
+				break
+			}
+		break
+		
+		case "anahCutscene1":
+			switch _scene
+			{
+				case 0:
+					obj_playerEmory.sprite_index=emory_r_idle
+					inst_1378BA2F.image_index=1
+					cutscene_timer(10,1)
+				break
+				
+				case 1:
+					inst_1378BA2F.image_index=1
+					if !instance_exists(obj_npcAnna){instance_create_layer(703,130,"Emory",obj_npcAnna)}
+					else{obj_npcAnna.walking=true cutscene_move_obj(obj_npcAnna,650,130,1,true)}
+				break	
+				
+				case 2:
+					inst_1378BA2F.image_index=0
+					obj_npcAnna.image_speed=.25
+					obj_npcAnna.walking=false
+					obj_npcAnna.panicking=true
+					if !instance_exists(obj_textBox){create_textbox("AnahTalk1")}
+				break;
+				
+				case 3:
+					obj_npcAnna.image_speed=1
+					obj_npcAnna.walking=true
+					obj_npcAnna.panicking=false
+					if obj_npcAnna.x<obj_playerEmory.x{obj_playerEmory.sprite_index=emory_l_idle}
+					cutscene_move_obj(obj_npcAnna,150,130,2.5,true)
+				break
+				
+				case 4:
+					instance_destroy(obj_npcAnna)
+					instance_destroy(oCutscene)
+				break
+			}
+		break
+		
+		case "nightcrawlerAttack":
+			switch _scene
+			{
+				case 0:
+					obj_playerEmory.sprite_index=emory_b_idle
+					
+					obj_evaDog.sprite_index=spr_eva_f_idle
+					cutscene_move_obj(obj_camera,1620,450,1.5,true)
+				break
+				case 1:
+					
+					obj_evaDog.sprite_index=spr_eva_f_walking
+					cutscene_move_obj(obj_evaDog,1610,405,.25,true)
+				break
+				case 2:
+					
+					obj_evaDog.sprite_index=spr_eva_f_idle
+					
+					inst_293ECBE6.image_index=2
+					inst_767A26CE.image_index=2
+					
+					cutscene_timer(25,3)
+				break
+				case 3:
+					inst_293ECBE6.image_index=3
+					inst_767A26CE.image_index=3
+					
+					
+					cutscene_timer(50,4)
+				break
+				
+				case 4:
+					inst_293ECBE6.image_index=1
+					inst_767A26CE.image_index=2
+					
+					cutscene_timer(40,5)
+				break
+				
+				case 5:
+					inst_293ECBE6.walking=true
+					inst_767A26CE.walking=true
+					
+					cutscene_move_obj(inst_293ECBE6,obj_playerEmory.x,obj_playerEmory.y,1,true)
+					cutscene_move_obj(inst_767A26CE,obj_playerEmory.x,obj_playerEmory.y,1,true)
+				break
+				
+				case 6:
+					NewEncounter(
+						choose(	
+								[global.enemies.nightcrawler,global.enemies.nightcrawler],
+						), 
+						spr_battleBackground1,
+						battle2,
+						true,
+						7,
+						obj_nightCrawlerOverworld
+					);
+				break
+				
+				case 7:
+					if !instance_exists(obj_nightCrawlerOverworld)
+					{
+						cutscene_end_action()
+					}
+					else
+					{
+						inst_293ECBE6.image_speed=0
+						inst_767A26CE.image_speed=0
+						obj_nightCrawlerOverworld.dead=true
+					}
+				break
+				
+				case 8:
+					obj_evaDog.sprite_index=spr_eva_f_walking
+					cutscene_move_obj(obj_evaDog,obj_playerEmory.x,obj_playerEmory.y,1,true)
+				break;
+				
+				case 9:
+					obj_evaDog.image_speed=0
+					if !instance_exists(obj_textBox){create_textbox("EvaRescue")}
+				break;
+				
+				case 10:
+					if instance_exists(obj_evaDog){instance_destroy(obj_evaDog)}
+					global.flag[57]=1
+					instance_destroy(oCutscene)
+				break;
+			}
+		break
+		
 		case "ladderFallCatacombsBottom":
 			switch _scene
 			{
@@ -360,6 +550,19 @@ function cutscene_main(_cutscene,_scene)
 					}
 				break
 				case 8:
+					//if have not saved
+					if global.flag[41]=0
+					{
+						oMacintosh.image_index=12
+						if !instance_exists(obj_textBox){create_textbox("computerTalk5")}
+					}
+					else
+					{
+						instance_destroy(oCutscene)
+					}	
+				break
+				
+				case 9:
 					instance_destroy(oCutscene)
 				break
 			}

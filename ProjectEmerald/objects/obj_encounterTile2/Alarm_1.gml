@@ -15,17 +15,4 @@ if (room == RM_BROWNSTOWN)
 		false
 		);
 	}
-	else
-	{
-		NewEncounter(
-		choose
-		(
-		[global.enemies.nightcrawler],
-		[global.enemies.nightcrawler,global.enemies.nightcrawler],
-		), 
-		spr_battleBackground1,
-		battle1,
-		false
-		);	
-	}
 }

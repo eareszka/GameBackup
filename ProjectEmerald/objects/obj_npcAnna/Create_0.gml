@@ -1,1 +1,2 @@
-text_id = 0;
+walking=false
+panicking=false

@@ -69,13 +69,19 @@ show_debug_message(global.timeOfDay)
 
 if room=RM_BROWNSTOWN
 {
+	var _enc=layer_get_id("encounter")
+	
 	if global.timeOfDay<8
 	{
+		layer_set_visible(_enc,false)
+		
 		obj_lightingCutout.visible=true
 		obj_parentNPC.activated=false
 	}
 	else
 	{
+		layer_set_visible(_enc,true)
+		
 		if instance_exists(obj_dayNightOverlay){instance_destroy(obj_dayNightOverlay)}
 		
 		var _t_b1=layer_get_id("tBUILDINGS1")
@@ -122,18 +128,6 @@ if room=RM_EMORY
 	{	
 		if instance_exists(obj_dayNightOverlay){instance_destroy(obj_dayNightOverlay)}
 		obj_lightingCutout.visible=false
-	}
-}
-
-if room=RM_ANAHhouse1
-{
-	if global.timeOfDay<8&&global.flag[41]=0
-	{
-		inst_4B466D20.activate=false
-	}
-	else
-	{
-		inst_4B466D20.activate=true
 	}
 }
 

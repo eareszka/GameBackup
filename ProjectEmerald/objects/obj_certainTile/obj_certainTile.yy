@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"VISIBLE",
-    "path":"folders/Actors/VISIBLE.yy",
+    "path":"folders/Actors/openDoor/VISIBLE.yy",
   },
   "parentObjectId":null,
   "persistent":false,

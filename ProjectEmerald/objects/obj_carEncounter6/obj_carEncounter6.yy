@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"CARSbrownstown",
-    "path":"folders/Actors/VISIBLE/BROWNSTOWN/CARSbrownstown.yy",
+    "path":"folders/Actors/openDoor/VISIBLE/BROWNSTOWN/CARSbrownstown.yy",
   },
   "parentObjectId":null,
   "persistent":false,

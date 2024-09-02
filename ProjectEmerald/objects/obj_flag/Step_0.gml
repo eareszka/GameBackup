@@ -2,6 +2,30 @@ if action
 {
 	switch flag
 	{
+		case 60:
+			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]!=1&&global.sacredAnimals.dog=true&&global.flag[57]=0
+			{
+				create_cutscene("computerTalkDestiny")
+				global.flag[flag]=1
+			}
+		break
+		
+		case 59:
+			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]!=1&&global.flag[57]=1&&global.sacredAnimals.dog=false
+			{
+				create_cutscene("evaReturn")
+				global.flag[flag]=1
+			}
+		break
+		
+		case 58:
+			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]!=1
+			{
+				create_cutscene("nightcrawlerAttack")
+				global.flag[flag]=1
+			}
+		break
+		
 		case 56:
 			if place_meeting(x,y,obj_playerEmory)
 			{
@@ -29,9 +53,9 @@ if action
 		break;
 		
 		case 51:
-			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]=0
+			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]=0&&global.flag[60]=1
 			{
-				if global.flag[41]=1
+				if global.sacredAnimals.dog=true
 				{
 					if global.timeOfDay<8
 					{
@@ -52,7 +76,7 @@ if action
 		case 50:
 			if place_meeting(x,y,obj_playerEmory)&&global.flag[flag]=0
 			{
-				if !instance_exists(obj_textBox){create_textbox("goToSleep")}
+				create_cutscene("anahCutscene1")
 				global.flag[flag]=1
 			}
 		break;
@@ -175,7 +199,7 @@ if action
 		
 		//computer talk 1
 		case 42:
-			if global.flag[flag] < 1&&global.flag[41]=1
+			if global.flag[flag]<1
 			{
 				if place_meeting(x,y,obj_playerEmory)
 				{

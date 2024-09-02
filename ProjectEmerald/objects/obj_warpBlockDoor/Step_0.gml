@@ -40,28 +40,6 @@ else
 		}
 	}
 	
-	if room=RM_BROWNSTOWN
-	{
-		if !activate
-		{
-			if place_meeting(x, y, obj_playerEmory)
-			{
-				if !instance_exists(obj_textBox)
-				{
-					if keyboard_check(vk_space)&&timer1<0
-					{
-						if text_id!=-1{create_textbox(text_id)}
-					}
-				}
-				else
-				{
-					timer1=10	
-				}
-			}
-			if timer1>-100{timer1--}
-		}
-	}
-	
 	if room=RM_ANAHhouse1
 	{
 		if !activate

@@ -3,6 +3,41 @@ function scr_game_text(_text_id)
 {
 	switch(_text_id)
 	{	
+		case "computerTalk9":
+			scr_name("McIntosh Computer") 
+			scr_text("I believe that at least one more of the sacred 12 is here in town. Go fourth now and save the world!")
+		break
+		
+		case "computerTalk7":
+			scr_name("McIntosh Computer") 
+			scr_text("Oh good you handled that. However rescuing a mere dog is the least of your concerns.")
+		break
+		
+		case "computerTalk8":
+			scr_name("McIntosh Computer") 
+			scr_text("While you were away, I dug into the origins of that gemstone you possess. It appears a new mark has surfaced yet 11 more remain.")
+			scr_text("My research reveals that these markings correspond to the 12 Sacred Ones.")
+			scr_text("Since the Great Impact, the world has been overrun by biological monstrosities, twisted forms of life.")
+			scr_text("But there sis hope—only the 12 purest forms of life can restore balance and save this world.")
+			scr_text("The first light of dawn is upon us... As day breaks, so too will your journey.")
+			scr_text("Now, go forth and seek out the remaining marks. I’ll be here if you need any more of my brilliant insights ;)")
+		break;
+		
+		case "AnahTalk1":
+			scr_name("Anna")
+			scr_text("Thank goodness you're home, 'Player'!")
+			scr_text("Our dog, Eva, ran off while I was playing outside, and I can't find her anywhere!")
+			scr_text("I tried searching for her, but instead, I saw these terrifying, pale creatures wandering around!")
+			scr_text("Please, bring her back! I'm too scared to go out there again.")
+			scr_text("Ahhh! What was that thing? I'm going to hide in my room!")
+		break;
+		
+		case "EvaRescue":
+			scr_name("")
+			scr_text("You rescued Eva from the Nightcrawlers!")
+			scr_text("Now, let’s get her safely back home.")
+		break
+		
 		/****
 		NPC's
 		****/
@@ -122,34 +157,27 @@ function scr_game_text(_text_id)
 		break
 		
 		case "Loki":
-			scr_name("Loki")
-			scr_text("*sniff*, *sniff*")
-			if global.quest.dogTreat.available = true
+			if global.sacredAnimals.dog=false
 			{
-				scr_name("")
-				scr_text("Give Loki Dog Treat?")
-				scr_option("Yes", "Loki - yes")
-				scr_option("No", "Loki - no")
+				scr_name("Loki")
+				scr_text("*sniff*, *sniff*")
+				scr_text("*whimper*")
 			}
 			else
 			{
-				scr_text("*whimper*")	
+				scr_name("Loki & Eva")
+				scr_text("*Bark Bark*")
 			}
 		break
 		
 		case "Loki - yes":
 			scr_name("")
-			audio_stop_sound(home1)
-			instance_create_layer(obj_playerEmory.x,obj_playerEmory.y,"overworldInteraction",oSacredAnimalBackground)
+			global.sacredAnimals.dog = true;	
+			instance_create_layer(obj_playerEmory.x,obj_playerEmory.y,"Player",oSacredAnimalBackground)
 			audio_play_sound(sacredAnimalSong,1,false)
-			scr_text("*Filled with joy Loki let out a bark*")
-			scr_text("*His bark echoed around the world*")
-			scr_text("*Now wherever you go the presence of Loki lingers on*")
-			scr_text("*Sound of Sacred Dog collected*")
-			global.quest.dogTreat.available = false
-			global.sacredAnimals.dog = true;
-			
-			
+			scr_text("*Overwhelmed with joy, Loki and Eva let out a harmonious bark.")
+			scr_text("*Their presence now lingers with you, a constant reminder of there bond.")
+			scr_text("*You notice a fresh scratch mark on your gemstone.")
 		break
 		
 		case "Loki - no":
@@ -524,7 +552,6 @@ function scr_game_text(_text_id)
 			case "SaveProgress - yes":
 				scr_name("")
 				global.flag[41]=1
-				global.flag[50]=1
 				global.EcurrentHP = 20+global.hpAdd
 				global.FcurrentHP = round(50+(global.hpAdd*1.2))
 				global.BcurrentHP = round(10+(global.hpAdd*.5))
@@ -617,7 +644,7 @@ function scr_game_text(_text_id)
 		
 		case "KnockAnna":
 			scr_name("")
-			scr_text("Your sister is asleep")
+			scr_text("No one answered")
 		break
 				
 		
@@ -1155,14 +1182,17 @@ function scr_game_text(_text_id)
 		    scr_text("Scanned every database known to man, and still no hits.")
 		    scr_text("But hey, there's an old tale about something similar happening up north before the great impact.")
 		    scr_text("Guess that little adventure didn't end well, huh?")
-		    scr_text("Maybe figure out what that gemstone's all about.")
-		    scr_text("Or, who knows, we might repeat history. Wouldn't that be fun?")
-		    scr_text("Anyway, I'm here if you need more brilliant insights ;)") 
+		    scr_text("Anyways we can worry about this later. I think your sister needs you in the other room.")
 		break
 		
 		case "computerTalk5":
 			scr_name("McIntosh Computer") 
-			scr_text("Maybe finding a way to leave town would be a good way to start. It's not like this place has much to offer anyway.")
+			scr_text("However, before you go, you might want to lay down in bed real quick to ensure your journey is safely recorded.")
+		break;
+		
+		case "computerTalk6":
+			scr_name("McIntosh Computer") 
+			scr_text("We can worry about the gemstone later. I think your sister needs you in the other room.")
 		break;
 		
 		case "magicianTalk1":

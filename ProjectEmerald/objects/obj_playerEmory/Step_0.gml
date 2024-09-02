@@ -478,6 +478,16 @@ if global.timeOfDay<8
 {
 	if room=RM_EMORY||room=RM_BROWNSTOWN
 	{
+		if global.flag[60]=1
+		{
+			image_blend=merge_color(c_white,obj_dayNight.lightColor,.6)
+		}
+		else
+		{
+			var _c = merge_color(c_navy,c_white,.5)
+			image_blend=_c
+		}
+		
 		obj_dayNight.drawDaylight=true
 	}
 	else

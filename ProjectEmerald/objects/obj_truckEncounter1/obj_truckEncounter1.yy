@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"CARSplainvill",
-    "path":"folders/Actors/VISIBLE/PLAINVILL/CARSplainvill.yy",
+    "path":"folders/Actors/openDoor/VISIBLE/PLAINVILL/CARSplainvill.yy",
   },
   "parentObjectId":null,
   "persistent":false,

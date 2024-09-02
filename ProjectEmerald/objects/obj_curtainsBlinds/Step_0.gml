@@ -1,8 +1,7 @@
 switch type
 {
 	case 0:
-		if global.flag[41]=0{image_index=0}
-		if global.flag[41]=1{image_index=1}
+		if global.timeOfDay>8{image_index=1}else{image_index=0}
 	break;
 	
 	//hoteltop curtains
