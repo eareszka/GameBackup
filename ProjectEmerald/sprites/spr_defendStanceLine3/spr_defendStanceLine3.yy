@@ -23,6 +23,7 @@
   "height":10,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"91c6ffe5-e28a-41c3-af27-b1147effa5ba","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"91c6ffe5-e28a-41c3-af27-b1147effa5ba","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"442eff7e-37fd-4f83-8db1-da9fbfbb87e0","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"442eff7e-37fd-4f83-8db1-da9fbfbb87e0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_defendStanceLine3",

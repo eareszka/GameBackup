@@ -2,22 +2,17 @@ if (hp <= 0)
 {
 	if (enemy) 
 	{
-		//makes sure only 1 summoned ene can exsist at given time
-		if (!audio_is_playing(enemyDie1) && (playOnce = false))
+		if !playOnce
 		{
-			audio_play_sound(enemyDie1,1,false)
-			playOnce = true;
+			alarm[0]=1
+			alarm[2]=room_speed*.4
+			playOnce=true
 		}
-		image_blend = c_red;
-		image_alpha -= 0.01
+		
 	}
 	else
 	{
-		if (!audio_is_playing(playerDie1) && (playOnce = false))
-		{
-			audio_play_sound(playerDie1,1,false)
-			playOnce = true;
-		}
+		
 	}
 }
 

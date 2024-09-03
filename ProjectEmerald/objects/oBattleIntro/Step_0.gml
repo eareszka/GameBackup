@@ -4,7 +4,3 @@ if subimg < 19
 {
 	subimg+=.5
 }
-else
-{
-	instance_create_depth(x,y,-16000,oFadeIn)
-}

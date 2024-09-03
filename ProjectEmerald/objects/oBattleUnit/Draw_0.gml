@@ -1,3 +1,52 @@
+if name="Armored Beetle"
+{
+	draw_self()
+}
+if name="Mogging Mole"
+{
+	subimg+=.005
+	
+	var _xOff=0
+	
+	var _yOff=2
+	
+	var _ran=irandom_range(0,300)
+	
+	if _ran=50
+	{
+		if !instance_exists(Object316){instance_create_depth(x+4+_xOff,y+4+yy+_yOff,-16000,Object316)}
+	}
+	
+	draw_sprite_ext(spr_mogMoleBody_1,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_mogMoleHead,subimg,x+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)
+	
+	if subimg<1
+	{
+		draw_sprite_ext(spr_mogMoleHands,subimg,x+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)
+	}
+	if subimg>=1&&subimg<2
+	{
+		draw_sprite_ext(spr_mogMoleHands,subimg,x+_xOff,y+yy+_yOff,1,1,rot,image_blend,image_alpha)
+		
+		rot=5 + sin(sinTimer / 10) * 10
+	}
+	if subimg>=2&&subimg<3
+	{
+		draw_sprite_ext(spr_mogMoleHands,2,x+xx+_xOff,y+yyy+yy+_yOff+5,1,1,0,image_blend,image_alpha)
+		xx=-8 + sin(sinTimer / 50) * 5	
+		yyy=-1 + sin(sinTimer / 50) * 5	
+	}
+	if subimg>=3
+	{
+		sinTimer=0
+		subimg=0	
+	}
+	
+	yy=0 + sin(current_time * 0.0040);	
+	
+	sinTimer++
+}
 if name="Grinning Rock"
 {
 	draw_self()
@@ -39,33 +88,34 @@ if name="Scaly Feline"
 }
 if name="Teakettler"
 {
+	var _xOff=0
+	
+	var _yOff=-4
+	
 	if yyyyscale<1{subimg=1}
 	else
 	{
 		subimg=0
 	}
 	
-	if 	hp>0&&!set1&&yyyscale>=1.19{set1=true instance_create_depth(x+18,y-22,-16000,obj_teakettlerSteam)}
+	if 	hp>0&&!set1&&yyyscale>=1.19{set1=true instance_create_depth(x+18+_xOff,y-22+_yOff,-16000,obj_teakettlerSteam)}
 	else{set1=false}
 	
-	show_debug_message(yyyyscale)
-	
-	show_debug_message(yyyscale)
-	
 	//draw_sprite_ext(spr_teakettlerBackLegs,subimg,x-2,y,1,1,rot,image_blend,image_alpha)
-	draw_sprite_ext(spr_teakettlerTail,subimg,x-15,y+3,1,1,rot2,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerTail,subimg,x-15+_xOff,y+3+_yOff,1,1,rot2,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,1,1,rot3,image_blend,image_alpha)
-	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,-1,1,rot3*-1,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2+_xOff,y-40+_yOff,1,1,rot3,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x-3,y,1,1,rot,image_blend,image_alpha)
-	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+7,y,-1,1,rot*-1,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2+_xOff,y-40+_yOff,-1,1,rot3*-1,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_teakettlerBody1,subimg,x+27,y+22,1,yyyyscale,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x-3+_xOff,y+_yOff,1,1,rot,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+7+_xOff,y+_yOff,-1,1,rot*-1,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_teakettlerBody2,subimg,x+27,y+23,1,yyscale,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerBody1,subimg,x+27+_xOff,y+22+_yOff,1,yyyyscale,0,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_teakettlerTrunk,subimg,x+41,y+3,1,yyyscale,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_teakettlerBody2,subimg,x+27+_xOff,y+23+_yOff,1,yyscale,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_teakettlerTrunk,subimg,x+41+_xOff,y+3+_yOff,1,yyyscale,0,image_blend,image_alpha)
 
 	if hp >0
 	{
@@ -90,15 +140,19 @@ if name="Teakettler"
 
 if name="Wapaloosie"
 {
+	var _xOff=0
+	
+	var _yOff=-3
+	
 	subimg+=.025
 	
-	draw_sprite_ext(spr_wapaloosieTail,subimg,x-8,y-20,1,1,rot,image_blend,image_alpha)
+	draw_sprite_ext(spr_wapaloosieTail,subimg,x-8+_xOff,y-20+_yOff,1,1,rot,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_wapaloosieBody1,subimg*2,x-11,y-20,xxscale,1,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_wapaloosieBody1,subimg*2,x-11+_xOff,y-20+_yOff,xxscale,1,0,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_wapaloosieBody2,subimg*2,x-11,y-20+yy,xxscale,1,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_wapaloosieBody2,subimg*2,x-11+_xOff,y-20+yy+_yOff,xxscale,1,0,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_wapaloosieHead,subimg,x-11,y-20+yy,1,1,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_wapaloosieHead,subimg,x-11+_xOff,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)
 	
 	yy=1 + 2 * sin(current_time * 0.0020);
 	
@@ -146,13 +200,17 @@ if name="Crude Spider"
 }
 if name="Mutant Worm"
 {
+	var _xOff=0
+	
+	var _yOff=-3
+	
 	subimg+=.2
 	
-	draw_self()
+	draw_sprite_ext(spr_babyWormBody,subimg/2,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)	
 	
-	draw_sprite_ext(spr_babyWormHead,subimg,x,y+yy,1,1,0,image_blend,image_alpha)	
+	draw_sprite_ext(spr_babyWormHead,subimg,x+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)	
 	
-	draw_sprite_ext(spr_babyWormFace,subimg,(x+xx),y+yy,1,1,0,image_blend,image_alpha)	
+	draw_sprite_ext(spr_babyWormFace,subimg,(x+xx)+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)	
 	
 	yy=1 - sin(current_time * 0.0020);	
 	
@@ -235,11 +293,15 @@ if name="Annoyed Ant"
 
 if name="Nightcrawler"
 {	
+	var _xOff=0
+	
+	var _yOff=-1
+	
 	subimg+=.2
 	
-	draw_self()
+	draw_sprite_ext(spr_nightcrawlersLegs,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)	
 	
-	draw_sprite_ext(spr_nightcrawlerHead,subimg,x-11,y-20+yy,1,1,0,image_blend,image_alpha)	
+	draw_sprite_ext(spr_nightcrawlerHead,subimg,x-11+_xOff,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)	
 	
 	if (hp <= 0) 
 	{
@@ -252,13 +314,17 @@ if name="Nightcrawler"
 }
 if name="Bull Frog"
 {	
+	var _xOff=0
+	
+	var _yOff=-5
+	
 	subimg+=.2
 	
-	draw_sprite_ext(spr_bullFrogHorns,subimg,x,y-3,xxscale,1,rot,image_blend,image_alpha)	
-	draw_sprite_ext(spr_bullFrogHorns,subimg,x,y-3,xxscale*-1,1,rot*-1,image_blend,image_alpha)
+	draw_sprite_ext(spr_bullFrogHorns,subimg,x+_xOff,y-3+_yOff,xxscale,1,rot,image_blend,image_alpha)	
+	draw_sprite_ext(spr_bullFrogHorns,subimg,x+_xOff,y-3+_yOff,xxscale*-1,1,rot*-1,image_blend,image_alpha)
 	
-	draw_sprite_ext(spr_bullFrogBody,subimg,x,y,1,1,0,image_blend,image_alpha)
-	draw_sprite_ext(spr_bullFrogArms,subimg,x,y,1,yyscale,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_bullFrogBody,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_bullFrogArms,subimg,x+_xOff,y+_yOff,1,yyscale,0,image_blend,image_alpha)
 	
 	if (hp <= 0) 
 	{
@@ -301,8 +367,29 @@ if flash > 0
 	shader_set_uniform_f(g,green)
 	shader_set_uniform_f(b,blue)
 	shader_set_uniform_f(alpha,flash)
+	
+	if name="Grinning Rock"
+	{
+		draw_self()
+	}
+	
+	if name="Nightcrawler"
+	{	
+		var _xOff=0
+	
+		var _yOff=-1
+	
+		draw_sprite_ext(spr_nightcrawlersLegs,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)	
+	
+		draw_sprite_ext(spr_nightcrawlerHead,subimg,x-11+_xOff,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)
+	}
+	
 	if name="Scaly Feline"
 	{
+		var _xOff=15
+	
+		var _yOff=20
+	
 		draw_sprite_ext(spr_scalyFelineTail,subimg/2,(x-35+_xOff)+xxscale*50,y-30+yy+_yOff,1,1,rot*-1,image_blend,image_alpha)
 	
 		draw_sprite_ext(spr_scalyFelineBody,subimg,x-11+_xOff,y-20+_yOff,xxscale,1,0,image_blend,image_alpha)	
@@ -313,32 +400,47 @@ if flash > 0
 	
 		draw_sprite_ext(spr_scalyFelineHead,subimg,(x+15+_xOff)-xxscale*25,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)
 	}
+	
 	if name="Teakettler"
 	{
-		draw_sprite_ext(spr_teakettlerTail,subimg,x-15,y+3,1,1,rot2,image_blend,image_alpha)
+		var _xOff=0
 	
-		draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,1,1,rot3,image_blend,image_alpha)
-		draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2,y-40,-1,1,rot3*-1,image_blend,image_alpha)
+		var _yOff=-4
 	
-		draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x-3,y,1,1,rot,image_blend,image_alpha)
-		draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+7,y,-1,1,rot*-1,image_blend,image_alpha)
+		//draw_sprite_ext(spr_teakettlerBackLegs,subimg,x-2,y,1,1,rot,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerTail,subimg,x-15+_xOff,y+3+_yOff,1,1,rot2,image_blend,image_alpha)
 	
-		draw_sprite_ext(spr_teakettlerBody1,subimg,x+27,y+22,1,yyyyscale,0,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2+_xOff,y-40+_yOff,1,1,rot3,image_blend,image_alpha)
 	
-		draw_sprite_ext(spr_teakettlerBody2,subimg,x+27,y+23,1,yyscale,0,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerBackLegs,subimg,x+2+_xOff,y-40+_yOff,-1,1,rot3*-1,image_blend,image_alpha)
 	
-		draw_sprite_ext(spr_teakettlerTrunk,subimg,x+41,y+3,1,yyyscale,0,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x-3+_xOff,y+_yOff,1,1,rot,image_blend,image_alpha)
+		draw_sprite_ext(spr_teakettlerFrontLegs,subimg,x+7+_xOff,y+_yOff,-1,1,rot*-1,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerBody1,subimg,x+27+_xOff,y+22+_yOff,1,yyyyscale,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerBody2,subimg,x+27+_xOff,y+23+_yOff,1,yyscale,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_teakettlerTrunk,subimg,x+41+_xOff,y+3+_yOff,1,yyyscale,0,image_blend,image_alpha)
 	}
+	
 	if name="Wapaloosie"
 	{
-		draw_sprite_ext(spr_wapaloosieTail,subimg,x-8,y-20,1,1,rot,image_blend,image_alpha)
+		var _xOff=0
 	
-		draw_sprite_ext(spr_wapaloosieBody1,subimg*2,x-11,y-20,xxscale,1,0,image_blend,image_alpha)
+		var _yOff=-3
 	
-		draw_sprite_ext(spr_wapaloosieBody2,subimg*2,x-11,y-20+yy,xxscale,1,0,image_blend,image_alpha)
+		subimg+=.025
 	
-		draw_sprite_ext(spr_wapaloosieHead,subimg,x-11,y-20+yy,1,1,0,image_blend,image_alpha)
+		draw_sprite_ext(spr_wapaloosieTail,subimg,x-8+_xOff,y-20+_yOff,1,1,rot,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_wapaloosieBody1,subimg*2,x-11+_xOff,y-20+_yOff,xxscale,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_wapaloosieBody2,subimg*2,x-11+_xOff,y-20+yy+_yOff,xxscale,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_wapaloosieHead,subimg,x-11+_xOff,y-20+yy+_yOff,1,1,0,image_blend,image_alpha)
 	}
+	
 	if name="Crude Spider"
 	{
 		draw_sprite_ext(spr_caveSpiderLegs,subimg,x,y,1,1,rot+rot2,image_blend,image_alpha)	
@@ -348,7 +450,6 @@ if flash > 0
 		draw_sprite_ext(spr_caveSpiderHead,subimg,x-1,y+yy,xxscale,1,rot2,image_blend,image_alpha)	
 	}
 	
-	draw_sprite_ext(spr_caveSpiderEyes,subimg,x-4.75,y+2,.45,.45,rot2,image_blend,image_alpha)	
 	if name="Typha"
 	{
 		draw_sprite_ext(spr_catTailsBody2,subimg,x-3,y+10,xxscale*1.25,.7,rot2,image_blend,image_alpha)	
@@ -362,27 +463,36 @@ if flash > 0
 	
 		draw_sprite_ext(spr_catTailsBody1,subimg,x,y,xxscale,1,0,image_blend,image_alpha)
 	}
+	
 	if name="Mutant Worm"
 	{
-		draw_sprite_ext(spr_babyWormHead,subimg,x,y+yy,1,1,0,image_blend,image_alpha)	
+		var _xOff=0
 	
-		draw_sprite_ext(spr_babyWormFace,subimg,(x+xx),y+yy,1,1,0,image_blend,image_alpha)
+		var _yOff=-3
+	
+		draw_sprite_ext(spr_babyWormBody,subimg/2,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)	
+	
+		draw_sprite_ext(spr_babyWormHead,subimg,x+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)	
+	
+		draw_sprite_ext(spr_babyWormFace,subimg,(x+xx)+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)	
 	}
+	
 	if name="Annoyed Ant"
 	{
 		draw_sprite_ext(spr_annoyedAntHead,subimg,x,y+yy,1,1,0,image_blend,image_alpha)	
 	}
-	if name="Nightcrawler"
-	{	
-		draw_sprite_ext(spr_nightcrawlerHead,subimg,x-11,y-20+yy,1,1,0,image_blend,image_alpha)	
-	}
+	
 	if name="Bull Frog"
 	{	
-		draw_sprite_ext(spr_bullFrogHorns,subimg,x,y-3,xxscale,1,rot,image_blend,image_alpha)	
-		draw_sprite_ext(spr_bullFrogHorns,subimg,x,y-3,xxscale*-1,1,rot*-1,image_blend,image_alpha)
+		var _xOff=0
 	
-		draw_sprite_ext(spr_bullFrogBody,subimg,x,y,1,1,0,image_blend,image_alpha)
-		draw_sprite_ext(spr_bullFrogArms,subimg,x,y,1,yyscale,0,image_blend,image_alpha)
+		var _yOff=-5
+		
+		draw_sprite_ext(spr_bullFrogHorns,subimg,x+_xOff,y-3+_yOff,xxscale,1,rot,image_blend,image_alpha)	
+		draw_sprite_ext(spr_bullFrogHorns,subimg,x+_xOff,y-3+_yOff,xxscale*-1,1,rot*-1,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_bullFrogBody,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
+		draw_sprite_ext(spr_bullFrogArms,subimg,x+_xOff,y+_yOff,1,yyscale,0,image_blend,image_alpha)
 	}
 	
 	shader_reset()

@@ -7,11 +7,11 @@ function encounterRate()
 	switch room
 	{
 		case RM_BROWNSTOWN:
-			if (global.enemyKills[0] >= 25) {return 48000+_ran}
-			if (global.enemyKills[0] >= 20) {return 24000+_ran}
-			if (global.enemyKills[0] >= 10) {return 12000+_ran}
-			if (global.enemyKills[0] >= 5) {return 6000+_ran}
-			if (global.enemyKills[0] < 5) {return 3000+_ran}	
+			if (global.enemyKills[0] >= 25) {return 96000+_ran}
+			if (global.enemyKills[0] >= 20) {return 48000+_ran}
+			if (global.enemyKills[0] >= 10) {return 24000+_ran}
+			if (global.enemyKills[0] >= 5) {return 12000+_ran}
+			if (global.enemyKills[0] < 5) {return 6000+_ran}	
 				
 			//}
 			//if _group = 2

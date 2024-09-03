@@ -258,3 +258,9 @@ switch oBattle.battleBackground
 		subimg=5
 	break;
 }
+
+//escaped
+if oBattle.escaped
+{
+	y+=2
+}

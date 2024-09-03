@@ -11,6 +11,13 @@ flag3 = false
 //for perfect curse
 perfect=false
 
+greyOut=false
+regularBlend=false
+
+r=255
+g=255
+b=255
+
 
 AIscript = function(_unit)
 {

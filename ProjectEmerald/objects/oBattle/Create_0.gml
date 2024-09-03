@@ -4,7 +4,7 @@ global.success = 0
 global.perfect=0
 
 //Transition setup
-transitionProg = 0;
+transitionProg = 1;
 transitionTransparency = 1;
 surfTransition = surface_create(surface_get_width(application_surface),surface_get_height(application_surface));
 
@@ -13,9 +13,9 @@ var _camWidth = 384
 var _camHeight = 216
 camera_set_view_size(view_camera[0],_camWidth,_camHeight)
 
+instance_create_depth(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]),-16000,oFadeOut){FadeSpeed=.02}
 
 instance_create_depth(x,y,depth+100,oBattleBackground,{battleBackground: battleBackground})
-with instance_create_depth(camera_get_view_x(view_camera[0]),camera_get_view_y(view_camera[0]),-16000,oFadeOut){FadeSpeed=.05}
 
 //Battle setup
 battleState = 0; //0: starting, 1: happening, 2: over
@@ -53,7 +53,6 @@ units = [];
 stats=[]
 unitRenderOrder = [];
 unitDepth = depth-10;
-starupTimer=20;
 endTimer = 80;
 
 //poison
@@ -131,7 +130,7 @@ if	(array_length(enemies) > 3 && array_length(enemies) < 5)
 	{
 		for (var i = 0; i < array_length(enemies); i++)
 		{
-		    enemyUnits[i] = instance_create_depth(x+100+(i*60),y+90, unitDepth, oBattleUnitEnemy, enemies[i]);
+		    enemyUnits[i] = instance_create_depth(x+100+(i*60),y+85, unitDepth, oBattleUnitEnemy, enemies[i]);
 			array_push(units, enemyUnits[i]);
 		}
 	}
@@ -139,7 +138,7 @@ if	(array_length(enemies) > 2 && array_length(enemies) < 4)
 	{
 		for (var i = 0; i < array_length(enemies); i++)
 		{
-		    enemyUnits[i] = instance_create_depth(x+130+(i*60),y+90, unitDepth, oBattleUnitEnemy, enemies[i]);
+		    enemyUnits[i] = instance_create_depth(x+130+(i*60),y+85, unitDepth, oBattleUnitEnemy, enemies[i]);
 			array_push(units, enemyUnits[i]);
 		}
 	}
@@ -147,13 +146,13 @@ if	(array_length(enemies) > 1 && array_length(enemies) < 3)
 	{
 		for (var i = 0; i < array_length(enemies); i++)
 		{
-		    enemyUnits[i] = instance_create_depth(x+165+(i*60),y+90, unitDepth, oBattleUnitEnemy, enemies[i]);
+		    enemyUnits[i] = instance_create_depth(x+165+(i*60),y+85, unitDepth, oBattleUnitEnemy, enemies[i]);
 			array_push(units, enemyUnits[i]);
 		}
 	}
 if  (array_length(enemies) <= 1)
 	{
-			enemyUnits[0] = instance_create_depth(x+195,y+90, unitDepth, oBattleUnitEnemy, enemies[0]);
+			enemyUnits[0] = instance_create_depth(x+195,y+85, unitDepth, oBattleUnitEnemy, enemies[0]);
 			array_push(units, enemyUnits[0]);
 	}
 

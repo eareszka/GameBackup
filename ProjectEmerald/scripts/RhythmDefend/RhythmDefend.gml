@@ -2,6 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function RhythmDefend(_user,_targets)
 {
+	oBattle.highlightEnemy=true
+	oBattle.battleText=""
 	if !instance_exists(obj_projectileGenerator)&&oBattle.defendEnd=false{ObjFlash(_targets,1.5,.025,255,255,255) instance_create_depth(0,0,0,obj_projectileGenerator,{enemy: _user, target: _targets})}
 }
 
@@ -33,8 +35,6 @@ function EnemyUI()
 
 function DefendUI()
 {
-	oBattle.highlightEnemy=true
-	
 	if oBattleBackground.fadeAlpha<1
 	{
 		oBattleBackground.fadeAlpha+=.1
@@ -54,10 +54,46 @@ function DefendUI()
 		}
 	}
 	
+	if oBattle.highlightEnemy=true
+	{
+		for (var i = 0; i < array_length(oBattle.enemyUnits); i++)
+		{
+			with oBattle.enemyUnits[i]
+			{	
+				if myTurn=false
+				{
+					oBattle.enemyUnits[i].greyOut=true
+				}
+				else
+				{
+					oBattle.enemyUnits[i].greyOut=false
+				}
+			}
+		}
+	}
+	else
+	{
+		for (var i = 0; i < array_length(oBattle.enemyUnits); i++)
+		{
+			with oBattle.enemyUnits[i]
+			{	
+				oBattle.enemyUnits[i].greyOut=false
+			}
+		}
+	}
+	
 }
 
 function ResetUI()
 {
+	for (var i = 0; i < array_length(oBattle.enemyUnits); i++)
+	{
+		with oBattle.enemyUnits[i]
+		{	
+			oBattle.enemyUnits[i].greyOut=false
+		}
+	}
+	
 	if oBattleBackground.fadeAlpha>0
 	{
 		oBattleBackground.fadeAlpha-=.01

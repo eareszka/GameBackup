@@ -6,7 +6,7 @@ if (!instance_exists(oMainMenu))
 	    {
 			global.escapeImmunity = 1	
 			instance_create_depth(obj_playerEmory.x+8,obj_playerEmory.y-20,-16000,oExclamationMark)
-			alarm[0] = room_speed *.5
+			alarm[0] = room_speed *.4
 		}
 	}
 }

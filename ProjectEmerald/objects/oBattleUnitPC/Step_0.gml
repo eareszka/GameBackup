@@ -272,7 +272,7 @@ else{spd=3 color=c_white}
 //dead or escaped
 if (oBattle.escaped) && (hp > 0)
 {
-	y +=2;	
+	y +=5;	
 }
 
 if (hp <= 0)

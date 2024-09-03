@@ -23,6 +23,5 @@ else
 		obj_playerJen.layer = _player
 		boss.depth = obj_playerEmory.depth-10
 		done = true
-		instance_create_depth(x,y,-16000,oFadeIn)
 	}
 }

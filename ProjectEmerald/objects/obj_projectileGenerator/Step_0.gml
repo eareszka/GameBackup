@@ -1,3 +1,5 @@
+if tutorial
+{
 switch enemy.name
 {
 	case  "Scaly Feline":
@@ -300,15 +302,26 @@ switch enemy.name
 	break
 }
 
-
-
-
-
-show_debug_message(sec)
-
-if steps>=60
-{
-	steps=0
-	sec+=1
+	if steps>=60
+	{
+		steps=0
+		sec+=1
+	}
+	steps++
+	
 }
-steps++
+
+
+
+
+
+
+//for tutorial
+if global.flag[61]=0
+{
+	if !instance_exists(obj_dodgeTutorial){instance_create_depth(oBattle.x+192,oBattle.y+140,-16000,obj_dodgeTutorial)}
+}
+if global.flag[61]=1
+{
+	tutorial=true	
+}

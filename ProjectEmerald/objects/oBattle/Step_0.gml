@@ -6,18 +6,11 @@ if (battleState == 0)
 		audio_play_sound(music,2,true)
 	}
 	transitionProg += .1
-	if (transitionProg >= 1)
+	if (transitionProg >= .5)
 	{
-		transitionTransparency-=.1;
+		transitionTransparency-=.3;
 		if (transitionTransparency <0)
 		{
-			if starupTimer < 60
-			{
-				for (i=0;i<array_length(enemyUnits);i++)
-				{
-					enemyUnits[i].sprite_index = enemyUnits[i].sprites.idle
-				}
-			}
 			if (bossBattle = false)
 			{
 				if array_length(enemyUnits)>1
@@ -34,7 +27,6 @@ if (battleState == 0)
 				battleEndMessages[0] = string(enemyUnits[0].name)+" Approaches Confidently!"
 			}
 			battleText = battleEndMessages[battleEndMessageProg];
-			starupTimer-=1
 			if battleMessageClear<=0&&keyboard_check_pressed(vk_space)
 			{
 				battleFlavorText(enemies,flavorText)
@@ -48,43 +40,18 @@ if (battleState == 0)
 //Battle end - transition
 if (battleState == 3) 
 {
-	if conclusionType != 3
+	transitionProg -= 0.1;
+	if (transitionProg <= 0.0)
 	{
-		transitionTransparency+=.1
-		if transitionTransparency>1
-		{
-			transitionTransparency-=.1
-			transitionProg -= .5
-			if transitionProg < 0
-			{
-				audio_stop_sound(battleVictory)
-				var _camWidth = 480
-				var _camHeight = 270
-				camera_set_view_size(view_camera[0],_camWidth,_camHeight)
-				instance_destroy()
-				instance_deactivate_object(oMainMenu)
-				instance_deactivate_object(oExclamationMark)
-			}
-		}
+		var _camWidth = 480
+		var _camHeight = 270
+		camera_set_view_size(view_camera[0],_camWidth,_camHeight)
+		
+		instance_destroy()
+		instance_deactivate_object(oMainMenu)
+		instance_deactivate_object(oExclamationMark)
 	}
-	else
-	{
-		transitionTransparency+=.1
-		if transitionTransparency>1
-		{
-			transitionTransparency-=.1
-			transitionProg -= .5
-			if transitionProg < 0
-			{
-				var _camWidth = 480
-				var _camHeight = 270
-				camera_set_view_size(view_camera[0],_camWidth,_camHeight)
-				instance_destroy()
-				instance_deactivate_object(oMainMenu)
-				instance_deactivate_object(oExclamationMark)
-			}
-		}
-	}
+	
 }
 
 //Battle end - messages
@@ -103,15 +70,20 @@ if (battleState == 2)
 			audio_play_sound(battleVictory,1,false)
 		}
 	}
+	
 	if (keyboard_check_pressed(vk_space)) && battleMessageClear < 0
 	{
 		audio_play_sound(moveArrow2,1,false)
-		textBoxHeight = 25
-		battleEndMessageProg++;
+
 		battleMessageClear = 15
+		
+		if (battleEndMessageProg < array_length(battleEndMessages)){draw_char=0 battleEndMessageProg++;}
+		
 	}
 	if (battleEndMessageProg >= array_length(battleEndMessages))
 	{
+		battleText = ""
+		
 		battleState = 3;
 	}
 	else
@@ -213,6 +185,8 @@ if (battleState == 1)
 		
 		if (_noEnemiesAlive)
 		{
+			transitionProg=2
+			
 			poisoned = false
 			if !instance_exists(oRhythmVisual)
 			{
@@ -223,7 +197,6 @@ if (battleState == 1)
 					conclusionType = 1;
 					battleState = 2;
 					draw_char = 0
-					battleEndMessages[0] = "Victory!";
 					for (var i = 0; i < array_length(enemyUnits); i++)
 					{
 						battleMoneyGained += enemyUnits[i].moneyValue;
@@ -234,16 +207,19 @@ if (battleState == 1)
 							EnemiesCount(room)
 						}	
 					}
-					battleEndMessages[1] = string("Gained {0} $", battleMoneyGained);
-					battleEndMessages[2] = string("Gained {0} XP", battleExperinceGained);
+					battleEndMessages[0] = "Victory!\nGained $"+string(battleMoneyGained)+" & "+string(battleExperinceGained)+"XP"
+					
+					//battleEndMessages[1] = string("Gained {0} $", battleMoneyGained);
+					//battleEndMessages[2] = string("Gained {0} XP", battleExperinceGained);
 					global.my_Money +=battleMoneyGained
 					global.battleExperince +=battleExperinceGained
 					global.battlesWon++;
-					LevelUp()	
+					
+					LevelUp()
 				}
 				else
 				{
-					battleMessageClear = 20
+					battleMessageClear = 10
 				}
 			}
 		}
@@ -254,8 +230,6 @@ if (battleState == 1)
 			draw_char = 0
 			conclusionType = 2;
 			battleState = 2;
-			battleEndMessages[0] = "Escaped!"
-			battleEndMessages[1] = "No money gained."
 		}
 	}
 		

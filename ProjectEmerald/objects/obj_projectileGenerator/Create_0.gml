@@ -1,3 +1,4 @@
+tutorial=false
 steps=0
 sec=0
 

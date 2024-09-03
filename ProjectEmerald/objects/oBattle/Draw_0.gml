@@ -55,6 +55,15 @@ if (targetCursor.cursorActive) && endTimer = 80
 //Draw battle text
 if (battleText != "") && !instance_exists(obj_textBoxBattle)
 {
+	
+	if battleState=2
+	{
+		if battleEndMessageProg=0{textBoxHeight=40}
+		if battleEndMessageProg=1{textBoxHeight=40}
+		if battleEndMessageProg=2{textBoxHeight=25}
+	}
+	
+	
 	draw_set_font(fnOpenSansPX)
 	draw_set_halign(fa_left);
 	draw_set_color(c_white);
@@ -73,13 +82,16 @@ if (battleText != "") && !instance_exists(obj_textBoxBattle)
 	
 	var _drawText = string_copy(battleText, 1, draw_char);
 	var _w = string_width(battleText)+20;
-	draw_sprite_stretched(global.battleBox,0,x+192-(_w*0.5),y+5,_w,25);
+	
+	draw_sprite_stretched(global.battleBox,0,x+192-(_w*0.5),y+5,_w,textBoxHeight);
+
 	draw_text(x+200-(_w*0.5),y+10,_drawText);
 	
 	//Continue arrow for multi message
-	if battleMessageClear <= 0
+	if battleMessageClear <= 0&&battleState!=3
 	{
-		draw_sprite(sDownArrow,0,x + 192, y + 35);	
+		if textBoxHeight=40{draw_sprite(sDownArrow,0,x + 192, y + 50);}
+		else{draw_sprite(sDownArrow,0,x + 192, y + 35);}
 	}
 }
 else
@@ -104,7 +116,9 @@ if instance_exists(oMenu) && oMenu.active = false && item != -1
 	
 	var _drawText = string_copy(item.description, 1, draw_char);
 	var _w = 200
+	
 	draw_sprite_stretched(global.battleBox,0,x+192-(_w*0.5),y+5,_w,textBoxHeight);
+	
 	draw_set_halign(fa_left);
 	draw_set_color(c_white);
 	draw_text_ext(x+200-(_w*0.5),y+10,_drawText,12,_w)

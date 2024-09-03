@@ -183,6 +183,8 @@ global.flag =
 	0,
 	//mcintoshtalkDestinity 60
 	0,
+	//dodgetutorial 61
+	0,
 ]
 	
 	
@@ -806,13 +808,12 @@ global.actionLibrary =
 		userAnimation : "escape",
 		func : function(_user, _target)
 		{
-			if (random(1) < .3) && oBattle.bossBattle = false
+			if (random(1)<(.3*oBattle.roundCount)) && oBattle.bossBattle = false
 			{
 				oBattle.escaped = true
 				oBattle.conclusionType = 2
 				oBattle.battleState = 2;
-				oBattle.battleEndMessages[0] = "Escaped!"
-				oBattle.battleEndMessages[1] = "No money gained."
+				oBattle.battleEndMessages[0] = "Escaped!\nNo money or XP gained."
 			}
 			else //fail
 			{
@@ -1639,7 +1640,8 @@ global.enemyLibrary =
 		effectOnTarget: false,
 		func : function(_user, _targets)
 		{
-			ObjFlash(_user,.75,.01,255,255,255)
+			_user.regularBlend=true
+			ObjFlash(_user,.75,.005,255,255,255)
 			switch _user.name
 			{
 				case "Scaly Feline":
@@ -1674,7 +1676,7 @@ global.enemyLibrary =
 					var _ran = irandom_range(0,1)
 					if _ran = 0
 					{
-						oBattle.battleEndMessages[0] = string(_user.name)+" is questioning your rhythm abilities."
+						oBattle.battleEndMessages[0] = string(_user.name)+" is staring at your gemstone."
 					}
 					if _ran = 1
 					{
@@ -2251,7 +2253,7 @@ global.enemies =
 		arrows: 2,
 		frequency: 3,
 		spd: 3,
-		sprites: { intro: sBeetleIntro, idle: sBeetleIdle, attack: sBeetleIdle, defend: sBeetleIdle},
+		sprites: { intro: sBeetleIdle_1, idle: sBeetleIdle_1, attack: sBeetleIdle_1, defend: sBeetleIdle_1},
 		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
 		moneyValue : 20,
 		experinceValue : irandom_range(10,20),
@@ -2281,7 +2283,7 @@ global.enemies =
 		arrows: 2,
 		frequency: 4,
 		spd: 3,
-		sprites: { intro: spr_mogMole, idle: spr_mogMole, attack: spr_mogMole},
+		sprites: { intro: spr_mogMoleHead, idle: spr_mogMoleHead, attack: spr_mogMoleHead},
 		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.intimidate,global.enemyLibrary.intimidate,global.enemyLibrary.taunt],
 		moneyValue : 20,
 		experinceValue : irandom_range(20,40),
@@ -2559,7 +2561,7 @@ global.bosses =
 		spd: 3,
 		sprites: { intro: spr_babyWormBody, idle: spr_babyWormBody, attack: spr_babyWormBody, defend: spr_babyWormBody},
 		scripted: true, 
-		actions: [global.enemyLibrary.attack ,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
 		moneyValue : 5,
 		experinceValue : 11,
 		AIscript : function ()

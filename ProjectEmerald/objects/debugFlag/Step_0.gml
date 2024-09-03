@@ -10,9 +10,8 @@ if place_meeting(x,y,obj_playerEmory)
 	global.mpAdd = global.mpAdd+20;
 	global.strengthAdd = 100;
 	global.levels.level60 = true;
-	global.battleExperince = 120
 	global.my_Money = 100000
-	global.battleExperince =1281
+	global.battleExperince =0
 	global.abilities.canSprint = true
 	global.sacredAnimals.dog = false
 	global.quest.helicopter.available=true
@@ -20,5 +19,5 @@ if place_meeting(x,y,obj_playerEmory)
 	global.quest.crown.available=true
 	global.quest.hotelKey.available=true
 	global.quest.boatKey.available=true
-	global.timeOfDay=5
+	global.timeOfDay=8
 }
