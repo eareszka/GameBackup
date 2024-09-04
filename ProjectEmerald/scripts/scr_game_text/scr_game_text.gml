@@ -8,6 +8,11 @@ function scr_game_text(_text_id)
 			scr_text("I believe that at least one more of the sacred 12 is here in town. Go fourth now and save the world!")
 		break
 		
+		case "computerTalk10":
+			scr_name("McIntosh Computer") 
+			scr_text("Oh great you have Eva with you. Your other dog 'Loki' has been missing her very much.")
+		break
+		
 		case "computerTalk7":
 			scr_name("McIntosh Computer") 
 			scr_text("Oh good you handled that. However rescuing a mere dog is the least of your concerns.")

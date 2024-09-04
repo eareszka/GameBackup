@@ -1878,7 +1878,7 @@ global.itemLibrary =
 		func : function(_user, _targets)
 		{
 			oBattle.battleEndMessages[0] = string(_user.name)+" Sprayed Insecticide.";
-			if _targets[0].name = "Horned Beetle" || _targets[0].name = "Armored Beetle" || _targets[0].name = "Annoyed Ant" || _targets[0].name = "Crude Spider"
+			if _targets[0].name = "Horned Beetle" || _targets[0].name = "SGT. B Beetle" || _targets[0].name = "Annoyed Ant" || _targets[0].name = "Crude Spider"
 			{
 				var _damage = 100;
 				BattleChangeHP(_targets[0], -_damage);
@@ -2243,7 +2243,7 @@ global.enemies =
 	//defensive 
 	beetle: 
 	{
-		name: "Armored Beetle",
+		name: "SGT. B Beetle",
 		unitID:11,
 		hp: 50,
 		hpMax: 50,
@@ -2253,7 +2253,7 @@ global.enemies =
 		arrows: 2,
 		frequency: 3,
 		spd: 3,
-		sprites: { intro: sBeetleIdle_1, idle: sBeetleIdle_1, attack: sBeetleIdle_1, defend: sBeetleIdle_1},
+		sprites: { intro: spr_beetleBody1, idle: spr_beetleBody1, attack: spr_beetleBody1, defend: spr_beetleBody1},
 		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
 		moneyValue : 20,
 		experinceValue : irandom_range(10,20),
@@ -2792,7 +2792,7 @@ global.bosses =
 		frequency: 1,
 		spd: 3,
 		reverse: 0,
-		sprites: {  intro: sJennaBattleIdle, idle: sJennaBattleIdle, attack: sJennaBattleIdle},
+		sprites: {  intro: spr_jennaBody1, idle: spr_jennaBody1, attack: spr_jennaBody1},
 		//scripted: true,
 		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.windGust],
 		actions: [global.enemyLibrary.maxHeal],

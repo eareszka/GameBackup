@@ -1,6 +1,42 @@
-if name="Armored Beetle"
+if name="Jenna"
 {
-	draw_self()
+	
+	draw_sprite_ext(spr_jennaHair,0,x,y+yy/2,1.1,.95,0,c_white,1)
+	
+	draw_sprite_ext(spr_jennaBody2,0,x,y,1.1,.95,0,c_white,1)
+	
+	draw_sprite_ext(spr_jennaBody1,0,x,y+yy,1.1,.95,0,c_white,1)
+	
+	draw_sprite_ext(spr_jennaHead,0,x,y+yy/1.5,1.1,.95,0,c_white,1)
+	
+	yy=0 + sin(current_time * 0.0020);	
+}
+if name="SGT. B Beetle"
+{
+	subimg+=.20
+	
+	var _xOff=+2
+	
+	var _yOff=-7
+	
+	draw_sprite_ext(spr_beetleBottomHands1,subimg,x+_xOff,y+_yOff+(yy*2)-10,1.1,1,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_beetleBody2,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_beetleBody1,subimg,x+_xOff,y+_yOff+yy,1,1,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_beetleBottomHands2,subimg,x+_xOff,y+_yOff+yy,1,1,0,image_blend,image_alpha)
+	
+	draw_sprite_ext(spr_beetleSpike,subimg,x+_xOff+xx,y+_yOff+yy-1,(xxscale),1,0,image_blend,image_alpha)
+	draw_sprite_ext(spr_beetleSpike,subimg,x+_xOff-xx-1,y+_yOff+yy-1,(xxscale*-1),1,0,image_blend,image_alpha)
+	
+	yy=+4 + sin(current_time * 0.0040);	
+	
+	xx=1 + sin(current_time * 0.0040);	
+	
+	xxscale=1 - sin(sinTimer / 50) * 0.1
+	sinTimer++
+	
 }
 if name="Mogging Mole"
 {
@@ -12,7 +48,7 @@ if name="Mogging Mole"
 	
 	var _ran=irandom_range(0,300)
 	
-	if _ran=50
+	if _ran=50&&hp>0
 	{
 		if !instance_exists(Object316){instance_create_depth(x+4+_xOff,y+4+yy+_yOff,-16000,Object316)}
 	}
@@ -367,7 +403,29 @@ if flash > 0
 	shader_set_uniform_f(g,green)
 	shader_set_uniform_f(b,blue)
 	shader_set_uniform_f(alpha,flash)
+	if name="Mogging Mole"
+	{
+		var _xOff=0
 	
+		var _yOff=2
+	
+		draw_sprite_ext(spr_mogMoleBody_1,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_mogMoleHead,subimg,x+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)
+	
+		if subimg<1
+		{
+			draw_sprite_ext(spr_mogMoleHands,subimg,x+_xOff,y+yy+_yOff,1,1,0,image_blend,image_alpha)
+		}
+		if subimg>=1&&subimg<2
+		{
+			draw_sprite_ext(spr_mogMoleHands,subimg,x+_xOff,y+yy+_yOff,1,1,rot,image_blend,image_alpha)
+		}
+		if subimg>=2&&subimg<3
+		{
+			draw_sprite_ext(spr_mogMoleHands,2,x+xx+_xOff,y+yyy+yy+_yOff+5,1,1,0,image_blend,image_alpha)
+		}
+	}
 	if name="Grinning Rock"
 	{
 		draw_self()
@@ -493,6 +551,23 @@ if flash > 0
 	
 		draw_sprite_ext(spr_bullFrogBody,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
 		draw_sprite_ext(spr_bullFrogArms,subimg,x+_xOff,y+_yOff,1,yyscale,0,image_blend,image_alpha)
+	}
+	if name="SGT. B Beetle"
+	{
+		var _xOff=+2
+	
+		var _yOff=-7
+	
+		draw_sprite_ext(spr_beetleBottomHands1,subimg,x+_xOff,y+_yOff+(yy*2)-10,1.1,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_beetleBody2,subimg,x+_xOff,y+_yOff,1,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_beetleBody1,subimg,x+_xOff,y+_yOff+yy,1,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_beetleBottomHands2,subimg,x+_xOff,y+_yOff+yy,1,1,0,image_blend,image_alpha)
+	
+		draw_sprite_ext(spr_beetleSpike,subimg,x+_xOff+xx,y+_yOff+yy-1,(xxscale),1,0,image_blend,image_alpha)
+		draw_sprite_ext(spr_beetleSpike,subimg,x+_xOff-xx-1,y+_yOff+yy-1,(xxscale*-1),1,0,image_blend,image_alpha)
 	}
 	
 	shader_reset()

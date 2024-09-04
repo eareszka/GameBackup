@@ -43,7 +43,14 @@ switch room
 					{
 						if global.flag[60]=0
 						{
-							if !instance_exists(obj_textBox){create_textbox("computerTalk6")}
+							if global.flag[57]=0
+							{
+								if !instance_exists(obj_textBox){create_textbox("computerTalk6")}
+							}
+							if global.flag[57]=1
+							{
+								if !instance_exists(obj_textBox){create_textbox("computerTalk10")}
+							}
 						}
 						else
 						{
