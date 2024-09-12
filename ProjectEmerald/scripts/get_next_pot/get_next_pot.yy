@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_next_pot",
   "isCompatibility":false,
   "isDnD":false,

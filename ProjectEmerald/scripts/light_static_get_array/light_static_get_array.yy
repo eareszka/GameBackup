@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_static_get_array",
   "isCompatibility":false,
   "isDnD":false,

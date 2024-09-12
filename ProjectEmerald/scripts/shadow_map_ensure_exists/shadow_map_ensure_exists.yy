@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"shadow_map_ensure_exists",
   "isCompatibility":false,
   "isDnD":false,

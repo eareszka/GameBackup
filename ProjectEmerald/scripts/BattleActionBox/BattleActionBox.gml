@@ -61,6 +61,23 @@ function BattleActionBox(_user,_action)
 				}
 			break
 			
+			case 25:
+				switch _action.action
+				{
+					case 1:
+						CreateActionBox(_user,1,10,-10)
+					break;	
+				
+					case 2:
+						CreateActionBox(_user,2,10,-10)
+					break;	
+				
+					case 3:
+						CreateActionBox(_user,3,10,-10)
+					break;	
+				}
+			break
+			
 			case 18:
 				switch _action.action
 				{

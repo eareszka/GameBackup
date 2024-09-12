@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_enumerate_extensions",
   "isCompatibility":false,
   "isDnD":false,

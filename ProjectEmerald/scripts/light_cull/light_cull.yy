@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_cull",
   "isCompatibility":false,
   "isDnD":false,

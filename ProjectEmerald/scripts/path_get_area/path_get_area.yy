@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"path_get_area",
   "isCompatibility":false,
   "isDnD":false,

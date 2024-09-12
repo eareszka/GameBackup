@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"lighting_post_composite",
   "isCompatibility":false,
   "isDnD":false,

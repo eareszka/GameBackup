@@ -176,6 +176,14 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 	{
 		switch _targets.name
 		{
+			case "Crude Spider":
+				RhythmCreate(_action.rhythm,_targets)
+				with (_user)
+				{
+					acting = true;
+				}
+			break;
+			
 			case "Mutant Worm":
 				if _targets.hp <= round(_targets.hpMax/2) && oBattleUnitEnemy.flag1 = false
 				{		
@@ -205,7 +213,7 @@ function ScriptedBeforeAttack(_user, _action, _targets)
 					_targets.arrows = 5
 					_targets.spd=2
 					_targets.disappear=true	
-					create_textboxBattle("magicianTalk2",0,_user)
+					create_textboxBattle("magicianTalk2",_user)
 				}
 				else
 				{
@@ -355,6 +363,13 @@ function getPointer(_targets)
 		case 12:
 	        return -25;
 	    break;
+		
+		case 18:
+			return -25;
+	    break;
+		case 25:
+			return -22;
+		break
 		
 		case 26:
 	        return -22;

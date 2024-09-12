@@ -1,5 +1,5 @@
 {
-  "$GMRoom":"",
+  "$GMRoom":"v1",
   "%Name":"RM_FREEFARM",
   "creationCodeFile":"",
   "inheritCode":false,

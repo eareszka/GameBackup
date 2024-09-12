@@ -38,3 +38,4 @@ rot2=0
 rot3=0
 sinTimer=0
 CosTimer=0
+talking=false

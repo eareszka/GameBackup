@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"lighting_get_active_camera",
   "isCompatibility":false,
   "isDnD":false,

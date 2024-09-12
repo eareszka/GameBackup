@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_create_area",
   "isCompatibility":false,
   "isDnD":false,

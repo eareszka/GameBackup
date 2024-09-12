@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"polygon_from_instance",
   "isCompatibility":false,
   "isDnD":false,

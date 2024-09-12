@@ -1,1 +1,0 @@
-plateNumber=0

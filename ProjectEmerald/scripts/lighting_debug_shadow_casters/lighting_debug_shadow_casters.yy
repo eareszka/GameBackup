@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"lighting_debug_shadow_casters",
   "isCompatibility":false,
   "isDnD":false,

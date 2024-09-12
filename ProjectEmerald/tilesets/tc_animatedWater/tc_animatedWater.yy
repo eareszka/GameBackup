@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"tc_animatedWater",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -25,10 +25,6 @@
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",
-  },
-  "tileAnimation":{
-    "FrameData":[0,0,0,0,1,2,3,4,2,3,4,1,3,4,1,2,4,1,2,3,],
-    "SerialiseFrameCount":4,
   },
   "tileAnimationFrames":[
     {"$GMTileAnimation":"","%Name":"animation_1","frames":[1,2,3,4,],"name":"animation_1","resourceType":"GMTileAnimation","resourceVersion":"2.0",},

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"point_in_polygon",
   "isCompatibility":false,
   "isDnD":false,

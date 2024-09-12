@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ShakeObject",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,14 +1,9 @@
-/******************************************************
-	this textbox is only used when
-	the player can walk around while the text displays
-*****************************************************/
 oBattle.battleStopFlow=true
-timer = 20
 
-textbox_x = 0;
-textbox_y = 0;
-textbox_width = 100
-textbox_height = 70
+textbox_x = oBattle.x+16;
+textbox_y = oBattle.y+146;
+textbox_width = 384
+textbox_height = 30
 border = 8;
 line_sep = 12;
 line_width = textbox_width - border*2;
@@ -16,6 +11,9 @@ txtb_spr = spr_textBox;
 txtb2_spr = spr_textBox2
 txtb_img = 0;
 txtb_img_spd = 0;
+//pushes textbox
+textBoxPush=0
+textBoxPushSize=1
 
 //text
 page = 0;
@@ -26,6 +24,7 @@ name_length[0] =  string_length(name[0]);
 text_length[0] = string_length(text[0]);
 draw_char = 0;
 text_spd = 1;
+multipleText=-1
 
 //branching options
 option[0] = "";
@@ -34,15 +33,8 @@ option_pos = 0;
 option_number = 0;
 
 setup = false;
-skipTurn = false
 
-draw_set_font(global.font_main);
-draw_set_valign(fa_top);
-draw_set_halign(fa_left);
-draw_set_color(c_white)
+setupTimer=10
 
-//for oBattle
-user = -1
-enemy = -1
-action = -1
-targets = -1
+accept_key = -1
+esc_key = -1

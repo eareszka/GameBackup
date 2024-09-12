@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"CopyStruct",
   "isCompatibility":false,
   "isDnD":false,

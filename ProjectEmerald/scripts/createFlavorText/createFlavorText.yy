@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"createFlavorText",
   "isCompatibility":false,
   "isDnD":false,

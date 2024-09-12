@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ObjDepth",
   "isCompatibility":false,
   "isDnD":false,

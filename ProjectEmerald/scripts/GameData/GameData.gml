@@ -185,6 +185,8 @@ global.flag =
 	0,
 	//dodgetutorial 61
 	0,
+	//blue projectile tutorial 62
+	0,
 ]
 	
 	
@@ -1228,7 +1230,7 @@ global.enemyLibrary =
 	}
 	,
 	//ene attack
-	attack : 
+	attack1 : 
 	{
 		name : "Attack",
 		textBeforeAct: true,
@@ -1241,7 +1243,7 @@ global.enemyLibrary =
 		rhythmDefend: true,
 		func : function(_user, _targets)
 		{		
-			ObjFlash(_targets[0],1.5,.075,255,0,0)
+			ObjFlash(_targets[0],1,0,255,0,0)
 			var _damage = ceil(_user.strength + random_range(-_user.strength * 0.25, _user.strength * 0.25));
 			if (global.quest.blueRing.available = true && global.quest.blackRing.available = false) _damage = ceil(_damage * 0.5);
 			if (global.quest.blackRing.available = true) _damage = ceil(_damage * 0.1);
@@ -2019,7 +2021,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_catTailsBody1, idle: spr_catTailsBody1, attack: spr_catTailsBody1, defend: spr_catTailsBody1},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1,],
 		moneyValue : 5,
 		experinceValue : 2,
 		AIscript : function ()
@@ -2048,7 +2050,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_antIntro, idle: spr_annoyedAntBody},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1],
 		moneyValue : 5,
 		experinceValue : 1,
 		AIscript : function ()
@@ -2077,7 +2079,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_bullFrogBody, idle: spr_bullFrogBody, attack: spr_bullFrogBody, defend: spr_bullFrogBody},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1],
 		moneyValue : 10,
 		experinceValue : irandom_range(3,5),
 		AIscript : function ()
@@ -2106,7 +2108,8 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_caveSpiderLegs, idle: spr_caveSpiderLegs, attack: spr_caveSpiderLegs},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.betrayal,global.enemyLibrary.stealItem,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.attack1,global.enemyLibrary.stealItem,global.enemyLibrary.betrayal,global.enemyLibrary.attack1,global.enemyLibrary.attack1],
+		scripted: true,
 		moneyValue : 12,
 		experinceValue : irandom_range(3,6),
 		summonAmt: 1,
@@ -2136,7 +2139,7 @@ global.enemies =
 		frequency: 2,
 		spd: 3,
 		sprites: { intro: spr_wapaloosieBody1, idle: spr_wapaloosieBody1, attack: spr_wapaloosieBody1,},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1],
 		moneyValue : 15,
 		experinceValue : irandom_range(5,7),
 		AIscript : function()
@@ -2165,7 +2168,7 @@ global.enemies =
 		frequency: 2,
 		spd: 3,
 		sprites: { intro: spr_scalyFelineBody, idle: spr_scalyFelineBody, attack: spr_scalyFelineBody,},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1],
 		moneyValue : 15,
 		experinceValue : irandom_range(5,7),
 		AIscript : function()
@@ -2224,7 +2227,7 @@ global.enemies =
 		frequency: 2,
 		spd: 3,
 		sprites: { intro: spr_grinningRockIntro, idle: spr_grinningRockIdle, attack: spr_grinningRockIdle,},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.taunt],
 		moneyValue : 15,
 		experinceValue : irandom_range(5,7),
 		AIscript : function()
@@ -2254,7 +2257,7 @@ global.enemies =
 		frequency: 3,
 		spd: 3,
 		sprites: { intro: spr_beetleBody1, idle: spr_beetleBody1, attack: spr_beetleBody1, defend: spr_beetleBody1},
-		actions: [global.enemyLibrary.attack,global.actionLibrary.defend],
+		actions: [global.enemyLibrary.attack1,global.actionLibrary.defend],
 		moneyValue : 20,
 		experinceValue : irandom_range(10,20),
 		AIscript : function()
@@ -2284,7 +2287,7 @@ global.enemies =
 		frequency: 4,
 		spd: 3,
 		sprites: { intro: spr_mogMoleHead, idle: spr_mogMoleHead, attack: spr_mogMoleHead},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.intimidate,global.enemyLibrary.intimidate,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.intimidate,global.enemyLibrary.intimidate,global.enemyLibrary.taunt],
 		moneyValue : 20,
 		experinceValue : irandom_range(20,40),
 		AIscript : function()
@@ -2347,7 +2350,7 @@ global.enemies =
 		frequency: 2,
 		spd: 3,
 		sprites: { intro: spr_poisonThornsIdle, idle: spr_poisonThornsIdle, attack: spr_poisonThornsIdle, defend: spr_poisonThornsIdle},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.poison,global.actionLibrary.defend],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.poison,global.actionLibrary.defend],
 		moneyValue : 25,
 		experinceValue : irandom_range(20,40),
 		AIscript : function()
@@ -2378,7 +2381,7 @@ global.enemies =
 		spd: 3,
 		hold: 1,
 		sprites: { intro: sBaneBatIntro, idle: sBaneBatIdle, attack: sBaneBatIdle},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.poison],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.poison],
 		moneyValue : 25,
 		experinceValue : irandom_range(20,40),
 		AIscript : function()
@@ -2408,7 +2411,7 @@ global.enemies =
 		frequency: 3,
 		spd: 3,
 		sprites: choose(({ intro: spr_AmalbonemationIdle1, idle: spr_AmalbonemationIdle1, attack: spr_AmalbonemationIdle1}),({ intro: spr_AmalbonemationIdle2, idle: spr_AmalbonemationIdle2, attack: spr_AmalbonemationIdle2}),({ intro: spr_AmalbonemationIdle3, idle: spr_AmalbonemationIdle3, attack: spr_AmalbonemationIdle3})),
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.toss,global.enemyLibrary.toss],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.toss,global.enemyLibrary.toss],
 		moneyValue : 35,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
@@ -2469,7 +2472,7 @@ global.enemies =
 		spd: 3,
 		hold: 1,
 		sprites: { intro: spr_thunderBirdIdle, idle: spr_thunderBirdIdle, attack: spr_thunderBirdIdle, defend : spr_thunderBirdIdle, special : spr_thunderBirdIdle},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack,global.actionLibrary.defend],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.actionLibrary.defend],
 		moneyValue : 50,
 		experinceValue : irandom_range(50,70),
 		AIscript : function()
@@ -2527,7 +2530,7 @@ global.enemies =
 		frequency: 1,
 		spd: 3,
 		sprites: { intro: spr_nightcrawlersLegs, idle: spr_nightcrawlersLegs, attack: spr_nightcrawlersLegs, defend: spr_nightcrawlersLegs},
-		actions: [global.enemyLibrary.attack ,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack1 ,global.enemyLibrary.taunt],
 		moneyValue : 30,
 		experinceValue : irandom_range(10,15),
 		AIscript : function()
@@ -2561,7 +2564,7 @@ global.bosses =
 		spd: 3,
 		sprites: { intro: spr_babyWormBody, idle: spr_babyWormBody, attack: spr_babyWormBody, defend: spr_babyWormBody},
 		scripted: true, 
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.taunt,global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.taunt,global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.attack1],
 		moneyValue : 5,
 		experinceValue : 11,
 		AIscript : function ()
@@ -2593,13 +2596,13 @@ global.bosses =
 		spd: 3,
 		sprites: { intro: spr_magicianBattleIdle, idle: spr_magicianBattleIdle, attack: spr_magicianBattleIdle, defend: spr_magicianBattleIdle},
 		scripted: true, 
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.stealItem],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.stealItem],
 		moneyValue : 50,
 		experinceValue : 30,
 		AIscript : function ()
 		{
 			//attack random party member
-			var _action = actions[0];
+			var _action = actions[0]; 
 			var _possibleTargets = array_filter(oBattle.partyUnits, function(_unit, _index)
 			{
 				return (_unit.hp > 0);
@@ -2623,7 +2626,7 @@ global.bosses =
 		frequency: 2,
 		spd: 3,
 		sprites: { intro: spr_mommaWormIntro, idle: spr_mommaWorm, attack: spr_mommaWorm, defend: spr_mommaWorm},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.stealItem,global.enemyLibrary.healSelf],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.stealItem,global.enemyLibrary.healSelf],
 		moneyValue : 60,
 		experinceValue : 50,
 		AIscript : function ()
@@ -2655,7 +2658,7 @@ global.bosses =
 		hold: false,
 		sprites: { intro: sHornedBeetleIntro, idle: sHornedBeetleIdle, attack: sHornedBeetleIdle},
 		scripted: true, 
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.summonEne,global.enemyLibrary.summonEne,global.enemyLibrary.continuousAttack,global.enemyLibrary.taunt],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.summonEne,global.enemyLibrary.summonEne,global.enemyLibrary.continuousAttack,global.enemyLibrary.taunt],
 		moneyValue : 100,
 		experinceValue : 100,
 		summonAmt: 2,
@@ -2690,7 +2693,7 @@ global.bosses =
 		sprites: {  intro: sAncientKingIdle, idle: sAncientKingIdle, attack: sAncientKingIdle, special: sAncientKingSpecial, defend: sAncientKingDefend},
 		scripted: true,
 		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.perfectStrikeCurse],
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.actionLibrary.defend,global.enemyLibrary.windGust],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.actionLibrary.defend,global.enemyLibrary.windGust],
 		moneyValue : 300,
 		experinceValue : 300,
 		AIscript : function ()
@@ -2712,7 +2715,7 @@ global.bosses =
 		frequency: 2,
 		spd: 3,
 		sprites: { intro: spr_mommaWormIntro, idle: spr_mommaWorm, attack: spr_mommaWorm, defend: spr_mommaWorm},
-		actions: [global.enemyLibrary.attack,global.enemyLibrary.attack,global.enemyLibrary.stealItem,global.enemyLibrary.healSelf],
+		actions: [global.enemyLibrary.attack1,global.enemyLibrary.attack1,global.enemyLibrary.stealItem,global.enemyLibrary.healSelf],
 		moneyValue : 700,
 		experinceValue : 500,
 		AIscript : function ()
@@ -2746,7 +2749,7 @@ global.bosses =
 		sprites: {  intro: sTheCoachIdle_1, idle: sTheCoachIdle_1, attack: sTheCoachIdle_1, throwing: sTheCoachThrowing},
 		scripted: true,
 		actionsScripted: [global.dialogueLibrary.beforeEneAttack,global.enemyLibrary.windGust],
-		actions: [global.enemyLibrary.attack],
+		actions: [global.enemyLibrary.attack1],
 		moneyValue : 1000,
 		experinceValue : 1000,
 		AIscript : function ()

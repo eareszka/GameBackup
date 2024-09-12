@@ -56,14 +56,10 @@ function  create_textbox3(_text_id)
 	}	
 }
 
-function  create_textboxBattle(_text_id,_enemy,_user,_action=undefined,_target=undefined)
+function  create_textboxBattle(_text_id)
 {
-	with (instance_create_depth(0,0,-10003, obj_textBoxBattle))
+	with (instance_create_depth(0,0,oBattle.depth-10, obj_textBoxBattle))
 	{
-		user = _user
-		enemy = _enemy
-		textbox_x = 225;
-		textbox_y = 50;
 		scr_game_text(_text_id)
 	}	
 }

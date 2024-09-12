@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_add_extension",
   "isCompatibility":false,
   "isDnD":false,

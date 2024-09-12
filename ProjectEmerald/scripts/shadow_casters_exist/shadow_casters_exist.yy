@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"shadow_casters_exist",
   "isCompatibility":false,
   "isDnD":false,

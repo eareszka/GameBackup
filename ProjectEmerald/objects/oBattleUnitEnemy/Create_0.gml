@@ -33,9 +33,33 @@ AIscript = function(_unit)
 	{
 		switch _unit.name
 		{
+			case "Crude Spider":
+				var _action = chooseAttack(_unit)
+				var _target = chooseTarget(_action)
+				if _action.name="Attack"
+				{
+					oBattle.attackSubtype=irandom_range(0,1)
+					
+					if global.flag[62]=0&&oBattle.attackSubtype=1
+					{
+						global.flag[62]=1
+						if !instance_exists(obj_textBoxBattle)
+						{
+							create_textboxBattle("blueProjectileTutorial")
+						}
+						return [_action, _target];
+					}
+					else
+					{
+						return [_action, _target];
+					}
+				}
+				else return [_action, _target];
+			break;
+			
 			case "Mutant Worm":
 			
-				if _unit.hp <= round(_unit.hpMax/2){global.defendDodgeWave=1}
+				if _unit.hp <= round(_unit.hpMax/2){oBattle.attackSubtype=1}
 				
 				var _action = chooseAttack(_unit)
 				var _target = chooseTarget(_action)
@@ -43,9 +67,18 @@ AIscript = function(_unit)
 			break;	
 			
 			case "The Magician":
-				var _action = chooseAttack(_unit)
-				var _target = chooseTarget(_action)
-				return [_action, _target];
+				if _unit.hp = _unit.hpMax&&flag1=false
+				{
+					flag1=true
+					if !instance_exists(obj_textBoxBattle)
+					{
+						create_textboxBattle("computerTalk10")
+					}
+					var _action = _unit.actions[0]
+					var _target = chooseTarget(_action)
+					return [_action, _target];
+				}
+				
 			break;
 			
 			case "Horned Beetle":

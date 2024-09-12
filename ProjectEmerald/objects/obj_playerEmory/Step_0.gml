@@ -344,10 +344,10 @@ if !swimming
 	}
 	if global.quest.blackRing.available = false && global.quest.blueRing.available = false
 	{
-		if keyboard_check(vk_lshift){sprite[RIGHT] = emory_r_running}else{sprite[RIGHT] = emory_r_walking}
-		if keyboard_check(vk_lshift){sprite[UP] = emory_b_running}else{sprite[UP] = emory_b_walking}
-		if keyboard_check(vk_lshift){sprite[LEFT] = emory_l_running}else{sprite[LEFT] = emory_l_walking}
-		if keyboard_check(vk_lshift){sprite[DOWN] = emory_f_running}else{sprite[DOWN] = emory_f_walking}
+		if keyboard_check(vk_lshift)&&!instance_exists(obj_carryingObj){sprite[RIGHT] = emory_r_running}else{sprite[RIGHT] = emory_r_walking}
+		if keyboard_check(vk_lshift)&&!instance_exists(obj_carryingObj){sprite[UP] = emory_b_running}else{sprite[UP] = emory_b_walking}
+		if keyboard_check(vk_lshift)&&!instance_exists(obj_carryingObj){sprite[LEFT] = emory_l_running}else{sprite[LEFT] = emory_l_walking}
+		if keyboard_check(vk_lshift)&&!instance_exists(obj_carryingObj){sprite[DOWN] = emory_f_running}else{sprite[DOWN] = emory_f_walking}
 		sprite[UPr] = emory_b_walking
 		sprite[DOWNr] = emory_f_idle
 		sprite[UPl] = emory_b_walking

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_add_to_world",
   "isCompatibility":false,
   "isDnD":false,

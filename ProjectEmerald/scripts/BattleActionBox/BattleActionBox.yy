@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"BattleActionBox",
   "isCompatibility":false,
   "isDnD":false,

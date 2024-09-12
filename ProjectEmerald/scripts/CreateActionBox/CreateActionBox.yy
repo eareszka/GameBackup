@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"CreateActionBox",
   "isCompatibility":false,
   "isDnD":false,

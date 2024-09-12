@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"lighting_free",
   "isCompatibility":false,
   "isDnD":false,

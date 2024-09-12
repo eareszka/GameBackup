@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"tri_direction",
   "isCompatibility":false,
   "isDnD":false,

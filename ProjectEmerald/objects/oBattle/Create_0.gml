@@ -197,6 +197,8 @@ RefreshRenderOrder();
 //Perform a turn
 DoTurn = function(_unit)
 {	
+	textBoxHeight = 25
+	
 	//Is this unit alive and able to act?
 	if (instance_exists(_unit)) && (_unit.hp > 0)
 	{
@@ -367,7 +369,7 @@ DoTurn = function(_unit)
 			playerTurn=false
 			//run ai script for that enemy
 			var _enemyAction = _unit.AIscript(_unit); 
-			if (_enemyAction != -1) 
+			if (_enemyAction != -1)
 			{
 				if _enemyAction[0]=noone
 				{
@@ -706,12 +708,12 @@ function ContinueAction(_user, _action, _targets)
 				}
 				else
 				{
-				
 					if (_user.enemy == true)
 					{
 						//doding attack mechanic
 						if variable_struct_exists(_action,"rhythmDefend")
 						{
+							
 							RhythmDefend(_user,_targets[0])	
 							
 							if _targets[0].hp>0

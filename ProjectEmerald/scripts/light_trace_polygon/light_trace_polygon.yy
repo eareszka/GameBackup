@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_trace_polygon",
   "isCompatibility":false,
   "isDnD":false,

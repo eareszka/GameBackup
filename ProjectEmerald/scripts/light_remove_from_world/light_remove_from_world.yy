@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_remove_from_world",
   "isCompatibility":false,
   "isDnD":false,

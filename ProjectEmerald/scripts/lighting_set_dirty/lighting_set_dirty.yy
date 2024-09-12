@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"lighting_set_dirty",
   "isCompatibility":false,
   "isDnD":false,

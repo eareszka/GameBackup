@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"ts_backroomsFloor",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -22,10 +22,6 @@
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",
-  },
-  "tileAnimation":{
-    "FrameData":[0,],
-    "SerialiseFrameCount":1,
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

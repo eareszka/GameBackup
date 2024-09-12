@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"dayNightShaderScript",
   "isCompatibility":false,
   "isDnD":false,

@@ -207,7 +207,7 @@ if dodgePhase
 
 if stunned
 {
-	color=c_purple
+	color=c_blue
 	
 	if moveTimer<0
 	{

@@ -5,9 +5,9 @@ if (global.escapeImmunity == 0) && (!dead)
 	{
 		NewEncounter(
 			choose(	
-					[global.bosses.jennaBoss],
+					[global.enemies.nightcrawler],
 			), 
-			spr_battleBackground5,
+			spr_battleBackground4,
 			battle2,
 			true,
 			,self

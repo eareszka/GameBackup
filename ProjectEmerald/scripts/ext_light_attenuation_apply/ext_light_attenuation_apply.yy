@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"ext_light_attenuation_apply",
   "isCompatibility":false,
   "isDnD":false,

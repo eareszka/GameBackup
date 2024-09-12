@@ -3,6 +3,11 @@ function scr_game_text(_text_id)
 {
 	switch(_text_id)
 	{	
+		case "blueProjectileTutorial":
+			scr_name("Crude Spider")
+			scr_text("Tee Hee,")
+			scr_text("Watch out for the BLUE web, my tasty friend. If you walk into it, you'll be stunned like a fly!")
+		break;
 		case "computerTalk9":
 			scr_name("McIntosh Computer") 
 			scr_text("I believe that at least one more of the sacred 12 is here in town. Go fourth now and save the world!")
@@ -135,17 +140,17 @@ function scr_game_text(_text_id)
 		break
 		
 		case "ShopOwner2":
-			scr_name("Shop Owner")
+			scr_name("")
 			scr_text("You can't afford this item.")
 		break
 		
 		case "ShopOwner3":
-			scr_name("Shop Owner")
+			scr_name("")
 			scr_text("You can't hold any more than 5 of this item.")
 		break
 		
 		case "ShopOwner4":
-			scr_name("Shop Owner")
+			scr_name("")
 			scr_text("Thank you for your purchase!")
 			scr_text("Anything else?")
 		break
@@ -986,7 +991,7 @@ function scr_game_text(_text_id)
 		
 		case "sign2":
 			scr_name("")
-			scr_text("'Sources of light holds the key, twist them, and the hidden door you'll see.'")
+			scr_text("'Chest on the left, and torch switches on the right. Both can be interacted with by pressing (spacebar)'")
 		break
 		
 		case "sign3":

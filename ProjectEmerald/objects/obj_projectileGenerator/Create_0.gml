@@ -4,6 +4,10 @@ sec=0
 
 switch enemy.name
 {
+	case "The Magician":
+		waveID=0
+	break
+	
 	case  "Scaly Feline":
 		waveID=irandom_range(0,1)
 	break
@@ -38,14 +42,8 @@ switch enemy.name
 	break
 	
 	case "Mutant Worm":
-		if global.defendDodgeWave=0
-		{
-			waveID=irandom_range(0,1)
-		}
-		if global.defendDodgeWave=1
-		{
-			waveID=2
-		}
+		if oBattle.attackSubtype=0{waveID=irandom_range(0,1)}
+		if oBattle.attackSubtype=1{waveID=2}
 	break
 }
 

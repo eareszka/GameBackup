@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"light_draw_shadow_map",
   "isCompatibility":false,
   "isDnD":false,
