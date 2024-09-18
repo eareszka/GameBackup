@@ -32,7 +32,7 @@ else
 
 if place_meeting(x,y,obj_playerEmory) && global.flag[7]>=1 && image_index = 15
 {
-	global.escapeImmunity = 2500
+	global.escapeImmunity = 0
 	global.prevRoom = room
 	instance_create_depth(0,0,-9999,oFadeIn)
 	if alarm[0] == -1 

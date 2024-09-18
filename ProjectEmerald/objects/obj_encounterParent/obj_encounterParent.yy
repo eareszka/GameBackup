@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"broke_f_idleBLACK",
-    "path":"sprites/broke_f_idleBLACK/broke_f_idleBLACK.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

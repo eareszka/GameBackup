@@ -1,1 +1,1 @@
-global.escapeImmunity = encounterRate()
+//if instance_exists(obj_encounterParent){instance_destroy(obj_encounterParent)}

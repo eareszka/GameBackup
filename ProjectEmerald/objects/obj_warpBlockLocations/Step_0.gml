@@ -15,7 +15,7 @@ if store
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -27,7 +27,7 @@ if store
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -49,7 +49,7 @@ if store
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -61,7 +61,7 @@ if store
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -83,7 +83,7 @@ if store
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -95,7 +95,7 @@ if store
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -123,7 +123,7 @@ if drug
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -135,7 +135,7 @@ if drug
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -157,7 +157,7 @@ if drug
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -169,7 +169,7 @@ if drug
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -197,7 +197,7 @@ if hospital
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -209,7 +209,7 @@ if hospital
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -231,7 +231,7 @@ if hospital
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -243,7 +243,7 @@ if hospital
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -271,7 +271,7 @@ if tent
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -283,7 +283,7 @@ if tent
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -305,7 +305,7 @@ if tent
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -317,7 +317,7 @@ if tent
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -346,7 +346,7 @@ if igloo
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -358,7 +358,7 @@ if igloo
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -380,7 +380,7 @@ if igloo
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -392,7 +392,7 @@ if igloo
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{
@@ -414,7 +414,7 @@ if igloo
 					{
 						if before_face != -1 obj_playerEmory.face = before_face
 						global.prevRoom = room
-						global.escapeImmunity = 2500
+						global.escapeImmunity = 0
 						instance_create_depth(0,0,-9999,oFadeIn)
 						if alarm[0] == -1 
 						{
@@ -426,7 +426,7 @@ if igloo
 				{
 					if before_face != -1 obj_playerEmory.face = before_face
 					global.prevRoom = room
-					global.escapeImmunity = 2500
+					global.escapeImmunity = 0
 					instance_create_depth(0,0,-9999,oFadeIn)
 					if alarm[0] == -1 
 					{

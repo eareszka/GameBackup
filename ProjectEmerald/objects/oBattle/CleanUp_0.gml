@@ -52,6 +52,8 @@ if (bossBattle = false)
 		{
 			instance_create_depth(0,0,-9999,oFadeOut)
 			global.escapeImmunity = encounterRate()/2
+			ResetEncounter()
+			
 			visible = true;
 		}
 	}
@@ -65,10 +67,13 @@ if (bossBattle = false)
 				obj_camera.follow = obj_playerEmory
 			}
 			instance_create_depth(0,0,-9999,oFadeOut)
-			global.escapeImmunity = encounterRate()
-			dead = true;
+			ResetEncounter()
+			
 			visible = true;
 		}
+		
+		ResetEncounter()
+		global.escapeImmunity = encounterRate()
 	}
 }
 else
@@ -78,7 +83,8 @@ else
 		with (creator) 
 		{
 			instance_create_depth(0,0,-9999,oFadeOut)
-			dead = true;
+			ResetEncounter()
+			
 			visible = false;
 		}
 	}
