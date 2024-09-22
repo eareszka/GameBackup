@@ -1,106 +1,51 @@
 if encounter
 {
-	if xscale>1.25{xscale-=.1}
-	if yscale>1.25{yscale-=.1}
-	
-	var cam = view_camera[0];
-	var x1 = camera_get_view_x(cam);
-	var y1 = camera_get_view_y(cam);
-	var x2 = x1 + camera_get_view_width(cam);
-	var y2 = y1 + camera_get_view_height(cam);
+	obj_playerEmory.speedWalk=0
 
-
-	var _encounterCount = instance_number(obj_encounterParent);
+	var _encounterCount = instance_number(obj_encounterOverworld);
 	
 	for (var i = 0; i < _encounterCount; i++) 
 	{
-		var _encounterInstance = instance_find(obj_encounterParent, i);
-		if (point_in_rectangle(_encounterInstance.x, _encounterInstance.y, x1, y1, x2, y2)) 
+		var _encounterInstance = instance_find(obj_encounterOverworld, i);
+		
+		if !_encounterInstance.hit&&_encounterInstance.activated
 		{
 		    _encounterInstance.absorbed = true;
 		}
 		
 		if _encounterInstance.absorbed = true
 		{
-			if !_encounterInstance.hitSet&&_encounterInstance.hit&&global.comboAmmount<3
+			if !_encounterInstance.hitSet&&global.comboAmmount<3&&comboTimer<0
 			{
+				comboTimer=8
+				
+				ObjFlash(_encounterInstance,1.5,0.05,255,255,255)
+				
 				global.comboAmmount++
-				obj_encounterMaster.xscale=1.75
-				obj_encounterMaster.yscale=1.75
+				
 				_encounterInstance.hitSet=true
 			}
 		}
 	}
 	
+	comboTimer--
+	
 	encounterStart=checkReady()
-	
-	draw_set_color(c_white)
-	draw_set_halign(fa_center)
-	draw_set_valign(fa_top)
-	draw_text_transformed(x,y,string(global.comboAmmount)+"x",xscale,yscale,0)
-
-	if xscale>1.25{xscale-=.1}
-	if yscale>1.25{yscale-=.1}
-	
-	ShakeObject(self,.40,.01)
 }
 
+if encounterStart{encounterTimer--}
 
-
-if encounterStart&&opponent!=noone
+if encounterTimer<0&&opponent!=noone
 {
-	switch opponent.opponent.unitID
-	{
-		case 6:
-			NewEncounter(
-			choose
-			(
-			[global.enemies.frog],
-			[global.enemies.frog],
-			[global.enemies.frog,global.enemies.frog],
-			[global.enemies.frog,global.enemies.frog],
-			), 
-			spr_battleBackground2,
-			battle1,
-			true,
-			,
-			opponent
-			);
-		break
+	var _enemy = enemyGet(global.comboAmmount)
 	
-		case 7:
-			NewEncounter(
-			choose
-			(
-			[global.enemies.frog],
-			[global.enemies.frog],
-			[global.enemies.frog,global.enemies.frog],
-			[global.enemies.frog,global.enemies.frog],
-			), 
-			spr_battleBackground2,
-			battle1,
-			true,
-			,
-			opponent
-			);
-		break
-	
-		case 8:
-			NewEncounter(
-			choose
-			(
-			[global.enemies.frog],
-			[global.enemies.frog],
-			[global.enemies.frog,global.enemies.frog],
-			[global.enemies.frog,global.enemies.frog],
-			), 
-			spr_battleBackground2,
-			battle1,
-			true,
-			,
-			opponent
-			);
-		break
-	}
-	opponent=noone
+	NewEncounter
+	(
+		_enemy,
+		spr_battleBackground2,
+		battle1,
+		false,
+		,
+		obj_encounterOverworld
+	);
 }

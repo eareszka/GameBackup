@@ -84,6 +84,7 @@ else
 		{
 			instance_create_depth(0,0,-9999,oFadeOut)
 			ResetEncounter()
+			dead=true
 			
 			visible = false;
 		}

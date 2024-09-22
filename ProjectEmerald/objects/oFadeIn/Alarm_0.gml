@@ -1,1 +1,2 @@
+ResetEncounterAll()
 instance_destroy()

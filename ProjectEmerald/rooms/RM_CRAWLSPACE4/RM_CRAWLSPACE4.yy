@@ -24,6 +24,8 @@
     {"name":"inst_20133BCD","path":"rooms/RM_CRAWLSPACE4/RM_CRAWLSPACE4.yy",},
     {"name":"inst_705CD9F5","path":"rooms/RM_CRAWLSPACE4/RM_CRAWLSPACE4.yy",},
     {"name":"inst_F14EB16","path":"rooms/RM_CRAWLSPACE4/RM_CRAWLSPACE4.yy",},
+    {"name":"inst_C44CAEB","path":"rooms/RM_CRAWLSPACE4/RM_CRAWLSPACE4.yy",},
+    {"name":"inst_5708BA56","path":"rooms/RM_CRAWLSPACE4/RM_CRAWLSPACE4.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -33,11 +35,13 @@
           -40,0,2,-2147483648,135,-22,-2147483648,-40,0,1,135,-17,-2147483648,-37,130,1,134,-7,0,1,135,-24,-2147483648,
           -28,0,-3,130,1,134,-6,0,2,135,0,-24,-2147483648,-28,0,-3,130,1,134,-5,0,3,135,0,0,-24,-2147483648,-28,
           0,-3,130,1,134,-4,0,1,135,-3,0,-24,-2147483648,-28,0,-2,130,1,168,-4,0,1,135,-4,0,-18,-2147483648,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"tcCOLL","path":"tilesets/tcCOLL/tcCOLL.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tcCOLL","path":"tilesets/tcCOLL/tcCOLL.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"warps","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_689C2A8F_1_1_1_1_1","colour":4294967295,"frozen":true,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_689C2A8F_1_1_1_1_1","objectId":{"name":"obj_warpBlock","path":"objects/obj_warpBlock/obj_warpBlock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.75,"scaleY":1.0,"x":554.0,"y":224.0,},
         {"$GMRInstance":"v1","%Name":"inst_230D858_1_1","colour":4294967295,"frozen":true,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_230D858_1_1","objectId":{"name":"obj_warpBlock","path":"objects/obj_warpBlock/obj_warpBlock.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.828125,"scaleY":1.15625,"x":-53.0,"y":92.0,},
         {"$GMRInstance":"v1","%Name":"inst_4A4F549A_1_1","colour":4294967295,"frozen":true,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4A4F549A_1_1","objectId":{"name":"obj_flag","path":"objects/obj_flag/obj_flag.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.7666668,"scaleY":2.4666665,"x":-53.0,"y":92.0,},
+        {"$GMRInstance":"v1","%Name":"inst_C44CAEB","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_C44CAEB","objectId":{"name":"obj_coll6","path":"objects/obj_coll6/obj_coll6.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-32.0,"y":144.0,},
+        {"$GMRInstance":"v1","%Name":"inst_5708BA56","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5708BA56","objectId":{"name":"obj_coll6","path":"objects/obj_coll6/obj_coll6.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":-32.0,"y":80.0,},
       ],"layers":[],"name":"warps","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"MANobj","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_4D1C50DD_1_1_1_1_1","colour":4294967295,"frozen":true,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4D1C50DD_1_1_1_1_1","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":608.0,"y":192.0,},

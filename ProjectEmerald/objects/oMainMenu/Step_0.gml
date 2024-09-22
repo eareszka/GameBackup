@@ -1,4 +1,4 @@
-if (active) && !instance_exists(oItemMenu) && !instance_exists(oQuestMenu) && !instance_exists(oBattle)
+if (active) && !instance_exists(oItemMenu) && !instance_exists(oQuestMenu) && !instance_exists(oBattle) && !instance_exists(obj_encounterMaster)
 {
 	//Control menu with keyboard
 	hover += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up);

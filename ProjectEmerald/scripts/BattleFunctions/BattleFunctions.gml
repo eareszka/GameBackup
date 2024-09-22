@@ -24,10 +24,9 @@ function NewEncounter(_enemies, _bg, _music, _boss, _scene = undefined, _bossPar
 		if !instance_exists(oBattleIntroBoss){with instance_create_depth(x,y,-16000,oBattleIntroBoss){boss=_bossParent}}
 		if oBattleIntroBoss.done=true
 		{
-			if instance_exists(oCutscene)
-			{
-				oCutscene.scene=_scene
-			}
+			
+			if instance_exists(oCutscene){oCutscene.scene=_scene}
+			
 			instance_create_depth(camera_get_view_x(view_camera[0]),
 			camera_get_view_y(view_camera[0]),-9999,
 			

@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
   "%Name":"spr_visualEncounterFrog",
-  "bboxMode":0,
-  "bbox_bottom":27,
-  "bbox_left":0,
-  "bbox_right":27,
+  "bboxMode":2,
+  "bbox_bottom":21,
+  "bbox_left":4,
+  "bbox_right":20,
   "bbox_top":5,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -23,7 +23,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":28,
+  "height":23,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"08d430c5-5748-453e-9e04-a01210ead0c9","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"08d430c5-5748-453e-9e04-a01210ead0c9","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},

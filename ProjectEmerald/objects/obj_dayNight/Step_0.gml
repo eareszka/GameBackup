@@ -74,7 +74,7 @@ if room=RM_BROWNSTOWN
 	if global.timeOfDay<8
 	{
 		layer_set_visible(_enc,false)
-		
+	
 		obj_lightingCutout.visible=true
 		obj_parentNPC.activated=false
 	}
