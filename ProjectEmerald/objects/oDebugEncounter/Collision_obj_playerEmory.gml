@@ -5,7 +5,7 @@ if (global.escapeImmunity == 0) && (!dead)
 	{
 		NewEncounter(
 			choose(	
-					[global.enemies.spider,global.enemies.rock,global.enemies.scalyFeline],
+					[global.enemies.teakettler,global.enemies.rock,global.enemies.scalyFeline],
 			), 
 			spr_battleBackground4,
 			battle2,

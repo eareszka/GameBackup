@@ -26,6 +26,19 @@ if encounter
 				_encounterInstance.hitSet=true
 			}
 		}
+		if _encounterInstance.absorbed = false
+		{
+			var cam = view_camera[0];
+			var x1 = camera_get_view_x(cam)
+			var y1 = camera_get_view_y(cam)
+			var x2 = x1 + camera_get_view_width(cam)
+			var y2 = y1 + camera_get_view_height(cam)
+
+			if(point_in_rectangle(_encounterInstance.x, _encounterInstance.y, x1, y1, x2, y2))
+			{ 
+				if !_encounterInstance.hit	_encounterInstance.image_alpha=.35
+			}
+		}
 	}
 	
 	comboTimer--
@@ -42,7 +55,7 @@ if encounterTimer<0&&opponent!=noone
 	NewEncounter
 	(
 		_enemy,
-		spr_battleBackground2,
+		spr_battleBackground1,
 		battle1,
 		false,
 		,

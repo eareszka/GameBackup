@@ -16,14 +16,14 @@ if(point_in_rectangle(x, y, x1, y1, x2, y2))
 			x += hSpeed;
 			y += vSpeed;
 	
-			if !place_meeting(x,y,obj_playerEmory)
+			if !place_meeting(x,y,obj_playerEmory)&&!distance_to_object(obj_playerEmory)<moveSpeed
 			{
 				dir = point_direction(x,y,obj_playerEmory.x,obj_playerEmory.y)
 
 				hSpeed= lengthdir_x(moveSpeed,dir)
 				vSpeed= lengthdir_y(moveSpeed,dir)
 			}
-			else
+			if place_meeting(x,y,obj_playerEmory)||distance_to_object(obj_playerEmory)<moveSpeed&&!obj_playerEmory.blown
 			{
 				hit=true
 				stop=true
@@ -46,7 +46,7 @@ if(point_in_rectangle(x, y, x1, y1, x2, y2))
 
 		//patrol points
 		// Initialize patrol variables
-		if (!activated)&&!stationery
+		if (!activated)&&!unique
 		{
 		    // Decrease patrol timer
 		    patrolTimer--;
@@ -94,18 +94,14 @@ if(point_in_rectangle(x, y, x1, y1, x2, y2))
 		}
 
 		// Handle four-direction animation
-		if !stationery
+		if !unique
 		{
 			FourDirectionAnimate();
 			image_speed=1
 		}
-		if stationery
+		if unique
 		{
-			if !stop&&activated
-			{
-				image_index+=.1
-			}
-			else image_index=0
+			UniqueDirectionAnimate();
 		}
 	
 	if hit&&!dead
@@ -125,7 +121,7 @@ if(point_in_rectangle(x, y, x1, y1, x2, y2))
 		}
 	}
 
-		if point_distance(x,y,obj_playerEmory.x,obj_playerEmory.y)<110
+		if point_distance(x,y,obj_playerEmory.x,obj_playerEmory.y)<110&&!obj_playerEmory.blown
 		{ 
 			activated=true
 		}
@@ -133,6 +129,7 @@ if(point_in_rectangle(x, y, x1, y1, x2, y2))
 		{ 
 			activated=false
 		}
+		
 	}
 	if instance_exists(obj_encounterMaster)
 	{
@@ -153,31 +150,75 @@ if(point_in_rectangle(x, y, x1, y1, x2, y2))
 			if _encounterInstance.y<self.y self.depth=_encounterInstance.depth+1
 		}
 	}
-}
-if(!point_in_rectangle(x, y, x1, y1, x2, y2))
-{
-	image_index=animIndex		
-}
-
-
-
-
-/*
-*When encounter starts
-*/
-if hit&&!dead
-{
-	if !instance_exists(obj_encounterMaster){instance_create_depth(x,y,-16000,obj_encounterMaster)}
-	else
+	
+	#region Coll
+	if place_meeting(x + hSpeed, y, obj_coll) || place_meeting (x + hSpeed, y, obj_coll2) || place_meeting (x + hSpeed, y, obj_coll3) || place_meeting (x + hSpeed, y, obj_coll4) || place_meeting (x + hSpeed, y, obj_collBuilding) || place_meeting (x + hSpeed, y, obj_collHouse) || place_meeting (x + hSpeed, y,obj_coll5) || place_meeting (x + hSpeed, y,obj_coll6) || place_meeting (x + hSpeed, y,oNPCfinCOLL) == true
 	{
-		obj_encounterMaster.encounter=true
-		obj_encounterMaster.opponent=self
-		
-		if !hitSet
+		hSpeed = 0
+	}
+	if place_meeting(x, y + vSpeed, obj_coll) || place_meeting (x, y + vSpeed, obj_coll2) || place_meeting (x, y + vSpeed, obj_coll3)  || place_meeting (x, y + vSpeed, obj_coll4) || place_meeting (x, y + vSpeed, obj_collBuilding) || place_meeting (x, y + vSpeed, obj_collHouse) || place_meeting (x, y + vSpeed,obj_coll5) || place_meeting (x, y + vSpeed,obj_coll6) || place_meeting (x, y + vSpeed,oNPCfinCOLL) == true
+	{
+		vSpeed = 0
+	}
+	if layer_exists("tcCOLL")
+	{
+		if tile_meeting(x + hSpeed, y, "tcCOLL", obj_precise_tile_checker) == true
 		{
-			global.comboAmmount++
-			ObjFlash(self,1.5,0.05,255,255,255)
-			hitSet=true
+			hSpeed = 0		
+		}
+		if tile_meeting(x, y + vSpeed, "tcCOLL", obj_precise_tile_checker) == true
+		{
+			vSpeed = 0		
+		}
+	}
+	if layer_exists("tcCOLLEne")
+	{
+		if tile_meeting(x + hSpeed, y, "tcCOLLEne", obj_precise_tile_checker_1) == true
+		{
+			hSpeed = 0		
+		}
+		if tile_meeting(x, y + vSpeed, "tcCOLLEne", obj_precise_tile_checker_1) == true
+		{
+			vSpeed = 0		
+		}
+	}
+	
+
+
+	var _encounterCount = instance_number(obj_encounterOverworld);
+		
+	for (var i = 0; i < _encounterCount; i++) 
+	{
+		var _encounterInstance = instance_find(obj_encounterOverworld, i);
+			
+		if _encounterInstance.id != self.id && _encounterInstance.id < self.id 
+		{
+			ObjDepth(self,_encounterInstance,2,1)
+		}
+	}
+	
+	/*
+	*When encounter starts
+	*/
+	if hit&&!dead
+	{
+		if !instance_exists(obj_encounterMaster){instance_create_depth(x,y,-16000,obj_encounterMaster)}
+		else
+		{
+			obj_encounterMaster.encounter=true
+			obj_encounterMaster.opponent=self
+		
+			if !hitSet
+			{
+				global.comboAmmount++
+				ObjFlash(self,1.5,0.05,255,255,255)
+				hitSet=true
+			}
 		}
 	}
 }
+if(!point_in_rectangle(x, y, x1, y1, x2, y2))
+{
+	image_index=animIndex
+}
+

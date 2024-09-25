@@ -50,4 +50,9 @@ function enemyGet(_ammount)
 		}
 		if _ammount=3 return [global.enemies.spider,global.enemies.rock,global.enemies.scalyFeline]
 	}
+	if room=RM_HOTELvent1||room=RM_HOTELvent2
+	{
+		if _ammount=1 return [opponent.opponent]
+		if _ammount>=2 return choose([global.enemies.wapaloosie,global.enemies.spider],[global.enemies.spider,global.enemies.wapaloosie])
+	}
 }

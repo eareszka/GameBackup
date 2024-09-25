@@ -4,8 +4,6 @@ startdepth=depth
 
 moveSpeed=0
 
-stationery=false
-
 patrolTimer=0
 
 patrolCooldown=0
@@ -44,9 +42,11 @@ animIndex = 0;
 
 sprite_index=opponent.sprites.overworld
 
-if opponent.name = "Typha" stationery=true
-
 moveSpeed=(opponent.spd-1)
+
+unique=false
+
+if variable_struct_exists(opponent,"unique") unique=true
 
 function FourDirectionAnimate() 
 {
@@ -89,5 +89,34 @@ function FourDirectionAnimate()
 			}
 			else animationEnd = false;
 		}
+	}
+}
+
+function UniqueDirectionAnimate() 
+{
+	if opponent.name = "Typha" 
+	{
+		if !stop&&activated
+		{
+			image_index+=.1
+		}
+		else image_index=0
+	}
+
+	if opponent.name = "Grinning Rock" 
+	{
+		if !place_meeting(x,y,obj_playerEmory)
+		{
+			dir = point_direction(x,y,obj_playerEmory.x+10,obj_playerEmory.y+15)
+
+			hSpeed= lengthdir_x(moveSpeed,dir)
+			vSpeed= lengthdir_y(moveSpeed,dir)
+		}
+		
+		if !stop&&activated
+		{
+			image_angle+=ceil((mean(hSpeed,vSpeed))*4)
+		}
+		else image_angle+=0
 	}
 }
